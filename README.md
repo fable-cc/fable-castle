@@ -4,6 +4,8 @@
 > 从国学、心理学、隐学和商业实战中提炼人性底层代码，
 > 帮你觉醒意识、看懂规则、落地搞钱。
 
+🌐 **在线知识花园**：[jpz65rnmp7-stack.github.io/jingyi-knowledge-garden](https://jpz65rnmp7-stack.github.io/jingyi-knowledge-garden/)
+
 ---
 
 ## 🎯 一句话定位
