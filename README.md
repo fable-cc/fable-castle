@@ -1,10 +1,10 @@
-# 🌳 景一的知识花园
+# 🌳 景一的寓言城堡
 
 > **不是搬运工，是冶炼者。**
 > 从国学、心理学、隐学和商业实战中提炼人性底层代码，
 > 帮你觉醒意识、看懂规则、落地搞钱。
 
-🌐 **在线知识花园**：[fable-cc.github.io/jingyi-knowledge-garden](https://fable-cc.github.io/jingyi-knowledge-garden/)
+🌐 **在线寓言城堡**：[fable-cc.github.io/jingyi-knowledge-garden](https://fable-cc.github.io/jingyi-knowledge-garden/)
 
 ---
 
@@ -34,7 +34,7 @@
 
 ---
 
-## 🗺️ 知识花园导航
+## 🗺️ 寓言城堡导航
 
 | 目录 | 内容 | 适合谁 |
 |------|------|--------|
