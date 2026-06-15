@@ -25,7 +25,7 @@ aux_links:
 aux_links_new_tab: true
 
 # 页脚
-footer_content: "Made with 🔥 by 景一 · 从人性出发，自然穿透所有领域 · <a href=\"https://github.com/fable-cc/jingyi-knowledge-garden\">GitHub</a>"
+footer_content: "Made with 🔥 by 景一 · 从人性出发，自然穿透所有领域 · <a href=\"https://github.com/fable-cc/jingyi-knowledge-garden\">GitHub</a> · <a href=\"https://github.com/fable-cc/jingyi-knowledge-garden/discussions\">讨论区</a>"
 
 # 返回顶部
 back_to_top: true

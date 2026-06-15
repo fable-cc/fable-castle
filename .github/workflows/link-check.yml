@@ -1,0 +1,20 @@
+# 每周自动检查所有链接是否失效
+name: 链接检查
+
+on:
+  schedule:
+    - cron: '23 8 * * 1'  # 每周一 8:23 UTC
+  workflow_dispatch:        # 手动触发
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-retries 2 '**/*.md'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

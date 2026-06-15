@@ -1,0 +1,26 @@
+# 每次推送后验证 GitHub Pages 构建状态
+name: Pages 构建检查
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 等待 Pages 构建
+        run: sleep 30
+      - name: 检查网站可访问
+        run: |
+          for i in 1 2 3 4 5; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://fable-cc.github.io/jingyi-knowledge-garden/)
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ Pages 构建成功"
+              exit 0
+            fi
+            echo "⏳ 等待中... (尝试 $i/5)"
+            sleep 15
+          done
+          echo "❌ Pages 构建可能失败"
+          exit 1
