@@ -1,0 +1,49 @@
+<!-- giscus 评论区样式 -->
+<style>
+.giscus-wrapper {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+</style>
+
+<!-- giscus 评论区 - 基于 GitHub Discussions 的免费评论系统 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 找到主内容区域
+  var main = document.querySelector('.main-content') || document.querySelector('main');
+  if (!main) return;
+
+  // 创建评论区容器
+  var wrapper = document.createElement('div');
+  wrapper.className = 'giscus-wrapper';
+
+  var heading = document.createElement('h3');
+  heading.textContent = '💬 讨论';
+  wrapper.appendChild(heading);
+
+  var giscusDiv = document.createElement('div');
+  giscusDiv.className = 'giscus';
+  wrapper.appendChild(giscusDiv);
+
+  main.appendChild(wrapper);
+
+  // 加载 giscus
+  var script = document.createElement('script');
+  script.src = 'https://giscus.app/client.js';
+  script.setAttribute('data-repo', 'fable-cc/jingyi-knowledge-garden');
+  script.setAttribute('data-repo-id', 'R_kgDOS7HTTA');
+  script.setAttribute('data-category', 'General');
+  script.setAttribute('data-category-id', 'DIC_kwDOS7HTTM4C_L5j');
+  script.setAttribute('data-mapping', 'pathname');
+  script.setAttribute('data-strict', '0');
+  script.setAttribute('data-reactions-enabled', '1');
+  script.setAttribute('data-emit-metadata', '0');
+  script.setAttribute('data-input-position', 'bottom');
+  script.setAttribute('data-theme', 'dark');
+  script.setAttribute('data-lang', 'zh-CN');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.async = true;
+  document.body.appendChild(script);
+});
+</script>
