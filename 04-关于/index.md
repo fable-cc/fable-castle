@@ -38,7 +38,7 @@
 
 | 平台 | 账号 |
 |------|------|
-| 🌐 GitHub | [@jpz65rnmp7-stack](https://github.com/jpz65rnmp7-stack) |
+| 🌐 GitHub | [@fable-cc](https://github.com/fable-cc) |
 | 📱 抖音 | @景一 |
 | 📕 小红书 | @景一 |
 | 🎬 B站 | @景一 |
