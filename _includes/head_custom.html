@@ -9,12 +9,93 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 
-<!-- giscus 评论区样式 -->
+<!-- 景一商业落地页样式 -->
 <style>
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  margin: -1rem -1rem 2rem;
+  background: linear-gradient(180deg, rgba(201,169,110,0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,169,110,0.15);
+  color: #C9A96E;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  background: linear-gradient(135deg, #E8D5B7, #C9A96E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-sub { font-size: 1.3rem; color: var(--body-text-color); margin: 0.5rem 0; }
+.hero-sub strong { color: #C9A96E; }
+.hero-desc { font-size: 1rem; color: #8b949e; line-height: 1.8; margin: 1rem 0; }
+
+/* Stats Row */
+.hero-stats {
+  display: flex; justify-content: center; gap: 2.5rem;
+  margin: 2rem 0; flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat strong { display: block; font-size: 2rem; color: #C9A96E; }
+.stat span { font-size: 0.85rem; color: #8b949e; }
+
+/* CTAs */
+.hero-cta { margin: 1.5rem 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.cta-primary {
+  background: linear-gradient(135deg, #C9A96E, #A68A4A);
+  color: #0d1117 !important; padding: 0.7rem 1.8rem;
+  border-radius: 8px; font-weight: 700; text-decoration: none;
+  transition: transform 0.2s;
+}
+.cta-primary:hover { transform: translateY(-2px); text-decoration: none; }
+.cta-secondary {
+  background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.3);
+  color: #C9A96E !important; padding: 0.7rem 1.5rem;
+  border-radius: 8px; font-weight: 600; text-decoration: none;
+}
+.cta-secondary:hover { background: rgba(201,169,110,0.2); text-decoration: none; }
+
+.hero-trust { margin-top: 1.5rem; font-size: 0.85rem; color: #8b949e; }
+.hero-trust img { vertical-align: middle; margin-right: 0.5rem; }
+
+/* Service Cards */
+.services {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; margin: 1.5rem 0;
+}
+.service-card {
+  background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.12);
+  border-radius: 12px; padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+.service-card:hover { border-color: rgba(201,169,110,0.35); }
+.service-card strong { font-size: 1.15rem; color: #C9A96E; display: block; margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.9rem; color: #8b949e; margin-bottom: 0.8rem; }
+.service-card a { color: #C9A96E; font-weight: 600; font-size: 0.9rem; }
+
+/* giscus */
 .giscus-wrapper {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-stats { gap: 1.5rem; }
+  .stat strong { font-size: 1.5rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
 }
 </style>
 
