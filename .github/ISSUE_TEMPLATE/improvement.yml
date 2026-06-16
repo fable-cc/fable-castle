@@ -1,0 +1,22 @@
+---
+name: 🛠️ 改进建议 / 问题反馈
+description: 网站问题、内容错误、结构改进建议
+title: "[改进] "
+labels: ["改进"]
+assignees: []
+body:
+  - type: dropdown
+    attributes:
+      label: 类型
+      options:
+        - 内容错误/事实性错误
+        - 网站功能问题
+        - 知识结构建议
+        - 文案/排版改进
+        - 其他
+  - type: textarea
+    attributes:
+      label: 具体描述
+      placeholder: 越具体越好，贴上链接或文件路径
+    validations:
+      required: true

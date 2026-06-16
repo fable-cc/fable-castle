@@ -1,0 +1,34 @@
+---
+name: 🔥 内容建议 / 冶炼投稿
+description: 推荐值得冶炼的内容素材、跨赛道融合方向、或者直接投稿
+title: "[内容] "
+labels: ["内容建议"]
+assignees: []
+body:
+  - type: textarea
+    attributes:
+      label: 内容素材
+      description: 你想推荐的视频、文章、书籍、观点？贴上链接或描述
+      placeholder: "BVxxxx | 为什么上古神明总有坐骑 | 修仙的蝼蚁"
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: 属于哪个赛道
+      options:
+        - 搞钱/商业认知（大F体系）
+        - 隐学/权力结构（九哥）
+        - 觉醒/人性意识（修仙的蝼蚁）
+        - 跨赛道融合
+        - 不确定
+  - type: textarea
+    attributes:
+      label: 冶炼方向
+      description: 你觉得这个素材能炼出什么？从哪个角度切入？
+      placeholder: "比如：山海经异兽 → 用硬核科学视角重新解释 → 打破文理科壁垒"
+  - type: textarea
+    attributes:
+      label: 为什么值得冶炼
+      description: 它和现有知识框架的关联是什么？
+    validations:
+      required: true
