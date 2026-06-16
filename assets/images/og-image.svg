@@ -33,13 +33,13 @@
 
   <!-- Three pillars -->
   <text x="300" y="410" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="22" fill="#E8D5B7" opacity="0.8">🪙 钱途心法</text>
-  <text x="300" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">外层实操 · 搞钱心法</text>
+  <text x="300" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">落地变现 · 搞钱心法</text>
 
   <text x="600" y="410" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="22" fill="#E8D5B7" opacity="0.8">🏰 暗流规则</text>
-  <text x="600" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">中层认知 · 权力结构</text>
+  <text x="600" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">权力博弈 · 权力结构</text>
 
   <text x="900" y="410" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="22" fill="#E8D5B7" opacity="0.8">🧬 意识觉醒</text>
-  <text x="900" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">内层意识 · NPC觉醒</text>
+  <text x="900" y="445" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="16" fill="#888">景一·本源升维 · NPC觉醒</text>
 
   <!-- Bottom text -->
   <text x="600" y="540" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="18" fill="#666">国学 × 心理学 × 隐学 × 商业实战 → 人性底层代码</text>
