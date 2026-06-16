@@ -1,6 +1,7 @@
 ---
 tags: [精华, SOP, 方法论, 全平台, 创作流程]
 created: 2026-06-08
+nav_exclude: true
 ---
 
 # 全平台内容创作 SOP

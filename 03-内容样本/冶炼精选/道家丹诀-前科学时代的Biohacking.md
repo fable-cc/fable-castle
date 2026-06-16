@@ -1,3 +1,6 @@
+---
+nav_exclude: true
+---
 # 道家丹诀：前科学时代的 Biohacking
 
 > 赛道：国学现代化 × 硬核前沿 × 心流

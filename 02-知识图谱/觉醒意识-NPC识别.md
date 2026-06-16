@@ -2,6 +2,7 @@
 source: 景一冶炼
 date: 2026-06-16
 tags: [意识觉醒, NPC, 系统思维, 觉醒]
+nav_exclude: true
 ---
 
 # 识别NPC的三个致命破绽

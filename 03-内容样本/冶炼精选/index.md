@@ -2,6 +2,7 @@
 title: 冶炼精选
 parent: 内容样本
 nav_order: 2
+nav_exclude: true
 ---
 
 # 🔥 冶炼精选 · 15篇跨赛道深度内容
