@@ -1,6 +1,5 @@
 ---
 title: 景一·商业IP课程
-nav_order: 4
 ---
 
 # 🔥 商业IP冶炼系统
