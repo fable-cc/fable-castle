@@ -11,16 +11,16 @@ nav_order: 1
 
   <div class="hero-stats">
     <div class="stat"><strong>18</strong><span>知识支柱</span></div>
+    <div class="stat"><strong>68篇</strong><span>精华文章</span></div>
     <div class="stat"><strong>90+</strong><span>公版书库</span></div>
-    <div class="stat"><strong>29篇</strong><span>精华文章</span></div>
     <div class="stat"><strong>开源</strong><span>可验证</span></div>
   </div>
 
   <div class="hero-cta">
-    <a href="04-关于/商业IP课程/" class="cta-primary">🔥 商业IP课程</a>
+    <a href="services/free-course/" class="cta-primary">🎁 ¥39.9 IP定位课</a>
     <a href="#start" class="cta-secondary">🚀 开始冶炼</a>
+    <a href="04-关于/商业IP课程/" class="cta-secondary">🔥 完整课程</a>
     <a href="04-关于/深度合作/" class="cta-secondary">🤝 深度合作</a>
-    <a href="04-关于/赞助支持/" class="cta-secondary">💰 赞助支持</a>
   </div>
 
   <div class="hero-trust">
