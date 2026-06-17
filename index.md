@@ -33,7 +33,7 @@ nav_order: 1
 
 ## 🎯 我能帮你什么
 
-<div class="services" markdown="0">
+<div id="services" class="services" markdown="0">
   <div class="service-card">
     <strong>🧠 认知操作系统升级</strong>
     <p>52种认知偏差诊断·系统1/2切换训练·概率思维决策框架。从"凭感觉"到"算概率"。</p>
