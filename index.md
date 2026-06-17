@@ -17,10 +17,10 @@ nav_order: 1
   </div>
 
   <div class="hero-cta">
-    <a href="/fable-castle/services/free-course.html" class="cta-primary">🎁 ¥39.9 IP定位课</a>
-    <a href="#services" class="cta-secondary">🚀 开始冶炼</a>
-    <a href="/fable-castle/04-关于/商业IP课程.html" class="cta-secondary">🔥 完整课程</a>
-    <a href="/fable-castle/04-关于/深度合作.html" class="cta-secondary">🤝 商业合作</a>
+    <a href="/fable-castle/services/free-course.html" class="cta-primary">🎁 ¥39.9 IP定位课 · 3天找到你的定位</a>
+  </div>
+  <div class="hero-cta" style="margin-top:12px">
+    <a href="/fable-castle/04-关于/深度合作.html" class="cta-secondary">🤝 企业GEO · Agent部署 · IP顾问</a>
   </div>
 
   <div class="hero-trust">
