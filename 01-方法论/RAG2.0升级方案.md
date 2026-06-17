@@ -119,24 +119,109 @@ Agent整合三次结果→生成对比分析→输出
 
 ---
 
-## 部署方案（你的M5上）
+## 方案A：零代码实现（Dify·30分钟上线）
 
+### 1. 拉取模型
 ```bash
-# 1. 安装依赖
-pip install llama-index FlagEmbedding rank-bm25
-
-# 2. 下载模型（只需一次）
-# BGE-M3 向量模型 (~2GB)
-# BGE-Reranker (~1.5GB)
-
-# 3. 构建索引
-python build_rag_index.py --docs ./02-知识图谱/ --model bge-m3
-
-# 4. 测试
-python query.py "王阳明知行合一在企业管理中的3个应用"
+ollama pull bge-m3
+ollama pull bge-reranker:v2-m3
 ```
 
-**你的M5 24GB完全够用**——BGE-M3 + Reranker 同时跑，内存占用约10GB。
+### 2. Dify知识库设置
+- 检索模式：**混合检索**
+- 向量模型：Ollama-bge-m3
+- 关键词检索权重：**0.5**（国学最优值）
+- 融合算法：**RRF**（不要用加权平均）
+- RRF k值：60
+- 召回数量：200
+
+### 3. 重排序设置
+- 开启重排序
+- 模型：Ollama-bge-reranker:v2-m3
+- 重排序前召回：200
+- 重排序后返回：**8**（国学最优）
+
+### 4. 测试
+提问"王阳明知行合一在企业管理中的三个核心应用"——不会再返回孔子内容。
+
+---
+
+## 方案B：完整代码（LlamaIndex·高度自定义）
+
+```python
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, StorageContext
+from llama_index.core.retrievers import QueryFusionRetriever
+from llama_index.retrievers.bm25 import BM25Retriever
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.llms.ollama import Ollama
+from llama_index.core.postprocessor import SentenceTransformerRerank
+import nest_asyncio
+nest_asyncio.apply()
+
+# 1. 模型配置（全部本地）
+embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-m3")
+reranker = SentenceTransformerRerank(model="BAAI/bge-reranker-v2-m3", top_n=8)
+llm = Ollama(model="qwen2:7b-instruct", temperature=0.1)
+
+# 2. 加载文档
+documents = SimpleDirectoryReader("./02-知识图谱/").load_data()
+
+# 3. 构建向量索引
+storage_context = StorageContext.from_defaults()
+vector_index = VectorStoreIndex.from_documents(
+    documents, storage_context=storage_context,
+    embed_model=embed_model, show_progress=True
+)
+
+# 4. 混合检索 + RRF融合
+vector_retriever = vector_index.as_retriever(similarity_top_k=100)
+bm25_retriever = BM25Retriever.from_defaults(
+    docstore=vector_index.docstore, similarity_top_k=100
+)
+hybrid_retriever = QueryFusionRetriever(
+    [vector_retriever, bm25_retriever],
+    similarity_top_k=200, num_queries=1,
+    mode="rrf", rrf_k=60, use_async=True
+)
+
+# 5. 查询引擎（含重排序）
+query_engine = vector_index.as_query_engine(
+    retriever=hybrid_retriever,
+    node_postprocessors=[reranker], llm=llm
+)
+
+# 6. 测试
+response = query_engine.query("王阳明知行合一在企业管理中的三个核心应用")
+print(response)
+```
+
+---
+
+## 国学知识库专属参数
+
+| 参数 | 通用值 | 国学最优值 | 原因 |
+|------|--------|-----------|------|
+| 分块大小 | 512 | **384** | 古文语义密度高 |
+| 分块重叠 | 50 | **80** | 避免古文截断 |
+| 向量检索Top K | 50 | **100** | 专有名词多 |
+| BM25权重 | 0.3 | **0.5** | 关键词更重要 |
+| 重排序后Top N | 5 | **8** | 需更多上下文 |
+
+---
+
+## 进阶：专有名词增强
+
+创建 `guoxue_terms.txt`：
+```
+知行合一 10.0
+格物致知 10.0
+内圣外王 10.0
+无为而治 8.0
+道 5.0
+仁 5.0
+```
+
+在BM25检索中给这些词更高权重——确保国学专业术语精确匹配。
 
 ---
 
