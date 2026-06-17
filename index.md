@@ -10,7 +10,7 @@ nav_order: 1
   <p class="hero-desc">跨学科知识冶炼引擎：国学×哲学×心理学×博弈论×商业模式×认知科学 → 人性底层操作系统。<br>从公版书库和全球思想中提炼可复用的认知资产，帮你建立不可替代的商业IP。</p>
 
   <div class="hero-stats">
-    <div class="stat"><strong>36</strong><span>知识支柱</span></div>
+    <div class="stat"><strong>72</strong><span>知识支柱</span></div>
     <div class="stat"><strong>77篇</strong><span>原创冶炼</span></div>
     <div class="stat"><strong>90+</strong><span>公版书库</span></div>
     <div class="stat"><strong>开源</strong><span>可验证</span></div>
@@ -74,7 +74,7 @@ nav_order: 1
   <img src="assets/images/architecture.svg" alt="景一知识体系全景架构" width="100%">
 </p>
 
-### 36知识支柱矩阵
+### 72知识支柱矩阵
 
 | 维度 | 支柱 | 核心命题 |
 |------|------|---------|
@@ -95,7 +95,7 @@ nav_order: 1
 
 | 证据 | 详情 | 验证方式 |
 |------|------|---------|
-| 🏗️ 36知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
+| 🏗️ 72知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
 | ✍️ 68篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/fable-castle/02-知识图谱/) |
 | 📚 90+公版书库 | Gutenberg·IA·中国哲学书电子化计划 | [→ 公版书库](https://github.com/fable-cc/fable-castle) |
 | ⚙️ 知识冶炼引擎 | 跨学科知识冶炼→结构化重组→景一原创框架 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |

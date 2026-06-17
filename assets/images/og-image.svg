@@ -78,14 +78,14 @@
 
   <!-- Stats row -->
   <g font-family="sans-serif" text-anchor="middle">
-    <text x="250" y="520" font-size="36" font-weight="bold" fill="#C9A96E">36</text>
+    <text x="250" y="520" font-size="36" font-weight="bold" fill="#C9A96E">72</text>
     <text x="250" y="545" font-size="15" fill="#8b949e">知识支柱</text>
 
-    <text x="500" y="520" font-size="36" font-weight="bold" fill="#C9A96E">77⁺</text>
-    <text x="500" y="545" font-size="15" fill="#8b949e">原创冶炼</text>
+    <text x="500" y="520" font-size="36" font-weight="bold" fill="#C9A96E">12</text>
+    <text x="500" y="545" font-size="15" fill="#8b949e">维度</text>
 
-    <text x="750" y="520" font-size="36" font-weight="bold" fill="#C9A96E">9</text>
-    <text x="750" y="545" font-size="15" fill="#8b949e">维度</text>
+    <text x="750" y="520" font-size="36" font-weight="bold" fill="#C9A96E">77⁺</text>
+    <text x="750" y="545" font-size="15" fill="#8b949e">原创冶炼</text>
 
     <text x="950" y="520" font-size="36" font-weight="bold" fill="#C9A96E">开源</text>
     <text x="950" y="545" font-size="15" fill="#8b949e">可验证</text>
