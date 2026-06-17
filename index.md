@@ -98,7 +98,7 @@ nav_order: 1
 | 🏗️ 18知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
 | ✍️ 68篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/02-知识图谱/) |
 | 📚 90+公版书库 | Gutenberg·IA·中国哲学书电子化计划 | [→ 公版书库](https://github.com/fable-cc/fable-castle) |
-| ⚙️ 自动化知识管道 | 多平台抓取→AI分类→质量过滤→冶炼→输出 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |
+| ⚙️ 知识冶炼引擎 | 跨学科知识冶炼→结构化重组→景一原创框架 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |
 | 🔓 全栈开源 | 18支柱·68篇·管道代码·公版索引 | [→ GitHub验证](https://github.com/fable-cc/fable-castle) |
 
 > **GitHub 是我的专业身份证。** 所有方法论和框架公开可查——不需要你相信我，你可以自己验证我。
