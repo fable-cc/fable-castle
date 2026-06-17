@@ -1,4 +1,6 @@
 ---
+nav_order: 4
+permalink: /fable-castle/samples/
 title: 景一·内容样本
 ------|------|------|------|
 | 1 | [用国学讲搞钱](./用国学讲搞钱.md) | 国学 × 搞钱 | 深度文章 |

@@ -1,4 +1,6 @@
 ---
+nav_order: 5
+permalink: /fable-castle/about/
 title: 景一·关于
 ---
 

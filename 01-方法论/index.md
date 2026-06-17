@@ -1,4 +1,6 @@
 ---
+nav_order: 2
+permalink: /fable-castle/methodology/
 title: 景一·冶炼方法论
 ---
 
