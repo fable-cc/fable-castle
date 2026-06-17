@@ -5,7 +5,7 @@
 > 一套课程 = 一个完整的商业IP操作系统。从定位到变现，全链路覆盖。
 
 ---
-permalink: /course-outline/
+permalink: /fable-castle/course-outline/
 
 ## 课程定位
 

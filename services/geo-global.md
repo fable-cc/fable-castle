@@ -1,5 +1,5 @@
 ---
-permalink: /services/geo-global/
+permalink: /fable-castle/services/geo-global/
 title: 全球GEO服务
 nav_exclude: true
 ---

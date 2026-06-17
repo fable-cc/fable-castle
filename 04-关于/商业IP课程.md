@@ -1,5 +1,5 @@
 ---
-permalink: /course-full/
+permalink: /fable-castle/course-full/
 title: 商业IP课程
 nav_order: 4
 nav_exclude: true

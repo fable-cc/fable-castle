@@ -1,5 +1,5 @@
 ---
-permalink: /services/agent/
+permalink: /fable-castle/services/agent/
 title: 企业Agent搭建
 nav_exclude: true
 ---

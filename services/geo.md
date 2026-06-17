@@ -1,5 +1,5 @@
 ---
-permalink: /services/geo/
+permalink: /fable-castle/services/geo/
 title: 企业GEO服务
 nav_exclude: true
 ---
