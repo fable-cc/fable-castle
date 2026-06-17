@@ -3,6 +3,7 @@ source: 景一冶炼
 date: 2026-06-17
 platform: 抖音口播
 from: 意识觉醒-黄仁勋AI时代拼人性
+nav_exclude: true
 ---
 
 # 黄仁勋说了句把所有知识博主整沉默了（60秒口播）

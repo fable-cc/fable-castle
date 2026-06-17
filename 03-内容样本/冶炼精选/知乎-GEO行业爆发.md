@@ -2,6 +2,7 @@
 source: 景一
 date: 2026-06-17
 platform: 知乎
+nav_exclude: true
 ---
 
 # 2026年6月，GEO行业正式爆发——你的企业再不行动就晚了

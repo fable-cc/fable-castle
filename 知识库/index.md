@@ -1,5 +1,5 @@
 ---
-title: 📚 知识库
+title: 景一·知识库
 nav_order: 5
 ---
 

@@ -2,6 +2,7 @@
 source: Jingyi
 date: 2026-06-17
 platform: Medium
+nav_exclude: true
 ---
 
 # Your Website Ranks #1 on Google. But You Don't Exist in AI Search.

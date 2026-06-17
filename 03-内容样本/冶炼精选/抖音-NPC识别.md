@@ -3,6 +3,7 @@ source: 景一冶炼
 date: 2026-06-16
 platform: 抖音口播
 from: 意识觉醒-NPC识别
+nav_exclude: true
 ---
 
 # 识别NPC的三个致命破绽（60秒口播）

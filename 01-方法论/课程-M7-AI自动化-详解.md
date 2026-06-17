@@ -3,6 +3,7 @@ source: 景一·商业IP冶炼系统
 module: 7
 date: 2026-06-17
 type: 课程详细版
+nav_exclude: true
 ---
 
 # 模块七详解：AI自动化——一个人就是一家公司

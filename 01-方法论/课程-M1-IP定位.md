@@ -3,6 +3,7 @@ source: 景一·商业IP冶炼系统
 module: 1
 date: 2026-06-16
 tags: [课程, IP定位, 商业IP]
+nav_exclude: true
 ---
 
 # 模块一：IP定位——找到你的不可替代性

@@ -3,6 +3,7 @@ permalink: /course-handbook/
 source: 景一
 date: 2026-06-17
 type: 课程产品手册
+nav_exclude: true
 ---
 
 # 景一·商业IP冶炼系统

@@ -2,6 +2,7 @@
 source: 景一
 date: 2026-06-17
 platform: 知乎
+nav_exclude: true
 ---
 
 # 当你的客户在问AI"哪家靠谱"时，你的企业根本不存在——什么是GEO？

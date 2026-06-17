@@ -2,6 +2,7 @@
 source: 景一
 date: 2026-06-17
 type: 引流课·免费
+nav_exclude: true
 ---
 
 # 🎁 ¥39.9 引流课：3天找到你的IP定位

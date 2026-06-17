@@ -2,6 +2,7 @@
 source: 景一·技术架构
 date: 2026-06-16
 tags: [企业Agent, 自动化, AI架构, 一人OPC]
+nav_exclude: true
 ---
 
 # 景一企业Agent：三合一自动化知识工厂
