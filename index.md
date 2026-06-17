@@ -17,10 +17,10 @@ nav_order: 1
   </div>
 
   <div class="hero-cta">
-    <a href="services/free-course/" class="cta-primary">🎁 ¥39.9 IP定位课</a>
+    <a href="/services/free-course/" class="cta-primary">🎁 ¥39.9 IP定位课</a>
     <a href="#start" class="cta-secondary">🚀 开始冶炼</a>
-    <a href="04-关于/商业IP课程/" class="cta-secondary">🔥 完整课程</a>
-    <a href="04-关于/深度合作/" class="cta-secondary">🤝 深度合作</a>
+    <a href="/course-full/" class="cta-secondary">🔥 完整课程</a>
+    <a href="/collaborate/" class="cta-secondary">🤝 深度合作</a>
   </div>
 
   <div class="hero-trust">
@@ -117,8 +117,8 @@ nav_order: 1
 | 📖 看精华文章 | [02-知识图谱](./02-知识图谱/) |
 | 🔬 看冶炼方法论 | [01-方法论](./01-方法论/) |
 | 🎨 看内容样本 | [03-内容样本](./03-内容样本/) |
-| 🤝 商业合作 | [04-关于/深度合作](./04-关于/深度合作/) |
-| 💰 赞助支持 | [04-关于/赞助支持](./04-关于/赞助支持/) |
+| 🤝 商业合作 | [04-关于/深度合作](/collaborate/) |
+| 💰 赞助支持 | [04-关于/赞助支持](.//sponsor/) |
 | 💻 GitHub 仓库 | [github.com/fable-cc/fable-castle](https://github.com/fable-cc/fable-castle) |
 
 ---
@@ -132,7 +132,7 @@ nav_order: 1
 | 📋 **内容策略顾问** | 想做IP的品牌/个人 | 定位+内容系统搭建 |
 | ⚙️ **知识管道代部署** | 想做知识付费的创作者 | 自动化管道搭建+培训 |
 
-→ [详细合作说明](./04-关于/深度合作/)
+→ [详细合作说明](/collaborate/)
 
 ---
 
@@ -140,7 +140,7 @@ nav_order: 1
 
 知识应该开源，冶炼需要燃料。你的赞助支持一个中国人建立自己的知识体系。
 
-<a href="04-关于/赞助支持/" class="cta-primary">💰 赞助景一</a>
+<a href="/sponsor/" class="cta-primary">💰 赞助景一</a>
 
 ---
 

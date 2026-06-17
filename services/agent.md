@@ -1,4 +1,5 @@
 ---
+permalink: /services/agent/
 title: 企业Agent搭建
 nav_exclude: true
 ---

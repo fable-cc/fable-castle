@@ -1,4 +1,5 @@
 ---
+permalink: /services/free-course/
 title: 免费IP定位课
 nav_order: 2
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /services/geo-test/
 title: GEO可见度自测
 nav_exclude: true
 ---

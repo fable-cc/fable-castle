@@ -1,4 +1,5 @@
 ---
+permalink: /course-handbook/
 source: 景一
 date: 2026-06-17
 type: 课程产品手册
