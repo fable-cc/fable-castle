@@ -96,7 +96,7 @@ nav_order: 1
 | 证据 | 详情 | 验证方式 |
 |------|------|---------|
 | 🏗️ 18知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
-| ✍️ 68篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/02-知识图谱/) |
+| ✍️ 68篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/fable-castle/02-知识图谱/) |
 | 📚 90+公版书库 | Gutenberg·IA·中国哲学书电子化计划 | [→ 公版书库](https://github.com/fable-cc/fable-castle) |
 | ⚙️ 知识冶炼引擎 | 跨学科知识冶炼→结构化重组→景一原创框架 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |
 | 🔓 全栈开源 | 18支柱·68篇·管道代码·公版索引 | [→ GitHub验证](https://github.com/fable-cc/fable-castle) |
@@ -137,7 +137,7 @@ nav_order: 1
 | 资产类型 | 路径 | 说明 |
 |---------|------|------|
 | 🧭 18支柱全景 | [/fable-castle/02-知识图谱/扩展体系全景.html](/fable-castle/02-知识图谱/扩展体系全景.html) | 完整知识架构与冶炼路线 |
-| 📖 68篇冶炼文章 | [/02-知识图谱/](/02-知识图谱/) | 按支柱分类的原创内容 |
+| 📖 68篇冶炼文章 | [/02-知识图谱/](/fable-castle/02-知识图谱/) | 按支柱分类的原创内容 |
 | 🔬 冶炼方法论 | [/fable-castle/methodology/](/fable-castle/methodology/) | 从人性出发的操作系统 |
 | 🎨 内容样本 | [/fable-castle/samples/](/fable-castle/samples/) | 多平台内容产出示例 |
 | 🤝 商业合作 | [/fable-castle/04-关于/深度合作.html](/fable-castle/04-关于/深度合作.html) | 企业GEO·Agent搭建·IP顾问 |
