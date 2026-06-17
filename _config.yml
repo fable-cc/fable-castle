@@ -2,10 +2,15 @@
 # 使用 just-the-docs 主题 — 专为知识库设计
 
 title: "景一的寓言城堡"
-description: "从人性出发，自然穿透所有领域。"
+description: "GitHub第一开源知识库 · 36支柱×9维度 · 国学×心理学×隐学×商业实战→人性底层代码"
 tagline: "见过底层规则的人 · 帮你觉醒+搞钱+升级认知"
 baseurl: "/fable-castle"
 url: "https://fable-cc.github.io"
+
+# SEO 优化
+lang: zh-CN
+locale: zh_CN
+timezone: Asia/Shanghai
 
 # 远程主题
 remote_theme: just-the-docs/just-the-docs

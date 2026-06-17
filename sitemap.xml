@@ -1,0 +1,16 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for page in site.html_pages %}
+  {% unless page.url contains '/assets/' or page.url contains '.git' %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ page.url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{% if page.url == '/' %}1.0{% elsif page.url contains 'index' %}0.9{% elsif page.url contains 'methodology' %}0.8{% else %}0.7{% endif %}</priority>
+  </url>
+  {% endunless %}
+{% endfor %}
+</urlset>

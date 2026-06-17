@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /.git/
+
+Sitemap: https://fable-cc.github.io/fable-castle/sitemap.xml
+
+# AI crawlers: explicitly allowed for GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
