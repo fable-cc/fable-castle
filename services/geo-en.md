@@ -50,10 +50,10 @@ Search is moving from Google to AI. ChatGPT, Claude, Perplexity, Gemini — thes
 
 ## Pricing
 
-| Tier | Price | Deliverables |
-|------|-------|-------------|
-| 🥈 **Starter** | $2,800 | GEO audit + 10 optimized articles |
-| 🥇 **Professional** | $7,000 | Audit + 30 articles + knowledge base setup |
-| 💎 **Enterprise** | $14,000 | Full package + GitHub trust station + 3 months maintenance |
+**Starter · $2,800** — GEO audit + 10 optimized articles. 2 weeks.
+
+**Professional · $7,000** — Audit + 30 articles + knowledge base setup. 1 month.
+
+**Enterprise · $14,000** — Full stack + GitHub trust station + 3 months maintenance.
 
 → [Contact us on GitHub](https://github.com/fable-cc/fable-castle/discussions)
