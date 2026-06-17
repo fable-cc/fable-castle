@@ -9,7 +9,15 @@ nav_exclude: true
 
 ---
 
-## The Problem
+## The Problem (June 2026 Data)
+
+- AI search penetration: 18.5%(2024) → **62.4%**(2026)
+- Global GEO market: $185B → **$582B** (68.5% CAGR)
+- **80%+** consumers ask AI before purchasing
+- **72%** B2B procurement uses AI for initial supplier screening
+- AI platforms: **1.5B+** monthly active users
+
+GEO-optimized brands: acquisition cost dropped from $17 to $8. ROI: **1:6**. Feedback cycle: compressed from 6 months to **7 days**.
 
 Search is moving from Google to AI. ChatGPT, Claude, Perplexity, Gemini — these are the new gatekeepers. If your business isn't structured for AI discovery, you're invisible to the next generation of buyers.
 
