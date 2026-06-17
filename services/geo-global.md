@@ -1,6 +1,5 @@
 ---
 title: 全球GEO服务
-permalink: /services/geo-global/
 ---
 
 # 🌏 景一全球GEO：AI时代的出海基础设施

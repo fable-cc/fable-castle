@@ -1,6 +1,5 @@
 ---
 title: GEO可见度自测
-permalink: /services/geo-test/
 ---
 
 # 🔍 GEO可见度自测：你的企业在AI里存在吗？

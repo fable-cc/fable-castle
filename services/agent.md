@@ -1,6 +1,5 @@
 ---
 title: 企业Agent搭建
-permalink: /services/agent/
 ---
 
 # 🤖 景一Agent工厂：帮企业搭自己的AI知识管家

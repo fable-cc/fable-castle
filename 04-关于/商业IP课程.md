@@ -1,6 +1,5 @@
 ---
 title: 商业IP课程
-permalink: /course-full/
 nav_order: 4
 ---
 

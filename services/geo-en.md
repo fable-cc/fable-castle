@@ -1,6 +1,5 @@
 ---
 title: Enterprise GEO Service
-permalink: /services/geo-en/
 ---
 
 # 🎯 Enterprise GEO: Get Found in AI Search

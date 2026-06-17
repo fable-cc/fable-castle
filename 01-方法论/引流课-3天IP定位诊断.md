@@ -1,6 +1,5 @@
 ---
 source: 景一
-permalink: /free-course-content/
 date: 2026-06-17
 type: 引流课·免费
 ---

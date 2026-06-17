@@ -17,10 +17,10 @@ nav_order: 1
   </div>
 
   <div class="hero-cta">
-    <a href="/fable-castle/services/free-course/" class="cta-primary">🎁 ¥39.9 IP定位课</a>
+    <a href="/fable-castle/services/free-course.html" class="cta-primary">🎁 ¥39.9 IP定位课</a>
     <a href="#services" class="cta-secondary">🚀 开始冶炼</a>
-    <a href="/fable-castle/course-full/" class="cta-secondary">🔥 完整课程</a>
-    <a href="/fable-castle/collaborate/" class="cta-secondary">🤝 商业合作</a>
+    <a href="/fable-castle/04-关于/商业IP课程.html" class="cta-secondary">🔥 完整课程</a>
+    <a href="/fable-castle/04-关于/深度合作.html" class="cta-secondary">🤝 商业合作</a>
   </div>
 
   <div class="hero-trust">
@@ -85,7 +85,7 @@ nav_order: 1
 | **知识基建** | 📜 经典注疏 · 🌐 百科词条 · 📁 原始档案 · 🎨 美学修辞 · 🧮 数理思维 | 90册公版·概念体系·IA档案·符号学·概率博弈 |
 | **全球框架** | 🌍 全球大V | 纳瓦尔·芒格·塔勒布·达利欧·彼得森 |
 
-→ **[查看完整18支柱体系](/pillars/)** · 68篇原创冶炼文章，全开源可验证
+→ **[查看完整18支柱体系](/fable-castle/02-知识图谱/扩展体系全景.html)** · 68篇原创冶炼文章，全开源可验证
 
 ---
 
@@ -95,7 +95,7 @@ nav_order: 1
 
 | 证据 | 详情 | 验证方式 |
 |------|------|---------|
-| 🏗️ 18知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/pillars/) |
+| 🏗️ 18知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
 | ✍️ 68篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/02-知识图谱/) |
 | 📚 90+公版书库 | Gutenberg·IA·中国哲学书电子化计划 | [→ 公版书库](https://github.com/fable-cc/fable-castle) |
 | ⚙️ 自动化知识管道 | 多平台抓取→AI分类→质量过滤→冶炼→输出 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |
@@ -136,12 +136,12 @@ nav_order: 1
 
 | 资产类型 | 路径 | 说明 |
 |---------|------|------|
-| 🧭 18支柱全景 | [/pillars/](/pillars/) | 完整知识架构与冶炼路线 |
+| 🧭 18支柱全景 | [/fable-castle/02-知识图谱/扩展体系全景.html](/fable-castle/02-知识图谱/扩展体系全景.html) | 完整知识架构与冶炼路线 |
 | 📖 68篇冶炼文章 | [/02-知识图谱/](/02-知识图谱/) | 按支柱分类的原创内容 |
 | 🔬 冶炼方法论 | [/01-方法论/](/01-方法论/) | 从人性出发的操作系统 |
 | 🎨 内容样本 | [/03-内容样本/](/03-内容样本/) | 多平台内容产出示例 |
-| 🤝 商业合作 | [/collaborate/](/collaborate/) | 企业GEO·Agent搭建·IP顾问 |
-| 💰 赞助 | [/sponsor/](/sponsor/) | 支持独立知识冶炼 |
+| 🤝 商业合作 | [/fable-castle/04-关于/深度合作.html](/fable-castle/04-关于/深度合作.html) | 企业GEO·Agent搭建·IP顾问 |
+| 💰 赞助 | [/fable-castle/04-关于/赞助支持.html](/fable-castle/04-关于/赞助支持.html) | 支持独立知识冶炼 |
 
 ---
 
@@ -154,7 +154,7 @@ nav_order: 1
 | 💡 高管认知教练 | 决策瓶颈期的CEO/创始人 | 月度深度1对1·18支柱视角 |
 | 📋 商业IP策略 | 想做IP的品牌/专家 | 定位+信任基建+内容系统 |
 
-→ [详细合作说明](/collaborate/)
+→ [详细合作说明](/fable-castle/04-关于/深度合作.html)
 
 ---
 
@@ -162,7 +162,7 @@ nav_order: 1
 
 知识应该开源，冶炼需要燃料。赞助支持一个中国人建立世界级知识体系。
 
-<a href="/fable-castle/sponsor/" class="cta-primary">💰 赞助景一</a>
+<a href="/fable-castle/04-关于/赞助支持.html" class="cta-primary">💰 赞助景一</a>
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 景一·¥39.9 IP定位课
-permalink: /services/free-course/
 nav_order: 2
 ---
 
@@ -28,4 +27,4 @@ nav_order: 2
 
 ---
 
-[→ 开始第1天](./3天IP定位诊断/)
+[→ 开始第1天](/fable-castle/01-方法论/引流课-3天IP定位诊断.html)

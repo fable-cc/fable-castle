@@ -1,6 +1,5 @@
 ---
 title: 企业GEO服务
-permalink: /services/geo/
 ---
 
 # 🎯 企业GEO：让你的生意在AI里被搜到
