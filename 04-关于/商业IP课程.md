@@ -1,5 +1,5 @@
 ---
-title: 商业IP课程
+title: 景一·商业IP课程
 nav_order: 4
 ---
 
