@@ -11,7 +11,7 @@ nav_order: 1
 
   <div class="hero-stats">
     <div class="stat"><strong>72</strong><span>知识支柱</span></div>
-    <div class="stat"><strong>77篇</strong><span>原创冶炼</span></div>
+    <div class="stat"><strong>402篇</strong><span>原创冶炼</span></div>
     <div class="stat"><strong>90+</strong><span>公版书库</span></div>
     <div class="stat"><strong>开源</strong><span>可验证</span></div>
   </div>
