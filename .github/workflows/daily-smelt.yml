@@ -1,0 +1,46 @@
+name: 景一自主冶炼引擎
+
+on:
+  schedule:
+    # 每2小时冶炼一次 (UTC时间，北京时间=UTC+8)
+    - cron: '17 0-14/2 * * *'
+    # 每天北京时间21:00全平台扫描
+    - cron: '0 13 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  smelt:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 安装Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装依赖
+        run: pip install anthropic --quiet
+
+      - name: 检查素材·冶炼新文章
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 .github/scripts/smelt.py
+
+      - name: 提交并推送
+        run: |
+          git config user.name "景一冶炼引擎"
+          git config user.email "smelt@fable-castle.ai"
+          git add 02-知识图谱/*.md 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无新文章——跳过推送"
+          else
+            git commit -m "🤖 自动冶炼：GitHub Actions引擎"
+            git push
+          fi
