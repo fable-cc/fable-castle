@@ -12,3 +12,23 @@ _site/
 .vscode/
 *.swp
 *.swo
+
+# 安全文件
+.env
+*.key
+*.pem
+*.p12
+credentials.json
+service-account.json
+
+# 备份和临时文件
+*.bak
+*.tmp
+*.backup
+*_backup.*
+*.orig
+
+# 压缩包
+*.zip
+*.tar.gz
+*.rar
