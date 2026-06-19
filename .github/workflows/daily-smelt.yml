@@ -20,7 +20,7 @@ jobs:
           ARTICLE_COUNT=$(find 02-知识图谱 -name "*.md" ! -name "index*" ! -name "en-*" | wc -l)
           echo "📊 当前冶炼文章数: $ARTICLE_COUNT 篇"
           echo "📅 更新时间: $(date -u +'%Y-%m-%d %H:%M UTC')"
-          echo "🔥 使命: GitHub第一开源知识库"
+          echo "🔥 使命: 独立开源知识库"
           echo "article_count=$ARTICLE_COUNT" >> $GITHUB_OUTPUT
 
       - name: 生成状态徽章数据
