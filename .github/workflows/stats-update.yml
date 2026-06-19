@@ -1,0 +1,45 @@
+name: 知识库统计更新
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'  # 每6小时更新
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 统计文章数
+        run: |
+          TOTAL=$(find 02-知识图谱 -name "*.md" ! -name "index*" ! -name "en-*" | wc -l)
+          JINGXUAN=$(find 03-内容样本/冶炼精选 -name "*.md" ! -name "index*" | wc -l)
+          BOOKS=$(find 公版书库 -name "*.txt" 2>/dev/null | wc -l)
+          SITE_SIZE=$(du -sh . | cut -f1)
+
+          echo "📊 知识图谱: $TOTAL 篇"
+          echo "⭐ 冶炼精选: $JINGXUAN 篇"
+          echo "📚 公版书: $BOOKS 本"
+          echo "💾 仓库大小: $SITE_SIZE"
+
+          mkdir -p assets
+          cat > assets/stats.json << EOF
+          {
+            "articles": $TOTAL,
+            "selected": $JINGXUAN,
+            "books": $BOOKS,
+            "pillars": 72,
+            "updated": "$(date -Iseconds)"
+          }
+          EOF
+
+      - name: 提交更新
+        run: |
+          git config user.name "景一知识库管家"
+          git config user.email "bot@fable-castle"
+          git add assets/stats.json
+          git diff --staged --quiet || git commit -m "📊 自动统计: $(date +%Y-%m-%d)"
+          git push
