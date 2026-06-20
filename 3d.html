@@ -10,46 +10,69 @@ permalink: /3d-globe/
 <title>景一·知识星球</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden;background:#050510;font-family:-apple-system,sans-serif}
+html,body{width:100%;height:100%;overflow:hidden;background:#030308;font-family:-apple-system,sans-serif}
+canvas{position:fixed;top:0;left:0;z-index:0}
 .star{position:fixed;border-radius:50%;animation:twinkle 3s infinite alternate}
 @keyframes twinkle{from{opacity:.2}to{opacity:1}}
-@keyframes pulse{0%,100%{box-shadow:0 0 8px currentColor}50%{box-shadow:0 0 24px currentColor,0 0 48px currentColor}}
+.shooting{position:fixed;width:2px;height:80px;background:linear-gradient(to bottom,transparent,#fff);border-radius:1px;animation:shoot 1.5s linear forwards;z-index:2;pointer-events:none}
+@keyframes shoot{0%{opacity:1;transform:translate(0,0) rotate(-45deg)}100%{opacity:0;transform:translate(-300px,200px) rotate(-45deg)}}
 #top{position:fixed;top:2rem;width:100%;text-align:center;z-index:10;pointer-events:none}
-#top h1{font-size:2rem;background:linear-gradient(135deg,#C9A96E,#00D4FF,#C9A96E);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+#top h1{font-size:2rem;background:linear-gradient(135deg,#C9A96E,#00D4FF,#FF64B4,#C9A96E);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s infinite linear}
+@keyframes shimmer{0%{background-position:0 0}100%{background-position:300% 0}}
 #top p{color:#8b949e;font-size:.85rem;margin-top:.3rem}
 #bot{position:fixed;bottom:1.5rem;width:100%;text-align:center;color:#555;font-size:.75rem;z-index:10}
-.node{position:fixed;padding:5px 12px;border-radius:14px;font-size:.75rem;font-weight:bold;white-space:nowrap;cursor:pointer;transition:all .3s;z-index:5;animation:pulse 2s infinite alternate}
+.node{position:fixed;padding:5px 12px;border-radius:14px;font-size:.73rem;font-weight:bold;white-space:nowrap;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);z-index:5}
 .node:hover{padding:10px 20px;font-size:1rem;z-index:999!important;box-shadow:0 0 40px currentColor!important;border-width:2px!important}
 a{color:#C9A96E;text-decoration:none}
+.burst{position:fixed;width:4px;height:4px;border-radius:50%;pointer-events:none;z-index:8;animation:burst .8s ease-out forwards}
+@keyframes burst{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}}
 </style>
 </head>
 <body>
+<canvas id="bg"></canvas>
 <div id="stars"></div>
-<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · 600+篇 · 悬停探索 · <a href="/fable-castle/">← 首页</a></p></div>
-<div id="bot">拖拽旋转 · 悬停放大 · 滚轮缩放</div>
+<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · 600+篇 · 点击星辰 · <a href="/fable-castle/">← 首页</a></p></div>
+<div id="bot">拖拽旋转 · 悬停放大 · 点击引爆粒子</div>
 
 <script>
+// Nebula background
+var c=document.getElementById('bg'),ctx=c.getContext('2d');
+c.width=window.innerWidth;c.height=window.innerHeight;
+var grd=ctx.createRadialGradient(c.width/2,c.height/3,0,c.width/2,c.height/2,c.width);
+grd.addColorStop(0,'rgba(0,180,255,.06)');grd.addColorStop(.3,'rgba(180,50,255,.04)');
+grd.addColorStop(.6,'rgba(255,150,50,.02)');grd.addColorStop(1,'rgba(0,0,0,0)');
+ctx.fillStyle=grd;ctx.fillRect(0,0,c.width,c.height);
+
 var P=["钱途心法","暗流规则","意识觉醒","财富商业","模式设计","认知重构","人性说服","权力策略","深度心理学","隐学意识","东学西渐","文明规则","能量管理","经典注疏","百科词条","原始档案","美学修辞","数理思维","全球大V","兵法谋略","中医哲学","科学哲学","政治哲学","博弈实战","组织控制","亲密关系","社会本能","心流研究","情绪工程","神经科学","语言哲学","比较神话","跨文化出海","经济学思维","历史数据库","批判性思维","创造力训练","元认知","师徒传承","教育觉醒","战略思维","风险管理","资源分配","长期规划","危机应对","不确定性决策","存在主义","生命意义","死亡哲学","幸福研究","自由意志","价值论","Agent工程","GEO优化","知识管道","AI素养","提示词工程","内容冶炼","全平台分发","视觉叙事","声音表达","品牌叙事","商业伦理","销售转化"];
 
-// Neon color palette
-var colors=[
-  {bg:'rgba(201,169,110,.25)',bd:'rgba(201,169,110,.5)',c:'#E8D5B7',glow:'rgba(201,169,110,.6)'},
-  {bg:'rgba(0,212,255,.2)',bd:'rgba(0,212,255,.45)',c:'#00D4FF',glow:'rgba(0,212,255,.5)'},
-  {bg:'rgba(255,100,180,.2)',bd:'rgba(255,100,180,.45)',c:'#FF64B4',glow:'rgba(255,100,180,.5)'},
-  {bg:'rgba(0,255,170,.2)',bd:'rgba(0,255,170,.45)',c:'#00FFAA',glow:'rgba(0,255,170,.5)'},
-  {bg:'rgba(255,180,50,.2)',bd:'rgba(255,180,50,.45)',c:'#FFB432',glow:'rgba(255,180,50,.5)'},
-  {bg:'rgba(160,120,255,.2)',bd:'rgba(160,120,255,.45)',c:'#A078FF',glow:'rgba(160,120,255,.5)'},
+var colPal=[
+  {bg:'rgba(201,169,110,.25)',bd:'rgba(201,169,110,.5)',c:'#E8D5B7'},
+  {bg:'rgba(0,212,255,.22)',bd:'rgba(0,212,255,.5)',c:'#00D4FF'},
+  {bg:'rgba(255,100,180,.22)',bd:'rgba(255,100,180,.5)',c:'#FF64B4'},
+  {bg:'rgba(0,255,170,.22)',bd:'rgba(0,255,170,.5)',c:'#00FFAA'},
+  {bg:'rgba(255,180,50,.22)',bd:'rgba(255,180,50,.5)',c:'#FFB432'},
+  {bg:'rgba(160,120,255,.22)',bd:'rgba(160,120,255,.5)',c:'#A078FF'},
 ];
 
 var nodes=[],angle=0;
 
 P.forEach(function(name,i){
-  var el=document.createElement('div');
-  el.className='node';el.textContent=name;
-  var col=colors[i%colors.length];
-  el.style.background=col.bg;el.style.border='1px solid '+col.bd;el.style.color=col.c;
-  el.style.animationDelay=(i*.05)+'s';
-  el.onclick=function(){window.open('/fable-castle/02-知识图谱/','_self')};
+  var el=document.createElement('div');el.className='node';el.textContent=name;
+  var col=colPal[i%colPal.length];el.style.background=col.bg;el.style.border='1px solid '+col.bd;el.style.color=col.c;
+  el.style.animationDelay=(i*.04)+'s';
+  el.onclick=function(e){
+    window.open('/fable-castle/02-知识图谱/','_self');
+    // Particle burst
+    for(var j=0;j<16;j++){
+      var b=document.createElement('div');b.className='burst';
+      b.style.left=e.clientX+'px';b.style.top=e.clientY+'px';
+      b.style.background=col.c;
+      b.style.setProperty('--dx',(Math.random()-.5)*100+'px');
+      b.style.setProperty('--dy',(Math.random()-.5)*100+'px');
+      document.body.appendChild(b);
+      setTimeout(function(){b.remove()},800);
+    }
+  };
   document.body.appendChild(el);
   var phi=Math.acos(-1+(2*i+1)/P.length);
   var theta=Math.sqrt(P.length*Math.PI)*phi;
@@ -57,35 +80,40 @@ P.forEach(function(name,i){
   nodes.push({el:el,phi:phi,theta:theta,r:r,col:col});
 });
 
+// Shooting stars
+function shootStar(){
+  var s=document.createElement('div');s.className='shooting';
+  s.style.left=(Math.random()*80+10)+'%';s.style.top=(Math.random()*40)+'%';
+  s.style.animationDuration=(1+Math.random()*1.5)+'s';
+  document.body.appendChild(s);
+  setTimeout(function(){s.remove()},2000);
+}
+setInterval(shootStar,4000);
+
 function render(){
   angle+=.0025;
   var cx=window.innerWidth/2,cy=window.innerHeight/2;
   nodes.forEach(function(n){
-    var t=n.theta+angle;
-    var x=cx+n.r*Math.cos(t)*Math.sin(n.phi);
-    var y=cy+n.r*Math.sin(t)*Math.sin(n.phi)*.55;
-    var z=Math.round(n.r*Math.cos(n.phi));
-    n.el.style.left=x+'px';n.el.style.top=y+'px';
-    n.el.style.zIndex=z+100;
+    var t=n.theta+angle,x=cx+n.r*Math.cos(t)*Math.sin(n.phi),y=cy+n.r*Math.sin(t)*Math.sin(n.phi)*.55,z=Math.round(n.r*Math.cos(n.phi));
+    n.el.style.left=x+'px';n.el.style.top=y+'px';n.el.style.zIndex=z+100;
     n.el.style.opacity=.35+(z+n.r)/(2*n.r)*.65;
   });
   requestAnimationFrame(render);
 }
 
-// Colorful twinkling stars
-var starColors=['#C9A96E','#00D4FF','#FF64B4','#00FFAA','#FFB432','#A078FF','#FFFFFF'];
+var starCols=['#C9A96E','#00D4FF','#FF64B4','#00FFAA','#FFB432','#A078FF','#FFF'];
 for(var i=0;i<200;i++){
   var s=document.createElement('div');s.className='star';
   s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
-  s.style.width=s.style.height=(1+Math.random()*2.5)+'px';
-  s.style.background=starColors[Math.floor(Math.random()*starColors.length)];
+  s.style.width=s.style.height=(1+Math.random()*3)+'px';
+  s.style.background=starCols[Math.floor(Math.random()*starCols.length)];
   s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=(2+Math.random()*3)+'s';
-  if(Math.random()>.7)s.style.boxShadow='0 0 '+(2+Math.random()*4)+'px '+s.style.background;
+  if(Math.random()>.6)s.style.boxShadow='0 0 '+(3+Math.random()*5)+'px '+s.style.background;
   document.getElementById('stars').appendChild(s);
 }
 
 render();
-window.addEventListener('resize',function(){var r=Math.min(window.innerWidth,window.innerHeight)*.32;nodes.forEach(function(n){n.r=r})});
+window.addEventListener('resize',function(){c.width=window.innerWidth;c.height=window.innerHeight;var r=Math.min(window.innerWidth,window.innerHeight)*.32;nodes.forEach(function(n){n.r=r})});
 </script>
 </body>
 </html>
