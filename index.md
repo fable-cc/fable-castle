@@ -50,6 +50,7 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 <div id="ai-a" style="color:#8b949e;font-size:.9rem;line-height:1.8"></div>
 </div>
 </details>
+{% raw %}
 <script>
 var KB={};
 fetch("/fable-castle/api/search-index.json").then(r=>r.json()).then(data=>{
@@ -113,6 +114,8 @@ document.getElementById('ai-q').addEventListener('input',function(){
   });
   document.getElementById('ai-a').innerHTML=bestScore>3?'<strong>匹配：</strong>'+best:'试试问：怎么开始做IP / 韩非子 / 搞钱 / 拖延 / 亲密关系 / 孙子兵法 / 强势文化 / 焦虑 / 道德经';
 });
+
+{% endraw %}
 </script>
 
 
