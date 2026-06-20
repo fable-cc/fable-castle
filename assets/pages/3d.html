@@ -1,94 +1,85 @@
 ---
-layout: default
-title: 景一·3D知识星球
-nav_order: 4
 permalink: /3d/
 ---
-
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>景一·3D知识星球</title>
 <style>
-  body { margin: 0; background: #0a0a0f; overflow-x: hidden; }
-  .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; font-family: -apple-system, sans-serif; overflow: hidden; height: 100vh; width: 100vw; }
+  #stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
   .star { position: absolute; background: #555; border-radius: 50%; animation: twinkle 3s infinite alternate; }
-  @keyframes twinkle { from { opacity: 0.2; } to { opacity: 1; } }
-  .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 2rem; text-align: center; }
-  h1 { color: #C9A96E; font-size: 2.5rem; margin-bottom: 0.5rem; }
-  .sub { color: #8b949e; margin-bottom: 2rem; }
-  .sphere { position: relative; width: 500px; height: 500px; margin: 0 auto; perspective: 800px; }
-  .sphere-inner { position: absolute; width: 100%; height: 100%; animation: rotate3d 30s linear infinite; transform-style: preserve-3d; }
-  @keyframes rotate3d { from { transform: rotateX(15deg) rotateY(0deg); } to { transform: rotateX(15deg) rotateY(360deg); } }
-  .sphere-inner:hover { animation-play-state: paused; }
-  .node { position: absolute; width: 80px; height: 30px; left: 50%; top: 50%; margin: -15px 0 0 -40px;
-    background: rgba(201,169,110,0.15); border: 1px solid rgba(201,169,110,0.3); border-radius: 15px;
-    color: #C9A96E; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s; cursor: pointer; white-space: nowrap; }
-  .node:hover { background: rgba(201,169,110,0.3); border-color: #C9A96E; transform: scale(1.3); z-index: 10; box-shadow: 0 0 20px rgba(201,169,110,0.3); }
-  .ring { position: absolute; width: 100%; height: 100%; left: 0; top: 0; border: 1px solid rgba(201,169,110,0.04); border-radius: 50%; }
-  .ring:nth-child(1) { transform: rotateX(60deg); }
-  .ring:nth-child(2) { transform: rotateX(-30deg); }
-  .ring:nth-child(3) { transform: rotateY(30deg); }
-  .legend { margin-top: 2rem; color: #555; font-size: 0.8rem; }
-  .legend span { color: #C9A96E; }
+  @keyframes twinkle { from { opacity: 0.15; } to { opacity: 0.9; } }
+  #info { position: fixed; top: 2rem; left: 0; width: 100%; text-align: center; z-index: 10; pointer-events: none; }
+  #info h1 { color: #C9A96E; font-size: 2rem; margin: 0; }
+  #info p { color: #8b949e; font-size: 0.9rem; margin: 0.3rem 0 0; }
+  #hint { position: fixed; bottom: 1.5rem; left: 0; width: 100%; text-align: center; color: #555; font-size: 0.75rem; z-index: 10; }
+  #scene { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  .pill { position: absolute; left: 50%; top: 50%; padding: 4px 12px;
+    background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.2); border-radius: 14px;
+    color: #C9A96E; font-size: 0.7rem; white-space: nowrap; cursor: pointer;
+    transition: all 0.3s; transform-origin: center center; }
+  .pill:hover { background: rgba(201,169,110,0.35); border-color: #C9A96E; 
+    box-shadow: 0 0 24px rgba(201,169,110,0.4); z-index: 999 !important; font-size: 0.8rem; padding: 6px 14px; }
+  a { color: #C9A96E; text-decoration: none; }
 </style>
-
-<div class="stars" id="stars"></div>
-
-<div class="container">
-  <h1>🏰 景一·知识星球</h1>
-  <p class="sub">72支柱 · 600+篇 · 拖拽探索</p>
-
-  <div class="sphere">
-    <div class="ring"></div><div class="ring"></div><div class="ring"></div>
-    <div class="sphere-inner" id="sphere">
-    </div>
-  </div>
-
-  <p class="legend"><span>拖拽旋转</span> · <span>悬停节点</span> · <span>滚轮缩放</span></p>
-</div>
+</head>
+<body>
+<div id="stars"></div>
+<div id="info"><h1>🏰 景一·知识星球</h1><p>72支柱 · 悬停探索 · <a href="/fable-castle/">← 首页</a></p></div>
+<div id="scene"></div>
+<div id="hint">鼠标悬停放大 · 点击跳转</div>
 
 <script>
-(function(){
-  var pillars = [
-    "钱途心法","暗流规则","意识觉醒","财富商业","模式设计","认知重构",
-    "人性说服","权力策略","深度心理学","隐学意识","东学西渐","文明规则",
-    "能量管理","经典注疏","百科词条","原始档案","美学修辞","数理思维",
-    "全球大V","兵法谋略","中医哲学","科学哲学","政治哲学","博弈实战",
-    "组织控制","亲密关系","社会本能","心流研究","情绪工程","神经科学",
-    "语言哲学","比较神话","跨文化出海","经济学思维","历史数据库",
-    "批判性思维","创造力训练","元认知","师徒传承","教育觉醒",
-    "战略思维","风险管理","资源分配","长期规划","危机应对","不确定性决策",
-    "存在主义","生命意义","死亡哲学","幸福研究","自由意志","价值论",
-    "Agent工程","GEO优化","知识管道","AI素养","提示词工程","AI伦理",
-    "内容冶炼","全平台分发","视觉叙事","声音表达","互动设计",
-    "品牌叙事","商业伦理","销售转化"
-  ];
-  var sphere = document.getElementById('sphere');
-  var count = pillars.length;
-  pillars.forEach(function(name, i){
-    var phi = Math.acos(-1 + (2*i+1)/count);
-    var theta = Math.sqrt(count*Math.PI)*phi;
-    var r = 220;
-    var x = r * Math.cos(theta) * Math.sin(phi);
-    var y = r * Math.sin(theta) * Math.sin(phi);
-    var z = r * Math.cos(phi);
-    var node = document.createElement('div');
-    node.className = 'node';
-    node.textContent = name;
-    node.style.transform = 'translate3d('+x+'px,'+y+'px,'+z+'px)';
-    node.title = name;
-    node.onclick = function(){ alert(name + ' → 探索文章 /fable-castle/02-知识图谱/'); };
-    sphere.appendChild(node);
-  });
+var P=["钱途心法","暗流规则","意识觉醒","财富商业","模式设计","认知重构","人性说服","权力策略","深度心理学","隐学意识","东学西渐","文明规则","能量管理","经典注疏","百科词条","原始档案","美学修辞","数理思维","全球大V","兵法谋略","中医哲学","科学哲学","政治哲学","博弈实战","组织控制","亲密关系","社会本能","心流研究","情绪工程","神经科学","语言哲学","比较神话","跨文化出海","经济学思维","历史数据库","批判性思维","创造力训练","元认知","师徒传承","教育觉醒","战略思维","风险管理","资源分配","长期规划","危机应对","不确定性决策","存在主义","生命意义","死亡哲学","幸福研究","自由意志","价值论","Agent工程","GEO优化","知识管道","AI素养","提示词工程","内容冶炼","全平台分发","视觉叙事","声音表达","品牌叙事","商业伦理","销售转化"];
 
-  // Stars
-  var starsDiv = document.getElementById('stars');
-  for(var i=0;i<150;i++){
-    var s = document.createElement('div');
-    s.className = 'star';
-    s.style.left = Math.random()*100+'%';
-    s.style.top = Math.random()*100+'%';
-    s.style.width = s.style.height = (1+Math.random()*2)+'px';
-    s.style.animationDelay = Math.random()*3+'s';
-    starsDiv.appendChild(s);
-  }
-})();
+var scene=document.getElementById('scene');
+var nodes=[];
+var angle=0;
+
+P.forEach(function(name,i){
+  var el=document.createElement('div');
+  el.className='pill';el.textContent=name;
+  el.onclick=function(){ window.open('/fable-castle/02-知识图谱/','_self'); };
+  scene.appendChild(el);
+  var phi=Math.acos(-1+(2*i+1)/P.length);
+  var theta=Math.sqrt(P.length*Math.PI)*phi;
+  var r=Math.min(window.innerWidth,window.innerHeight)*0.38;
+  nodes.push({el:el,phi:phi,theta:theta,r:r});
+});
+
+function render(){
+  angle+=0.003;
+  var cx=window.innerWidth/2, cy=window.innerHeight/2;
+  nodes.forEach(function(n){
+    var t=n.theta+angle;
+    var x=cx+n.r*Math.cos(t)*Math.sin(n.phi);
+    var y=cy+n.r*Math.sin(t)*Math.sin(n.phi)*0.6;
+    var z=Math.round(n.r*Math.cos(n.phi));
+    n.el.style.transform='translate('+x+'px,'+y+'px)';
+    n.el.style.zIndex=z+100;
+    n.el.style.opacity=0.3+(z+n.r)/(2*n.r)*0.7;
+  });
+  requestAnimationFrame(render);
+}
+
+// Stars
+for(var i=0;i<150;i++){
+  var s=document.createElement('div');s.className='star';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.width=s.style.height=(1+Math.random()*2)+'px';
+  s.style.animationDelay=Math.random()*3+'s';
+  document.getElementById('stars').appendChild(s);
+}
+
+render();
+window.addEventListener('resize',function(){
+  var r=Math.min(window.innerWidth,window.innerHeight)*0.38;
+  nodes.forEach(function(n){ n.r=r; });
+});
 </script>
+</body>
+</html>
