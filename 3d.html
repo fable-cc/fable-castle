@@ -55,7 +55,7 @@ P.forEach(function(name,i){
 
 function render(){
   angle+=0.003;
-  var cx=0, cy=0;
+  var cx=document.documentElement.clientWidth/2, cy=document.documentElement.clientHeight/2;
   nodes.forEach(function(n){
     var t=n.theta+angle;
     var x=cx+n.r*Math.cos(t)*Math.sin(n.phi);
