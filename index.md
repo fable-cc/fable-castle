@@ -42,6 +42,29 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 
 ---
 
+
+<details style="margin:2rem 0">
+<summary style="cursor:pointer;color:#C9A96E;font-size:1.1rem;font-weight:bold">🤖 AI问答 · 试试问我</summary>
+<div style="padding:1rem;background:rgba(201,169,110,.03);border-radius:10px;margin-top:.5rem">
+<input type="text" id="ai-q" placeholder="比如：怎么开始做个人IP？" style="width:100%;padding:.6rem;background:#0a0a0f;border:1px solid rgba(201,169,110,.2);color:#E8D5B7;border-radius:8px;margin-bottom:.5rem">
+<div id="ai-a" style="color:#8b949e;font-size:.9rem;line-height:1.8"></div>
+</div>
+</details>
+<script>
+var KB={"怎么开始做IP":"先发30条。第一篇很烂没关系。第100篇会有人私信你。第600篇客户自己来找你。定位不是想出来的——是试出来的。",
+"韩非子":"韩非子公元前3世纪，法家代表。核心理论：法术势三柱系统。法=规则公开。术=绩效管理。势=权力基础。他的同学李斯把他毒死了。",
+"道德经":"你读的道德经不是老子写的。1973年马王堆帛书出土，发现六个关键字被改过。绝仁弃义原为绝伪弃诈。大器免成不是大器晚成。",
+"怎么搞钱":"钱的本质是认知的副产品。不是努力换来的。赚小钱靠运气，赚大钱靠规律。如如不动一个方向死磕。筛选就是成交。",
+"拖延":"拖延不是懒——是怕。怕做出来发现就这水平。把任务砍到不好意思不做的程度。不是写一篇文章——打开文档写一行字。",
+"亲密关系":"你不是在遇人不淑——是在用同一个算法选人。童年父母的关系模式是你最早的操作系统。打破循环需要一次反向测试。"};
+document.getElementById('ai-q').addEventListener('input',function(){
+  var q=this.value;var best='';var score=0;
+  Object.keys(KB).forEach(function(k){var s=q.split('').filter(function(c){return k.indexOf(c)>-1}).length;if(s>score){score=s;best=KB[k]}});
+  document.getElementById('ai-a').textContent=score>1?best:'试试问：怎么开始做IP / 韩非子 / 怎么搞钱 / 拖延';
+});
+</script>
+
+
 ## 🎯 我能帮你什么
 
 <div id="services" class="services" markdown="0">

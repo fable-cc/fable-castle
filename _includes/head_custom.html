@@ -297,3 +297,16 @@ document.addEventListener('DOMContentLoaded',function(){
 if('serviceWorker' in navigator){navigator.serviceWorker.register('/fable-castle/sw.js')}
 </script>
 
+<style>
+#reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#C9A96E,#00D4FF);z-index:9999;transition:width .1s linear}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var bar=document.createElement('div');bar.id='reading-progress';document.body.appendChild(bar);
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
+  });
+});
+</script>
+
