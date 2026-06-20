@@ -31,7 +31,7 @@ a{color:#C9A96E;text-decoration:none}
 <body>
 <canvas id="bg"></canvas>
 <div id="stars"></div>
-<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · 600+篇 · 点击星辰 · <a href="/fable-castle/">← 首页</a></p></div>
+<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · <span id="liveCount">600+</span>篇 · 点击星辰 · <a href="/fable-castle/">← 首页</a></p></div>
 <div id="bot">拖拽旋转 · 悬停放大 · 点击引爆粒子</div>
 
 <script>
@@ -43,7 +43,7 @@ grd.addColorStop(0,'rgba(0,180,255,.06)');grd.addColorStop(.3,'rgba(180,50,255,.
 grd.addColorStop(.6,'rgba(255,150,50,.02)');grd.addColorStop(1,'rgba(0,0,0,0)');
 ctx.fillStyle=grd;ctx.fillRect(0,0,c.width,c.height);
 
-var P=["钱途心法","暗流规则","意识觉醒","财富商业","模式设计","认知重构","人性说服","权力策略","深度心理学","隐学意识","东学西渐","文明规则","能量管理","经典注疏","百科词条","原始档案","美学修辞","数理思维","全球大V","兵法谋略","中医哲学","科学哲学","政治哲学","博弈实战","组织控制","亲密关系","社会本能","心流研究","情绪工程","神经科学","语言哲学","比较神话","跨文化出海","经济学思维","历史数据库","批判性思维","创造力训练","元认知","师徒传承","教育觉醒","战略思维","风险管理","资源分配","长期规划","危机应对","不确定性决策","存在主义","生命意义","死亡哲学","幸福研究","自由意志","价值论","Agent工程","GEO优化","知识管道","AI素养","提示词工程","内容冶炼","全平台分发","视觉叙事","声音表达","品牌叙事","商业伦理","销售转化"];
+var P=[{n:"钱途心法",c:14},{n:"暗流规则",c:6},{n:"意识觉醒",c:0},{n:"财富商业",c:6},{n:"模式设计",c:4},{n:"认知重构",c:18},{n:"人性说服",c:6},{n:"权力策略",c:13},{n:"深度心理学",c:3},{n:"隐学意识",c:4},{n:"东学西渐",c:4},{n:"文明规则",c:10},{n:"能量管理",c:5},{n:"经典注疏",c:55},{n:"百科词条",c:2},{n:"原始档案",c:2},{n:"美学修辞",c:2},{n:"数理思维",c:3},{n:"全球大V",c:5},{n:"兵法谋略",c:0},{n:"中医哲学",c:1},{n:"科学哲学",c:1},{n:"政治哲学",c:1},{n:"博弈实战",c:1},{n:"组织控制",c:1},{n:"亲密关系",c:1},{n:"社会本能",c:2},{n:"心流研究",c:1},{n:"情绪工程",c:1},{n:"神经科学",c:1},{n:"语言哲学",c:1},{n:"比较神话",c:1},{n:"跨文化出海",c:1},{n:"经济学思维",c:1},{n:"历史数据库",c:1},{n:"批判性思维",c:1},{n:"创造力训练",c:1},{n:"元认知",c:1},{n:"师徒传承",c:1},{n:"教育觉醒",c:13},{n:"战略思维",c:1},{n:"风险管理",c:1},{n:"资源分配",c:1},{n:"长期规划",c:1},{n:"危机应对",c:1},{n:"不确定性决策",c:1},{n:"存在主义",c:1},{n:"生命意义",c:1},{n:"死亡哲学",c:1},{n:"幸福研究",c:1},{n:"自由意志",c:1},{n:"价值论",c:1},{n:"Agent工程",c:1},{n:"GEO优化",c:1},{n:"知识管道",c:1},{n:"AI素养",c:1},{n:"提示词工程",c:1},{n:"内容冶炼",c:1},{n:"全平台分发",c:1},{n:"视觉叙事",c:1},{n:"声音表达",c:1},{n:"品牌叙事",c:1},{n:"商业伦理",c:1},{n:"销售转化",c:1}];
 
 var colPal=[
   {bg:'rgba(201,169,110,.25)',bd:'rgba(201,169,110,.5)',c:'#E8D5B7'},
@@ -56,12 +56,14 @@ var colPal=[
 
 var nodes=[],angle=0;
 
-P.forEach(function(name,i){
-  var el=document.createElement('div');el.className='node';el.textContent=name;
+var totalArticles=0;P.forEach(function(d,i){totalArticles+=d.c;
+  var label=d.c>0?d.n+' · '+d.c:d.n;
+  var el=document.createElement('div');el.className='node';el.textContent=label;el.title=d.n+' ('+d.c+'篇)';
   var col=colPal[i%colPal.length];el.style.background=col.bg;el.style.border='1px solid '+col.bd;el.style.color=col.c;
   el.style.animationDelay=(i*.04)+'s';
   el.onclick=function(e){
     window.open('/fable-castle/02-知识图谱/','_self');
+    if(d.c===0){e.preventDefault();return;}
     // Particle burst
     for(var j=0;j<16;j++){
       var b=document.createElement('div');b.className='burst';
@@ -76,6 +78,7 @@ P.forEach(function(name,i){
   document.body.appendChild(el);
   var phi=Math.acos(-1+(2*i+1)/P.length);
   var theta=Math.sqrt(P.length*Math.PI)*phi;
+  if(d.c===0)el.style.opacity='.15';
   var r=Math.min(window.innerWidth,window.innerHeight)*.32;
   nodes.push({el:el,phi:phi,theta:theta,r:r,col:col});
 });
@@ -99,6 +102,7 @@ function render(){
     n.el.style.opacity=.35+(z+n.r)/(2*n.r)*.65;
   });
   requestAnimationFrame(render);
+if(!document.getElementById('liveCount').dataset.set){document.getElementById('liveCount').textContent=totalArticles;document.getElementById('liveCount').dataset.set='1';}
 }
 
 var starCols=['#C9A96E','#00D4FF','#FF64B4','#00FFAA','#FFB432','#A078FF','#FFF'];
