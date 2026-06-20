@@ -13,19 +13,19 @@ permalink: /3d-globe/
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { margin:0;padding:0;width:100vw;height:100vh;overflow:hidden;background:#0a0a0f;font-family:-apple-system,sans-serif; }
   #stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-  .star { position: absolute; background: #555; border-radius: 50%; animation: twinkle 3s infinite alternate; }
+  .star { position: absolute; background: #888; border-radius: 50%; animation: twinkle 3s infinite alternate; }
   @keyframes twinkle { from { opacity: 0.15; } to { opacity: 0.9; } }
   #info { position: fixed; top: 2rem; left: 0; width: 100%; text-align: center; z-index: 10; pointer-events: none; }
-  #info h1 { color: #C9A96E; font-size: 2rem; margin: 0; }
+  #info h1 { color: #C9A96E; font-size: 2.5rem; margin: 0; }
   #info p { color: #8b949e; font-size: 0.9rem; margin: 0.3rem 0 0; }
   #hint { position: fixed; bottom: 1.5rem; left: 0; width: 100%; text-align: center; color: #555; font-size: 0.75rem; z-index: 10; }
   #scene { position: fixed; inset: 0; z-index: 1; }
-  .pill { position: absolute; left: 50%; top: 50%; padding: 4px 12px;
-    background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.2); border-radius: 14px;
-    color: #C9A96E; font-size: 0.7rem; white-space: nowrap; cursor: pointer;
+  .pill { position: absolute; left: 50%; top: 50%; padding: 8px 16px;
+    background: rgba(201,169,110,0.2); border: 1px solid rgba(201,169,110,0.4); border-radius: 16px;
+    color: #C9A96E; font-size: 0.85rem; font-weight: bold; white-space: nowrap; cursor: pointer;
     transition: all 0.3s; transform-origin: center center; }
   .pill:hover { background: rgba(201,169,110,0.35); border-color: #C9A96E; 
-    box-shadow: 0 0 24px rgba(201,169,110,0.4); z-index: 999 !important; font-size: 0.8rem; padding: 6px 14px; }
+    box-shadow: 0 0 24px rgba(201,169,110,0.4); z-index: 999 !important; font-size: 1rem; padding: 10px 18px; }
   a { color: #C9A96E; text-decoration: none; }
 </style>
 </head>
@@ -49,7 +49,7 @@ P.forEach(function(name,i){
   scene.appendChild(el);
   var phi=Math.acos(-1+(2*i+1)/P.length);
   var theta=Math.sqrt(P.length*Math.PI)*phi;
-  var r=Math.min(document.documentElement.clientWidth,document.documentElement.clientHeight)*0.35;
+  var r=Math.min(document.documentElement.clientWidth,document.documentElement.clientHeight)*0.28;
   nodes.push({el:el,phi:phi,theta:theta,r:r});
 });
 
@@ -79,7 +79,7 @@ for(var i=0;i<150;i++){
 
 render();
 window.addEventListener('resize',function(){
-  var r=Math.min(document.documentElement.clientWidth,document.documentElement.clientHeight)*0.35;
+  var r=Math.min(document.documentElement.clientWidth,document.documentElement.clientHeight)*0.28;
   nodes.forEach(function(n){ n.r=r; });
 });
 </script>
