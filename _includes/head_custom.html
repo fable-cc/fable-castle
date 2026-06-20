@@ -226,3 +226,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- 阅读时长 -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var m=document.querySelector('.main-content main');
+  if(!m)return;
+  var t=m.textContent.replace(/\s/g,'').length;
+  var min=Math.max(1,Math.round(t/400));
+  var h=document.querySelector('h1');
+  if(h){var s=document.createElement('span');s.style.cssText='color:#8b949e;font-size:.8rem;margin-left:.5rem;font-weight:normal';s.textContent=' ⏱约'+min+'分钟';h.appendChild(s)}
+});
+</script>
+
