@@ -1,74 +1,84 @@
 ---
 layout: default
-title: 搜索600篇知识库
+title: 搜索知识库
 nav_order: 2
 permalink: /search/
 ---
 
 <style>
-  .search-container { max-width: 800px; margin: 0 auto; }
-  #search-input { width: 100%; padding: 1rem; background: rgba(201,169,110,0.05); border: 2px solid rgba(201,169,110,0.15); border-radius: 10px; color: #E8D5B7; font-size: 1.1rem; }
-  #search-input:focus { border-color: rgba(201,169,110,0.4); outline: none; }
-  #results { margin-top: 1.5rem; }
-  .result-item { background: rgba(201,169,110,0.03); border: 1px solid rgba(201,169,110,0.08); border-radius: 8px; padding: 1rem; margin-bottom: 0.8rem; }
-  .result-item h3 { color: #C9A96E; font-size: 1.05rem; margin: 0 0 0.3rem 0; }
-  .result-item p { color: #8b949e; font-size: 0.85rem; margin: 0; }
-  .result-item .match { color: #E8D5B7; background: rgba(201,169,110,0.1); padding: 0 0.2rem; border-radius: 3px; }
-  #stats { color: #8b949e; font-size: 0.85rem; margin-top: 0.5rem; }
+  #q { width: 100%; padding: 0.8rem; background: rgba(201,169,110,0.05); border: 2px solid rgba(201,169,110,0.15); border-radius: 8px; color: #E8D5B7; font-size: 1rem; }
+  #q:focus { border-color: #C9A96E; outline: none; }
+  #r { margin-top: 1rem; }
+  .hit { background: rgba(201,169,110,0.03); border-left: 2px solid #C9A96E; padding: 0.8rem; margin-bottom: 0.5rem; }
+  .hit b { color: #C9A96E; }
+  .hit small { color: #8b949e; }
+  .hit p { color: #8b949e; font-size: 0.85rem; margin: 0.2rem 0 0 0; }
 </style>
 
-<div class="search-container">
-  <input type="text" id="search-input" placeholder="搜索600篇文章..." autofocus>
-  <div id="stats"></div>
-  <div id="results"></div>
-</div>
+<input type="text" id="q" placeholder="输入关键词搜索..." autofocus>
+<p id="n" style="color:#8b949e;font-size:0.85rem;margin-top:0.3rem"></p>
+<div id="r"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 <script>
-// Knowledge base index - key articles
-const articles = [
-  { title:"强势文化", text:"强势文化不是凶不是霸道 是不让别人定义你是谁 你值多少钱 弱者等待 强者不等 丁元英天道 不等了 现在开始", pillar:"暗流规则" },
-  { title:"搞钱的五个底层真相", text:"钱不是线性积累 在关键节点爆发 搞钱是战斗状态 如如不动一个方向死磕 筛选就是成交 钱是认知的副产品", pillar:"钱途心法" },
-  { title:"知行合一", text:"王阳明知行合一 知道但做不到等于不知道 脑科学验证 真知编码到运动皮层 事上磨练 不是准备好了才开始", pillar:"隐学意识" },
-  { title:"成年人六条生存算法", text:"系统驱动不靠热血 边界清晰不讨好 用结果代替解释 管理注意力不是时间 选择大于努力 止损比坚持更高级", pillar:"认知重构" },
-  { title:"不战而胜", text:"孙子上兵伐谋 最好竞争不用竞争 伐谋伐交伐兵攻城 苹果不跟诺基亚比耐摔 去没有对手的地方", pillar:"权力策略" },
-  { title:"政治哲学三定律", text:"荀子韩非马基雅维利霍布斯 人性不可信制度假设最坏 权力厌恶真空 合法性来自被相信", pillar:"政治哲学" },
-  { title:"为什么你不敢收钱", text:"收钱不是索取是筛选 价格你定的 你不需要想值多少 定一个价有人付就值 免费最贵", pillar:"钱途心法" },
-  { title:"为什么你总是拖延", text:"拖延不是懒是怕 怕做出来发现就这水平 不开始保护你 砍到不好意思不做 打开文档写一行字", pillar:"认知重构" },
-  { title:"穷因为没穷过", text:"穷和苦两回事 老子不知知病也 佛家无明是第一因 刺激次数程度等于成长深度", pillar:"钱途心法" },
-  { title:"亲密关系的底层算法", text:"不是遇人不淑是在选 熟悉不等于对 父母关系模式出厂设置 反向测试 破坏之后问自己反应的是什么", pillar:"亲密关系" },
-  { title:"道德经六大篡改", text:"绝仁弃义原为绝伪弃诈 大器免成不是晚成 非恒道不是非常道 马王堆帛书郭店楚简 五人合著", pillar:"经典注疏" },
-  { title:"中医哲学的底层算法", text:"中医不是医学是系统论 治未病 整体观头痛不治头 辨证论治 偏性纠偏", pillar:"中医哲学" },
-  { title:"荀子与认知行为疗法", text:"化性起伪是公元前CBT 积善成德是神经可塑性 五步操作手册一模一样 儒家选孟子是政治", pillar:"东西融合" },
-  { title:"你是活成别人想要的样子", text:"庄子鹓鶵死老鼠 你追了十年的东西是不是别人叼着的 惠子相位 不被期待绑在树枝上", pillar:"价值论" },
-  { title:"乌合之众", text:"群体智商远低于个体 渴望简单答案 需要敌人 断言重复传染 勒庞1895年写的今天仍然准确", pillar:"人性洞察" },
-  { title:"万历十五年", text:"什么都没发生的一年明朝命运已定 制度烂了每个人做分内事系统分崩离析 万历躺平不是懒是绝望", pillar:"文明规则" },
-  { title:"GEO个人实操版", text:"被AI引用不是被搜到 三阶段认识信任推荐 真实内容被引用概率是AI写作4.7倍 知识库就是资产", pillar:"AI工程" },
-  { title:"博弈实战三原则", text:"不做单次博弈的好人 纳什均衡 信号比实力重要 囚徒困境 反复博弈才需要合作", pillar:"博弈实战" },
-  { title:"为什么越努力越焦虑", text:"你忙的是维持现状 老子为学日益为道日损 砍掉所有维持现状的忙 只留一件往前推的事", pillar:"认知重构" },
-  { title:"你不敢做IP", text:"不是能力不够是怕被看见 怕被说你也配 第一篇很烂第十篇也很烂 第100篇有人私信 先发30条", pillar:"个人IP" }
+var A=[
+  {t:"强势文化",p:"暗流规则",d:"强势文化不是凶不是霸道 是不让别人定义你是谁 弱者等待 强者不等 丁元英天道 不等了现在开始"},
+  {t:"搞钱的五个底层真相",p:"钱途心法",d:"钱不是线性积累 关键节点爆发 搞钱是战斗状态 如如不动一个方向死磕 筛选成交 认知副产品"},
+  {t:"知行合一",p:"隐学意识",d:"王阳明知行合一 知而不行只是未知 脑科学验证 真知编码运动皮层 事上磨练 不是准备好了才开始"},
+  {t:"成年人六条生存算法",p:"认知重构",d:"系统驱动不靠热血 边界清晰不讨好 用结果代替解释 管理注意力 选择大于努力 止损比坚持高级"},
+  {t:"不战而胜",p:"权力策略",d:"孙子上兵伐谋 最好竞争不用竞争 伐谋伐交伐兵攻城 苹果诺基亚 去没有对手的地方"},
+  {t:"政治哲学三定律",p:"政治哲学",d:"荀子韩非马基雅维利霍布斯 人性不可信制度假设最坏 权力厌恶真空 合法性来自被相信"},
+  {t:"为什么不敢收钱",p:"钱途心法",d:"收钱不是索取是筛选 价格你定 不需要想值多少 定一个价有人付就值 免费最贵"},
+  {t:"为什么总是拖延",p:"认知重构",d:"拖延不是懒是怕 怕做出来就这水平 不开始保护你 砍到不好意思不做 打开文档写一行字"},
+  {t:"穷因为没穷过",p:"钱途心法",d:"穷和苦两回事 老子不知知病也 佛家无明 刺激次数等于成长深度 穷不知己穷"},
+  {t:"亲密关系的底层算法",p:"亲密关系",d:"不是遇人不淑在选 熟悉不等于对 父母关系出厂设置 反向测试 崩溃时问反应的是什么"},
+  {t:"道德经六大篡改",p:"经典注疏",d:"绝仁弃义原是绝伪弃诈 大器免成不是晚成 非恒道非常道 马王堆帛书郭店楚简 五人合著"},
+  {t:"中医哲学底层算法",p:"中医哲学",d:"中医不是医学是系统论 治未病 整体观头痛不治头 辨证论治 偏性纠偏"},
+  {t:"荀子与认知行为疗法",p:"东西融合",d:"化性起伪是公元前CBT 积善成德神经可塑性 五步操作手册 儒家选孟子的政治原因"},
+  {t:"你活成了别人想要的样子",p:"生命哲学",d:"庄子鹓鶵死老鼠 追了十年的东西是不是别人的 惠子相位 不被任何期待绑在树枝上"},
+  {t:"乌合之众",p:"人性洞察",d:"群体智商远低于个体 渴望简单答案 需要敌人 断言重复传染 勒庞1895"},
+  {t:"万历十五年",p:"文明规则",d:"什么都没发生的一年明朝命运已定 制度烂了每个人做分内事系统崩 万历躺平不是懒是绝望"},
+  {t:"GEO个人实操版",p:"AI工程",d:"被AI引用不是被搜到 三阶段认识信任推荐 真实内容被引用4.7倍 知识库就是GEO资产"},
+  {t:"博弈实战三原则",p:"博弈实战",d:"不做单次博弈好人 纳什均衡 信号比实力重要 囚徒困境 反复博弈才合作"},
+  {t:"为什么越努力越焦虑",p:"认知重构",d:"忙的是维持现状 老子为道日损 砍掉所有维持现状的忙 只留一件往前推"},
+  {t:"曾不敢做IP",p:"个人IP",d:"怕被看见 怕被说你也配 第一篇很烂 100篇有人私信 600篇不需找客户 先发30条"},
+  {t:"穷查理宝典",p:"全球大V",d:"芒格反过来想 不做什么比做什么重要 你不需要聪明只需不犯大错 逆向清单"},
+  {t:"聪明的投资者",p:"全球大V",d:"格雷厄姆安全边际 按最坏情况出价 市场先生每天报价你可以不理"},
+  {t:"非暴力沟通",p:"人性洞察",d:"观察感受需要请求 你从来不洗碗是评价 这周五天我洗是观察 说你不在乎我是指责"},
+  {t:"沉默的病人",p:"人性洞察",d:"她杀丈夫后六年不说话 沉默不是说不出是说了没用 你第一次没听他只是遗憾"},
+  {t:"教父",p:"权力策略",d:"永远不第一个报价 永远不让情绪进谈判 给他不能拒绝的条件 不是威胁是好到拒绝等于亏"},
+  {t:"红楼梦",p:"国学体系",d:"食尽鸟投林落了片白茫茫大地 你也在大观园里 得到怕失去最后失去 庄子相濡以沫"},
+  {t:"野性的呼唤",p:"生命哲学",d:"巴克被偷走驯化 你也被驯化了以为是成熟 驯化是别人替选的 你本来可以不是这样"},
+  {t:"金阁寺",p:"生命哲学",d:"僧人烧了金阁寺 毁掉的不是建筑是执念 你放不下的人在占你位置 不是忘掉是今天不想"},
+  {t:"生死疲劳",p:"生命哲学",d:"莫言六道轮回 地主变驴牛猪狗 放不下就是自造轮回 你每次'不'都是在用旧剧本"},
+  {t:"高老头",p:"人性洞察",d:"巴尔扎克 钱全给女儿死时无人在场 一直给变成应该给 你不是爱是用钱代替爱"},
+  {t:"激荡三十年",p:"文明规则",d:"吴晓波1978-2008 年广久傻子瓜子 每个时代有窗口 你只是不敢当那个疯子"},
+  {t:"未来简史",p:"文明规则",d:"赫拉利 算法比你妈更了解你 有用的人没用的人 做算法做不了的事"},
+  {t:"易经与心理学",p:"东西融合",d:"荣格共时性 八八六十四卦人生阶段 五行五类人格 你今天在哪个卦"},
+  {t:"破局",p:"认知重构",d:"认知破局停止内耗 路径破局优势是做过什么 系统破局建一直转的东西"},
+  {t:"丁元英执行力算法",p:"认知重构",d:"年收入不到10万别拼认知 叶晓明认知高跑了 冯世杰认知低留下 执行力在逆境守底线"},
+  {t:"关雎与依恋理论",p:"人性洞察",d:"诗经第一首 寤寐思服焦虑型依恋 琴瑟友之安全型依恋 从需要你到在你身边"},
+  {t:"强势文化行动指南",p:"暗流规则",d:"认知决定上限 执行力决定下限 不等了 今天做第一步 从旁观者变在做的人"},
+  {t:"中国式家庭",p:"人性洞察",d:"陈海贤 我爱你但不喜欢你 以爱为名的控制 哪吒剔骨还父 边界不是墙是门"},
+  {t:"起势",p:"暗流规则",d:"逆袭不是硬扛是借势 风来了你只需升帆 会偷懒比埋头苦干重要 认出风的方向"}
 ];
 
-const idx = lunr(function() {
-  this.ref('title');
-  this.field('title', { boost: 10 });
-  this.field('text');
-  this.field('pillar');
-  articles.forEach(a => this.add(a));
-});
-
-const input = document.getElementById('search-input');
-const results = document.getElementById('results');
-const stats = document.getElementById('stats');
-
-input.addEventListener('input', function() {
-  const q = this.value.trim();
-  if (q.length < 2) { results.innerHTML = ''; stats.textContent = ''; return; }
-  const matches = idx.search(q);
-  stats.textContent = `找到 ${matches.length} 篇相关文章`;
-  results.innerHTML = matches.map(m => {
-    const a = articles.find(x => x.title === m.ref);
-    return `<div class="result-item"><h3>${a.title} <small style="color:#8b949e">${a.pillar}</small></h3><p>${a.text.substring(0,150)}...</p></div>`;
-  }).join('');
+document.getElementById('q').addEventListener('input',function(){
+  var s=this.value.trim().toLowerCase();
+  var h='',c=0;
+  if(s.length<1){document.getElementById('r').innerHTML='';document.getElementById('n').textContent='';return;}
+  for(var i=0;i<A.length;i++){
+    var a=A[i];
+    if(a.t.toLowerCase().indexOf(s)>-1||a.d.toLowerCase().indexOf(s)>-1||a.p.toLowerCase().indexOf(s)>-1){
+      var d=a.d;
+      if(s.length>1){
+        var re=new RegExp('('+s+')','gi');
+        d=d.replace(re,'<mark>$1</mark>');
+      }
+      h+='<div class="hit"><b>'+a.t+'</b> <small>'+a.p+'</small><p>'+d.substring(0,120)+'...</p></div>';
+      c++;
+    }
+  }
+  document.getElementById('r').innerHTML=h||'<p style="color:#8b949e">没找到，换关键词试试</p>';
+  document.getElementById('n').textContent=c+' 篇匹配';
 });
 </script>
