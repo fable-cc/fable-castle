@@ -19,7 +19,7 @@ permalink: /3d-globe/
   #info h1 { color: #C9A96E; font-size: 2rem; margin: 0; }
   #info p { color: #8b949e; font-size: 0.9rem; margin: 0.3rem 0 0; }
   #hint { position: fixed; bottom: 1.5rem; left: 0; width: 100%; text-align: center; color: #555; font-size: 0.75rem; z-index: 10; }
-  #scene { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  #scene { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; display: flex; align-items: center; justify-content: center; }
   .pill { position: absolute; left: 50%; top: 50%; padding: 4px 12px;
     background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.2); border-radius: 14px;
     color: #C9A96E; font-size: 0.7rem; white-space: nowrap; cursor: pointer;
@@ -55,7 +55,7 @@ P.forEach(function(name,i){
 
 function render(){
   angle+=0.003;
-  var cx=window.innerWidth/2, cy=window.innerHeight/2;
+  var cx=window.innerWidth/2, cy=window.innerHeight/2-20;
   nodes.forEach(function(n){
     var t=n.theta+angle;
     var x=cx+n.r*Math.cos(t)*Math.sin(n.phi);
