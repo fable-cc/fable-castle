@@ -51,7 +51,18 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 </div>
 </details>
 <script>
-var KB={
+var KB={};
+fetch("/fable-castle/api/search-index.json").then(r=>r.json()).then(data=>{
+  data.forEach(function(a){
+    KB[a.title]=a.summary;
+    // Also index by keywords from pillar
+    if(a.pillar)KB[a.pillar]=(KB[a.pillar]||'')+' | '+a.title;
+  });
+  console.log("AI: loaded "+Object.keys(KB).length+" articles");
+}).catch(function(){
+
+// Fallback KB in case JSON fails to load
+var KB_FALLBACK={
 "怎么开始做IP":"先发30条。定位不是想出来的——是试出来的。我第一篇写得很烂，第100篇开始有人私信，第600篇客户自己来找我。今天发第一条。",
 "韩非子":"韩非子公元前3世纪，法家代表。法术势三柱系统：法=规则公开，术=绩效管理，势=权力基础。他和李斯是同学，李斯嫉妒他，把他毒死了。名言：法不阿贵——制度面前CEO跟实习生一样扣钱。",
 "道德经":"你读的道德经不全。1973年马王堆帛书出土，六个关键字被改。绝仁弃义原为绝伪弃诈。大器免成不是大器晚成。非恒道变成非常道是因为避讳——汉文帝叫刘恒。你读到的是五人合著版。",
