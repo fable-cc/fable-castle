@@ -1,0 +1,74 @@
+---
+layout: default
+title: 搜索600篇知识库
+nav_order: 2
+permalink: /search/
+---
+
+<style>
+  .search-container { max-width: 800px; margin: 0 auto; }
+  #search-input { width: 100%; padding: 1rem; background: rgba(201,169,110,0.05); border: 2px solid rgba(201,169,110,0.15); border-radius: 10px; color: #E8D5B7; font-size: 1.1rem; }
+  #search-input:focus { border-color: rgba(201,169,110,0.4); outline: none; }
+  #results { margin-top: 1.5rem; }
+  .result-item { background: rgba(201,169,110,0.03); border: 1px solid rgba(201,169,110,0.08); border-radius: 8px; padding: 1rem; margin-bottom: 0.8rem; }
+  .result-item h3 { color: #C9A96E; font-size: 1.05rem; margin: 0 0 0.3rem 0; }
+  .result-item p { color: #8b949e; font-size: 0.85rem; margin: 0; }
+  .result-item .match { color: #E8D5B7; background: rgba(201,169,110,0.1); padding: 0 0.2rem; border-radius: 3px; }
+  #stats { color: #8b949e; font-size: 0.85rem; margin-top: 0.5rem; }
+</style>
+
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="搜索600篇文章..." autofocus>
+  <div id="stats"></div>
+  <div id="results"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
+// Knowledge base index - key articles
+const articles = [
+  { title:"强势文化", text:"强势文化不是凶不是霸道 是不让别人定义你是谁 你值多少钱 弱者等待 强者不等 丁元英天道 不等了 现在开始", pillar:"暗流规则" },
+  { title:"搞钱的五个底层真相", text:"钱不是线性积累 在关键节点爆发 搞钱是战斗状态 如如不动一个方向死磕 筛选就是成交 钱是认知的副产品", pillar:"钱途心法" },
+  { title:"知行合一", text:"王阳明知行合一 知道但做不到等于不知道 脑科学验证 真知编码到运动皮层 事上磨练 不是准备好了才开始", pillar:"隐学意识" },
+  { title:"成年人六条生存算法", text:"系统驱动不靠热血 边界清晰不讨好 用结果代替解释 管理注意力不是时间 选择大于努力 止损比坚持更高级", pillar:"认知重构" },
+  { title:"不战而胜", text:"孙子上兵伐谋 最好竞争不用竞争 伐谋伐交伐兵攻城 苹果不跟诺基亚比耐摔 去没有对手的地方", pillar:"权力策略" },
+  { title:"政治哲学三定律", text:"荀子韩非马基雅维利霍布斯 人性不可信制度假设最坏 权力厌恶真空 合法性来自被相信", pillar:"政治哲学" },
+  { title:"为什么你不敢收钱", text:"收钱不是索取是筛选 价格你定的 你不需要想值多少 定一个价有人付就值 免费最贵", pillar:"钱途心法" },
+  { title:"为什么你总是拖延", text:"拖延不是懒是怕 怕做出来发现就这水平 不开始保护你 砍到不好意思不做 打开文档写一行字", pillar:"认知重构" },
+  { title:"穷因为没穷过", text:"穷和苦两回事 老子不知知病也 佛家无明是第一因 刺激次数程度等于成长深度", pillar:"钱途心法" },
+  { title:"亲密关系的底层算法", text:"不是遇人不淑是在选 熟悉不等于对 父母关系模式出厂设置 反向测试 破坏之后问自己反应的是什么", pillar:"亲密关系" },
+  { title:"道德经六大篡改", text:"绝仁弃义原为绝伪弃诈 大器免成不是晚成 非恒道不是非常道 马王堆帛书郭店楚简 五人合著", pillar:"经典注疏" },
+  { title:"中医哲学的底层算法", text:"中医不是医学是系统论 治未病 整体观头痛不治头 辨证论治 偏性纠偏", pillar:"中医哲学" },
+  { title:"荀子与认知行为疗法", text:"化性起伪是公元前CBT 积善成德是神经可塑性 五步操作手册一模一样 儒家选孟子是政治", pillar:"东西融合" },
+  { title:"你是活成别人想要的样子", text:"庄子鹓鶵死老鼠 你追了十年的东西是不是别人叼着的 惠子相位 不被期待绑在树枝上", pillar:"价值论" },
+  { title:"乌合之众", text:"群体智商远低于个体 渴望简单答案 需要敌人 断言重复传染 勒庞1895年写的今天仍然准确", pillar:"人性洞察" },
+  { title:"万历十五年", text:"什么都没发生的一年明朝命运已定 制度烂了每个人做分内事系统分崩离析 万历躺平不是懒是绝望", pillar:"文明规则" },
+  { title:"GEO个人实操版", text:"被AI引用不是被搜到 三阶段认识信任推荐 真实内容被引用概率是AI写作4.7倍 知识库就是资产", pillar:"AI工程" },
+  { title:"博弈实战三原则", text:"不做单次博弈的好人 纳什均衡 信号比实力重要 囚徒困境 反复博弈才需要合作", pillar:"博弈实战" },
+  { title:"为什么越努力越焦虑", text:"你忙的是维持现状 老子为学日益为道日损 砍掉所有维持现状的忙 只留一件往前推的事", pillar:"认知重构" },
+  { title:"你不敢做IP", text:"不是能力不够是怕被看见 怕被说你也配 第一篇很烂第十篇也很烂 第100篇有人私信 先发30条", pillar:"个人IP" }
+];
+
+const idx = lunr(function() {
+  this.ref('title');
+  this.field('title', { boost: 10 });
+  this.field('text');
+  this.field('pillar');
+  articles.forEach(a => this.add(a));
+});
+
+const input = document.getElementById('search-input');
+const results = document.getElementById('results');
+const stats = document.getElementById('stats');
+
+input.addEventListener('input', function() {
+  const q = this.value.trim();
+  if (q.length < 2) { results.innerHTML = ''; stats.textContent = ''; return; }
+  const matches = idx.search(q);
+  stats.textContent = `找到 ${matches.length} 篇相关文章`;
+  results.innerHTML = matches.map(m => {
+    const a = articles.find(x => x.title === m.ref);
+    return `<div class="result-item"><h3>${a.title} <small style="color:#8b949e">${a.pillar}</small></h3><p>${a.text.substring(0,150)}...</p></div>`;
+  }).join('');
+});
+</script>

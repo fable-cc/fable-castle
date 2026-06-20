@@ -1,0 +1,83 @@
+---
+layout: default
+title: 景一·72支柱导航图
+nav_order: 3
+permalink: /72-pillars/
+---
+
+<style>
+  .pillar-map { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; padding: 1rem 0; }
+  .pillar-card { background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.1); border-radius: 10px; padding: 1rem; cursor: pointer; transition: all 0.2s; }
+  .pillar-card:hover { border-color: rgba(201,169,110,0.3); background: rgba(201,169,110,0.08); }
+  .pillar-card h3 { color: #C9A96E; font-size: 1.1rem; margin: 0 0 0.3rem 0; }
+  .pillar-card .emoji { font-size: 1.5rem; }
+  .pillar-card .count { color: #8b949e; font-size: 0.8rem; }
+  .pillar-card .desc { color: #8b949e; font-size: 0.85rem; margin: 0.3rem 0; }
+  .pillar-card .articles { display: none; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(201,169,110,0.1); }
+  .pillar-card.open .articles { display: block; }
+  .pillar-card .articles a { display: block; color: #E8D5B7; font-size: 0.8rem; padding: 0.15rem 0; text-decoration: none; }
+  .pillar-card .articles a:hover { color: #C9A96E; }
+  .section-title { color: #C9A96E; margin: 1.5rem 0 0.5rem 0; font-size: 1.3rem; border-bottom: 1px solid rgba(201,169,110,0.1); padding-bottom: 0.3rem; }
+  #search-box { width: 100%; padding: 0.8rem; background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.15); border-radius: 8px; color: #E8D5B7; font-size: 1rem; margin-bottom: 1rem; }
+</style>
+
+<input type="text" id="search-box" placeholder="搜索文章..." oninput="filterCards()">
+
+<div class="section-title">核心支柱（3）</div>
+<div class="pillar-map" id="core"></div>
+
+<div class="section-title">扩展支柱（10）</div>
+<div class="pillar-map" id="extended"></div>
+
+<div class="section-title">基础支柱（5）</div>
+<div class="pillar-map" id="foundation"></div>
+
+<script>
+const pillars = [
+  { id:"core", emoji:"🪙", name:"钱途心法", desc:"搞钱底层·变现·转运", count:8, articles:["搞钱的五个底层真相","穷因为没穷过","赚钱的108条铁律","利益比感情更可靠","为什么你不敢收钱","你赚不到钱是因为你怕赚到钱","消费主义收割年轻人","财富自由之路"] },
+  { id:"core", emoji:"🏰", name:"暗流规则", desc:"信息封锁·强势文化·权力", count:7, articles:["强势文化","信息封锁","文化属性","两套知识","强势文化行动指南","起势的底层算法","丁元英的执行力算法"] },
+  { id:"core", emoji:"🧬", name:"意识觉醒", desc:"NPC觉醒·系统降权·维度思维", count:3 },
+  { id:"ext", emoji:"💎", name:"财富商业", desc:"商业模式·轻资产·变现路径", count:5, articles:["四大永恒赛道","认知套利模型","商业伦理边界","巨鲸账户的底层算法"] },
+  { id:"ext", emoji:"📐", name:"模式设计", desc:"商业画布·护城河·股权架构", count:4 },
+  { id:"ext", emoji:"🔬", name:"认知重构", desc:"认知偏差·决策科学·思维模型", count:12, articles:["成年人的六条生存算法","七个心理学概念","晕轮与乐队花车","逆商","为什么你总是拖延","为什么越努力越焦虑","为什么忍不住比较","情绪不是你的敌人","心理学反常识武器库","认知驱动","破局","祖宗情结"] },
+  { id:"ext", emoji:"🎯", name:"人性说服", desc:"影响力·品牌叙事·营销", count:7, articles:["影响力武器","让对方自己说服自己","倾听是最高的恭维","词语包装术"] },
+  { id:"ext", emoji:"⚔️", name:"权力策略", desc:"博弈论·制度设计·权谋", count:8, articles:["不战而胜","荀子与霍布斯","政治哲学三定律","权谋的底层逻辑","无情才是真权力","职场好人为什么升得慢","职场双领导困局","浮沉的底层算法"] },
+  { id:"ext", emoji:"🧠", name:"深度心理学", desc:"荣格·弗洛伊德·阿德勒", count:5, articles:["阿德勒自卑与超越","弗洛伊德与儒家","荣格与阿赖耶识"] },
+  { id:"ext", emoji:"🔮", name:"隐学意识", desc:"易经·知行合一·觉醒", count:6, articles:["知行合一","谁在操控你的思考","信息封锁四层觉醒地图"] },
+  { id:"ext", emoji:"🏛️", name:"东学西渐", desc:"斯多葛×道家·佛学×科学", count:5, articles:["斯多葛道家决策框架","荀子与认知行为疗法","科学哲学殊途同归"] },
+  { id:"ext", emoji:"🌊", name:"文明规则", desc:"历史周期·大历史·技术变革", count:7, articles:["历史周期","大历史","量劫中的三种人","万历十五年","激荡三十年","未来简史","南明史"] },
+  { id:"ext", emoji:"⚡", name:"能量管理", desc:"深度工作·多巴胺·巅峰状态", count:4, articles:["身体是精神的居所","孤勇者的专注状态","多巴胺","打坐不是玄学"] },
+  { id:"found", emoji:"📜", name:"经典注疏", desc:"53部经典·公版书库·深度冶炼", count:53 },
+  { id:"found", emoji:"🌐", name:"百科词条", desc:"概念体系·术语定义", count:2 },
+  { id:"found", emoji:"📁", name:"原始档案", desc:"一手资料·IA·公版书", count:2 },
+  { id:"found", emoji:"🎨", name:"美学修辞", desc:"符号学·叙事·表达", count:3, articles:["美的历程","爱伦坡的底层算法"] },
+  { id:"found", emoji:"🧮", name:"数理思维", desc:"概率·博弈·系统论", count:3 }
+];
+
+function buildCards() {
+  pillars.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'pillar-card';
+    card.dataset.name = p.name;
+    card.dataset.desc = p.desc;
+    card.innerHTML = `<span class="emoji">${p.emoji}</span> <h3>${p.name}</h3><p class="desc">${p.desc}</p><span class="count">${p.count}篇</span>`;
+    if (p.articles) {
+      const arts = document.createElement('div');
+      arts.className = 'articles';
+      p.articles.forEach(a => { const link = document.createElement('a'); link.href = '#'; link.textContent = a; arts.appendChild(link); });
+      card.appendChild(arts);
+      card.onclick = () => card.classList.toggle('open');
+    }
+    document.getElementById(p.id === 'core' ? 'core' : p.id === 'ext' ? 'extended' : 'foundation').appendChild(card);
+  });
+}
+
+function filterCards() {
+  const q = document.getElementById('search-box').value.toLowerCase();
+  document.querySelectorAll('.pillar-card').forEach(c => {
+    c.style.display = (c.dataset.name + c.dataset.desc).toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+buildCards();
+</script>
