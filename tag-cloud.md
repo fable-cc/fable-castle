@@ -37,6 +37,10 @@ nav_order: 8
 <a href="/fable-castle/02-知识图谱/" class="tag s1">批判性思维</a>
 <a href="/fable-castle/02-知识图谱/" class="tag s1">政治哲学</a>
 <a href="/fable-castle/02-知识图谱/" class="tag s1">组织控制</a>
+<a href="/fable-castle/课程/" class="tag s3">国学课程</a>
+<a href="/fable-castle/课程/" class="tag s3">创业决策</a>
+<a href="/fable-castle/研究/" class="tag s3">大健康</a>
+<a href="/fable-castle/运营方案/" class="tag s2">冷启动</a>
 <a href="/fable-castle/02-知识图谱/" class="tag s1">AI工程</a>
 <a href="/fable-castle/02-知识图谱/" class="tag s1">创作系统</a>
 <a href="/fable-castle/02-知识图谱/" class="tag s1">教育觉醒</a>
