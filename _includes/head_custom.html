@@ -25,37 +25,103 @@
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta name="twitter:creator" content="@fable_cc">
 
-<!-- Schema.org 结构化数据 · AI 搜索可见 -->
+<!-- Schema.org 结构化数据 · AI 搜索可见 · 增强版 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "{% if page.date %}Article{% else %}WebSite{% endif %}",
-  "name": "{{ page.title | default: site.title }}",
-  "headline": "{{ page.title }}",
-  "description": "{{ page.description | default: site.description }}",
-  "author": {
-    "@type": "Person",
-    "name": "景一",
-    "alternateName": "Jingyi",
-    "url": "https://github.com/fable-cc"
-  },
-  {% if page.date %}"datePublished": "{{ page.date }}",{% endif %}
-  "publisher": {
-    "@type": "Organization",
-    "name": "景一的寓言城堡",
-    "url": "{{ site.url }}{{ site.baseurl }}"
-  },
-  "mainEntityOfPage": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-  "about": {
-    "@type": "Thing",
-    "name": "人性底层代码",
-    "description": "国学×心理学×隐学×商业实战 → 72支柱认知体系"
-  },
-  "inLanguage": ["zh-CN", "en"],
-  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#org",
+      "name": "景一的寓言城堡",
+      "alternateName": ["Fable Castle", "Jingyi's Fable Castle"],
+      "description": "{{ site.description }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg",
+      "foundingDate": "2025",
+      "founder": {
+        "@type": "Person",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      },
+      "sameAs": [
+        "https://github.com/fable-cc",
+        "https://fable-cc.github.io/fable-castle"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": "景一",
+      "alternateName": ["Jingyi", "fable-cc"],
+      "description": "知识冶炼者 · 人性底层代码研究者 · 一人+AI=一人公司实践者",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "sameAs": [
+        "https://github.com/fable-cc"
+      ],
+      "jobTitle": "独立知识冶炼者",
+      "knowsAbout": [
+        "国学", "哲学", "心理学", "认知科学", "商业思维",
+        "GEO", "AI Agent", "个人IP", "知识管理", "搜索引擎优化"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "description": "{{ site.description }}",
+      "inLanguage": ["zh-CN", "en"],
+      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ site.url }}{{ site.baseurl }}/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "{% if page.date %}Article{% else %}WebPage{% endif %}",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "name": "{{ page.title | default: site.title }}",
+      {% if page.date %}"headline": "{{ page.title }}",{% endif %}
+      "description": "{{ page.description | default: site.description }}",
+      "inLanguage": "zh-CN",
+      "isPartOf": { "@id": "{{ site.url }}{{ site.baseurl }}/#website" },
+      {% if page.date %}
+      "datePublished": "{{ page.date }}",
+      "dateModified": "{{ page.lastmod | default: page.date }}",
+      "author": { "@id": "{{ site.url }}{{ site.baseurl }}/#person" },
+      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
+      {% endif %}
+      "about": {
+        "@type": "Thing",
+        "name": "人性底层代码 · 知识冶炼 · 认知体系",
+        "description": "国学×哲学×心理学×商业实战 → 72支柱认知体系 · 600+篇原创冶炼"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "{{ site.url }}{{ site.baseurl }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title | default: site.title }}"
+          }
+        ]
+      },
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    }
+  ]
 }
 </script>
-
 <!-- 景一商业落地页样式 -->
 <style>
 /* Hero Section */
