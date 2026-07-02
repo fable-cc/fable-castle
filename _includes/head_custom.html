@@ -1,6 +1,6 @@
 <!-- 景一·寓言城堡 · SEO/GEO 极致优化 -->
 <!-- GEO: AI Search Optimization -->
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证。国学×心理学×隐学×商业实战→人性底层代码。不是搬运工，是冶炼者。独立知识冶炼。{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证。国学×心理学×隐学×商业实战→人性底层代码。不是搬运工，是冶炼者。独立知识冶炼。{% endif %}">
 <meta name="keywords" content="人性底层代码,国学,心理学,隐学,商业思维,认知升级,72支柱,知识体系,商业IP,GEO优化,企业Agent,个人IP,搞钱,灵性觉醒,商业模式,开源知识,景一,知识库,GitHub">
 <meta name="author" content="景一 Jingyi">
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
@@ -9,7 +9,7 @@
 <!-- Open Graph / 社交预览 -->
 <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | 景一的寓言城堡{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta name="twitter:creator" content="@fable_cc">
 
@@ -87,7 +87,7 @@
       "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
       "name": "{{ page.title | default: site.title }}",
       {% if page.date %}"headline": "{{ page.title }}",{% endif %}
-      "description": "{{ page.description | default: site.description }}",
+      "description": "{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
       "inLanguage": "zh-CN",
       "isPartOf": { "@id": "{{ site.url }}{{ site.baseurl }}/#website" },
       {% if page.date %}
