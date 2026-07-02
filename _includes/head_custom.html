@@ -1,15 +1,15 @@
 <!-- 景一·寓言城堡 · SEO/GEO 极致优化 -->
-<!-- GEO: AI Search Optimization -->
-<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证。国学×心理学×隐学×商业实战→人性底层代码。不是搬运工，是冶炼者。独立知识冶炼。{% endif %}">
+<!-- GEO: AI Search Optimization - 每页自动取前160字为描述 -->
+{% capture page_desc %}{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证{% endif %}{% endcapture %}
+<meta name="description" content="{{ page_desc }}">
 <meta name="keywords" content="人性底层代码,国学,心理学,隐学,商业思维,认知升级,72支柱,知识体系,商业IP,GEO优化,企业Agent,个人IP,搞钱,灵性觉醒,商业模式,开源知识,景一,知识库,GitHub">
 <meta name="author" content="景一 Jingyi">
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
 <link rel="alternate" hreflang="zh" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
 
-<!-- Open Graph / 社交预览 -->
 <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | 景一的寓言城堡{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:description" content="{{ page_desc }}">
 <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,14 +18,13 @@
 <meta property="og:site_name" content="景一 · 寓言城堡">
 <meta property="og:locale" content="zh_CN">
 
-<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:description" content="{{ page_desc }}">
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta name="twitter:creator" content="@fable_cc">
 
-<!-- Schema.org 结构化数据 · AI 搜索可见 · 增强版 -->
+<!-- Schema.org 结构化数据 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,14 +38,8 @@
       "url": "{{ site.url }}{{ site.baseurl }}",
       "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg",
       "foundingDate": "2025",
-      "founder": {
-        "@type": "Person",
-        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
-      },
-      "sameAs": [
-        "https://github.com/fable-cc",
-        "https://fable-cc.github.io/fable-castle"
-      ]
+      "founder": { "@type": "Person", "@id": "{{ site.url }}{{ site.baseurl }}/#person" },
+      "sameAs": ["https://github.com/fable-cc", "https://fable-cc.github.io/fable-castle"]
     },
     {
       "@type": "Person",
@@ -55,14 +48,9 @@
       "alternateName": ["Jingyi", "fable-cc"],
       "description": "知识冶炼者 · 人性底层代码研究者 · 一人+AI=一人公司实践者",
       "url": "{{ site.url }}{{ site.baseurl }}",
-      "sameAs": [
-        "https://github.com/fable-cc"
-      ],
+      "sameAs": ["https://github.com/fable-cc"],
       "jobTitle": "独立知识冶炼者",
-      "knowsAbout": [
-        "国学", "哲学", "心理学", "认知科学", "商业思维",
-        "GEO", "AI Agent", "个人IP", "知识管理", "搜索引擎优化"
-      ]
+      "knowsAbout": ["国学", "哲学", "心理学", "认知科学", "商业思维", "GEO", "AI Agent", "个人IP", "知识管理", "搜索引擎优化"]
     },
     {
       "@type": "WebSite",
@@ -74,10 +62,7 @@
       "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "{{ site.url }}{{ site.baseurl }}/search/?q={search_term_string}"
-        },
+        "target": { "@type": "EntryPoint", "urlTemplate": "{{ site.url }}{{ site.baseurl }}/search/?q={search_term_string}" },
         "query-input": "required name=search_term_string"
       }
     },
@@ -87,132 +72,47 @@
       "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
       "name": "{{ page.title | default: site.title }}",
       {% if page.date %}"headline": "{{ page.title }}",{% endif %}
-      "description": "{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
+      "description": "{{ page_desc }}",
       "inLanguage": "zh-CN",
       "isPartOf": { "@id": "{{ site.url }}{{ site.baseurl }}/#website" },
-      {% if page.date %}
-      "datePublished": "{{ page.date }}",
-      "dateModified": "{{ page.lastmod | default: page.date }}",
-      "author": { "@id": "{{ site.url }}{{ site.baseurl }}/#person" },
-      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
-      {% endif %}
-      "about": {
-        "@type": "Thing",
-        "name": "人性底层代码 · 知识冶炼 · 认知体系",
-        "description": "国学×哲学×心理学×商业实战 → 72支柱认知体系 · 600+篇原创冶炼"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "首页",
-            "item": "{{ site.url }}{{ site.baseurl }}/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{ page.title | default: site.title }}"
-          }
-        ]
-      },
+      "about": { "@type": "Thing", "name": "人性底层代码 · 知识冶炼 · 认知体系", "description": "国学×哲学×心理学×商业实战" },
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "{{ site.url }}{{ site.baseurl }}/" },
+        { "@type": "ListItem", "position": 2, "name": "{{ page.title | default: site.title }}" }
+      ]},
       "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
     }
   ]
 }
 </script>
-<!-- 景一商业落地页样式 -->
+
 <style>
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 2rem 1rem 3rem;
-  margin: -1rem -1rem 2rem;
-  background: linear-gradient(180deg, rgba(201,169,110,0.08) 0%, transparent 100%);
-  border-bottom: 1px solid rgba(201,169,110,0.15);
-}
-.hero-badge {
-  display: inline-block;
-  background: rgba(201,169,110,0.15);
-  color: #C9A96E;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-}
-.hero-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin: 0.5rem 0;
-  background: linear-gradient(135deg, #E8D5B7, #C9A96E);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.hero { text-align: center; padding: 2rem 1rem 3rem; margin: -1rem -1rem 2rem; background: linear-gradient(180deg, rgba(201,169,110,0.08) 0%, transparent 100%); border-bottom: 1px solid rgba(201,169,110,0.15); }
+.hero-badge { display: inline-block; background: rgba(201,169,110,0.15); color: #C9A96E; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+.hero-title { font-size: 2.8rem; font-weight: 800; margin: 0.5rem 0; background: linear-gradient(135deg, #E8D5B7, #C9A96E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-sub { font-size: 1.3rem; color: var(--body-text-color); margin: 0.5rem 0; }
 .hero-sub strong { color: #C9A96E; }
 .hero-desc { font-size: 1rem; color: #8b949e; line-height: 1.8; margin: 1rem 0; }
-
-/* Stats Row */
-.hero-stats {
-  display: flex; justify-content: center; gap: 2.5rem;
-  margin: 2rem 0; flex-wrap: wrap;
-}
+.hero-stats { display: flex; justify-content: center; gap: 2.5rem; margin: 2rem 0; flex-wrap: wrap; }
 .stat { text-align: center; }
 .stat strong { display: block; font-size: 2rem; color: #C9A96E; }
 .stat span { font-size: 0.85rem; color: #8b949e; }
-
-/* CTAs */
 .hero-cta { margin: 1.5rem 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.cta-primary {
-  background: linear-gradient(135deg, #C9A96E, #A68A4A);
-  color: #0d1117 !important; padding: 0.7rem 1.8rem;
-  border-radius: 8px; font-weight: 700; text-decoration: none;
-  transition: transform 0.2s;
-}
+.cta-primary { background: linear-gradient(135deg, #C9A96E, #A68A4A); color: #0d1117 !important; padding: 0.7rem 1.8rem; border-radius: 8px; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
 .cta-primary:hover { transform: translateY(-2px); text-decoration: none; }
-.cta-secondary {
-  background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.3);
-  color: #C9A96E !important; padding: 0.7rem 1.5rem;
-  border-radius: 8px; font-weight: 600; text-decoration: none;
-}
+.cta-secondary { background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.3); color: #C9A96E !important; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
 .cta-secondary:hover { background: rgba(201,169,110,0.2); text-decoration: none; }
-
 .hero-trust { margin-top: 1.5rem; font-size: 0.85rem; color: #8b949e; }
-.hero-trust img { vertical-align: middle; margin-right: 0.5rem; }
-
-/* Service Cards */
-.services {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem; margin: 1.5rem 0;
-}
-.service-card {
-  background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.12);
-  border-radius: 12px; padding: 1.5rem;
-  transition: border-color 0.2s;
-}
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.service-card { background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.12); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s; }
 .service-card:hover { border-color: rgba(201,169,110,0.35); }
 .service-card strong { font-size: 1.15rem; color: #C9A96E; display: block; margin-bottom: 0.5rem; }
 .service-card p { font-size: 0.9rem; color: #8b949e; margin-bottom: 0.8rem; }
 .service-card a { color: #C9A96E; font-weight: 600; font-size: 0.9rem; }
-
-/* giscus */
-.giscus-wrapper {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .hero-title { font-size: 2rem; }
-  .hero-stats { gap: 1.5rem; }
-  .stat strong { font-size: 1.5rem; }
-  .hero-cta { flex-direction: column; align-items: center; }
-}
+.giscus-wrapper { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+@media (max-width: 768px) { .hero-title { font-size: 2rem; } .hero-stats { gap: 1.5rem; } .stat strong { font-size: 1.5rem; } .hero-cta { flex-direction: column; align-items: center; } }
 </style>
 
-<!-- 侧栏底部灵感区 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var nav = document.querySelector('.side-bar') || document.querySelector('nav');
@@ -224,13 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- 交叉引用网络 · 相关冶炼 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var main = document.querySelector('.main-content') || document.querySelector('main');
   if (!main) return;
-
-  // Only add to article pages (with tags in frontmatter rendered as data attributes)
   var relatedNav = document.createElement('div');
   relatedNav.style.cssText = 'margin-top:2rem;padding:1.5rem;background:rgba(201,169,110,0.03);border:1px solid rgba(201,169,110,0.1);border-radius:12px';
   relatedNav.innerHTML = '<p style="color:#C9A96E;font-weight:700;margin-bottom:0.8rem;font-size:0.95rem">🧭 知识网络</p>' +
@@ -240,39 +137,21 @@ document.addEventListener('DOMContentLoaded', function() {
     '<a href="/fable-castle/" style="color:#C9A96E">首页</a> →' +
     '</p>' +
     '<p style="color:#555;font-size:0.75rem;margin-top:0.5rem">🌐 独立开源知识库 · 每篇文章都是一个知识节点</p>';
-
-  // Insert before giscus if it exists, otherwise at the end
   var giscus = document.querySelector('.giscus-wrapper');
-  if (giscus) {
-    giscus.parentNode.insertBefore(relatedNav, giscus);
-  } else {
-    main.appendChild(relatedNav);
-  }
+  if (giscus) { giscus.parentNode.insertBefore(relatedNav, giscus); }
+  else { main.appendChild(relatedNav); }
 });
 </script>
 
-<!-- giscus 评论区 - 基于 GitHub Discussions 的免费评论系统 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 找到主内容区域
   var main = document.querySelector('.main-content') || document.querySelector('main');
   if (!main) return;
-
-  // 创建评论区容器
-  var wrapper = document.createElement('div');
-  wrapper.className = 'giscus-wrapper';
-
-  var heading = document.createElement('h3');
-  heading.textContent = '💬 讨论';
+  var wrapper = document.createElement('div'); wrapper.className = 'giscus-wrapper';
+  var heading = document.createElement('h3'); heading.textContent = '💬 讨论';
   wrapper.appendChild(heading);
-
-  var giscusDiv = document.createElement('div');
-  giscusDiv.className = 'giscus';
-  wrapper.appendChild(giscusDiv);
-
-  main.appendChild(wrapper);
-
-  // 加载 giscus
+  var giscusDiv = document.createElement('div'); giscusDiv.className = 'giscus';
+  wrapper.appendChild(giscusDiv); main.appendChild(wrapper);
   var script = document.createElement('script');
   script.src = 'https://giscus.app/client.js';
   script.setAttribute('data-repo', 'fable-cc/fable-castle');
@@ -287,92 +166,19 @@ document.addEventListener('DOMContentLoaded', function() {
   script.setAttribute('data-theme', 'dark');
   script.setAttribute('data-lang', 'zh-CN');
   script.setAttribute('crossorigin', 'anonymous');
-  script.async = true;
-  document.body.appendChild(script);
+  script.async = true; document.body.appendChild(script);
 });
 </script>
 
-<!-- 阅读时长 -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var m=document.querySelector('.main-content main');
-  if(!m)return;
-  var t=m.textContent.replace(/\s/g,'').length;
-  var min=Math.max(1,Math.round(t/400));
-  var h=document.querySelector('h1');
-  if(h){var s=document.createElement('span');s.style.cssText='color:#8b949e;font-size:.8rem;margin-left:.5rem;font-weight:normal';s.textContent=' ⏱约'+min+'分钟';h.appendChild(s)}
-});
-</script>
+<script>document.addEventListener('DOMContentLoaded',function(){var m=document.querySelector('.main-content main');if(!m)return;var t=m.textContent.replace(/\s/g,'').length;var min=Math.max(1,Math.round(t/400));var h=document.querySelector('h1');if(h){var s=document.createElement('span');s.style.cssText='color:#8b949e;font-size:.8rem;margin-left:.5rem;font-weight:normal';s.textContent=' ⏱约'+min+'分钟';h.appendChild(s)}});</script>
 
-<!-- 面包屑导航 -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var path=window.location.pathname.replace('/fable-castle/','');
-  if(!path||path==='/')return;
-  var main=document.querySelector('.main-content main');
-  if(!main)return;
-  var nav=document.createElement('div');
-  nav.style.cssText='color:#8b949e;font-size:.8rem;margin-bottom:1rem;padding:.5rem 0;border-bottom:1px solid rgba(201,169,110,.08)';
-  nav.innerHTML='<a href="/fable-castle/" style="color:#C9A96E">🏰 首页</a> » '+path.split('/').pop().replace('.html','');
-  main.insertBefore(nav,main.firstChild);
-});
-</script>
+<script>document.addEventListener('DOMContentLoaded',function(){var path=window.location.pathname.replace('/fable-castle/','');if(!path||path==='/')return;var main=document.querySelector('.main-content main');if(!main)return;var nav=document.createElement('div');nav.style.cssText='color:#8b949e;font-size:.8rem;margin-bottom:1rem;padding:.5rem 0;border-bottom:1px solid rgba(201,169,110,.08)';nav.innerHTML='<a href="/fable-castle/" style="color:#C9A96E">🏰 首页</a> » '+path.split('/').pop().replace('.html','');main.insertBefore(nav,main.firstChild)});</script>
 
+<script>document.addEventListener('DOMContentLoaded',function(){var main=document.querySelector('.main-content main');if(!main)return;var share=document.createElement('div');share.style.cssText='margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(201,169,110,.08);display:flex;gap:.5rem;flex-wrap:wrap';var url=encodeURIComponent(location.href);var title=encodeURIComponent(document.title);share.innerHTML='<span style="color:#8b949e;font-size:.8rem;margin-right:.5rem">分享:</span><a href="https://service.weibo.com/share/share.php?url='+url+'&title='+title+'" target="_blank" style="color:#C9A96E;font-size:.8rem">📢 微博</a> <a href="#" onclick="navigator.clipboard.writeText(location.href);this.textContent=\'✅已复制\';return false" style="color:#C9A96E;font-size:.8rem">📋 复制链接</a>';var giscus=document.querySelector('.giscus-wrapper');if(giscus)giscus.parentNode.insertBefore(share,giscus);else main.appendChild(share)});</script>
 
-<!-- 分享按钮 -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var main=document.querySelector('.main-content main');
-  if(!main)return;
-  var share=document.createElement('div');
-  share.style.cssText='margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(201,169,110,.08);display:flex;gap:.5rem;flex-wrap:wrap';
-  var url=encodeURIComponent(location.href);
-  var title=encodeURIComponent(document.title);
-  share.innerHTML='<span style="color:#8b949e;font-size:.8rem;margin-right:.5rem">分享:</span>'+
-    '<a href="https://service.weibo.com/share/share.php?url='+url+'&title='+title+'" target="_blank" style="color:#C9A96E;font-size:.8rem">📢 微博</a> '+
-    '<a href="#" onclick="navigator.clipboard.writeText(location.href);this.textContent=\'✅已复制\';return false" style="color:#C9A96E;font-size:.8rem">📋 复制链接</a>';
-  var giscus=document.querySelector('.giscus-wrapper');
-  if(giscus)giscus.parentNode.insertBefore(share,giscus);
-  else main.appendChild(share);
-});
-</script>
+<script>document.addEventListener('DOMContentLoaded',function(){if(window.location.pathname!=='/fable-castle/')return;var main=document.querySelector('.main-content main');if(!main)return;var map=document.createElement('div');map.id='heatmap';map.style.cssText='margin:2rem 0;text-align:center';map.innerHTML='<h2>📊 冶炼热力图</h2><p style="color:#8b949e;font-size:.85rem">过去90天的冶炼记录</p><div id="hm-grid" style="display:inline-grid;grid-template-columns:repeat(13,12px);gap:2px;margin-top:.5rem"></div>';main.appendChild(map);var grid=document.getElementById('hm-grid');for(var i=0;i<90;i++){var cell=document.createElement('div');cell.style.cssText='width:12px;height:12px;border-radius:2px;background:rgba(201,169,110,'+(.1+Math.random()*.5)+')';cell.title=''+i+'天前';grid.appendChild(cell)}});</script>
 
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/fable-castle/sw.js')}</script>
 
-<!-- 贡献热力图 -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  if(window.location.pathname!=='/fable-castle/')return;
-  var main=document.querySelector('.main-content main');
-  if(!main)return;
-  var map=document.createElement('div');
-  map.id='heatmap';map.style.cssText='margin:2rem 0;text-align:center';
-  map.innerHTML='<h2>📊 冶炼热力图</h2><p style="color:#8b949e;font-size:.85rem">过去90天的冶炼记录</p><div id="hm-grid" style="display:inline-grid;grid-template-columns:repeat(13,12px);gap:2px;margin-top:.5rem"></div>';
-  main.appendChild(map);
-  var grid=document.getElementById('hm-grid');
-  for(var i=0;i<90;i++){
-    var cell=document.createElement('div');
-    cell.style.cssText='width:12px;height:12px;border-radius:2px;background:rgba(201,169,110,'+(.1+Math.random()*.5)+')';
-    cell.title=''+i+'天前';
-    grid.appendChild(cell);
-  }
-});
-</script>
-
-<!-- PWA -->
-<script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('/fable-castle/sw.js')}
-</script>
-
-<style>
-#reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#C9A96E,#00D4FF);z-index:9999;transition:width .1s linear}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var bar=document.createElement('div');bar.id='reading-progress';document.body.appendChild(bar);
-  window.addEventListener('scroll',function(){
-    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
-  });
-});
-</script>
-
+<style>#reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#C9A96E,#00D4FF);z-index:9999;transition:width .1s linear}</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var bar=document.createElement('div');bar.id='reading-progress';document.body.appendChild(bar);window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%'})});</script>
