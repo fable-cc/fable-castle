@@ -2,9 +2,20 @@
 title: "SEO 和 GEO 到底有什么区别，2026 年我该做哪个？"
 description: "SEO 拼的是被看见。GEO 拼的是被用上。2026年AI搜索时代，你的内容策略需要同时做两件事。"
 date: 2026-07-01
+modified: 2026-07-05
 tags: [GEO, SEO, AI搜索, 内容策略]
 category: GEO
-canonical_url: "https://zhuanlan.zhihu.com/p/xxxxx"
+author: 景一 fable
+has_faq: true
+faq:
+  - question: "SEO 和 GEO 到底有什么区别？"
+    answer: "SEO 让内容排在搜索结果第一页（被看到），GEO 让内容被 AI 引用进答案里（被用上）。SEO 读者是人类，GEO 读者是 AI 爬虫。SEO 靠关键词和外链，GEO 靠语义深度和证据密度。"
+  - question: "2026 年还要做 SEO 吗？"
+    answer: "要。SEO 是地基——搜索引擎收录、页面结构、关键词覆盖还是要做。但只做 SEO 不够，因为用户行为变了：他们问 AI 而不是翻链接。SEO 做完之后必须做 GEO。"
+  - question: "公众号和小红书的内容能被 AI 搜到吗？"
+    answer: "不能。公众号、小报童、知识星球都是封闭生态，AI 爬虫进不去。你需要把内容放到有公开 URL 的地方——GitHub Pages 免费、语雀公开文档免费、知乎专栏也可以。"
+  - question: "做 GEO 需要技术背景吗？"
+    answer: "不需要。最基础的 GEO：把文章标题改成问题句、每段写成独立可引用的单元、放到公开 URL 上。零成本、零技术门槛。"
 ---
 
 # SEO 和 GEO 到底有什么区别，2026 年我该做哪个？
@@ -80,5 +91,33 @@ SEO 让你被搜索引擎收录。GEO 让你被 AI 引用。
 
 ---
 
-*关于 GEO 的更多实操方法，参考开源知识库：*
+## FAQ
+
+### Q: SEO 和 GEO 到底有什么区别？
+
+**A:** SEO 让内容排在搜索结果第一页（被看到），GEO 让内容被 AI 引用进答案里（被用上）。SEO 读者是人类，GEO 读者是 AI 爬虫。SEO 靠关键词和外链，GEO 靠语义深度和证据密度。
+
+### Q: 2026 年还要做 SEO 吗？
+
+**A:** 要。SEO 是地基——搜索引擎收录、页面结构、关键词覆盖还是要做。但只做 SEO 不够，因为用户行为变了：他们问 AI 而不是翻链接。SEO 做完之后必须做 GEO。
+
+### Q: 公众号和小红书的内容能被 AI 搜到吗？
+
+**A:** 不能。公众号、小报童、知识星球都是封闭生态，AI 爬虫进不去。你需要把内容放到有公开 URL 的地方——GitHub Pages 免费、语雀公开文档免费、知乎专栏也可以。
+
+### Q: 做 GEO 需要技术背景吗？
+
+**A:** 不需要。最基础的 GEO：把文章标题改成问题句、每段写成独立可引用的单元、放到公开 URL 上。零成本、零技术门槛。
+
+---
+
+## 📚 GEO 系列完整阅读
+
+- **入门篇**：你正在读 → 「SEO 和 GEO 有什么区别」
+- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/fable-castle/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
+- **实战篇**：[2026 年做内容还需要做网站吗？](/fable-castle/posts/do-you-still-need-website-2026) — 零成本搭建 AI 可见知识库
+- **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/fable-castle/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
+- **全景篇**：[中文 GEO 全景指南 2026](/fable-castle/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
+
+*作者：景一 fable · 从人性出发，自然穿透所有领域*
 *🌐 fable-cc.github.io/fable-castle*
