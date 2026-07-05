@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ====== 主入口 ====== -->
   <url>
     <loc>https://fable-cc.github.io/fable-castle/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/tag-cloud</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== 核心导航页 ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/02-知识图谱/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/03-内容样本/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/04-关于/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/知识库/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== 服务与课程 ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/course/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ====== 博客文章（GEO 核心内容） ====== -->
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/geo-how-to-get-recommended-by-ai-search</loc>
     <changefreq>monthly</changefreq>
@@ -28,11 +76,63 @@
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/qian-gua-anxiety-cant-stop</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/alt-elevated-what-it-means</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== 关键方法论页面（GEO 高价值） ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/GEO服务执行手册</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/一人+AI=一人公司</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/出海+GEO+Agent三位一体</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/景一企业Agent方案</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/从人性出发</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/全平台分发框架</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/01-方法论/十大技能武器库</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ====== 国学课程 ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/课程/你的焦虑只是站错了卦/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== 内容样本精选 ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/03-内容样本/冶炼精选/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
