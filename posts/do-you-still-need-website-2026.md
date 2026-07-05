@@ -2,9 +2,20 @@
 title: "2026 年做内容，还需要做网站吗？"
 description: "需要。但不是给人看的——是给 AI 爬的。你的内容需要一个公开的、AI 爬虫能访问的 URL。"
 date: 2026-07-03
+modified: 2026-07-05
 tags: [GEO, 个人网站, AI搜索, 内容创作]
 category: GEO
-canonical_url: "https://zhuanlan.zhihu.com/p/xxxxx"
+author: 景一 fable
+has_faq: true
+faq:
+  - question: "2026 年还需要做网站吗？"
+    answer: "需要。但不是给人看的——是给 AI 爬的。你的内容需要一个公开的、AI 爬虫能访问的 URL。公众号、小报童、知识星球都是封闭生态，AI 进不去。GitHub Pages 和语雀公开文档都免费，零成本。"
+  - question: "GitHub Pages 和语雀选哪个？"
+    answer: "国内用户选语雀——手机号注册、国内直连、AI 爬虫友好、永久免费。有 VPN 的用户选 GitHub Pages——全球 CDN、版本控制、Jekyll 自动渲染 Markdown 为 HTML。两者都可以，选你最顺手的。"
+  - question: "建站需要买域名和服务器吗？"
+    answer: "不需要。GitHub Pages 提供免费域名（xxx.github.io），语雀提供免费公开文档 URL。不需要买域名、不需要买服务器、不需要备案。零成本开始。"
+  - question: "网站建好后多久能被 AI 搜到？"
+    answer: "通常 2-4 周。Google 和 Bing 会自动索引 GitHub Pages 内容。确保 robots.txt 没有拦截 GPTBot、ClaudeBot 和 PerplexityBot。你可以通过 Google Search Console 主动提交 URL 加速索引。"
 ---
 
 # 2026 年做内容，还需要做网站吗？
@@ -88,5 +99,33 @@ canonical_url: "https://zhuanlan.zhihu.com/p/xxxxx"
 
 ---
 
-*关于 GEO 的更多实操方法，参考开源知识库：*
+## FAQ
+
+### Q: 2026 年还需要做网站吗？
+
+**A:** 需要。但不是给人看的——是给 AI 爬的。你的内容需要一个公开的、AI 爬虫能访问的 URL。公众号、小报童、知识星球都是封闭生态，AI 进不去。GitHub Pages 和语雀公开文档都免费，零成本。
+
+### Q: GitHub Pages 和语雀选哪个？
+
+**A:** 国内用户选语雀——手机号注册、国内直连、AI 爬虫友好、永久免费。有 VPN 的用户选 GitHub Pages——全球 CDN、版本控制、Jekyll 自动渲染 Markdown 为 HTML。两者都可以，选你最顺手的。
+
+### Q: 建站需要买域名和服务器吗？
+
+**A:** 不需要。GitHub Pages 提供免费域名（xxx.github.io），语雀提供免费公开文档 URL。不需要买域名、不需要买服务器、不需要备案。零成本开始。
+
+### Q: 网站建好后多久能被 AI 搜到？
+
+**A:** 通常 2-4 周。Google 和 Bing 会自动索引 GitHub Pages 内容。确保 robots.txt 没有拦截 GPTBot、ClaudeBot 和 PerplexityBot。你可以通过 Google Search Console 主动提交 URL 加速索引。
+
+---
+
+## 📚 GEO 系列完整阅读
+
+- **入门篇**：[SEO 和 GEO 到底有什么区别？](/fable-castle/posts/seo-vs-geo-whats-the-difference-2026) — 搞清楚基本概念
+- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/fable-castle/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
+- **实战篇**：你正在读 → 「2026 年做内容还需要做网站吗？」
+- **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/fable-castle/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
+- **全景篇**：[中文 GEO 全景指南 2026](/fable-castle/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
+
+*作者：景一 fable · 从人性出发，自然穿透所有领域*
 *🌐 fable-cc.github.io/fable-castle*
