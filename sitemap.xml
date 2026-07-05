@@ -52,36 +52,72 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ====== 博客文章（GEO 核心内容） ====== -->
+  <!-- ====== GEO 系列文章（SEO vs GEO 三部曲） ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/seo-vs-geo-whats-the-difference-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/why-ai-search-never-cites-my-articles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/do-you-still-need-website-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ====== GEO 深度文章（GEO 改造版） ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/geo-intro-ai-search-era-your-content-on-trial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/chinese-geo-comprehensive-guide-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ====== 商业认知文章 ====== -->
+  <url>
+    <loc>https://fable-cc.github.io/fable-castle/posts/claude-code-ban-wave-2026-what-to-do</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ====== 早期博客文章 ====== -->
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/geo-how-to-get-recommended-by-ai-search</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/ai-content-factory-one-person</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/how-to-build-ai-searchable-knowledge-base</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/how-to-build-personal-ip-alone</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/qian-gua-anxiety-cant-stop</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fable-cc.github.io/fable-castle/posts/alt-elevated-what-it-means</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- ====== 关键方法论页面（GEO 高价值） ====== -->
