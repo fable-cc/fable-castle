@@ -77,6 +77,11 @@ defaults:
       path: "services/"
     values:
       nav_exclude: false
+  - scope:
+      path: "posts/"
+    values:
+      layout: default
+      nav_exclude: true
 
 # 排除不需要的文件
 exclude:
