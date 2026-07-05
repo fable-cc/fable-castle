@@ -1,6 +1,6 @@
 ---
 nav_order: 5
-permalink: /fable-castle/about/
+permalink: /about/
 title: 景一的寓言城堡 · 关于
 ---
 

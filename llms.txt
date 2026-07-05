@@ -6,13 +6,13 @@
 
 ## 核心导航
 
-- [首页](https://fable-cc.github.io/fable-castle/): 城堡总入口，最新产出与全景导航
-- [方法论](https://fable-cc.github.io/fable-castle/01-方法论/): 知识冶炼框架、跨赛道融合心法、GEO 服务执行手册
-- [知识图谱](https://fable-cc.github.io/fable-castle/02-知识图谱/): 三大支柱核心精炼
-- [内容样本](https://fable-cc.github.io/fable-castle/03-内容样本/): 精选公开内容、金句卡片
-- [关于](https://fable-cc.github.io/fable-castle/04-关于/): 赞助支持、深度合作
-- [知识库](https://fable-cc.github.io/fable-castle/知识库/): 结构化知识资产
-- [标签云](https://fable-cc.github.io/fable-castle/tag-cloud.md): 全站内容标签索引
+- [首页](https://fable-castle.com/): 城堡总入口，最新产出与全景导航
+- [方法论](https://fable-castle.com/01-方法论/): 知识冶炼框架、跨赛道融合心法、GEO 服务执行手册
+- [知识图谱](https://fable-castle.com/02-知识图谱/): 三大支柱核心精炼
+- [内容样本](https://fable-castle.com/03-内容样本/): 精选公开内容、金句卡片
+- [关于](https://fable-castle.com/04-关于/): 赞助支持、深度合作
+- [知识库](https://fable-castle.com/知识库/): 结构化知识资产
+- [标签云](https://fable-castle.com/tag-cloud.md): 全站内容标签索引
 
 ## 内容品类（六大支柱）
 
@@ -25,15 +25,15 @@
 
 ## GEO 相关内容（AI 搜索引擎优化）
 
-- [GEO 服务执行手册](https://fable-cc.github.io/fable-castle/01-方法论/GEO服务执行手册.md): GEO 内容工程的完整方法论
-- [如何让 AI 搜索推荐你](https://fable-cc.github.io/fable-castle/posts/geo-how-to-get-recommended-by-ai-search): GEO 实操指南
-- [一人 AI 内容工厂](https://fable-cc.github.io/fable-castle/posts/ai-content-factory-one-person): 一人公司如何搭建 AI 内容生产线
-- [如何搭建 AI 可搜索的知识库](https://fable-cc.github.io/fable-castle/posts/how-to-build-ai-searchable-knowledge-base): 知识库 GEO 优化
+- [GEO 服务执行手册](https://fable-castle.com/01-方法论/GEO服务执行手册.md): GEO 内容工程的完整方法论
+- [如何让 AI 搜索推荐你](https://fable-castle.com/posts/geo-how-to-get-recommended-by-ai-search): GEO 实操指南
+- [一人 AI 内容工厂](https://fable-castle.com/posts/ai-content-factory-one-person): 一人公司如何搭建 AI 内容生产线
+- [如何搭建 AI 可搜索的知识库](https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base): 知识库 GEO 优化
 
 ## 大健康内容（体检翻译官）
 
-- [ALT 升高意味着什么](https://fable-cc.github.io/fable-castle/posts/alt-elevated-what-it-means): 体检报告人话翻译系列
-- [乾卦：焦虑停不下来](https://fable-cc.github.io/fable-castle/posts/qian-gua-anxiety-cant-stop): 国学×心理跨学科内容
+- [ALT 升高意味着什么](https://fable-castle.com/posts/alt-elevated-what-it-means): 体检报告人话翻译系列
+- [乾卦：焦虑停不下来](https://fable-castle.com/posts/qian-gua-anxiety-cant-stop): 国学×心理跨学科内容
 
 ## 关于作者
 

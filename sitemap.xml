@@ -3,13 +3,13 @@
 
   <!-- ====== 主入口 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/</loc>
+    <loc>https://fable-castle.com/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/tag-cloud</loc>
+    <loc>https://fable-castle.com/tag-cloud</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -17,31 +17,31 @@
 
   <!-- ====== 核心导航页 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/</loc>
+    <loc>https://fable-castle.com/01-方法论/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/02-知识图谱/</loc>
+    <loc>https://fable-castle.com/02-知识图谱/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/03-内容样本/</loc>
+    <loc>https://fable-castle.com/03-内容样本/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/04-关于/</loc>
+    <loc>https://fable-castle.com/04-关于/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/知识库/</loc>
+    <loc>https://fable-castle.com/知识库/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -49,13 +49,13 @@
 
   <!-- ====== 服务与课程 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/services/</loc>
+    <loc>https://fable-castle.com/services/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/course/</loc>
+    <loc>https://fable-castle.com/course/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -63,19 +63,19 @@
 
   <!-- ====== GEO 系列文章（SEO vs GEO 三部曲） ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/seo-vs-geo-whats-the-difference-2026</loc>
+    <loc>https://fable-castle.com/posts/seo-vs-geo-whats-the-difference-2026</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/why-ai-search-never-cites-my-articles</loc>
+    <loc>https://fable-castle.com/posts/why-ai-search-never-cites-my-articles</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/do-you-still-need-website-2026</loc>
+    <loc>https://fable-castle.com/posts/do-you-still-need-website-2026</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -83,13 +83,13 @@
 
   <!-- ====== GEO 深度文章（GEO 改造版） ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/geo-intro-ai-search-era-your-content-on-trial</loc>
+    <loc>https://fable-castle.com/posts/geo-intro-ai-search-era-your-content-on-trial</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/chinese-geo-comprehensive-guide-2026</loc>
+    <loc>https://fable-castle.com/posts/chinese-geo-comprehensive-guide-2026</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -97,7 +97,7 @@
 
   <!-- ====== 商业认知文章 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/claude-code-ban-wave-2026-what-to-do</loc>
+    <loc>https://fable-castle.com/posts/claude-code-ban-wave-2026-what-to-do</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -105,37 +105,37 @@
 
   <!-- ====== 早期博客文章 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/geo-how-to-get-recommended-by-ai-search</loc>
+    <loc>https://fable-castle.com/posts/geo-how-to-get-recommended-by-ai-search</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/ai-content-factory-one-person</loc>
+    <loc>https://fable-castle.com/posts/ai-content-factory-one-person</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/how-to-build-ai-searchable-knowledge-base</loc>
+    <loc>https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/how-to-build-personal-ip-alone</loc>
+    <loc>https://fable-castle.com/posts/how-to-build-personal-ip-alone</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/qian-gua-anxiety-cant-stop</loc>
+    <loc>https://fable-castle.com/posts/qian-gua-anxiety-cant-stop</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/posts/alt-elevated-what-it-means</loc>
+    <loc>https://fable-castle.com/posts/alt-elevated-what-it-means</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -143,43 +143,43 @@
 
   <!-- ====== 关键方法论页面（GEO 高价值） ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/GEO服务执行手册</loc>
+    <loc>https://fable-castle.com/01-方法论/GEO服务执行手册</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/一人+AI=一人公司</loc>
+    <loc>https://fable-castle.com/01-方法论/一人+AI=一人公司</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/出海+GEO+Agent三位一体</loc>
+    <loc>https://fable-castle.com/01-方法论/出海+GEO+Agent三位一体</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/景一企业Agent方案</loc>
+    <loc>https://fable-castle.com/01-方法论/景一企业Agent方案</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/从人性出发</loc>
+    <loc>https://fable-castle.com/01-方法论/从人性出发</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/全平台分发框架</loc>
+    <loc>https://fable-castle.com/01-方法论/全平台分发框架</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/01-方法论/十大技能武器库</loc>
+    <loc>https://fable-castle.com/01-方法论/十大技能武器库</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -187,7 +187,7 @@
 
   <!-- ====== 国学课程 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/课程/你的焦虑只是站错了卦/</loc>
+    <loc>https://fable-castle.com/课程/你的焦虑只是站错了卦/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -195,7 +195,7 @@
 
   <!-- ====== 内容样本精选 ====== -->
   <url>
-    <loc>https://fable-cc.github.io/fable-castle/03-内容样本/冶炼精选/</loc>
+    <loc>https://fable-castle.com/03-内容样本/冶炼精选/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

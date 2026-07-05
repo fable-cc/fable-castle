@@ -3,7 +3,7 @@ Allow: /
 Disallow: /assets/
 Disallow: /.git/
 
-Sitemap: https://fable-cc.github.io/fable-castle/sitemap.xml
+Sitemap: https://fable-castle.com/sitemap.xml
 
 # AI crawlers: explicitly allowed for GEO
 User-agent: GPTBot
