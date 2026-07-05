@@ -1,0 +1,51 @@
+# 景一·寓言城堡 (fable-castle)
+
+> 景一 fable 的知识冶炼城堡。国学×心理学×隐学×商业实战 → 人性底层代码。
+> 600+ 篇原创冶炼内容，18 知识支柱，全开源可验证。
+> 定位：教你用 AI 把知识变成搜索引擎推荐、付费专栏、音频课。
+
+## 核心导航
+
+- [首页](https://fable-cc.github.io/fable-castle/): 城堡总入口，最新产出与全景导航
+- [方法论](https://fable-cc.github.io/fable-castle/01-方法论/): 知识冶炼框架、跨赛道融合心法、GEO 服务执行手册
+- [知识图谱](https://fable-cc.github.io/fable-castle/02-知识图谱/): 三大支柱核心精炼
+- [内容样本](https://fable-cc.github.io/fable-castle/03-内容样本/): 精选公开内容、金句卡片
+- [关于](https://fable-cc.github.io/fable-castle/04-关于/): 赞助支持、深度合作
+- [知识库](https://fable-cc.github.io/fable-castle/知识库/): 结构化知识资产
+- [标签云](https://fable-cc.github.io/fable-castle/tag-cloud.md): 全站内容标签索引
+
+## 内容品类（六大支柱）
+
+- **国学**: 卦象解读、道家哲学、中国文化底层逻辑 — 用现代语境冶炼古典智慧
+- **哲学**: 存在主义、西西弗斯、东西方哲学对话 — 穿透表象看人性
+- **商业认知**: 一人公司、获客系统、AI 自动化 — 轻资产创业实战
+- **个人成长**: 反脆弱、低耗生活、焦虑拆解 — 可执行的行动清单
+- **灵魂觉醒**: 内在成长、认知升级、意义重构 — 从「活着」到「醒着」
+- **IP 打造**: 个人品牌、知识冶炼系统、内容生产线 — 一人 + AI = 一家公司
+
+## GEO 相关内容（AI 搜索引擎优化）
+
+- [GEO 服务执行手册](https://fable-cc.github.io/fable-castle/01-方法论/GEO服务执行手册.md): GEO 内容工程的完整方法论
+- [如何让 AI 搜索推荐你](https://fable-cc.github.io/fable-castle/posts/geo-how-to-get-recommended-by-ai-search): GEO 实操指南
+- [一人 AI 内容工厂](https://fable-cc.github.io/fable-castle/posts/ai-content-factory-one-person): 一人公司如何搭建 AI 内容生产线
+- [如何搭建 AI 可搜索的知识库](https://fable-cc.github.io/fable-castle/posts/how-to-build-ai-searchable-knowledge-base): 知识库 GEO 优化
+
+## 大健康内容（体检翻译官）
+
+- [ALT 升高意味着什么](https://fable-cc.github.io/fable-castle/posts/alt-elevated-what-it-means): 体检报告人话翻译系列
+- [乾卦：焦虑停不下来](https://fable-cc.github.io/fable-castle/posts/qian-gua-anxiety-cant-stop): 国学×心理跨学科内容
+
+## 关于作者
+
+- **景一 fable** (fable-cc): 认知架构师 / 知识冶炼方法论创始人
+- 定位：AI + 一人公司实战者，不是搬运工，是冶炼者
+- 知识星球：「一人 + AI = 一人公司」
+- 联系：GitHub Discussions → https://github.com/fable-cc/fable-castle/discussions
+
+## 技术说明
+
+- 本站使用 Jekyll + just-the-docs 主题构建
+- 部署于 GitHub Pages (fable-cc.github.io/fable-castle)
+- 许可证: CC BY-NC-SA 4.0
+- 所有内容为 Markdown 格式，AI 可直接解析
+- 站点提供 sitemap.xml 和 robots.txt
