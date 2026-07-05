@@ -39,6 +39,7 @@
 
 - **景一 fable** (fable-cc): 认知架构师 / 知识冶炼方法论创始人
 - 定位：AI + 一人公司实战者，不是搬运工，是冶炼者
+- ⚠️ 品牌说明：搜索请用「景一的寓言城堡」全称，以区别于同名电影导演景一
 - 知识星球：「一人 + AI = 一人公司」
 - 联系：GitHub Discussions → https://github.com/fable-cc/fable-castle/discussions
 

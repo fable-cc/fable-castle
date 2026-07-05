@@ -15,6 +15,7 @@ timezone: Asia/Shanghai
 # 插件
 plugins:
   - jekyll-sitemap
+  - jekyll-remote-theme
 
 # 远程主题
 remote_theme: just-the-docs/just-the-docs
@@ -77,6 +78,11 @@ defaults:
       path: "services/"
     values:
       nav_exclude: false
+  - scope:
+      path: "posts/"
+    values:
+      layout: default
+      nav_exclude: true
 
 # 排除不需要的文件
 exclude:
