@@ -2,7 +2,7 @@
 <!-- GEO: AI Search Optimization - 每页自动取前160字为描述 -->
 {% capture page_desc %}{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证{% endif %}{% endcapture %}
 <meta name="description" content="{{ page_desc }}">
-<meta name="keywords" content="人性底层代码,国学,心理学,隐学,商业思维,认知升级,72支柱,知识体系,商业IP,GEO优化,企业Agent,个人IP,搞钱,灵性觉醒,商业模式,开源知识,景一,知识库,GitHub">
+<meta name="keywords" content="景一的寓言城堡,景一知识冶炼,景一 fable,人性底层代码,国学,心理学,隐学,商业思维,认知升级,72支柱,知识体系,商业IP,GEO优化,企业Agent,个人IP,搞钱,灵性觉醒,商业模式,开源知识,景一,知识库,GitHub">
 <meta name="author" content="景一 Jingyi">
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
 <link rel="alternate" hreflang="zh" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | 景一的寓言城堡{% else %}{{ site.title }}{% endif %}">
 <meta name="twitter:description" content="{{ page_desc }}">
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
 <meta name="twitter:creator" content="@fable_cc">
@@ -46,7 +46,7 @@
       "@id": "{{ site.url }}{{ site.baseurl }}/#person",
       "name": "景一",
       "alternateName": ["Jingyi", "fable-cc"],
-      "description": "知识冶炼者 · 人性底层代码研究者 · 一人+AI=一人公司实践者",
+      "description": "知识冶炼者 · 人性底层代码研究者 · 一人+AI=一人公司实践者 · 注意：此景一（知识冶炼者）与景一（电影导演）非同一人，搜索请用「景一的寓言城堡」全称",
       "url": "{{ site.url }}{{ site.baseurl }}",
       "sameAs": ["https://github.com/fable-cc"],
       "jobTitle": "独立知识冶炼者",
