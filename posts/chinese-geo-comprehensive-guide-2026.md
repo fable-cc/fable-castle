@@ -6,6 +6,18 @@ modified: 2026-07-05
 tags: [GEO, AI搜索, 内容工程, SEO, 微信小微, ChatGPT, Perplexity]
 category: GEO
 author: 景一 fable
+has_faq: true
+faq:
+  - question: "GEO需要花钱吗？"
+    answer: "不需要。GitHub Pages免费，语雀公开文档免费，robots.txt配置免费。GEO的核心成本是时间——把内容从散文格式改造为结构化格式。"
+  - question: "做GEO多久能看到效果？"
+    answer: "短则2-4周。一个B2B公司修复robots.txt后3周引用率从12%→18%。但完整优化（技术+内容+实体+品牌权威）需要3-6个月。"
+  - question: "我只发公众号和小红书，需要做GEO吗？"
+    answer: "如果你的商业模式完全依赖封闭平台流量，短期不需要。但长期来看，AI搜索在吃掉越来越多的搜索份额。建议至少把核心内容存一份到公开URL上（GitHub Pages或语雀），作为AI搜索引擎的内容副本。"
+  - question: "中文内容的GEO和英文有什么不同？"
+    answer: "中文AI搜索平台（豆包、DeepSeek、微信小微）的引用机制和英文平台不同。豆包偏好C端生态内容，DeepSeek偏好开源和技术内容，微信小微不引用网页而调度小程序。中文GEO需要同时考虑多个平台的不同规则。"
+  - question: "FAQ Schema具体怎么加？"
+    answer: "在HTML页面中用JSON-LD格式标记FAQ内容。如果用GitHub Pages（Jekyll），可以在_post模板中嵌入FAQ Schema。或者用支持Schema插件的CMS（WordPress Yoast SEO插件会自动加）。"
 ---
 
 # 中文GEO全景指南：2026年，你的内容如何在AI搜索里被找到
@@ -149,30 +161,6 @@ SEO和GEO的根本差异：
 2. 检查robots.txt。很多人不知道自己的站天然拦了AI。
 3. 把一篇最有价值的文章改成问答体+可引用段落格式，放上GitHub Pages。
 4. 两周后搜那个话题。看AI有没有开始引用你。
-
----
-
-## FAQ
-
-### Q: GEO需要花钱吗？
-
-**A:** 不需要。GitHub Pages免费，语雀公开文档免费，robots.txt配置免费。GEO的核心成本是时间——把内容从散文格式改造为结构化格式。
-
-### Q: 做GEO多久能看到效果？
-
-**A:** 短则2-4周。一个B2B公司修复robots.txt后3周引用率从12%→18%。但完整优化（技术+内容+实体+品牌权威）需要3-6个月。
-
-### Q: 我只发公众号和小红书，需要做GEO吗？
-
-**A:** 如果你的商业模式完全依赖封闭平台流量，短期不需要。但长期来看，AI搜索在吃掉越来越多的搜索份额。建议至少把核心内容存一份到公开URL上（GitHub Pages或语雀），作为AI搜索引擎的「内容副本」。
-
-### Q: 中文内容的GEO和英文有什么不同？
-
-**A:** 中文AI搜索平台（豆包、DeepSeek、微信小微）的引用机制和英文平台不同。豆包偏好C端生态内容，DeepSeek偏好开源和技术内容，微信小微不引用网页而调度小程序。中文GEO需要同时考虑多个平台的不同规则。
-
-### Q: FAQ Schema具体怎么加？
-
-**A:** 在HTML页面中用JSON-LD格式标记FAQ内容。如果用GitHub Pages（Jekyll），可以在_post模板中嵌入FAQ Schema。或者用支持Schema插件的CMS（WordPress Yoast SEO插件会自动加）。
 
 ---
 
