@@ -4,8 +4,8 @@
 title: "景一的寓言城堡"
 description: "72知识支柱 · 600+篇原创冶炼 · 国学×心理学×隐学×商业实战→人性底层代码 · 全开源可验证"
 tagline: "见过底层规则的人 · 帮你觉醒+搞钱+升级认知"
-baseurl: ""
-url: "https://fable-castle.com"
+baseurl: "/fable-castle"
+url: "https://fable-cc.github.io"
 
 # SEO 优化
 lang: zh-CN
