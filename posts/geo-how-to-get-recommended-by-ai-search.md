@@ -1,3 +1,14 @@
+---
+title: "刚开了个知乎号，怎么让AI搜索推荐我？"
+description: "你不需要投广告。不需要做SEO。AI搜索的推荐逻辑和Google完全不一样——它看的是你回答问题的方式。把标题从关键词改成一句真实问题，AI才开始引用你。"
+date: 2026-06-25
+modified: 2026-07-06
+tags: [GEO, AI搜索, 内容策略, 知乎, Perplexity, 引用优化]
+category: GEO实操
+author: 景一 fable
+has_faq: false
+---
+
 # 刚开了个知乎号，怎么让AI搜索推荐我？
 
 **你不需要投广告。不需要做SEO。AI搜索的推荐逻辑和Google完全不一样——它看的是你回答问题的方式。**
@@ -60,5 +71,5 @@
 **GEO不需要预算。需要的是你用AI能理解的方式表达你的知识。你的公开网页就是你的SEO。**
 
 📍 景一·寓言城堡 · 从人性出发 · 自然穿透所有领域
-🌐 fable-cc.github.io/fable-castle
+🌐 fable-castle.com
 🪐 知识星球：一人+AI=一人公司
