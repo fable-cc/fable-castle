@@ -54,8 +54,6 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 <a href="/ai/" style="display:inline-block;padding:.8rem 2rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);border-radius:10px;color:#C9A96E;font-size:1.1rem;font-weight:bold;text-decoration:none;transition:all .2s">🤖 AI问答 · 搜600篇文章</a>
 </div>
 
-</script>
-
 
 ## 🎯 我能帮你什么
 
