@@ -32,6 +32,10 @@ lastmod: 2026-06-21
   </div>
 </div>
 
+<div style="text-align:center;margin:0 0 1.5rem;padding:.6rem 1rem;font-size:13px;color:#8b8b90;border:1px solid rgba(201,169,110,.15);background:rgba(201,169,110,.03);border-radius:6px" markdown="0">
+⚠️ 品牌声明：此<b>景一</b>（知识冶炼者）与电影导演<b>景一</b>非同一人。搜索请用全称<b>「景一的寓言城堡」</b>。
+</div>
+
 <div id="daily-quote" style="text-align:center;padding:1rem 2rem;margin:0 0 1.5rem;background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.08);border-radius:10px"></div>
 
 <script>
