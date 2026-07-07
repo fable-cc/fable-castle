@@ -114,10 +114,10 @@ SEO 让你被搜索引擎收录。GEO 让你被 AI 引用。
 ## 📚 GEO 系列完整阅读
 
 - **入门篇**：你正在读 → 「SEO 和 GEO 有什么区别」
-- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/fable-castle/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
-- **实战篇**：[2026 年做内容还需要做网站吗？](/fable-castle/posts/do-you-still-need-website-2026) — 零成本搭建 AI 可见知识库
-- **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/fable-castle/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
-- **全景篇**：[中文 GEO 全景指南 2026](/fable-castle/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
+- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
+- **实战篇**：[2026 年做内容还需要做网站吗？](/posts/do-you-still-need-website-2026) — 零成本搭建 AI 可见知识库
+- **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
+- **全景篇**：[中文 GEO 全景指南 2026](/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
 
 *作者：景一 fable · 从人性出发，自然穿透所有领域*
 *🌐 fable-cc.github.io/fable-castle*
