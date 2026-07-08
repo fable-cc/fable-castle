@@ -1,4 +1,5 @@
 <!-- 景一·寓言城堡 · SEO/GEO 极致优化 -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
 <!-- GEO: AI Search Optimization - 每页自动取前160字为描述 -->
 {% capture page_desc %}{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证{% endif %}{% endcapture %}
 <meta name="description" content="{{ page_desc }}">

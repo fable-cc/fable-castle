@@ -31,7 +31,7 @@ a{color:#C9A96E;text-decoration:none}
 <body>
 <canvas id="bg"></canvas>
 <div id="stars"></div>
-<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · <span id="liveCount">600+</span>篇 · 点击星辰 · <a href="/fable-castle/">← 首页</a></p></div>
+<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · <span id="liveCount">600+</span>篇 · 点击星辰 · <a href="/">← 首页</a></p></div>
 <div id="bot">拖拽旋转 · 悬停放大 · 点击引爆粒子</div>
 
 <script>
@@ -62,7 +62,7 @@ var totalArticles=0;P.forEach(function(d,i){totalArticles+=d.c;
   var col=colPal[i%colPal.length];el.style.background=col.bg;el.style.border='1px solid '+col.bd;el.style.color=col.c;
   el.style.animationDelay=(i*.04)+'s';
   el.onclick=function(e){
-    window.open('/fable-castle/02-知识图谱/','_self');
+    window.open('/02-知识图谱/','_self');
     if(d.c===0){e.preventDefault();return;}
     // Particle burst
     for(var j=0;j<16;j++){

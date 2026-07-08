@@ -3,391 +3,341 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>景一 · 商业IP冶炼系统 | 把你的生意变成别人追着买的IP</title>
-<meta name="description" content="8周，把你的行业经验变成自动成交的IP系统。专门为实体商家、中小企业老板打造。18支柱体系·开源可验证·40节系统课程。">
-<meta property="og:image" content="https://fable-cc.github.io/fable-castle/assets/images/og-image.svg">
-<meta property="og:title" content="景一 · 商业IP冶炼系统">
-<meta property="og:description" content="8周，把你的行业经验变成自动成交的IP系统。不是网红课——是商业IP的系统工程。">
+<title>景一 · 系统课程 | 国学×哲学×IP×AI</title>
+<meta name="description" content="景一系统课程：国学卦象课、人性真相课、IP定位课、AI实操课。从人性底层代码到AI自动化，一人+AI=一人公司。700+篇原创冶炼·全开源可验证。">
+<meta property="og:title" content="景一 · 系统课程 | 国学×哲学×IP×AI">
+<meta property="og:description" content="从人性底层代码到AI自动化。国学·哲学·IP打造·AI实操——四门系统课程。">
+<meta property="og:image" content="https://fable-castle.com/assets/images/og-image.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fable-castle.com/course/">
+<meta property="og:site_name" content="景一 · 寓言城堡">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="景一 · 系统课程">
+<meta name="twitter:description" content="从人性底层代码到AI自动化。四门系统课程。">
+<meta name="twitter:image" content="https://fable-castle.com/assets/images/og-image.svg">
+<link rel="canonical" href="https://fable-castle.com/course/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC",sans-serif;background:#08080d;color:#d4cfc4;line-height:1.75}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-section{padding:80px 0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:#08080d;color:#d4cfc4;line-height:1.75;overflow-x:hidden}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
 .g{color:#C9A96E}
-.gb{background:linear-gradient(135deg,#C9A96E,#A68A4A)}
 .d{color:#8b8b90}
 .w{color:#f5f0e8}
-.s{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;margin-bottom:12px}
-h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;color:#f5f0e8;margin-bottom:6px;line-height:1.3}
-h3{font-size:clamp(1.1rem,2vw,1.4rem);color:#d4cfc4;margin-bottom:8px}
 
-/* Hero - no nav, single CTA */
-.hero{padding:100px 0 60px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,.1) 0%,transparent 60%)}
-.hero .badge{display:inline-block;border:1px solid rgba(201,169,110,.35);color:#C9A96E;padding:6px 18px;border-radius:20px;font-size:13px;margin-bottom:20px}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:12px;background:linear-gradient(135deg,#f5e8d0,#C9A96E);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero .outcome{font-size:clamp(1.1rem,2vw,1.3rem);color:#f5f0e8;margin-bottom:6px}
-.hero .who{font-size:16px;color:#8b8b90;margin-bottom:28px}
-.hero .who span{color:#C9A96E;font-weight:600}
-.hero .proof-row{display:flex;justify-content:center;gap:40px;margin:28px 0;flex-wrap:wrap}
-.hero .proof-row div{text-align:center}
-.hero .proof-row strong{display:block;font-size:2.2rem;color:#C9A96E;font-weight:900}
-.hero .proof-row span{font-size:13px;color:#8b8b90}
-.hero .btn{display:inline-block;background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d;padding:18px 48px;border-radius:10px;font-size:18px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s}
-.hero .btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(201,169,110,.3)}
-.hero .gh{display:block;margin-top:16px;font-size:13px;color:#8b8b90}
-.hero .gh a{color:#C9A96E;text-decoration:underline}
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,13,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .logo{font-weight:800;font-size:17px;color:#f5f0e8;text-decoration:none}
+nav .logo span{color:#C9A96E}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:#8b8b90;text-decoration:none;font-size:14px;transition:color .2s}
+nav .links a:hover{color:#C9A96E}
+nav .links .active{color:#C9A96E;font-weight:600}
 
-/* Problem agitation */
-.agitate{max-width:760px;margin:0 auto}
-.agitate p{font-size:17px;color:#b0aca0;margin-bottom:12px;padding-left:20px;border-left:2px solid rgba(201,169,110,.2)}
-.agitate p strong{color:#f5f0e8}
+/* ── Hero ── */
+.hero{padding:120px 0 80px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,.08) 0%,transparent 55%)}
+.hero .badge{display:inline-block;border:1px solid rgba(201,169,110,.35);color:#C9A96E;padding:5px 16px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;line-height:1.2;margin-bottom:14px;background:linear-gradient(135deg,#f5e8d0,#C9A96E);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:clamp(1rem,1.8vw,1.2rem);color:#b0aca0;max-width:600px;margin:0 auto 28px}
+.hero .stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:20px}
+.hero .stats div{text-align:center}
+.hero .stats strong{display:block;font-size:2rem;color:#C9A96E;font-weight:900;line-height:1}
+.hero .stats span{font-size:12px;color:#8b8b90;display:block;margin-top:4px}
 
-/* Trust stack */
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
-.trust-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:24px;text-align:center}
-.trust-card .t{font-size:32px;margin-bottom:8px}
-.trust-card h4{color:#f5f0e8;margin-bottom:6px;font-size:15px}
-.trust-card p{color:#8b8b90;font-size:13px}
+/* ── Section ── */
+section{padding:80px 0}
+section .label{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;margin-bottom:10px}
+h2{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:900;color:#f5f0e8;margin-bottom:8px;line-height:1.3}
+h3{font-size:1.2rem;color:#f5f0e8;margin-bottom:6px}
 
-/* Outcome cards */
-.outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:32px}
-.outcome-card{background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.1);border-radius:14px;padding:28px;transition:border-color .2s}
-.outcome-card:hover{border-color:rgba(201,169,110,.3)}
-.outcome-card .n{font-size:40px;margin-bottom:12px}
-.outcome-card h4{color:#C9A96E;font-size:18px;margin-bottom:8px}
-.outcome-card p{color:#8b8b90;font-size:14px}
+/* ── Course Cards ── */
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:36px}
+.course-card{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;position:relative;transition:all .25s;display:flex;flex-direction:column}
+.course-card:hover{border-color:rgba(201,169,110,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.course-card.featured{border-color:rgba(201,169,110,.2);background:rgba(201,169,110,.03)}
+.course-card .tag{position:absolute;top:-10px;right:20px;background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d;padding:3px 12px;border-radius:10px;font-size:11px;font-weight:700}
+.course-card .icon{font-size:44px;margin-bottom:16px}
+.course-card h3{font-size:1.3rem;margin-bottom:6px}
+.course-card .desc{color:#8b8b90;font-size:14px;margin-bottom:16px;flex:1}
+.course-card .meta{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.course-card .meta span{font-size:12px;color:#8b8b90;background:rgba(255,255,255,.03);padding:4px 10px;border-radius:6px}
+.course-card .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+.course-card .price{font-size:2rem;font-weight:900;color:#C9A96E}
+.course-card .price-orig{font-size:14px;color:#555;text-decoration:line-through}
+.course-card .btn{display:block;text-align:center;padding:14px;border-radius:10px;font-weight:700;text-decoration:none;font-size:15px;transition:all .2s}
+.course-card .btn-primary{background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d}
+.course-card .btn-primary:hover{box-shadow:0 8px 25px rgba(201,169,110,.25);transform:translateY(-1px)}
+.course-card .btn-outline{border:1px solid rgba(201,169,110,.35);color:#C9A96E}
+.course-card .btn-outline:hover{background:rgba(201,169,110,.06)}
 
-/* Module grid */
-.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:32px}
-.mod{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:22px}
-.mod .num{font-size:11px;color:#C9A96E;margin-bottom:6px}
-.mod h4{color:#f5f0e8;font-size:15px;margin-bottom:4px}
-.mod p{color:#8b8b90;font-size:13px;line-height:1.6}
+/* ── Platform Badge ── */
+.platform{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#666;margin-bottom:12px}
+.platform img,.platform span{vertical-align:middle}
 
-/* Instructor */
-.inst{max-width:760px;margin:0 auto;text-align:center}
-.inst .avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#C9A96E,#A68A4A);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:36px;color:#08080d;font-weight:900}
-.inst .story{color:#8b8b90;font-size:16px;line-height:1.8;margin:20px 0}
+/* ── GEO Section ── */
+.geo-banner{background:linear-gradient(135deg,rgba(201,169,110,.04),rgba(201,169,110,.01));border:1px solid rgba(201,169,110,.1);border-radius:16px;padding:40px;text-align:center;margin-top:20px}
+.geo-banner h3{font-size:1.4rem;color:#C9A96E;margin-bottom:10px}
+.geo-banner p{color:#8b8b90;font-size:15px;max-width:600px;margin:0 auto 20px}
+.geo-banner .btn{display:inline-block;padding:12px 28px;border:1px solid rgba(201,169,110,.35);color:#C9A96E;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;transition:all .2s}
+.geo-banner .btn:hover{background:rgba(201,169,110,.08)}
 
-/* Disqualify */
-.dq-box{max-width:700px;margin:0 auto;background:rgba(255,255,255,.02);border:1px solid rgba(201,169,110,.15);border-radius:14px;padding:36px}
-.dq-box h3{color:#C9A96E;margin-bottom:16px;text-align:center;font-size:20px}
-.dq-box ul{list-style:none}
-.dq-box li{color:#8b8b90;padding:8px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,.04)}
-.dq-box li::before{content:"✗ ";color:#C9A96E;font-weight:700}
-.dq-box .yes{color:#10B981}
-.dq-box .yes::before{content:"✓ "}
+/* ── Trust Bar ── */
+.trust-bar{background:rgba(255,255,255,.01);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);padding:32px 0}
+.trust-bar .wrap{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-bar div{text-align:center}
+.trust-bar strong{display:block;font-size:1.5rem;color:#C9A96E}
+.trust-bar span{font-size:13px;color:#8b8b90}
 
-/* Pricing */
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;margin-top:32px}
-.price-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;text-align:center;position:relative}
-.price-card.featured{border-color:#C9A96E;background:rgba(201,169,110,.04)}
-.price-card .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#C9A96E;color:#08080d;padding:3px 14px;border-radius:10px;font-size:11px;font-weight:700}
-.price-card .amount{font-size:2.8rem;font-weight:900;color:#C9A96E;margin:12px 0}
-.price-card .amount sub{font-size:14px;color:#8b8b90;font-weight:400}
-.price-card ul{list-style:none;text-align:left;margin:20px 0}
-.price-card li{color:#8b8b90;padding:6px 0;font-size:14px}
-.price-card li::before{content:"✓ ";color:#C9A96E;font-weight:700}
-.price-card .btn{display:block;text-align:center;padding:14px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;transition:transform .2s}
-.price-card .btn:hover{transform:translateY(-1px)}
-.price-card .btn-primary{background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d}
-.price-card .btn-outline{border:1px solid rgba(201,169,110,.4);color:#C9A96E}
-
-/* FAQ */
-.faq{max-width:760px;margin:0 auto}
+/* ── FAQ ── */
+.faq{max-width:720px;margin:24px auto 0}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.04);padding:20px 0}
-.faq-item h4{color:#f5f0e8;font-size:16px;margin-bottom:6px;cursor:pointer}
+.faq-item h4{color:#f5f0e8;font-size:15px;margin-bottom:6px}
 .faq-item p{color:#8b8b90;font-size:14px}
 
-/* Guarantee */
-.guarantee{max-width:600px;margin:0 auto;text-align:center;padding:40px;background:rgba(255,255,255,.02);border:1px solid rgba(201,169,110,.15);border-radius:16px}
-.guarantee .icon{font-size:48px;margin-bottom:16px}
-.guarantee h3{color:#C9A96E;font-size:20px;margin-bottom:10px}
-.guarantee p{color:#8b8b90;font-size:15px}
+/* ── CTA ── */
+.cta-section{text-align:center;padding:80px 0;background:linear-gradient(180deg,rgba(201,169,110,.05),transparent)}
+.cta-section h2{font-size:1.8rem;margin-bottom:8px}
+.cta-section p{color:#8b8b90;font-size:16px;margin-bottom:24px}
+.cta-section .btn{display:inline-block;background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d;padding:16px 44px;border-radius:10px;font-size:17px;font-weight:700;text-decoration:none;transition:all .2s}
+.cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(201,169,110,.3)}
 
-/* Final CTA */
-.final{text-align:center;background:linear-gradient(180deg,rgba(201,169,110,.06),transparent);padding:80px 20px}
-.final h2{color:#f5f0e8;margin-bottom:10px}
-.final p{color:#8b8b90;font-size:17px;margin-bottom:24px}
-.final .btn{display:inline-block;background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d;padding:18px 48px;border-radius:10px;font-size:18px;font-weight:700;text-decoration:none}
-.final .gh-link{margin-top:16px;font-size:14px}
-.final .gh-link a{color:#C9A96E}
-
-/* Footer */
-footer{text-align:center;padding:30px 20px;color:#666;font-size:13px;border-top:1px solid rgba(255,255,255,.04)}
+/* ── Footer ── */
+footer{text-align:center;padding:32px 20px;color:#555;font-size:13px;border-top:1px solid rgba(255,255,255,.04)}
 footer a{color:#C9A96E;text-decoration:none}
 
-/* Sticky bottom bar (mobile) */
-.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#0d0d14;border-top:1px solid rgba(201,169,110,.2);padding:12px 20px;z-index:100;text-align:center}
-.sticky-bar .btn{display:inline-block;background:linear-gradient(135deg,#C9A96E,#A68A4A);color:#08080d;padding:14px 36px;border-radius:8px;font-weight:700;text-decoration:none;font-size:16px;width:100%}
+/* ── Mobile ── */
 @media(max-width:768px){
   section{padding:50px 0}
-  .sticky-bar{display:block}
-  body{padding-bottom:70px}
-  .hero .proof-row{gap:24px}
-  .hero .proof-row strong{font-size:1.8rem}
+  .hero{padding:90px 0 50px}
+  nav .links{gap:14px}
+  nav .links a{font-size:12px}
+  .hero .stats{gap:20px}
+  .hero .stats strong{font-size:1.6rem}
+  .course-grid{grid-template-columns:1fr}
+  .trust-bar .wrap{gap:24px}
 }
 </style>
 </head>
 <body>
 
-<!-- ====== 1. HERO - Specific Outcome + Single CTA ====== -->
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap">
+    <a href="/" class="logo">🏰 <span>景一</span> · 寓言城堡</a>
+    <div class="links">
+      <a href="/">首页</a>
+      <a href="/course/" class="active">课程</a>
+      <a href="/02-知识图谱/">知识库</a>
+      <a href="/04-关于/深度合作/">合作</a>
+      <a href="https://github.com/fable-cc/fable-castle" target="_blank">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="badge">🔥 8周 · 商业IP冶炼系统</div>
-    <h1>把你的行业经验<br>变成自动成交的IP资产</h1>
-    <p class="outcome"><strong class="g">8周</strong>，从"只知道做生意"到"客户追着你买"</p>
-    <p class="who">针对：<span>实体商家</span> · <span>中小企业老板</span> · <span>大企业主</span></p>
-
-    <div class="proof-row">
-      <div><strong>18</strong><span>知识支柱开源</span></div>
-      <div><strong>40节</strong><span>系统课程</span></div>
-      <div><strong>一键</strong><span>AI自动化</span></div>
-      <div><strong>永久</strong><span>可复用体系</span></div>
+    <div class="badge">📚 系统课程</div>
+    <h1>从人性底层代码<br>到AI自动化</h1>
+    <p class="sub">国学·哲学·IP打造·AI实操——四门系统课程，覆盖从认知觉醒到商业变现的完整路径。</p>
+    <div class="stats">
+      <div><strong>700+</strong><span>篇原创冶炼</span></div>
+      <div><strong>72</strong><span>知识支柱</span></div>
+      <div><strong>4门</strong><span>系统课程</span></div>
+      <div><strong>开源</strong><span>可验证</span></div>
     </div>
-
-    <a href="#pricing" class="btn">🔥 查看课程方案</a>
-    <p class="gh">📦 全部方法论开源可验证：<a href="https://github.com/fable-cc/fable-castle" target="_blank">github.com/fable-cc/fable-castle</a></p>
   </div>
 </section>
 
-<!-- ====== 2. PROBLEM AGITATION ====== -->
+<!-- ============ COURSES ============ -->
 <section>
   <div class="wrap">
-    <p class="s">你是不是也有这些问题</p>
-    <h2>生意做了十年，<br>但客户只认你的店，不认你</h2>
-    <div class="agitate" style="margin-top:28px">
-      <p><strong>😰 流量越来越贵。</strong>投DOU+、买点评、做活动——钱花了，客户来了又走了。你没有自己的流量资产，永远在给平台交租。</p>
-      <p><strong>😰 客户记不住你。</strong>做了十年生意，客户只知道"那家店不错"，不知道你是谁。换个地址客户就丢了。你的生意核心资产是你的人，但你没有把"人"变成IP。</p>
-      <p><strong>😰 利润被平台吃掉。</strong>美团抽成、抖音抽成、点评抽成。你做实体，他们做平台。你不做IP，永远在交租。做了IP，客户直接找你——平台只是你的工具。</p>
-      <p><strong>😰 最好的销售走了，客户就丢了。</strong>你的生意被员工绑架。但如果你自己是IP——客户认的是你，不是你的员工。</p>
-      <p><strong>😰 想做IP但不知道从哪下手。</strong>知道要做内容、要拍视频，但一想到就头疼。没人教你怎么系统地做——不是网红那一套，是<strong>老板的节奏</strong>。</p>
+    <p class="label">系统课程</p>
+    <h2>四门课 · 一条完整的成长路径</h2>
+    <p class="d" style="margin-top:6px">不是散装知识——是从认知底层到商业变现的完整操作系统。</p>
+
+    <div class="course-grid">
+
+      <!-- Course 1: 国学卦象课 -->
+      <div class="course-card featured">
+        <div class="tag">🔥 热门</div>
+        <div class="icon">🏯</div>
+        <h3>你的焦虑只是站错了卦</h3>
+        <p class="desc">用《易经》六十四卦拆解现代人最常见的焦虑场景。不背古文、不搞玄学——把三千年前的决策算法翻译成你今天能用的认知工具。</p>
+        <div class="meta">
+          <span>📖 15集</span>
+          <span>🎧 音频课</span>
+          <span>⏱ 每集15分钟</span>
+        </div>
+        <div class="price-row">
+          <span class="price">¥99</span>
+        </div>
+        <a href="https://m.ximalaya.com" target="_blank" class="btn btn-primary">🎧 喜马拉雅收听</a>
+        <p class="platform" style="margin-top:8px">即将上架 · 关注喜马拉雅「景一的寓言城堡」</p>
+      </div>
+
+      <!-- Course 2: 人性真相课 -->
+      <div class="course-card">
+        <div class="icon">🧬</div>
+        <h3>15个让你瞬间清醒的人性真相</h3>
+        <p class="desc">荣格、阿德勒、尼采、韩非子——东西方最锋利的人性洞察者，提炼15个底层真相。每集一个"原来如此"。</p>
+        <div class="meta">
+          <span>📖 15集</span>
+          <span>🎧 音频课</span>
+          <span>⏱ 每集12分钟</span>
+        </div>
+        <div class="price-row">
+          <span class="price">¥99</span>
+        </div>
+        <a href="https://m.ximalaya.com" target="_blank" class="btn btn-outline">🎧 喜马拉雅收听</a>
+        <p class="platform" style="margin-top:8px">即将上架 · 关注喜马拉雅「景一的寓言城堡」</p>
+      </div>
+
+      <!-- Course 3: IP定位课 -->
+      <div class="course-card">
+        <div class="icon">🎯</div>
+        <h3>3天找到你的IP定位</h3>
+        <p class="desc">不是"找个赛道"。是找到那个——你做十年不烦、越积累越值钱、别人想抄需要先花三年补课的位置。三天，每天15分钟。</p>
+        <div class="meta">
+          <span>📖 3天</span>
+          <span>✍️ 实操课</span>
+          <span>⏱ 每天15分钟</span>
+        </div>
+        <div class="price-row">
+          <span class="price">¥39.9</span>
+          <span class="price-orig">¥99</span>
+        </div>
+        <a href="/services/free-course/" class="btn btn-primary">📱 微信报名 S-9595A</a>
+        <p class="platform" style="margin-top:8px">备注「IP定位」· 不满意退</p>
+      </div>
+
+      <!-- Course 4: AI实操 · 知识星球 -->
+      <div class="course-card featured">
+        <div class="tag">⭐ 日更</div>
+        <div class="icon">🤖</div>
+        <h3>一人+AI=一人公司</h3>
+        <p class="desc">知识星球日更专栏。AI自动化实操、GEO搜索引擎优化、Agent搭建、内容管线搭建。不是教程——是实战记录+可复用模板。</p>
+        <div class="meta">
+          <span>📖 45+篇已发</span>
+          <span>⭐ 日更</span>
+          <span>🔓 永久买断</span>
+        </div>
+        <div class="price-row">
+          <span class="price">¥69.9</span>
+          <span class="price-orig">¥199</span>
+        </div>
+        <a href="https://wx.zsxq.com" target="_blank" class="btn btn-primary">⭐ 加入知识星球</a>
+        <p class="platform" style="margin-top:8px">永久买断 · 持续日更 · 搜索「一人+AI=一人公司」</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ====== 3. SOCIAL PROOF ====== -->
+<!-- ============ GEO FREE CONTENT ============ -->
 <section>
   <div class="wrap">
-    <p class="s">为什么是我</p>
-    <h2>不是"我教你做"——<br>是我已经做完了，你可以自己验证</h2>
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="t">🔓</div>
-        <h4>全部开源可验证</h4>
-        <p>18支柱·29篇精华·自动化管道<br>GitHub上全部公开。你自己看。</p>
+    <div class="geo-banner">
+      <h3>🌐 免费 GEO 知识库</h3>
+      <p>700+篇原创冶炼文章，72知识支柱，全部开源免费。AI搜索时代的流量入口——让你的内容被AI引用，用户搜任何相关关键词都能找到你。</p>
+      <a href="/02-知识图谱/" class="btn">🔍 浏览知识库 →</a>
+      <a href="/services/geo/" class="btn" style="margin-left:12px">🎯 GEO 服务 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar">
+  <div class="wrap">
+    <div><strong>700+</strong><span>原创冶炼文章</span></div>
+    <div><strong>72</strong><span>知识支柱体系</span></div>
+    <div><strong>90册</strong><span>冶炼书库</span></div>
+    <div><strong>全栈</strong><span>开源可验证</span></div>
+    <div><strong>7天</strong><span>无理由退款</span></div>
+  </div>
+</section>
+
+<!-- ============ PATH ============ -->
+<section>
+  <div class="wrap" style="text-align:center">
+    <p class="label">学习路径</p>
+    <h2>从哪里开始？</h2>
+    <p class="d" style="margin-top:6px;margin-bottom:32px">根据你的阶段选择入口</p>
+    <div class="course-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div class="course-card" style="text-align:center">
+        <div class="icon" style="margin:0 auto 12px">🌱</div>
+        <h3>觉醒期</h3>
+        <p class="desc">搞懂人性底层代码<br>推荐：人性真相课 →</p>
+        <a href="#course-2" class="g" style="font-weight:600;text-decoration:none">¥99 开始 →</a>
       </div>
-      <div class="trust-card">
-        <div class="t">⚙️</div>
-        <h4>自动化知识管道</h4>
-        <p>每天自动抓取→分类→冶炼→输出<br>这门课我把这套系统也教给你</p>
+      <div class="course-card" style="text-align:center">
+        <div class="icon" style="margin:0 auto 12px">🏯</div>
+        <h3>深耕期</h3>
+        <p class="desc">建立跨学科思维框架<br>推荐：国学卦象课 →</p>
+        <a href="#course-1" class="g" style="font-weight:600;text-decoration:none">¥99 开始 →</a>
       </div>
-      <div class="trust-card">
-        <div class="t">🏗️</div>
-        <h4>体系厚度=护城河</h4>
-        <p>抄一篇内容10分钟<br>抄18支柱+管道——没半年不可能</p>
+      <div class="course-card" style="text-align:center">
+        <div class="icon" style="margin:0 auto 12px">🎯</div>
+        <h3>定位期</h3>
+        <p class="desc">找到你的不可替代性<br>推荐：IP定位课 →</p>
+        <a href="#course-3" class="g" style="font-weight:600;text-decoration:none">¥39.9 开始 →</a>
       </div>
-      <div class="trust-card">
-        <div class="t">🎯</div>
-        <h4>不是网红课</h4>
-        <p>不做短视频套路<br>教你建商业IP的底层操作系统</p>
+      <div class="course-card" style="text-align:center">
+        <div class="icon" style="margin:0 auto 12px">🚀</div>
+        <h3>变现期</h3>
+        <p class="desc">AI自动化+商业变现<br>推荐：知识星球 →</p>
+        <a href="#course-4" class="g" style="font-weight:600;text-decoration:none">¥69.9 开始 →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====== 4. OUTCOMES - What they become ====== -->
+<!-- ============ FAQ ============ -->
 <section>
   <div class="wrap">
-    <p class="s">课程结束后你会</p>
-    <h2>不是学了一堆理论<br>是拥有了一套自己的IP系统</h2>
-    <div class="outcome-grid">
-      <div class="outcome-card">
-        <div class="n">📍</div>
-        <h4>定位清晰</h4>
-        <p>客户三秒内知道你是谁、为什么选你。你的专业经验被提炼成独特的IP定位——不是抄同行，是从你的经历里长出来的。</p>
-      </div>
-      <div class="outcome-card">
-        <div class="n">📝</div>
-        <h4>内容系统化</h4>
-        <p>不靠灵感也能稳定输出。选题库→素材库→成品输出，一条流水线。每周花2小时，产出够用一周的内容。</p>
-      </div>
-      <div class="outcome-card">
-        <div class="n">🔐</div>
-        <h4>信任可验证</h4>
-        <p>拥有自己的GitHub知识体系——客户不再"信你说的"，而是"自己看完就信了"。这是别人没有的信任基建。</p>
-      </div>
-      <div class="outcome-card">
-        <div class="n">💰</div>
-        <h4>自动成交</h4>
-        <p>内容本身就在成交。客户看完你的文章/视频，自己算完账，主动找你。不是你在卖——是系统在卖。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 5. CURRICULUM ====== -->
-<section>
-  <div class="wrap">
-    <p class="s">课程体系</p>
-    <h2>8个模块 · 40节课<br>从0到1搭建你的商业IP</h2>
-    <div class="mod-grid">
-      <div class="mod"><p class="num">模块一</p><h4>📍 IP定位</h4><p>找到你的"不可替代性"——从行业经验提炼独有认知差</p></div>
-      <div class="mod"><p class="num">模块二</p><h4>📝 内容系统</h4><p>不靠灵感稳定输出——选题库→素材库→成品流水线</p></div>
-      <div class="mod"><p class="num">模块三</p><h4>🔐 信任基建</h4><p>GitHub开源知识体系——让客户自己验证你的专业度</p></div>
-      <div class="mod"><p class="num">模块四</p><h4>📈 流量引擎</h4><p>零投放获客——长尾搜索+平台矩阵+内容复利</p></div>
-      <div class="mod"><p class="num">模块五</p><h4>💎 产品设计</h4><p>把知识变成资产——课程/咨询/内训/授权，四个引擎</p></div>
-      <div class="mod"><p class="num">模块六</p><h4>💰 成交系统</h4><p>内容即成交——每篇文章都是一封销售信</p></div>
-      <div class="mod"><p class="num">模块七</p><h4>⚡ AI自动化</h4><p>一人+AI=一家公司——知识管道+10大AI技能</p></div>
-      <div class="mod"><p class="num">模块八</p><h4>🏆 变现升维</h4><p>从卖时间到卖资产——五层变现模型·三年复利路径</p></div>
-    </div>
-    <p style="text-align:center;margin-top:20px"><a href="https://fable-cc.github.io/fable-castle/01-方法论/商业IP课程大纲/" class="g" style="font-weight:600">→ 查看完整40节课大纲</a></p>
-  </div>
-</section>
-
-<!-- ====== 6. INSTRUCTOR ====== -->
-<section>
-  <div class="wrap">
-    <div class="inst">
-      <div class="avatar">景</div>
-      <p class="s">你的教练</p>
-      <h2>景一</h2>
-      <div class="story">
-        <p>不是网红。不是讲师。是<strong class="g">冶炼者</strong>。</p>
-        <p style="margin-top:12px">从国学、心理学、隐学和商业实战中提炼人性底层代码。搭建了<strong>18知识支柱体系</strong>、<strong>90册冶炼书库</strong>、<strong>自动化知识管道</strong>——全部在GitHub上开源可验证。</p>
-        <p style="margin-top:12px">我教的不是"怎么做账号"——我教的是<strong>怎么把你的行业经验，变成别人永远抄不走的IP资产</strong>。这套系统我自己跑通了，现在教你跑。</p>
-      </div>
-      <p style="margin-top:16px">
-        <a href="https://github.com/fable-cc/fable-castle" target="_blank" style="color:#C9A96E;font-weight:600">📦 GitHub验证 →</a>&nbsp;&nbsp;
-        <a href="https://fable-cc.github.io/fable-castle/" target="_blank" style="color:#8b8b90">🌐 知识体系 →</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 7. DISQUALIFICATION ====== -->
-<section>
-  <div class="wrap">
-    <div class="dq-box">
-      <h3>⚠️ 这门课不适合所有人</h3>
-      <ul>
-        <li>想一夜暴富的——这门课教你建系统，不是教你捡钱</li>
-        <li>想学"月入百万秘籍"的——出门左转抖音，一堆人卖这个</li>
-        <li>不愿意花时间建体系的——8周需要每周投入3-5小时</li>
-        <li>觉得"随便搞搞就行"的——体系是系统工程，不是随便搞搞</li>
-        <li style="border:none;margin-top:8px" class="yes">✅ <strong>适合</strong>：有行业经验、想做长期IP资产、愿意花8周建系统的老板</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 8. PRICING ====== -->
-<section id="pricing">
-  <div class="wrap">
-    <p class="s">课程方案</p>
-    <h2>投资你的IP资产<br><span class="d" style="font-size:16px">这不是消费。是你IP系统的基建投入。</span></h2>
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="amount">¥999<sub>/终身</sub></div>
-        <h4>🥈 标准版</h4>
-        <ul>
-          <li>40节视频课永久观看</li>
-          <li>8份模块实操手册PDF</li>
-          <li>10个即用模板</li>
-          <li>课程专属社群</li>
-        </ul>
-        <a href="https://github.com/fable-cc/fable-castle/discussions" target="_blank" class="btn btn-outline">咨询报名 →</a>
-      </div>
-      <div class="price-card featured">
-        <div class="tag">🔥 推荐</div>
-        <div class="amount">¥999<sub>/终身</sub></div>
-        <h4>🥇 实战版</h4>
-        <ul>
-          <li>标准版全部内容</li>
-          <li>knowledge-pipeline 部署</li>
-          <li>2次1v1诊断（定位+变现）</li>
-          <li>专属社群+景一直答疑</li>
-          <li>GitHub知识体系搭建指导</li>
-        </ul>
-        <a href="https://github.com/fable-cc/fable-castle/discussions" target="_blank" class="btn btn-primary">🔥 立即报名</a>
-      </div>
-      <div class="price-card">
-        <div class="amount">¥2,999<sub>/终身</sub></div>
-        <h4>💎 创始版</h4>
-        <ul>
-          <li>实战版全部内容</li>
-          <li>商业画布1v1定制</li>
-          <li>3个月IP陪跑</li>
-          <li>景一知识体系授权（可商用）</li>
-          <li>优先深度合作权</li>
-        </ul>
-        <a href="https://github.com/fable-cc/fable-castle/discussions" target="_blank" class="btn btn-outline">咨询报名 →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 9. FAQ ====== -->
-<section>
-  <div class="wrap">
-    <p class="s">常见问题</p>
+    <p class="label">常见问题</p>
     <h2>你可能在想</h2>
     <div class="faq">
       <div class="faq-item">
-        <h4>我没做过内容，完全零基础能学吗？</h4>
-        <p>能。这门课就是从零开始设计的。前两个模块专门解决"不知道怎么开始"的问题。而且你不是一个人——我会给你模板和框架，你只需要往里填你的行业经验。</p>
+        <h4>这些课和市面上的有什么区别？</h4>
+        <p>市面上教技巧——怎么拍视频、写标题、追热点。我的课教底层操作系统——人性算法、认知框架、商业模型。技巧三个月过时，系统越用越值钱。而且700+篇文章全部开源，你不需要"相信我"，你可以自己验证。</p>
       </div>
       <div class="faq-item">
-        <h4>我是做实体的，不是做互联网的，这套适合我吗？</h4>
-        <p>正因为你是做实体的，才更需要做IP。互联网人可以靠流量吃饭，实体老板的IP本质是<strong>把实体生意的信任搬到线上</strong>。你不是要和网红竞争——你是要让你已有的客户和潜在客户更方便地信任你。</p>
+        <h4>我完全零基础，能学吗？</h4>
+        <p>能。课程设计就是给非专业背景的人用的。国学课不要求你读过《易经》，IP课不要求你做过内容。每门课都从"你现在的状态"出发。</p>
       </div>
       <div class="faq-item">
-        <h4>8周真的能建起来吗？</h4>
-        <p>8周能建起完整的框架和第一轮内容。体系会随着你的使用继续生长。这就像盖房子——8周打好地基和主体结构，之后的装修是持续优化的。</p>
-      </div>
-      <div class="faq-item">
-        <h4>和市面上的IP课有什么区别？</h4>
-        <p>市面IP课教你怎么拍视频、写标题、追热点——<strong>技巧层</strong>。这门课教你建系统、做定位、搭信任基建、设计商业模式——<strong>系统层</strong>。技巧三个月过时，系统越用越值钱。</p>
+        <h4>国学课和人性课有什么区别？</h4>
+        <p>国学课用《易经》六十四卦做框架，讲的是决策和行动——"面对这个处境，我该怎么做"。人性课用心理学和哲学做框架，讲的是认知和觉察——"为什么我会有这样的反应，背后的底层代码是什么"。两门课互补。</p>
       </div>
       <div class="faq-item">
         <h4>不满意能退吗？</h4>
-        <p>开课7天内，无条件全额退款。你只需要告诉我"不适合我"——不需要解释。</p>
+        <p>IP定位课和知识星球：7天内无条件退款。喜马拉雅课程：按平台规则。</p>
+      </div>
+      <div class="faq-item">
+        <h4>课程学完了有后续吗？</h4>
+        <p>知识星球是持续日更的，不是你买完就结束。国学课和人性课后续会有高级篇（中·下各¥99）。IP定位课后续有完整8周IP冶炼系统。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====== 10. GUARANTEE ====== -->
-<section>
+<!-- ============ CTA ============ -->
+<section class="cta-section">
   <div class="wrap">
-    <div class="guarantee">
-      <div class="icon">🛡️</div>
-      <h3>7天无理由退款</h3>
-      <p>开课7天内，不满意全额退。不需要理由。</p>
-      <p style="margin-top:10px;font-size:14px">我的信心来自我的体系。你可以在GitHub上提前验证。</p>
-    </div>
+    <h2>选一门课，开始冶炼自己</h2>
+    <p>从国学入门 · 从人性觉醒 · 从IP定位 · 从AI变现——每条路都通向同一个终点：不可替代的你</p>
+    <a href="#top" class="btn">📚 回顶部选课</a>
+    <p style="margin-top:16px;font-size:14px">📱 微信：S-9595A | <a href="https://github.com/fable-cc/fable-castle" style="color:#C9A96E">GitHub 验证 →</a></p>
   </div>
 </section>
-
-<!-- ====== 11. FINAL CTA ====== -->
-<section class="final">
-  <div class="wrap">
-    <h2>你的行业经验，<br>值得变成别人追着买的IP</h2>
-    <p>8周 · 40节课 · 18支柱体系 · 开源可验证</p>
-    <a href="#pricing" class="btn">🔥 查看课程方案</a>
-    <p class="gh-link">先验证，再决定 → <a href="https://github.com/fable-cc/fable-castle" target="_blank">GitHub 开源知识体系</a></p>
-  </div>
-</section>
-
-<!-- Sticky mobile bar -->
-<div class="sticky-bar">
-  <a href="#pricing" class="btn">🔥 查看课程方案</a>
-</div>
 
 <footer>
   <div class="wrap">
-    <p>📱 微信：S-9595A | 景一 · 寓言城堡 | <a href="https://github.com/fable-cc/fable-castle">GitHub</a> | <a href="https://fable-cc.github.io/fable-castle/">知识体系</a></p>
+    <p>🏰 景一 · 寓言城堡 | <a href="/">首页</a> · <a href="/course/">课程</a> · <a href="/02-知识图谱/">知识库</a> · <a href="https://github.com/fable-cc/fable-castle">GitHub</a></p>
     <p style="margin-top:6px">从人性出发，自然穿透所有领域。Made with 🔥 by 景一 · 2026</p>
   </div>
 </footer>

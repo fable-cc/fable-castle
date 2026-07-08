@@ -12,7 +12,7 @@ lastmod: 2026-06-21
 
   <div class="hero-stats">
     <div class="stat"><strong>72</strong><span>知识支柱</span></div>
-    <div class="stat"><strong>600+篇</strong><span>原创冶炼</span></div>
+    <div class="stat"><strong>700+篇</strong><span>原创冶炼</span></div>
     <div class="stat"><strong>2门</strong><span>系统课程</span></div>
     <div class="stat"><strong>28源</strong><span>深度研究</span></div>
     <div class="stat"><strong>90册</strong><span>冶炼书库</span></div>
@@ -20,10 +20,10 @@ lastmod: 2026-06-21
   </div>
 
   <div class="hero-cta">
-    <a href="/fable-castle/services/free-course.html" class="cta-primary">🎁 ¥39.9 IP定位课 · 3天找到你的定位</a>
+    <a href="/services/free-course/" class="cta-primary">🎁 ¥39.9 IP定位课 · 3天找到你的定位</a>
   </div>
   <div class="hero-cta" style="margin-top:12px">
-    <a href="/fable-castle/04-关于/深度合作.html" class="cta-secondary">🤝 企业GEO · Agent部署 · IP顾问</a>
+    <a href="/04-关于/深度合作.html" class="cta-secondary">🤝 企业GEO · Agent部署 · IP顾问</a>
   </div>
 
   <div class="hero-trust">
@@ -40,14 +40,14 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 </script>
 
 <div style="width:100%;height:420px;border-radius:12px;overflow:hidden;margin:1rem 0 2rem;border:1px solid rgba(201,169,110,.15)">
-  <iframe src="/fable-castle/3d-globe/" style="width:100%;height:100%;border:none" title="知识星球"></iframe>
+  <iframe src="/3d-globe/" style="width:100%;height:100%;border:none" title="知识星球"></iframe>
 </div>
 
 ---
 
 
 <div style="text-align:center;margin:1.5rem 0">
-<a href="/fable-castle/ai/" style="display:inline-block;padding:.8rem 2rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);border-radius:10px;color:#C9A96E;font-size:1.1rem;font-weight:bold;text-decoration:none;transition:all .2s">🤖 AI问答 · 搜600篇文章</a>
+<a href="/ai/" style="display:inline-block;padding:.8rem 2rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);border-radius:10px;color:#C9A96E;font-size:1.1rem;font-weight:bold;text-decoration:none;transition:all .2s">🤖 AI问答 · 搜600篇文章</a>
 </div>
 
 </script>
@@ -59,32 +59,32 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
   <div class="service-card">
     <strong>🧠 认知操作系统升级</strong>
     <p>52种认知偏差诊断·系统1/2切换训练·概率思维决策框架。从"凭感觉"到"算概率"。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 认知重构</a>
+    <a href="/02-知识图谱/">→ 认知重构</a>
   </div>
   <div class="service-card">
     <strong>💰 商业IP资产化</strong>
     <p>轻资产商业模式设计·股权架构·品牌叙事工程·影响力变现系统。不是省钱——是设计收入引擎。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 模式设计</a>
+    <a href="/02-知识图谱/">→ 模式设计</a>
   </div>
   <div class="service-card">
     <strong>🏯 国学×哲学·东西方融合</strong>
     <p>斯多葛×道家·尼采×庄子·佛学×认知科学·王阳明×神经科学。不背古文——提炼底层算法。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 东学西渐</a>
+    <a href="/02-知识图谱/">→ 东学西渐</a>
   </div>
   <div class="service-card">
     <strong>⚡ 能量管理·巅峰状态</strong>
     <p>多巴胺系统修复·深度工作协议·注意力复利模型·Biohacking古代养生。你的注意力是最稀缺的生产资料。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 能量管理</a>
+    <a href="/02-知识图谱/">→ 能量管理</a>
   </div>
   <div class="service-card">
     <strong>🕸️ 暗流规则·权力博弈</strong>
     <p>信息封锁四层模型·权力结构分析·博弈论·制度设计。社会运行的隐性操作系统——看见规则。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 暗流规则</a>
+    <a href="/02-知识图谱/">→ 暗流规则</a>
   </div>
   <div class="service-card">
     <strong>🧬 意识觉醒·强者思维</strong>
     <p>NPC识别·系统降权诊断·维度思维·阿德勒目的论。从"被规则玩"到"定义游戏规则"。</p>
-    <a href="/fable-castle/02-知识图谱/">→ 意识觉醒</a>
+    <a href="/02-知识图谱/">→ 意识觉醒</a>
   </div>
 </div>
 
@@ -107,7 +107,7 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 | **知识基建** | 📜 经典注疏 · 🌐 百科词条 · 📁 原始档案 · 🎨 美学修辞 · 🧮 数理思维 | 90册冶炼·概念体系·IA档案·符号学·概率博弈 |
 | **全球框架** | 🌍 全球大V | 纳瓦尔·芒格·塔勒布·达利欧·彼得森 |
 
-→ **[查看完整72支柱体系](/fable-castle/02-知识图谱/扩展体系全景.html)** · 600+篇原创冶炼文章，全开源可验证
+→ **[查看完整72支柱体系](/02-知识图谱/扩展体系全景.html)** · 700+篇原创冶炼文章，全开源可验证
 
 ---
 
@@ -117,11 +117,11 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 
 | 证据 | 详情 | 验证方式 |
 |------|------|---------|
-| 🏗️ 72知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/fable-castle/02-知识图谱/扩展体系全景.html) |
-| ✍️ 600+篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/fable-castle/02-知识图谱/) |
-| 📚 90册冶炼书库 | 53篇深度文章 + 37篇核心洞察 · 全公版免费 | [→ 冶炼书库](/fable-castle/04-关于/公版书库.html) |
+| 🏗️ 72知识支柱 | 3核心+10扩展+5基础 | [→ 查看架构](/02-知识图谱/扩展体系全景.html) |
+| ✍️ 700+篇冶炼文章 | 每篇基于跨学科冶炼，拒绝正确废话 | [→ 阅读文章](/02-知识图谱/) |
+| 📚 90册冶炼书库 | 53篇深度文章 + 37篇核心洞察 · 全公版免费 | [→ 冶炼书库](/04-关于/公版书库.html) |
 | ⚙️ 知识冶炼引擎 | 跨学科知识冶炼→结构化重组→景一原创框架 | [→ 查看管道](https://github.com/fable-cc/knowledge-pipeline) |
-| 🔓 全栈开源 | 72支柱·600+篇·管道代码·公版索引 | [→ GitHub验证](https://github.com/fable-cc/fable-castle) |
+| 🔓 全栈开源 | 72支柱·700+篇·管道代码·公版索引 | [→ GitHub验证](https://github.com/fable-cc/fable-castle) |
 
 > **GitHub 是我的专业身份证。** 所有方法论和框架公开可查——不需要你相信我，你可以自己验证我。
 
@@ -135,11 +135,11 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 |------|------|------|
 | **向下穿透** | 解构到人性底层不变规律 | 识别3000年未变的行为算法 |
 | **横向连接** | 跨学科模式识别与重组 | 国学×商业·心理学×权力·哲学×认知科学 |
-| **向上构建** | 原创框架化与知识资产化 | 72支柱·600+篇文章·可复用的认知资产 |
+| **向上构建** | 原创框架化与知识资产化 | 72支柱·700+篇文章·可复用的认知资产 |
 
 **差异化定位**：信息平权时代的核心稀缺品不是信息本身——是**经过深度冶炼的结构化认知资产**。AI批量生产内容，但冶炼者的稀缺性源于跨学科模式识别与原创框架构建能力。
 
-→ [查看完整方法论](/fable-castle/methodology/)
+→ [查看完整方法论](/methodology/)
 
 ---
 
@@ -158,12 +158,12 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 
 | 资产类型 | 路径 | 说明 |
 |---------|------|------|
-| 🧭 72支柱全景 | [/fable-castle/02-知识图谱/扩展体系全景.html](/fable-castle/02-知识图谱/扩展体系全景.html) | 完整知识架构与冶炼路线 |
-| 📖 600+篇冶炼文章 | [/02-知识图谱/](/fable-castle/02-知识图谱/) | 按支柱分类的原创内容 |
-| 🔬 冶炼方法论 | [/fable-castle/methodology/](/fable-castle/methodology/) | 从人性出发的操作系统 |
-| 🎨 内容样本 | [/fable-castle/samples/](/fable-castle/samples/) | 多平台内容产出示例 |
-| 🤝 商业合作 | [/fable-castle/04-关于/深度合作.html](/fable-castle/04-关于/深度合作.html) | 企业GEO·Agent搭建·IP顾问 |
-| 💰 赞助 | [/fable-castle/04-关于/赞助支持.html](/fable-castle/04-关于/赞助支持.html) | 支持独立知识冶炼 |
+| 🧭 72支柱全景 | [/02-知识图谱/扩展体系全景.html](/02-知识图谱/扩展体系全景.html) | 完整知识架构与冶炼路线 |
+| 📖 700+篇冶炼文章 | [/02-知识图谱/](/02-知识图谱/) | 按支柱分类的原创内容 |
+| 🔬 冶炼方法论 | [/methodology/](/methodology/) | 从人性出发的操作系统 |
+| 🎨 内容样本 | [/samples/](/samples/) | 多平台内容产出示例 |
+| 🤝 商业合作 | [/04-关于/深度合作.html](/04-关于/深度合作.html) | 企业GEO·Agent搭建·IP顾问 |
+| 💰 赞助 | [/04-关于/赞助支持.html](/04-关于/赞助支持.html) | 支持独立知识冶炼 |
 
 ---
 
@@ -176,7 +176,7 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 | 💡 高管认知教练 | 决策瓶颈期的CEO/创始人 | 月度深度1对1·72支柱视角 |
 | 📋 商业IP策略 | 想做IP的品牌/专家 | 定位+信任基建+内容系统 |
 
-→ [详细合作说明](/fable-castle/04-关于/深度合作.html)
+→ [详细合作说明](/04-关于/深度合作.html)
 
 ---
 
@@ -184,7 +184,7 @@ document.getElementById('daily-quote').innerHTML='🔥 '+quotes[Math.floor(Math.
 
 知识应该开源，冶炼需要燃料。赞助支持一个中国人建立世界级知识体系。
 
-<a href="/fable-castle/04-关于/赞助支持.html" class="cta-primary">💰 赞助景一</a>
+<a href="/04-关于/赞助支持.html" class="cta-primary">💰 赞助景一</a>
 
 ---
 
