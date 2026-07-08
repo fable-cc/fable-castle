@@ -1,6 +1,6 @@
 ---
 nav_order: 2
-permalink: /fable-castle/methodology/
+permalink: /methodology/
 title: 景一·冶炼方法论
 ---
 
@@ -88,4 +88,3 @@ title: 景一·冶炼方法论
 ## 下一篇
 
 → [02-知识图谱](../02-知识图谱/) — 三大支柱核心精炼
-

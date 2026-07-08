@@ -1,5 +1,5 @@
 ---
-permalink: /fable-castle/library/
+permalink: /library/
 title: 景一·知识库
 nav_order: 5
 ---

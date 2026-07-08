@@ -1,6 +1,6 @@
 ---
 nav_order: 4
-permalink: /fable-castle/samples/
+permalink: /samples/
 title: 景一·内容样本
 ---
 
@@ -32,4 +32,3 @@ title: 景一·内容样本
 ---
 
 ← [知识图谱](../02-知识图谱/) | [关于](../04-关于/) →
-

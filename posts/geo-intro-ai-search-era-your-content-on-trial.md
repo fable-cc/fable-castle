@@ -134,11 +134,11 @@ AI搜索每引用你一次，就是在用户面前帮你做了一次品牌背书
 
 ## 📚 GEO 系列完整阅读
 
-- **入门篇**：[SEO 和 GEO 到底有什么区别？](/fable-castle/posts/seo-vs-geo-whats-the-difference-2026) — 搞清楚基本概念
-- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/fable-castle/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
-- **实战篇**：[2026 年做内容还需要做网站吗？](/fable-castle/posts/do-you-still-need-website-2026) — 零成本搭建 AI 可见知识库
+- **入门篇**：[SEO 和 GEO 到底有什么区别？](/posts/seo-vs-geo-whats-the-difference-2026) — 搞清楚基本概念
+- **诊断篇**：[为什么 AI 搜索从来不引用我的文章？](/posts/why-ai-search-never-cites-my-articles) — 拆解三个真实原因
+- **实战篇**：[2026 年做内容还需要做网站吗？](/posts/do-you-still-need-website-2026) — 零成本搭建 AI 可见知识库
 - **数据篇**：你正在读 → 「AI 搜索时代，你的内容正在被机器审判」
-- **全景篇**：[中文 GEO 全景指南 2026](/fable-castle/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
+- **全景篇**：[中文 GEO 全景指南 2026](/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
 
 *作者：景一 fable · 从人性出发，自然穿透所有领域*
 *🌐 fable-cc.github.io/fable-castle*
