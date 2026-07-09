@@ -14,28 +14,24 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#050510;color:#e0e0e0;line-height:1.7;overflow-x:hidden}
 
-    /* === AI 粒子背景 === */
     #particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 
     .container{max-width:860px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
 
-    /* === Hero === */
     .hero{text-align:center;padding:80px 0 48px}
     .hero h1{font-size:52px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:12px}
     .hero .cursor{display:inline-block;width:3px;height:44px;background:#6c5ce7;margin-left:4px;animation:blink 1s infinite;vertical-align:baseline}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
     .hero .tagline{font-size:18px;font-weight:600;margin-bottom:8px;background:linear-gradient(135deg,#6c5ce7,#00d2ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .hero .sub{font-size:14px;color:#666;max-width:520px;margin:0 auto 24px}
-    .hero .wisdom{font-size:15px;color:#555;font-style:italic;letter-spacing:1px;margin-top:8px;line-height:2}
-    .hero .wisdom em{color:#888;font-style:normal}
+    .hero .wisdom{font-size:15px;color:#555;letter-spacing:1px;margin-top:8px;line-height:2}
     .hero .wisdom .highlight{color:#b8acff}
 
-    /* === 经营范围 === */
     .scope-badge{text-align:center;margin-bottom:28px}
     .scope-badge span{display:inline-block;padding:6px 18px;border:1px solid rgba(108,92,231,.3);border-radius:20px;font-size:12px;color:#888;letter-spacing:2px}
 
     .biz-list{display:flex;flex-direction:column;gap:4px;margin-bottom:48px}
-    .biz-row{display:flex;align-items:center;gap:20px;padding:22px 28px;border-radius:12px;transition:all .3s;position:relative;overflow:hidden}
+    .biz-row{display:flex;align-items:center;gap:20px;padding:22px 28px;border-radius:12px;transition:all .3s;position:relative}
     .biz-row:hover{background:rgba(255,255,255,.02)}
     .biz-row .num{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
     .biz-row:nth-child(1) .num{background:rgba(108,92,231,.2);color:#b8acff}
@@ -49,11 +45,10 @@
     .biz-row .arrow{color:#333;font-size:20px;transition:all .3s}
     .biz-row:hover .arrow{color:#6c5ce7;transform:translateX(4px)}
 
-    /* === 服务面板 === */
     .section-title{font-size:13px;color:#555;letter-spacing:3px;text-align:center;margin-bottom:24px}
 
     .service-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:48px}
-    .svc{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px;padding:24px;transition:all .3s;position:relative}
+    .svc{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px;padding:24px;transition:all .3s}
     .svc:hover{border-color:rgba(108,92,231,.2);background:rgba(108,92,231,.03)}
     .svc .label{font-size:11px;color:#6c5ce7;letter-spacing:1px;margin-bottom:8px}
     .svc h4{font-size:15px;color:#fff;margin-bottom:6px}
@@ -64,19 +59,16 @@
     .svc:nth-child(3) .price{background:rgba(240,147,43,.12);color:#f0932b}
     .svc:nth-child(4) .price{background:rgba(106,226,147,.1);color:#6ae293}
 
-    /* === AI 标语条 === */
-    .ai-strip{text-align:center;padding:32px 0;margin-bottom:32px;position:relative}
+    .ai-strip{text-align:center;padding:32px 0;margin-bottom:32px}
     .ai-strip p{font-size:14px;color:#444;letter-spacing:2px}
     .ai-strip .dot{display:inline-block;width:6px;height:6px;background:#6c5ce7;border-radius:50%;margin:0 12px;animation:pulse 2s infinite}
     .ai-strip .dot:nth-child(2){animation-delay:.4s;background:#00d2ff}
     .ai-strip .dot:nth-child(3){animation-delay:.8s;background:#f0932b}
     @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
 
-    /* === 毛选金句条 === */
     .mao-quote{text-align:center;padding:0 0 40px;font-size:14px;color:#555;letter-spacing:1px}
     .mao-quote span{color:#888}
 
-    /* === Footer === */
     .links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:32px}
     .links a{color:#555;text-decoration:none;font-size:13px;transition:color .3s}
     .links a:hover{color:#aaa}
@@ -103,11 +95,10 @@
   <p class="sub">把你的知识和能力，变成 AI 能搜索、能推荐、能成交的系统</p>
   <p class="wisdom">
     道生一，一生二，二生三，<span class="highlight">三生万物</span><br>
-    <em>一人 + AI，裂变出一个公司。</em>
+    一人 + AI，裂变出一个公司。
   </p>
 </div>
 
-<!-- 经营范围 -->
 <div class="scope-badge"><span>经 营 范 围</span></div>
 
 <div class="biz-list">
@@ -143,13 +134,12 @@
     <div class="info">
       <h3>企业智能体 · 获客搭建</h3>
       <div class="en">AI Agent · Customer Acquisition</div>
-      <p>24h 聊客户、筛线索、约见面。不是 chatbot，是 AI 销售。</p>
+      <p>帮企业搭建获客智能体，把产品知识、销售话术、客户判断炼进 AI 系统。</p>
     </div>
     <div class="arrow">→</div>
   </div>
 </div>
 
-<!-- 服务 -->
 <div class="section-title">服 务 与 定 价</div>
 
 <div class="service-cards">
@@ -172,14 +162,13 @@
     <div class="price">¥1,999 起</div>
   </div>
   <div class="svc">
-    <div class="label">获客 · 成交</div>
+    <div class="label">获客 · 系统</div>
     <h4>企业智能体 · 获客搭建</h4>
-    <div class="who">实体商家 / B2B / 缺人手转化</div>
+    <div class="who">实体商家 / B2B / 想用 AI 搭建获客系统</div>
     <div class="price">定制报价</div>
   </div>
 </div>
 
-<!-- AI 元素条 -->
 <div class="ai-strip">
   <p>
     <span class="dot"></span>
@@ -190,9 +179,8 @@
   </p>
 </div>
 
-<!-- 毛选金句 -->
 <div class="mao-quote">
-  <p><span>「 实事求是 」</span> — 不追风口，不抄模板，从你的底层人性密码出发</p>
+  <p><span>「 实事求是 」</span> — 不追风口，不抄模板，从你的底层出发</p>
 </div>
 
 <div class="links">
