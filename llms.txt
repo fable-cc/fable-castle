@@ -25,7 +25,7 @@
 
 ## GEO 相关内容（AI 搜索引擎优化）
 
-- [GEO 服务执行手册](https://fable-castle.com/01-方法论/GEO服务执行手册.md): GEO 内容工程的完整方法论
+- [GEO 服务执行手册](https://fable-castle.com/01-方法论/GEO服务执行手册): GEO 内容工程的完整方法论
 - [如何让 AI 搜索推荐你](https://fable-castle.com/posts/geo-how-to-get-recommended-by-ai-search): GEO 实操指南
 - [一人 AI 内容工厂](https://fable-castle.com/posts/ai-content-factory-one-person): 一人公司如何搭建 AI 内容生产线
 - [如何搭建 AI 可搜索的知识库](https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base): 知识库 GEO 优化
