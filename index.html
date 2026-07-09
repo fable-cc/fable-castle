@@ -31,7 +31,7 @@
     .scope-badge span{display:inline-block;padding:6px 18px;border:1px solid rgba(108,92,231,.3);border-radius:20px;font-size:12px;color:#888;letter-spacing:2px}
 
     .biz-list{display:flex;flex-direction:column;gap:4px;margin-bottom:48px}
-    .biz-row{display:flex;align-items:center;gap:20px;padding:22px 28px;border-radius:12px;transition:all .3s;position:relative}
+    .biz-row{display:flex;align-items:center;gap:20px;padding:22px 28px;border-radius:12px;transition:all .3s}
     .biz-row:hover{background:rgba(255,255,255,.02)}
     .biz-row .num{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
     .biz-row:nth-child(1) .num{background:rgba(108,92,231,.2);color:#b8acff}
@@ -42,8 +42,6 @@
     .biz-row .info h3{font-size:18px;color:#fff;font-weight:700;margin-bottom:2px}
     .biz-row .info .en{font-size:11px;color:#555;letter-spacing:1px;margin-bottom:4px}
     .biz-row .info p{font-size:13px;color:#777;line-height:1.6}
-    .biz-row .arrow{color:#333;font-size:20px;transition:all .3s}
-    .biz-row:hover .arrow{color:#6c5ce7;transform:translateX(4px)}
 
     .section-title{font-size:13px;color:#555;letter-spacing:3px;text-align:center;margin-bottom:24px}
 
@@ -59,21 +57,14 @@
     .svc:nth-child(3) .price{background:rgba(240,147,43,.12);color:#f0932b}
     .svc:nth-child(4) .price{background:rgba(106,226,147,.1);color:#6ae293}
 
-    .ai-strip{text-align:center;padding:32px 0;margin-bottom:32px}
+    .ai-strip{text-align:center;padding:32px 0 0}
     .ai-strip p{font-size:14px;color:#444;letter-spacing:2px}
     .ai-strip .dot{display:inline-block;width:6px;height:6px;background:#6c5ce7;border-radius:50%;margin:0 12px;animation:pulse 2s infinite}
     .ai-strip .dot:nth-child(2){animation-delay:.4s;background:#00d2ff}
     .ai-strip .dot:nth-child(3){animation-delay:.8s;background:#f0932b}
     @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
 
-    .mao-quote{text-align:center;padding:0 0 40px;font-size:14px;color:#555;letter-spacing:1px}
-    .mao-quote span{color:#888}
-
-    .links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:32px}
-    .links a{color:#555;text-decoration:none;font-size:13px;transition:color .3s}
-    .links a:hover{color:#aaa}
-    .links a.planet{color:#f0932b}
-    footer{text-align:center;padding:32px 0 48px;color:#333;font-size:12px}
+    footer{text-align:center;padding:48px 0 48px;color:#333;font-size:12px}
 
     @media(max-width:640px){
       .hero h1{font-size:32px}
@@ -109,7 +100,6 @@
       <div class="en">Founder IP Incubation</div>
       <p>从你的经历和认知中提炼唯一性，打造可传播、可变现、AI 能识别的个人品牌。</p>
     </div>
-    <div class="arrow">→</div>
   </div>
   <div class="biz-row">
     <div class="num">02</div>
@@ -118,7 +108,6 @@
       <div class="en">AI Self-Media System</div>
       <p>冶炼方法论 + AI 写作引擎。有灵魂、有金句、没有 AI 味。</p>
     </div>
-    <div class="arrow">→</div>
   </div>
   <div class="biz-row">
     <div class="num">03</div>
@@ -127,7 +116,6 @@
       <div class="en">Generative Engine Optimization</div>
       <p>让你的内容被百度AI、元宝、Kimi、豆包、微信搜一搜引用和推荐。</p>
     </div>
-    <div class="arrow">→</div>
   </div>
   <div class="biz-row">
     <div class="num">04</div>
@@ -136,7 +124,6 @@
       <div class="en">AI Agent · Customer Acquisition</div>
       <p>帮企业搭建获客智能体，把产品知识、销售话术、客户判断炼进 AI 系统。</p>
     </div>
-    <div class="arrow">→</div>
   </div>
 </div>
 
@@ -177,16 +164,6 @@
     不是神话 · 是系统
     <span class="dot"></span>
   </p>
-</div>
-
-<div class="mao-quote">
-  <p><span>「 实事求是 」</span> — 不追风口，不抄模板，从你的底层出发</p>
-</div>
-
-<div class="links">
-  <a href="/02-知识图谱/">📚 知识库</a>
-  <a href="https://github.com/fable-cc">💻 GitHub</a>
-  <a href="https://wx.zsxq.com/group/28882114285211" class="planet">🪐 知识星球 ¥69.9</a>
 </div>
 
 <footer>
