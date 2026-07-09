@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>景一 · 一人+AI=一人公司</title>
-  <meta name="description" content="景一 — 创始人IP孵化、AI自媒体心经、GEO优化AI搜索获客、企业智能体搭建。把你的知识和能力，变成AI能搜到、能推荐、能成交的系统。">
+  <meta name="description" content="景一 — 创始人IP孵化、AI自媒体心经、GEO优化AI搜索获客、企业智能体搭建。道生一，一生二，二生三，三生万物。一人+AI，裂变出一个公司。">
   <meta name="keywords" content="景一,创始人IP孵化,AI自媒体,GEO优化,AI搜索获客,企业智能体,一人公司,AI获客">
   <link rel="canonical" href="https://fable-castle.com/">
   <style>
@@ -19,18 +19,16 @@
 
     .container{max-width:860px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
 
-    /* === 顶部导航 === */
-    nav{display:flex;justify-content:center;gap:32px;padding:24px 0;font-size:14px}
-    nav a{color:#888;text-decoration:none;transition:color .3s}
-    nav a:hover{color:#fff}
-
     /* === Hero === */
-    .hero{text-align:center;padding:60px 0 48px}
+    .hero{text-align:center;padding:80px 0 48px}
     .hero h1{font-size:52px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:12px}
     .hero .cursor{display:inline-block;width:3px;height:44px;background:#6c5ce7;margin-left:4px;animation:blink 1s infinite;vertical-align:baseline}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
     .hero .tagline{font-size:18px;font-weight:600;margin-bottom:8px;background:linear-gradient(135deg,#6c5ce7,#00d2ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .hero .sub{font-size:14px;color:#666;max-width:480px;margin:0 auto}
+    .hero .sub{font-size:14px;color:#666;max-width:520px;margin:0 auto 24px}
+    .hero .wisdom{font-size:15px;color:#555;font-style:italic;letter-spacing:1px;margin-top:8px;line-height:2}
+    .hero .wisdom em{color:#888;font-style:normal}
+    .hero .wisdom .highlight{color:#b8acff}
 
     /* === 经营范围 === */
     .scope-badge{text-align:center;margin-bottom:28px}
@@ -38,9 +36,7 @@
 
     .biz-list{display:flex;flex-direction:column;gap:4px;margin-bottom:48px}
     .biz-row{display:flex;align-items:center;gap:20px;padding:22px 28px;border-radius:12px;transition:all .3s;position:relative;overflow:hidden}
-    .biz-row::before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;transition:opacity .3s;pointer-events:none}
     .biz-row:hover{background:rgba(255,255,255,.02)}
-    .biz-row:hover::before{opacity:1}
     .biz-row .num{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
     .biz-row:nth-child(1) .num{background:rgba(108,92,231,.2);color:#b8acff}
     .biz-row:nth-child(2) .num{background:rgba(0,210,255,.15);color:#00d2ff}
@@ -76,6 +72,10 @@
     .ai-strip .dot:nth-child(3){animation-delay:.8s;background:#f0932b}
     @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
 
+    /* === 毛选金句条 === */
+    .mao-quote{text-align:center;padding:0 0 40px;font-size:14px;color:#555;letter-spacing:1px}
+    .mao-quote span{color:#888}
+
     /* === Footer === */
     .links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:32px}
     .links a{color:#555;text-decoration:none;font-size:13px;transition:color .3s}
@@ -88,28 +88,23 @@
       .hero .cursor{height:28px;width:2px}
       .service-cards{grid-template-columns:1fr}
       .biz-row{padding:16px 20px}
-      nav{gap:18px}
+      .hero .wisdom{font-size:13px}
     }
   </style>
 </head>
 <body>
-<!-- AI 粒子背景 -->
 <canvas id="particles"></canvas>
 
 <div class="container">
 
-<nav>
-  <a href="/02-知识图谱/">知识库</a>
-  <a href="/services/">服务</a>
-  <a href="/course.html">课程</a>
-  <a href="https://github.com/fable-cc">GitHub</a>
-  <a href="/faq.html">FAQ</a>
-</nav>
-
 <div class="hero">
   <h1>景一<span class="cursor"></span></h1>
   <p class="tagline">一人 + AI = 一人公司</p>
-  <p class="sub">把你的知识和能力，变成 AI 能搜到、能推荐、能成交的系统</p>
+  <p class="sub">把你的知识和能力，变成 AI 能搜索、能推荐、能成交的系统</p>
+  <p class="wisdom">
+    道生一，一生二，二生三，<span class="highlight">三生万物</span><br>
+    <em>一人 + AI，裂变出一个公司。</em>
+  </p>
 </div>
 
 <!-- 经营范围 -->
@@ -121,7 +116,7 @@
     <div class="info">
       <h3>创始人 IP 孵化</h3>
       <div class="en">Founder IP Incubation</div>
-      <p>定位 · 人设 · 内容体系。帮你成为赛道里 AI 第一个推荐的人。</p>
+      <p>从你的经历和认知中提炼唯一性，打造可传播、可变现、AI 能识别的个人品牌。</p>
     </div>
     <div class="arrow">→</div>
   </div>
@@ -139,7 +134,7 @@
     <div class="info">
       <h3>GEO 优化 · AI 搜索获客</h3>
       <div class="en">Generative Engine Optimization</div>
-      <p>让 ChatGPT / Perplexity / 微信小微搜到你、引用你、推荐你。</p>
+      <p>让你的内容被百度AI、元宝、Kimi、豆包、微信搜一搜引用和推荐。</p>
     </div>
     <div class="arrow">→</div>
   </div>
@@ -173,7 +168,7 @@
   <div class="svc">
     <div class="label">搜索 · 占位</div>
     <h4>GEO 优化 · AI 搜索获客</h4>
-    <div class="who">有内容但 AI 搜不到、不被引用</div>
+    <div class="who">有内容但在 AI 搜索里搜不到你</div>
     <div class="price">¥1,999 起</div>
   </div>
   <div class="svc">
@@ -195,9 +190,14 @@
   </p>
 </div>
 
+<!-- 毛选金句 -->
+<div class="mao-quote">
+  <p><span>「 实事求是 」</span> — 不追风口，不抄模板，从你的底层人性密码出发</p>
+</div>
+
 <div class="links">
-  <a href="/02-知识图谱/">📚 知识库 600+篇</a>
-  <a href="https://github.com/fable-cc">💻 GitHub 开源验证</a>
+  <a href="/02-知识图谱/">📚 知识库</a>
+  <a href="https://github.com/fable-cc">💻 GitHub</a>
   <a href="https://wx.zsxq.com/group/28882114285211" class="planet">🪐 知识星球 ¥69.9</a>
 </div>
 
@@ -209,7 +209,6 @@
 </div>
 
 <script>
-// === AI 粒子背景 ===
 (function(){
   var c=document.getElementById('particles'),ctx=c.getContext('2d'),w,h,pts=[];
   function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
@@ -223,7 +222,6 @@
       if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
       ctx.fillStyle='rgba(108,92,231,'+p.o*.4+')';ctx.fill();
-      // 连线
       for(var j=i+1;j<pts.length;j++){
         var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
         if(d<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(108,92,231,'+(.08*(1-d/120))+')';ctx.lineWidth=.5;ctx.stroke()}
