@@ -106,7 +106,6 @@ exclude:
   - LICENSE
   - README.md
   - .github/
-  - assets/
   - node_modules/
   - .git/
 
