@@ -14,9 +14,7 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#050510;color:#e0e0e0;line-height:1.7;overflow-x:hidden}
 
-    #bg-video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.35}
-    .video-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(5,5,16,.7) 0%,rgba(5,5,16,.85) 100%);z-index:0}
-    #particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+    #river{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 
     .container{max-width:860px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
 
@@ -59,13 +57,6 @@
     .svc:nth-child(3) .price{background:rgba(240,147,43,.12);color:#f0932b}
     .svc:nth-child(4) .price{background:rgba(106,226,147,.1);color:#6ae293}
 
-    .ai-strip{text-align:center;padding:32px 0 0}
-    .ai-strip p{font-size:14px;color:#444;letter-spacing:2px}
-    .ai-strip .dot{display:inline-block;width:6px;height:6px;background:#6c5ce7;border-radius:50%;margin:0 12px;animation:pulse 2s infinite}
-    .ai-strip .dot:nth-child(2){animation-delay:.4s;background:#00d2ff}
-    .ai-strip .dot:nth-child(3){animation-delay:.8s;background:#f0932b}
-    @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
-
     footer{text-align:center;padding:48px 0 48px;color:#333;font-size:12px}
 
     @media(max-width:640px){
@@ -78,12 +69,7 @@
   </style>
 </head>
 <body>
-<!-- 视频背景 -->
-<video id="bg-video" autoplay muted loop playsinline preload="auto">
-  <source src="/assets/bg.mp4" type="video/mp4">
-</video>
-<div class="video-overlay"></div>
-<canvas id="particles"></canvas>
+<canvas id="river"></canvas>
 
 <div class="container">
 
@@ -163,16 +149,6 @@
   </div>
 </div>
 
-<div class="ai-strip">
-  <p>
-    <span class="dot"></span>
-    一人 + AI = 一人公司
-    <span class="dot"></span>
-    不是神话 · 是系统
-    <span class="dot"></span>
-  </p>
-</div>
-
 <footer>
   <p>📍 景一的寓言城堡 · 从人性出发，自然穿透所有领域</p>
   <p style="margin-top:8px">© 2026 景一 · fable-castle.com</p>
@@ -182,21 +158,38 @@
 
 <script>
 (function(){
-  var c=document.getElementById('particles'),ctx=c.getContext('2d'),w,h,pts=[];
+  var c=document.getElementById('river'),ctx=c.getContext('2d'),w,h,chars=[];
+  var pool=['道','德','经','易','变','通','势','术','法','器','真','知','行','合','一','人','天','地','心','AI','∞','GEO','IP'];
   function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
   resize();window.addEventListener('resize',resize);
-  for(var i=0;i<60;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.5,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,o:Math.random()});
+
+  var cx=w/2,cy=h/2;
+  for(var i=0;i<60;i++){
+    var a=Math.random()*Math.PI*2,d=Math.random()*280;
+    chars.push({
+      ch:pool[Math.floor(Math.random()*pool.length)],
+      x:cx+Math.cos(a)*d,y:cy+Math.sin(a)*d,
+      vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,
+      size:10+Math.random()*14,o:Math.random(),rot:Math.random()*Math.PI*2,rv:(Math.random()-.5)*.01
+    });
+  }
+  window.addEventListener('resize',function(){cx=w/2;cy=h/2})
+
   function draw(){
     ctx.clearRect(0,0,w,h);
-    for(var i=0;i<pts.length;i++){
-      var p=pts[i];
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(108,92,231,'+p.o*.4+')';ctx.fill();
-      for(var j=i+1;j<pts.length;j++){
-        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(108,92,231,'+(.08*(1-d/120))+')';ctx.lineWidth=.5;ctx.stroke()}
+    for(var i=0;i<chars.length;i++){
+      var p=chars[i];
+      p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;
+      if(p.x<-40)p.x=w+40;if(p.x>w+40)p.x=-40;if(p.y<-40)p.y=h+40;if(p.y>h+40)p.y=-40;
+      var alpha=.15+p.o*.15;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);
+      ctx.font=p.size+'px "PingFang SC","Microsoft YaHei",sans-serif';
+      ctx.fillStyle='rgba(255,255,255,'+alpha+')';ctx.fillText(p.ch,-p.size/2,p.size/2);
+      ctx.restore();
+
+      for(var j=i+1;j<chars.length;j++){
+        var q=chars[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<140){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(108,92,231,'+(.06*(1-d/140))+')';ctx.lineWidth=.4;ctx.stroke()}
       }
     }
     requestAnimationFrame(draw)
