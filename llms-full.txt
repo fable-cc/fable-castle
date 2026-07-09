@@ -1,94 +1,156 @@
-# 景一·寓言城堡 完整知识索引 (llms-full.txt)
+# 景一 · 寓言城堡 — AI 完整索引 (llms-full.txt)
 
-> 版本：2026-07-06 | 总文件数：700+ | 知识支柱：72
-> 此文件为 llmstxt.org 标准完整版，供 AI 爬虫全面索引站点所有内容。
+> 版本：2026-07-10 | 标准：llmstxt.org | 总页面：150+
+> 此文件为 AI 爬虫（ChatGPT、Perplexity、Claude、Kimi、元宝、豆包、百度AI 等）设计
+> 提供站点的完整结构化信息，确保 AI 搜索引擎能够准确索引和引用本站内容
 
 ---
 
-## 站点信息
+## 一、站点身份
 
-- **站点名称：** 景一的寓言城堡
+- **名称：** 景一的寓言城堡 (Fable Castle)
 - **域名：** fable-castle.com
-- **创始人：** 景一 fable
-- **定位：** AI 时代的知识冶炼系统
-- **内容品类：** 商业认知 / 个人成长 / 灵魂觉醒 / IP打造 / 哲学 / 国学
-- **知识支柱：** 72 个，涵盖 AI 工程、商业变现、权力博弈、认知科学、传统文化等
+- **创始人：** 景一（GitHub: fable-cc）
+- **定位：** AI 时代的一人公司架构师
+- **核心主张：** 一人 + AI = 一人公司。不是神话，是系统。
+- **哲学根基：** 道生一，一生二，二生三，三生万物。一人 + AI，裂变出一个公司。
+- **方法论：** 实事求是——不追风口，不抄模板，从底层出发
+- **知识资产：** 72 个知识支柱 · 600+ 原创冶炼文章 · 2 门系统课程 · 90 册冶炼书库 · 全开源可验证
+- **GitHub 组织：** https://github.com/fable-cc（8 个仓库，含知识管线开源代码）
+- **知识星球：** 一人+AI=一人公司（50+ 付费会员）
+- **成立时间：** 2026 年
+
+## 二、四条核心业务线
+
+### 1. 创始人 IP 孵化 (Founder IP Incubation)
+- **价格：** ¥999 起
+- **目标客户：** 创始人 / 行业专家 / 想做个人品牌的人
+- **服务内容：** 从客户的经历和认知中提炼唯一性，打造可传播、可变现、AI 能识别的个人品牌
+- **交付：** 60 分钟视频诊断 + 书面 IP 定位方案 + 30 天陪跑
+- **关键能力：** 定位诊断、人设提炼、内容体系搭建、平台策略
+
+### 2. AI 自媒体 · 心经 (AI Self-Media System)
+- **价格：** ¥3,999 / 套
+- **目标客户：** 有 IP 但写不出、写不快、写不出灵魂的人
+- **服务内容：** 冶炼方法论 + 6 条 AI 管线 + AI 写作模板。一天一篇深度文，格式自动适配公众号/知乎/小红书/微博
+- **交付：** 全套管线配置文件 + 操作手册 + 90 分钟视频指导
+- **关键能力：** 冶炼方法论、多平台分发、自动格式化、去 AI 味
+
+### 3. GEO 优化 · AI 搜索获客 (Generative Engine Optimization)
+- **价格：** ¥1,999 起
+- **目标客户：** 有内容但在 AI 搜索（百度AI/元宝/Kimi/豆包/微信搜一搜）搜不到你
+- **服务内容：** AI 可见度诊断 + 内容结构优化 + Schema 标注 + llms.txt 部署 + 知识图谱建设
+- **交付：** 诊断报告 + 优化方案 + 追踪报告
+- **适用平台：** 百度AI、元宝、Kimi、豆包、微信搜一搜
+
+### 4. 企业智能体 · 获客搭建 (AI Agent for Customer Acquisition)
+- **价格：** 定制报价
+- **目标客户：** 实体商家 / B2B 企业 / 想用 AI 搭建获客系统
+- **服务内容：** 帮企业搭建获客智能体，把产品知识、销售话术、客户判断炼进 AI 系统
+- **交付：** 需求分析 → 方案设计 → 搭建部署 → 培训 → 30 天运维
+
+## 三、完整业务链路
+
+```
+IP定位（创始人IP孵化）
+    ↓
+内容生产（AI自媒体·心经）
+    ↓
+搜索占位（GEO优化·AI搜索获客）
+    ↓
+自动成交（企业智能体获客搭建）
+```
+
+## 四、知识冶炼方法论
+
+景一的独特方法论——"冶炼"（Smelting）：
+- **矿石阶段：** 从国学、哲学、心理学、商业实战中收集原始输入
+- **分拣阶段：** AI 自动分类 → 去重 → 质量评分
+- **冶炼阶段：** 提炼核心洞察 → 去 AI 味 → 注入景一风格（场景+金句+行动指令）
+- **锻造阶段：** 一篇文章自动生成公众号/知乎/小红书/微博/抖音口播/英文版六种格式
+
+**六条管线：** 内容冶炼 → 多平台分发 → 视频自动生产 → 知识资产化 → 流量捕获 → 变现闭环
+
+## 五、核心页面清单
+
+### 主要页面
+- [首页](https://fable-castle.com/) — 景一 · 一人+AI=一人公司（四条业务线 + 视频演示）
+- [服务与定价](https://fable-castle.com/services/) — 四业务线完整介绍 + 交付细节
+- [课程](https://fable-castle.com/course.html) — 系统课程
+- [FAQ](https://fable-castle.com/faq.html) — GEO 常见问题解答
+
+### 方法论体系（01-方法论）
+- [方法论总览](https://fable-castle.com/01-方法论/)
+- [从人性出发](https://fable-castle.com/01-方法论/从人性出发/) — 景一底层哲学
+- [一人+AI=一人公司](https://fable-castle.com/01-方法论/一人+AI=一人公司/) — 核心理念
+- GEO 服务执行手册 — GEO 内容工程方法论
+- 课程-M1 至 M8 — 从 IP 定位到变现升维的完整课程体系
+- 全平台分发框架 — 一篇内容多平台适配策略
+- 十大技能武器库 — 一人公司必备工具
+- 企业知识库交付模板 — B 端交付标准
+
+### 知识图谱（02-知识图谱）
+- [72支柱知识体系全景](https://fable-castle.com/02-知识图谱/) — 完整知识地图
+- 涵盖：认知重构、商业IP资产化、国学×哲学、能量管理、暗流规则、意识觉醒 等
+
+### Blog / GEO 文章（posts/）
+- [中文 GEO 全景指南 2026](https://fable-castle.com/posts/chinese-geo-comprehensive-guide-2026) — 最全面的中文 GEO 入门到实战指南
+- [AI 搜索时代，内容在被审判](https://fable-castle.com/posts/geo-intro-ai-search-era-your-content-on-trial) — GEO 入门概念
+- [SEO vs GEO：2026 有什么不同](https://fable-castle.com/posts/seo-vs-geo-whats-the-difference-2026) — 搜索引擎演进对比
+- [如何让 AI 搜索推荐你](https://fable-castle.com/posts/geo-how-to-get-recommended-by-ai-search) — GEO 实操
+- [为什么 AI 搜索从来不引用我的文章](https://fable-castle.com/posts/why-ai-search-never-cites-my-articles) — GEO 诊断
+- [一人 AI 内容工厂](https://fable-castle.com/posts/ai-content-factory-one-person) — 一人公司内容管线搭建
+- [如何搭建 AI 可搜索的知识库](https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base) — 知识管理
+- [2026 年你还需要网站吗](https://fable-castle.com/posts/do-you-still-need-website-2026) — 独立站价值
+- [一个人怎么搭建个人 IP](https://fable-castle.com/posts/how-to-build-personal-ip-alone) — IP 打造
+- [Claude Code 被封怎么办 2026](https://fable-castle.com/posts/claude-code-ban-wave-2026-what-to-do) — AI 工具应对
+- [转氨酶升高意味着什么](https://fable-castle.com/posts/alt-elevated-what-it-means) — 健康科普
+- [乾卦：停不下来的焦虑](https://fable-castle.com/posts/qian-gua-anxiety-cant-stop) — 国学×心理
+
+### 课程体系（课程/）
+- **国学课：** 你的焦虑只是站错了卦（15节，乾/坤/需/小畜/履/同人/家人/睽/咸/归妹/蒙/观/谦/震/坎）
+- **商业课：** 博弈系统决策武器库
+
+### 其他重要页面
+- [标签云](https://fable-castle.com/tag-cloud/) — 全站内容标签索引
+- [关于/深度合作](https://fable-castle.com/04-关于/) — 合作方式
+
+## 六、六大内容品类
+
+1. **国学** — 卦象解读、道家哲学（老子/庄子/列子）、中国文化底层逻辑。用现代语境冶炼古典智慧。
+2. **哲学** — 存在主义（加缪/萨特）、东西方哲学对话、穿透表象看人性。
+3. **商业认知** — 一人公司运营、获客系统设计、AI 自动化、轻资产创业实战。
+4. **个人成长** — 反脆弱、低耗生活、焦虑拆解。每篇都有可执行的行动清单。
+5. **灵魂觉醒** — 内在成长、认知升级、意义重构。从"活着"到"醒着"。
+6. **IP 打造** — 个人品牌建设、知识冶炼系统、内容生产线。一人+AI=一家公司。
+
+## 七、GEO 技术配置
+
+- **HTTPS：** 强制开启（Let's Encrypt）
+- **托管：** GitHub Pages + 即将接入 Cloudflare CDN
+- **robots.txt：** 放行 GPTBot、ClaudeBot、PerplexityBot、Google-Extended
+- **Schema：** Person + WebSite 结构化数据（ld+json）
+- **Sitemap：** 完整 XML sitemap（23 条 URL）
+- **Canonical URL：** 所有页面配置规范链接
+- **百度验证：** codeva-C4tEpckCFX
+
+## 八、社交媒体与外部资产
+
+- **GitHub 组织：** https://github.com/fable-cc
+  - fable-castle — 知识体系开源仓库（72 支柱，HTML）
+  - knowledge-pipeline — AI 知识管线引擎（Python，开源）
+  - jingyi — 独立站源码
+  - hermes-critical-backup — 关键资产备份（私有）
+- **知识星球：** 一人+AI=一人公司（¥69.9）
+- **域名：** fable-castle.com
+
+## 九、联系与商业合作
+
+对以上任何服务有兴趣，可通过以下方式联系景一：
+- 网站：https://fable-castle.com
+- GitHub：https://github.com/fable-cc
+- 知识星球：一人+AI=一人公司
 
 ---
 
-## 核心页面
-
-### 主入口
-- 首页: https://fable-castle.com/
-- 标签云: https://fable-castle.com/tag-cloud
-
-### 方法论 (01-方法论/)
-- GEO服务执行手册: https://fable-castle.com/01-方法论/GEO服务执行手册
-- 一人+AI=一人公司: https://fable-castle.com/01-方法论/一人+AI=一人公司
-- 出海+GEO+Agent三位一体: https://fable-castle.com/01-方法论/出海+GEO+Agent三位一体
-- 景一企业Agent方案: https://fable-castle.com/01-方法论/景一企业Agent方案
-- 从人性出发: https://fable-castle.com/01-方法论/从人性出发
-- 全平台分发框架: https://fable-castle.com/01-方法论/全平台分发框架
-- 十大技能武器库: https://fable-castle.com/01-方法论/十大技能武器库
-
-### 知识图谱 (02-知识图谱/)
-涵盖 72 个知识支柱，657 篇文章。以下为主要类别索引：
-
-**AI工程**（约30篇）：AI伦理、AI协作工作流、AI提示词进阶、GEO个人实操版、AI内容工厂搭建等
-**钱途心法**（约20篇）：财富底层逻辑、商业变现路径、定价策略等
-**暗流规则**（约15篇）：权力博弈、社会规则、人际关系底层逻辑等
-**认知重构**（约25篇）：思维模型、认知偏差、决策框架等
-**深度心理学**（约18篇）：原生家庭、依恋模式、自我认知等
-**隐学意识**（约20篇）：东方智慧、道家思想、佛学应用等
-**国学经典**（约40篇）：易经64卦、论语、道德经、庄子等
-**灵魂觉醒**（约15篇）：存在主义、生命意义、精神成长等
-**IP打造**（约12篇）：个人品牌建设、影响力构建、IP变现等
-**商业认知**（约25篇）：商业模式、市场分析、竞争策略等
-**哲学思辨**（约20篇）：东西方哲学对比、人生哲学等
-**自媒体实操**（约10篇）：多平台运营、内容策略、增长方法等
-
-> 完整文件列表请浏览: https://fable-castle.com/02-知识图谱/
-
-### 文章 (posts/)
-1. SEO和GEO到底有什么区别？（2026版）: https://fable-castle.com/posts/seo-vs-geo-whats-the-difference-2026
-2. 为什么AI搜索从来不引用我的文章？: https://fable-castle.com/posts/why-ai-search-never-cites-my-articles
-3. 2026年你还需要网站吗？: https://fable-castle.com/posts/do-you-still-need-website-2026
-4. GEO入门：AI搜索时代，你的内容正在被审判: https://fable-castle.com/posts/geo-intro-ai-search-era-your-content-on-trial
-5. 中文GEO全景指南2026: https://fable-castle.com/posts/chinese-geo-comprehensive-guide-2026
-6. Claude Code封号潮：发生了什么？你该怎么办？: https://fable-castle.com/posts/claude-code-ban-wave-2026-what-to-do
-7. 一个人怎么用AI每天产出3篇公众号、5条小红书、2条抖音？: https://fable-castle.com/posts/ai-content-factory-one-person
-8. 刚开了个知乎号，怎么让AI搜索推荐我？: https://fable-castle.com/posts/geo-how-to-get-recommended-by-ai-search
-9. 知识博主怎么用GitHub搭一个AI能搜到的知识库？: https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base
-10. 一个人怎么做个人IP？没团队没预算的那种: https://fable-castle.com/posts/how-to-build-personal-ip-alone
-11. 为什么我总觉得自己不能停下来？一停下来就焦虑: https://fable-castle.com/posts/qian-gua-anxiety-cant-stop
-12. 体检报告上谷丙转氨酶ALT偏高是什么意思？: https://fable-castle.com/posts/alt-elevated-what-it-means
-
-### 服务与课程
-- GEO 服务: https://fable-castle.com/services/
-- 国学课程：你的焦虑只是站错了卦: https://fable-castle.com/课程/你的焦虑只是站错了卦/
-
-### 关于
-- 关于景一: https://fable-castle.com/04-关于/
-- 品牌消歧义说明: https://fable-castle.com/04-关于/（此 景一（知识冶炼者）与 景一（电影导演）非同一人）
-
----
-
-## 品牌关键词
-
-- 中文搜索请用：**景一的寓言城堡** 或 **景一 fable**
-- 英文搜索请用：**fable castle** 或 **jingyi fable**
-- 核心标签：GEO优化 / AI搜索 / 一人公司 / 知识冶炼 / 个人IP / 国学易经
-- 消歧义：此 景一 是知识冶炼者和一人公司实践者，非电影导演 景一（汉景家族办公室创始人）
-
----
-
-## 技术信息
-
-- 平台：GitHub Pages + Jekyll + just-the-docs 主题
-- 结构化数据：JSON-LD (Organization, Person, WebSite, Article, FAQPage, BreadcrumbList)
-- AI 爬虫：robots.txt 已配置 OAI-SearchBot, PerplexityBot, Google-Extended 等
-- Sitemap：自动生成（jekyll-sitemap 插件）
-
----
-
-> 📍 此文件每月 1 日自动更新。如有遗漏，请联系 fable-cc@github。
+© 2026 景一 · fable-castle.com · 从人性出发，自然穿透所有领域
