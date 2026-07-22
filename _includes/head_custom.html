@@ -1,29 +1,46 @@
-<!-- 景一·寓言城堡 · SEO/GEO 极致优化 -->
+<!-- 寓言城堡 · 统一 head 扩展 -->
+<!-- 所有 meta、canonical、Schema 从此输出，数据源在 _data/ -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
-<!-- GEO: AI Search Optimization - 每页自动取前160字为描述 -->
-{% capture page_desc %}{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}{% else %}景一·寓言城堡：72知识支柱·600+篇原创冶炼·全部开源可验证{% endif %}{% endcapture %}
-<meta name="description" content="{{ page_desc }}">
-<meta name="keywords" content="景一的寓言城堡,景一知识冶炼,景一 fable,人性底层代码,国学,心理学,隐学,商业思维,认知升级,72支柱,知识体系,商业IP,GEO优化,企业Agent,个人IP,搞钱,灵性觉醒,商业模式,开源知识,景一,知识库,GitHub">
-<meta name="author" content="景一 Jingyi">
-<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
-<link rel="alternate" hreflang="zh" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | remove_first: '/' }}">
 
-<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
-<meta property="og:title" content="{% if page.title %}{{ page.title }} | 景一的寓言城堡{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{{ page_desc }}">
-<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
+{% capture page_desc %}
+{% if page.description %}
+  {{ page.description }}
+{% elsif page.content %}
+  {{ page.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}
+{% else %}
+  {{ site.description }}
+{% endif %}
+{% endcapture %}
+{% assign page_desc_stripped = page_desc | strip %}
+
+{% capture page_title %}
+{% if page.title %}{{ page.title }} | {{ site.data.entity.brand.name }}{% else %}{{ site.title }}{% endif %}
+{% endcapture %}
+{% assign page_title_stripped = page_title | strip %}
+
+<meta name="description" content="{{ page_desc_stripped | escape }}">
+<meta name="author" content="{{ site.data.entity.person.name }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+{% if page.date %}
+<meta property="og:type" content="article">
+{% else %}
+<meta property="og:type" content="website">
+{% endif %}
+<meta property="og:title" content="{{ page_title_stripped | escape }}">
+<meta property="og:description" content="{{ page_desc_stripped | escape }}">
+<meta property="og:image" content="{{ '/assets/images/og-image.webp' | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/svg+xml">
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-<meta property="og:site_name" content="景一 · 寓言城堡">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.data.entity.brand.name }}">
 <meta property="og:locale" content="zh_CN">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | 景一的寓言城堡{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{{ page_desc }}">
-<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg">
-<meta name="twitter:creator" content="@fable_cc">
+<meta name="twitter:title" content="{{ page_title_stripped | escape }}">
+<meta name="twitter:description" content="{{ page_desc_stripped | escape }}">
+<meta name="twitter:image" content="{{ '/assets/images/og-image.webp' | absolute_url }}">
 
 <!-- Schema.org 结构化数据 -->
 <script type="application/ld+json">
@@ -31,61 +48,45 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#org",
-      "name": "景一的寓言城堡",
-      "alternateName": ["Fable Castle", "Jingyi's Fable Castle"],
-      "description": "{{ site.description }}",
-      "url": "{{ site.url }}{{ site.baseurl }}",
-      "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/og-image.svg",
-      "foundingDate": "2025",
-      "founder": { "@type": "Person", "@id": "{{ site.url }}{{ site.baseurl }}/#person" },
-      "sameAs": ["https://github.com/fable-cc", "https://fable-cc.github.io/fable-castle"]
-    },
-    {
       "@type": "Person",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
-      "name": "景一",
-      "alternateName": ["Jingyi", "fable-cc"],
-      "description": "知识冶炼者 · 人性底层代码研究者 · 一人+AI=一人公司实践者 · 注意：此景一（知识冶炼者）与景一（电影导演）非同一人，搜索请用「景一的寓言城堡」全称",
-      "url": "{{ site.url }}{{ site.baseurl }}",
-      "sameAs": ["https://github.com/fable-cc"],
-      "jobTitle": "独立知识冶炼者",
-      "knowsAbout": ["国学", "哲学", "心理学", "认知科学", "商业思维", "GEO", "AI Agent", "个人IP", "知识管理", "搜索引擎优化"]
+      "@id": "{{ site.url }}/#person",
+      "name": "{{ site.data.entity.person.name }}",
+      "alternateName": [{% for alt in site.data.entity.person.alternate_names %}"{{ alt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "description": "{{ site.data.entity.person.description | escape }}",
+      "url": "{{ site.url }}/",
+      "sameAs": [{% for s in site.data.entity.person.same_as %}"{{ s }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "jobTitle": "{{ site.data.entity.person.job_title }}",
+      "knowsAbout": [{% for k in site.data.entity.person.knows_about %}"{{ k }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
     },
     {
       "@type": "WebSite",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}{{ site.baseurl }}",
-      "description": "{{ site.description }}",
-      "inLanguage": ["zh-CN", "en"],
-      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "{{ site.url }}{{ site.baseurl }}/search/?q={search_term_string}" },
-        "query-input": "required name=search_term_string"
-      }
+      "@id": "{{ site.url }}/#website",
+      "name": "{{ site.data.entity.brand.name }}",
+      "alternateName": "{{ site.data.entity.brand.english_name }}",
+      "url": "{{ site.url }}/",
+      "description": "{{ site.data.entity.brand.tagline | escape }}",
+      "inLanguage": "zh-CN",
+      "publisher": { "@id": "{{ site.url }}/#person" }
     },
     {
-      "@type": "{% if page.date %}Article{% else %}WebPage{% endif %}",
-      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-      "name": "{{ page.title | default: site.title }}",
-      {% if page.date %}"headline": "{{ page.title }}",{% endif %}
-      "description": "{{ page_desc }}",
+      "@type": "{% if page.date %}BlogPosting{% else %}WebPage{% endif %}",
+      "@id": "{{ page.url | absolute_url }}",
+      "url": "{{ page.url | absolute_url }}",
+      "name": "{{ page_title_stripped | escape }}",
+      {% if page.date %}"headline": "{{ page.title | escape }}",{% endif %}
+      "description": "{{ page_desc_stripped | escape }}",
       "inLanguage": "zh-CN",
-      "isPartOf": { "@id": "{{ site.url }}{{ site.baseurl }}/#website" },
-      "about": { "@type": "Thing", "name": "人性底层代码 · 知识冶炼 · 认知体系", "description": "国学×哲学×心理学×商业实战" },
-      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "首页", "item": "{{ site.url }}{{ site.baseurl }}/" },
-        { "@type": "ListItem", "position": 2, "name": "{{ page.title | default: site.title }}" }
-      ]},
-      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "author": { "@id": "{{ site.url }}/#person" },
+      "publisher": { "@id": "{{ site.url }}/#person" }
+      {% if page.date %},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" }
+      {% endif %}
     }
   ]
 }
 </script>
 
-<!-- GEO: FAQPage Schema - 条件加载，当页面有 has_faq: true 时激活（Perplexity 引用率 +350%） -->
 {% include faq-schema.html %}

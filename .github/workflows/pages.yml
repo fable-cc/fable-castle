@@ -34,3 +34,20 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Ping search engines after deploy
+        if: success()
+        run: |
+          SITEMAP="https://fable-castle.com/sitemap.xml"
+          echo ">>> Pinging Google..."
+          curl -s -o /dev/null -w "Google: %{http_code}\n" \
+            "https://www.google.com/ping?sitemap=${SITEMAP}"
+          echo ">>> Pinging Bing (IndexNow)..."
+          curl -s -o /dev/null -w "Bing: %{http_code}\n" \
+            "https://www.bing.com/indexnow?url=https://fable-castle.com&key=4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c"
+          echo ">>> Submitting to IndexNow (Bing+Yandex)..."
+          curl -s -o /dev/null -w "IndexNow: %{http_code}\n" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"fable-castle.com","key":"4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c","keyLocation":"https://fable-castle.com/4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c.txt","urlList":["https://fable-castle.com/"]}'
+          echo ">>> All pings complete."

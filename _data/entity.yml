@@ -1,0 +1,46 @@
+# ============================================================
+# 景一的寓言城堡 · 实体数据源
+# 所有页面、模板、Schema 只能从此文件读取共享事实
+# ============================================================
+
+# 人物实体
+person:
+  name: "景"
+  alternate_names:
+    - "Jing"
+    - "fable-cc"
+  disambiguation: "此景（GEO与AI可见度顾问）非彼景（同名电影导演）。搜索请用全称「景一的寓言城堡」以准确找到本站。"
+  description: "GEO 与 AI 可见度顾问"
+  url: "https://fable-castle.com/"
+  same_as:
+    - "https://github.com/fable-cc"
+  job_title: "GEO 与 AI 可见度顾问"
+  knows_about:
+    - "GEO"
+    - "AI Agent"
+    - "知识管理"
+    - "个人IP"
+    - "搜索引擎优化"
+    - "内容策略"
+
+# 内容品牌
+brand:
+  name: "景一的寓言城堡"
+  english_name: "Fable Castle"
+  tagline: "让你的专业，被 AI 正确找到与引用"
+  url: "https://fable-castle.com"
+
+# 方法
+method:
+  name: "景一式知识冶炼系统"
+  description: "内容生产与证据组织方法"
+
+# 收费产品（公开站只展示能力说明与咨询入口）
+product:
+  name: "GEO Skills"
+  description: "独立收费工具；公开站只展示经批准的能力说明与咨询入口"
+
+# 主题
+theme:
+  name: "一人 + AI = 一人公司"
+  description: "内容与产品理念，不作为唯一职业名称"
