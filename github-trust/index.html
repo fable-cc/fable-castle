@@ -1,0 +1,91 @@
+---
+sitemap: true
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 信任基建 · 景一的寓言城堡</title>
+<meta name="description" content="景一 fable 的 GitHub 公开仓库资产分层：主站、GEO 工具、知识自动化、个人主页与待整理仓库。">
+<link rel="canonical" href="https://fable-castle.com/github-trust/">
+<style>
+:root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--red:#a7472b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}.nav{max-width:980px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;color:var(--ink)}.nav a{font-size:14px}.wrap{max-width:980px;margin:0 auto;padding:46px 24px 82px}h1{font-size:38px;line-height:1.15;margin-bottom:12px}.lead{max-width:760px;color:var(--muted);margin-bottom:24px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}.card h2{font-size:20px;margin-bottom:6px}.card p{color:var(--muted);font-size:14px}.tag{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;margin:10px 6px 0 0;color:var(--muted)}.tier{font-size:12px;font-weight:800;color:#fff;border-radius:5px;padding:3px 8px;margin-right:8px}.a{background:var(--green)}.b{background:var(--blue)}.c{background:var(--gold)}.d{background:var(--red)}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);margin-top:18px}th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;font-size:14px}th{background:#f2eee7}.muted{color:var(--muted)}.notice{background:#fff8e6;border:1px solid #eed99c;border-radius:var(--radius);padding:16px 18px;color:#75580b;font-size:14px;margin:18px 0}.footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:var(--muted);font-size:13px}@media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:29px}.nav{flex-direction:column;gap:8px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"CollectionPage","@id":"https://fable-castle.com/github-trust/#page","name":"GitHub 信任基建","url":"https://fable-castle.com/github-trust/","isPartOf":{"@id":"https://fable-castle.com/#website"},"about":{"@id":"https://fable-castle.com/#person"}},
+    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景一 fable","alternateName":["景一","Jingyi fable","fable-cc","景一的寓言城堡"],"url":"https://fable-castle.com/","sameAs":["https://github.com/fable-cc","https://github.com/fable-cc/fable-castle","https://github.com/fable-cc/geo-skills","https://github.com/fable-cc/knowledge-pipeline"]}
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="nav"><a class="brand" href="/">景一的寓言城堡</a><a href="/diagnosis/">AI 可见度诊断</a></nav>
+<main class="wrap">
+<h1>GitHub 信任基建</h1>
+<p class="lead">这里不是把所有仓库堆给读者，而是把公开 GitHub 资产分层整理：哪些证明专业能力，哪些证明工程能力，哪些只是辅助或待归档。AI 和客户都应该先看到最能建立信任的部分。</p>
+
+<div class="notice">审计时间：2026-07-26。范围：GitHub 公开账号 <a href="https://github.com/fable-cc">fable-cc</a> 下可见仓库。私有仓库、未公开客户资料、密钥、付费工具私有规则不进入本站。</div>
+
+<section class="grid">
+  <article class="card">
+    <h2><span class="tier a">A</span><a href="https://github.com/fable-cc/fable-castle">fable-castle</a></h2>
+    <p>主站与知识库。证明长期内容沉淀、GEO 站点建设、结构化页面和 AI 可读入口能力。建议作为第一信任资产。</p>
+    <span class="tag">主站</span><span class="tag">知识资产</span><span class="tag">GEO 实战</span>
+  </article>
+  <article class="card">
+    <h2><span class="tier a">A</span><a href="https://github.com/fable-cc/geo-skills">geo-skills</a></h2>
+    <p>GEO 工具与方法库。证明内容审计、改写、关键词扩展和月报 Demo 能力。公开站只展示能力边界，不暴露付费交付规则。</p>
+    <span class="tag">GEO 工具</span><span class="tag">方法论</span><span class="tag">可产品化</span>
+  </article>
+  <article class="card">
+    <h2><span class="tier b">B</span><a href="https://github.com/fable-cc/knowledge-pipeline">knowledge-pipeline</a></h2>
+    <p>知识自动化管道。证明抓取、分类、去重、质量过滤、改写和 Obsidian 输出的工程思路。需要补安全说明与脱敏边界后再强推。</p>
+    <span class="tag">自动化</span><span class="tag">内容工厂</span><span class="tag">需脱敏包装</span>
+  </article>
+  <article class="card">
+    <h2><span class="tier b">B</span><a href="https://github.com/fable-cc/fable-cc">fable-cc</a></h2>
+    <p>GitHub Profile README。证明账号主体和项目矩阵，但当前话术与主站新定位不完全一致，建议统一为“创始人 AI 可见度与 IP 资产”。</p>
+    <span class="tag">账号主页</span><span class="tag">身份绑定</span><span class="tag">需统一口径</span>
+  </article>
+  <article class="card">
+    <h2><span class="tier c">C</span><a href="https://github.com/fable-cc/jingyi">jingyi</a></h2>
+    <p>小型独立站源码仓库。当前缺 README，和 fable-castle 职能可能重叠。建议保留但降级为历史/实验站，或并入主站说明。</p>
+    <span class="tag">实验站</span><span class="tag">缺 README</span><span class="tag">需定位</span>
+  </article>
+  <article class="card">
+    <h2><span class="tier d">D</span><a href="https://github.com/fable-cc/github-">github-</a></h2>
+    <p>技能安装库。当前名称和 README 都太弱，不适合作为对外信任入口。建议改名、补说明，或归档为内部工具库。</p>
+    <span class="tag">低信号</span><span class="tag">需重命名</span><span class="tag">不建议主推</span>
+  </article>
+</section>
+
+<h2>整理结论</h2>
+<table>
+  <tr><th>层级</th><th>用途</th><th>网站呈现方式</th></tr>
+  <tr><td>A 核心资产</td><td>直接证明你的 GEO 与知识资产能力</td><td>首页、llms.txt、服务页都可引用</td></tr>
+  <tr><td>B 支撑资产</td><td>证明自动化和主体身份</td><td>在本页解释，不抢主入口</td></tr>
+  <tr><td>C 实验资产</td><td>可保留，但避免造成品牌分裂</td><td>只作为补充，不做主卖点</td></tr>
+  <tr><td>D 噪音资产</td><td>名称弱、说明弱、信任信号弱</td><td>暂不放首页；后续重命名或归档</td></tr>
+</table>
+
+<h2>下一步建设清单</h2>
+<table>
+  <tr><th>优先级</th><th>动作</th><th>原因</th></tr>
+  <tr><td>P0</td><td>统一 Profile README 与主站定位</td><td>减少 AI 对“景一”主体的识别偏差</td></tr>
+  <tr><td>P0</td><td>给 knowledge-pipeline 增加脱敏与合规说明</td><td>避免公开抓取、API Key、改写流程被误解为黑箱工具</td></tr>
+  <tr><td>P1</td><td>给 jingyi 补 README，说明与 fable-castle 的关系</td><td>避免同一主体多个站点互相稀释权重</td></tr>
+  <tr><td>P1</td><td>重命名或归档 github-</td><td>当前名称对搜索和客户理解都不友好</td></tr>
+  <tr><td>P2</td><td>为 A/B 仓库补 topics、description、官网链接</td><td>增强 GitHub 内部搜索与外部引用信号</td></tr>
+</table>
+</main>
+<footer class="footer">景一的寓言城堡 · <a href="/who-is-jingyi/">景一身份消歧</a> · <a href="/llms.txt">llms.txt</a></footer>
+</body>
+</html>
