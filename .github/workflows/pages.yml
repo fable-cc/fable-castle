@@ -19,11 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/jekyll-build-pages@v1
+      - uses: actions/configure-pages@v5
+      - uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: '4.0'
+          bundler-cache: true
+      - run: bundle exec jekyll build --strict_front_matter --destination ./_site
       - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,15 +43,16 @@ jobs:
         if: success()
         run: |
           SITEMAP="https://fable-castle.com/sitemap.xml"
+          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/tools/","https://fable-castle.com/llms.txt"]'
           echo ">>> Pinging Google..."
           curl -s -o /dev/null -w "Google: %{http_code}\n" \
             "https://www.google.com/ping?sitemap=${SITEMAP}"
-          echo ">>> Pinging Bing (IndexNow)..."
+          echo ">>> Pinging Bing homepage (IndexNow GET)..."
           curl -s -o /dev/null -w "Bing: %{http_code}\n" \
             "https://www.bing.com/indexnow?url=https://fable-castle.com&key=4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c"
           echo ">>> Submitting to IndexNow (Bing+Yandex)..."
           curl -s -o /dev/null -w "IndexNow: %{http_code}\n" \
             -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json" \
-            -d '{"host":"fable-castle.com","key":"4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c","keyLocation":"https://fable-castle.com/4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c.txt","urlList":["https://fable-castle.com/"]}'
+            -d "{\"host\":\"fable-castle.com\",\"key\":\"4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c\",\"keyLocation\":\"https://fable-castle.com/4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c.txt\",\"urlList\":${URLS}}"
           echo ">>> All pings complete."

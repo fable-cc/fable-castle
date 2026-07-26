@@ -1,0 +1,48 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创始人 AI 可见度自测 · 景一的寓言城堡</title>
+<meta name="description" content="免费自测创始人的定位资产、内容资产、信任资产、搜索资产与 AI 可见度资产，获得 IP 资产成熟度等级与下一步建议。">
+<link rel="canonical" href="https://fable-castle.com/diagnosis/">
+<style>
+:root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--red:#a7472b;--radius:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}.nav{max-width:920px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;color:var(--ink)}.nav a{font-size:14px}.wrap{max-width:920px;margin:0 auto;padding:44px 24px 78px}h1{font-size:34px;line-height:1.2;margin-bottom:12px}.lead{color:var(--muted);max-width:720px;margin-bottom:26px}.quiz{display:grid;gap:14px}.item{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px}.item h2{font-size:18px;margin-bottom:8px}.item p{font-size:14px;color:var(--muted);margin-bottom:12px}.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.opts label{display:block;border:1px solid var(--line);border-radius:var(--radius);padding:10px;background:#fff;cursor:pointer;font-size:13px}.opts input{margin-right:5px}.actions{margin:22px 0;display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--blue);background:var(--blue);color:#fff;border-radius:var(--radius);padding:12px 18px;font-weight:800;cursor:pointer}.btn.secondary{background:#fff;color:var(--ink);border-color:var(--line)}.result{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:18px}.score{font-size:42px;font-weight:900;color:var(--blue);line-height:1}.level{font-size:20px;font-weight:900;margin:8px 0}.muted{color:var(--muted);font-size:14px}.next{margin-top:14px;padding-left:18px}.next li{margin-bottom:6px}.footer{text-align:center;border-top:1px solid var(--line);padding:26px;color:var(--muted);font-size:13px}@media(max-width:760px){.opts{grid-template-columns:1fr}h1{font-size:27px}.nav{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="brand" href="/">景一的寓言城堡</a><a href="/who-is-jingyi/">景一是谁</a></nav>
+<main class="wrap">
+<h1>创始人 AI 可见度自测</h1>
+<p class="lead">用 5 个维度判断你的专业能力是否已经变成可被用户信任、被平台识别、被 AI 正确引用的品牌资产。自测在浏览器本地完成，不上传数据。</p>
+<form class="quiz" id="quiz">
+  <section class="item" data-name="定位资产"><h2>1. 定位资产</h2><p>别人能否在 10 秒内明白你是谁、服务谁、解决什么高价值问题？</p><div class="opts"></div></section>
+  <section class="item" data-name="内容资产"><h2>2. 内容资产</h2><p>你的观点、方法论、案例、文章、视频是否围绕同一专业主题持续沉淀？</p><div class="opts"></div></section>
+  <section class="item" data-name="信任资产"><h2>3. 信任资产</h2><p>你是否有可公开验证的案例、客户反馈、项目证据或代表成果？</p><div class="opts"></div></section>
+  <section class="item" data-name="搜索资产"><h2>4. 搜索资产</h2><p>Google、百度、微信、知乎、掘金、GitHub 等平台上的身份信息是否一致且互相回链？</p><div class="opts"></div></section>
+  <section class="item" data-name="AI 可见度资产"><h2>5. AI 可见度资产</h2><p>ChatGPT、Kimi、DeepSeek、豆包等是否能正确回答你是谁、做什么、适合推荐给谁？</p><div class="opts"></div></section>
+</form>
+<div class="actions"><button class="btn" id="calc" type="button">生成自测结果</button><button class="btn secondary" id="reset" type="button">重置</button></div>
+<section class="result" id="result" aria-live="polite">
+  <div class="score"><span id="score">0</span>/100</div>
+  <div class="level" id="level"></div>
+  <p class="muted" id="summary"></p>
+  <ul class="next" id="next"></ul>
+  <p class="muted" style="margin-top:12px">说明：这是启发式自测，不代表搜索排名、收录或 AI 引用承诺。需要人工复核时，进入标准诊断报告。</p>
+</section>
+</main>
+<footer class="footer">免费自测只做诊断，不替代完整 GEO 与 IP 资产改造。</footer>
+<script>
+const levels=[["0","缺失"],["1","零散"],["2","可识别"],["3","有优势"]];
+document.querySelectorAll(".item").forEach((item,i)=>{const box=item.querySelector(".opts");levels.forEach(([v,t])=>{const id="q"+i+"-"+v;box.insertAdjacentHTML("beforeend",'<label for="'+id+'"><input id="'+id+'" name="q'+i+'" type="radio" value="'+v+'">'+t+'</label>')})});
+document.getElementById("calc").addEventListener("click",()=>{let total=0,miss=[];document.querySelectorAll(".item").forEach((item,i)=>{const picked=document.querySelector('input[name="q'+i+'"]:checked');if(!picked){miss.push(item.dataset.name);return}total+=Number(picked.value)*6.6667;if(Number(picked.value)<2)miss.push(item.dataset.name)});const score=Math.round(total);const result=document.getElementById("result");let level="隐形创始人",summary="现在最重要的是先把身份、内容和证据统一起来。";if(score>=81){level="品牌资产型";summary="你已经具备较强资产基础，下一步适合做持续 GEO 监测和权威信源扩展。"}else if(score>=61){level="可识别专家型";summary="你已经能被部分用户识别，下一步要补强搜索和 AI 可见度。"}else if(score>=41){level="内容散点型";summary="你有内容或能力，但还没有形成稳定、可引用的品牌资产。"}document.getElementById("score").textContent=score;document.getElementById("level").textContent=level;document.getElementById("summary").textContent=summary;const next=document.getElementById("next");next.innerHTML="";(miss.length?miss:["第三方权威信源","AI 可见度监测"]).slice(0,3).forEach(x=>{next.insertAdjacentHTML("beforeend","<li>优先修复："+x+"</li>")});result.style.display="block";result.scrollIntoView({behavior:"smooth",block:"start"})});
+document.getElementById("reset").addEventListener("click",()=>{document.getElementById("quiz").reset();document.getElementById("result").style.display="none"});
+</script>
+</body>
+</html>

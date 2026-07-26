@@ -1,14 +1,11 @@
 # 景一的寓言城堡 · Jekyll 配置
-# 使用 just-the-docs 主题 — 专为知识库设计
+# 使用 just-the-docs 主题
 
 title: "景一的寓言城堡"
-description: "72知识支柱 · 700+篇原创冶炼 · 国学×心理学×隐学×商业实战→人性底层代码 · 全开源可验证"
-tagline: "见过底层规则的人 · 帮你觉醒+搞钱+升级认知"
+description: "创始人 AI 可见度与 IP 资产诊断站"
+tagline: "GEO 与创始人 AI 可见度顾问"
 
 # ===== 域名配置 =====
-# 自定义域名 fable-castle.com（阿里云，等 clientHold 解除）
-# GitHub Pages: fable-cc.github.io/fable-castle
-# Surge 备用: hulking-hammer.surge.sh
 url: "https://fable-castle.com"
 baseurl: ""
 
@@ -17,24 +14,23 @@ lang: zh-CN
 locale: zh_CN
 timezone: Asia/Shanghai
 
-# 品牌元数据（供 Schema.org 生成和 AI 引用）
+# 品牌元数据
 brand:
   name: "景一 fable"
   full_name: "景一的寓言城堡"
-  alternate: ["Jingyi fable", "fable-cc"]
+  alternate: ["景一", "Jingyi fable", "fable-cc", "Fable Castle"]
   search_keyword: "景一的寓言城堡"
-  disambiguation: "此 景一（知识冶炼者）与 景一（电影导演）非同一人"
+  disambiguation: "此处景一指 GEO 与创始人 AI 可见度顾问景一 fable，与同名电影导演景一非同一人"
 
 # 插件
 plugins:
   - jekyll-sitemap
-  - jekyll-remote-theme
 
-# 远程主题
-remote_theme: just-the-docs/just-the-docs
+# 本地 gem 主题，避免构建时依赖 GitHub 远程下载主题包
+theme: just-the-docs
 
 # 颜色方案
-color_scheme: dark
+color_scheme: light
 
 # 导航设置
 search_enabled: true
@@ -49,13 +45,13 @@ aux_links:
 aux_links_new_tab: true
 
 # 页脚
-footer_content: "Made with 🔥 by 景一 · 从人性出发，自然穿透所有领域 · <a href=\"https://github.com/fable-cc/fable-castle\">GitHub</a> · <a href=\"https://github.com/fable-cc/fable-castle/discussions\">讨论区</a>"
+footer_content: "Made with 🔥 by 景 · <a href=\"https://github.com/fable-cc/fable-castle\">GitHub</a>"
 
 # 返回顶部
 back_to_top: true
 back_to_top_text: "返回顶部"
 
-# 导航：默认隐藏，只有主导航页显示
+# 导航
 nav_sort: case_sensitive
 
 defaults:
@@ -97,17 +93,21 @@ defaults:
     values:
       layout: default
       nav_exclude: true
+  - scope:
+      path: "docs/superpowers/"
+    values:
+      sitemap: false
+      published: false
 
 # 排除
-# 注意：02-知识图谱 不再排除，jekyll-sitemap 插件会自动索引
-# 文章通过 frontmatter 中的 nav_exclude: true 从导航隐藏，但在 sitemap 中
-
 exclude:
   - LICENSE
   - README.md
   - .github/
   - node_modules/
   - .git/
+  - docs/superpowers/
+  - image-cards/
 
 # Just the Docs 特定配置
 heading_anchors: true

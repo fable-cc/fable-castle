@@ -1,0 +1,45 @@
+# ============================================================
+# 景一的寓言城堡 · 工具数据源
+# 所有免费工具的名称、路径、边界统一从此输出
+# ============================================================
+
+- id: content-health
+  name: "内容健康检查"
+  path: "/tools/content-health/"
+  free_quota: "不限"
+  input_limit: "单篇 20,000 字符"
+  online: false
+  description: "在浏览器本地检测内容是否容易被 AI 搜索找到与引用"
+
+- id: crawler-check
+  name: "AI 爬虫与 robots 检查"
+  path: "/tools/crawler-check/"
+  free_quota: "无服务端额度"
+  input_limit: "1 个公开 URL"
+  online: false
+  description: "浏览器辅助检查网站对 AI 爬虫的可访问性与配置"
+
+- id: geo-rewrite
+  name: "GEO 改写建议"
+  path: "/tools/geo-rewrite/"
+  free_quota: "本地样例建议"
+  input_limit: "2,000 个中文字符"
+  online: false
+  description: "本地分析内容结构、FAQ、证据与 AI 味表达；完整批量改写属于付费交付"
+
+- id: question-expander
+  name: "长尾问题扩展"
+  path: "/tools/question-expander/"
+  free_quota: "无服务端额度"
+  input_limit: "5 个种子词"
+  online: false
+  description: "基于关键词在浏览器本地扩展用户在 AI 搜索中可能提出的问题"
+
+- id: geo-skills
+  name: "GEO Skills 专业能力"
+  path: "/tools/geo-skills/"
+  free_quota: "不适用"
+  input_limit: "不适用"
+  online: false
+  description: "专业 GEO 工具能力说明与咨询入口"
+  note: "只展示公开说明与咨询入口，不运行收费工具本体"
