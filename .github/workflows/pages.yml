@@ -25,6 +25,27 @@ jobs:
           ruby-version: '4.0'
           bundler-cache: true
       - run: bundle exec jekyll build --strict_front_matter --destination ./_site
+      - name: Verify key GEO pages
+        run: |
+          test -f ./_site/index.html
+          test -f ./_site/diagnosis/index.html
+          test -f ./_site/who-is-jingyi/index.html
+          test -f ./_site/tools/index.html
+          test -f ./_site/tools/content-health/index.html
+          test -f ./_site/tools/crawler-check/index.html
+          test -f ./_site/tools/question-expander/index.html
+          test -f ./_site/tools/geo-rewrite/index.html
+          test -f ./_site/tools/geo-skills/index.html
+          test -f ./_site/cases/index.html
+          test -f ./_site/services/index.html
+          test -f ./_site/research/index.html
+          test -f ./_site/research/methodology/index.html
+          test -f ./_site/llms.txt
+          test -f ./_site/robots.txt
+          test -f ./_site/sitemap.xml
+          grep -q "https://fable-castle.com/sitemap.xml" ./_site/robots.txt
+          grep -q "https://fable-castle.com/diagnosis/" ./_site/llms.txt
+          grep -q "https://fable-castle.com/who-is-jingyi/" ./_site/llms.txt
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
@@ -42,11 +63,8 @@ jobs:
       - name: Ping search engines after deploy
         if: success()
         run: |
-          SITEMAP="https://fable-castle.com/sitemap.xml"
-          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/tools/","https://fable-castle.com/llms.txt"]'
-          echo ">>> Pinging Google..."
-          curl -s -o /dev/null -w "Google: %{http_code}\n" \
-            "https://www.google.com/ping?sitemap=${SITEMAP}"
+          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/tools/","https://fable-castle.com/tools/content-health/","https://fable-castle.com/tools/crawler-check/","https://fable-castle.com/tools/question-expander/","https://fable-castle.com/tools/geo-rewrite/","https://fable-castle.com/tools/geo-skills/","https://fable-castle.com/cases/","https://fable-castle.com/services/","https://fable-castle.com/research/","https://fable-castle.com/research/methodology/","https://fable-castle.com/llms.txt"]'
+          echo ">>> Google sitemap ping is deprecated; use robots.txt + Search Console for Google."
           echo ">>> Pinging Bing homepage (IndexNow GET)..."
           curl -s -o /dev/null -w "Bing: %{http_code}\n" \
             "https://www.bing.com/indexnow?url=https://fable-castle.com&key=4f7a8b2c9d1e3f5a6b8c0d2e4f6a8b0c"
