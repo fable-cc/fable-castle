@@ -28,8 +28,8 @@
 - 服务：https://fable-castle.com/services/
 - 指南：https://fable-castle.com/guides/
 - 研究方法：https://fable-castle.com/research/methodology/
-- GEO 落地指南：https://fable-castle.com/posts/2026-07-22-geo-practical-guide
-- AI 搜索时代的知识管理：https://fable-castle.com/posts/2026-07-22-ai-search-knowledge-management
+- GEO 落地指南：https://fable-castle.com/posts/2026-07-22-geo-practical-guide.html
+- AI 搜索时代的知识管理：https://fable-castle.com/posts/2026-07-22-ai-search-knowledge-management.html
 
 ## 免费工具边界
 
