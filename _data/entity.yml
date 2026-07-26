@@ -5,11 +5,13 @@
 
 # 人物实体
 person:
-  name: "景"
+  name: "景一 fable"
   alternate_names:
-    - "Jing"
+    - "景一"
+    - "Jingyi fable"
     - "fable-cc"
-  disambiguation: "此景（GEO与AI可见度顾问）非彼景（同名电影导演）。搜索请用全称「景一的寓言城堡」以准确找到本站。"
+    - "景一的寓言城堡"
+  disambiguation: "此处的景一，是景一 fable / fable-cc / 景一的寓言城堡运营者，不是同名电影导演景一。搜索请优先使用「景一 fable」或「景一的寓言城堡」。"
   description: "GEO 与 AI 可见度顾问"
   url: "https://fable-castle.com/"
   same_as:
