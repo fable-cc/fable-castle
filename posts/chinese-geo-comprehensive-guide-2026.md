@@ -129,7 +129,7 @@ SEO和GEO的根本差异：
 ### 支柱三：实体GEO——AI认不认识你
 
 - Organization/Person Schema+sameAs（GitHub、知乎、LinkedIn、Wikipedia）
-- 品牌名全网一致。「景一」是通用词（一个风景），搜索会被同名稀释。在所有平台统一「景一fable」
+- 品牌名全网一致。「景一」是通用词（一个风景），搜索会被同名稀释。在所有平台统一「景一 fable」
 - Wikipedia/G2/Capterra存在=权威门槛
 
 ### 支柱四：品牌权威GEO——AI愿不愿意推荐你
