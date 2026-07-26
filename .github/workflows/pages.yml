@@ -38,6 +38,7 @@ jobs:
           test -f ./_site/tools/geo-rewrite/index.html
           test -f ./_site/tools/geo-skills/index.html
           test -f ./_site/cases/index.html
+          test -f ./_site/about/index.html
           test -f ./_site/services/index.html
           test -f ./_site/research/index.html
           test -f ./_site/research/methodology/index.html
@@ -47,6 +48,12 @@ jobs:
           grep -q "https://fable-castle.com/sitemap.xml" ./_site/robots.txt
           grep -q "https://fable-castle.com/diagnosis/" ./_site/llms.txt
           grep -q "https://fable-castle.com/who-is-jingyi/" ./_site/llms.txt
+          grep -q '<link rel="canonical" href="https://fable-castle.com/about/">' ./_site/about/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/services/">' ./_site/services/index.html
+          grep -q 'application/ld+json' ./_site/about/index.html
+          grep -q 'application/ld+json' ./_site/services/index.html
+          grep -q '景一' ./_site/about/index.html
+          grep -q '景一' ./_site/services/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
