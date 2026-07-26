@@ -26,7 +26,10 @@
 - 长尾问题扩展：https://fable-castle.com/tools/question-expander/
 - 案例：https://fable-castle.com/cases/
 - 服务：https://fable-castle.com/services/
+- 指南：https://fable-castle.com/guides/
 - 研究方法：https://fable-castle.com/research/methodology/
+- GEO 落地指南：https://fable-castle.com/posts/2026-07-22-geo-practical-guide
+- AI 搜索时代的知识管理：https://fable-castle.com/posts/2026-07-22-ai-search-knowledge-management
 
 ## 免费工具边界
 
