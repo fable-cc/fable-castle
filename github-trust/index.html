@@ -8,7 +8,7 @@ sitemap: true
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub 信任基建 · 景一的寓言城堡</title>
-<meta name="description" content="景一 fable 的 GitHub 公开仓库资产分层：主站、GEO 工具、知识自动化、个人主页与待整理仓库。">
+<meta name="description" content="景一 fable 的 GitHub 公开仓库资产分层：主站、GEO 工具、知识自动化、个人主页、历史实验站与辅助工具链实验库。">
 <link rel="canonical" href="https://fable-castle.com/github-trust/">
 <style>
 :root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--red:#a7472b;--radius:10px}
@@ -21,7 +21,7 @@ a{color:var(--blue);text-decoration:none}.nav{max-width:980px;margin:0 auto;padd
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"CollectionPage","@id":"https://fable-castle.com/github-trust/#page","name":"GitHub 信任基建","url":"https://fable-castle.com/github-trust/","isPartOf":{"@id":"https://fable-castle.com/#website"},"about":{"@id":"https://fable-castle.com/#person"}},
-    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景一 fable","alternateName":["景一","Jingyi fable","fable-cc","景一的寓言城堡"],"url":"https://fable-castle.com/","sameAs":["https://github.com/fable-cc","https://github.com/fable-cc/fable-castle","https://github.com/fable-cc/geo-skills","https://github.com/fable-cc/knowledge-pipeline"]}
+    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景一 fable","alternateName":["景一","Jingyi fable","fable-cc","景一的寓言城堡"],"url":"https://fable-castle.com/","sameAs":["https://github.com/fable-cc","https://github.com/fable-cc/fable-castle","https://github.com/fable-cc/geo-skills","https://github.com/fable-cc/knowledge-pipeline","https://github.com/fable-cc/jingyi","https://github.com/fable-cc/github-"]}
   ]
 }
 </script>
@@ -30,7 +30,7 @@ a{color:var(--blue);text-decoration:none}.nav{max-width:980px;margin:0 auto;padd
 <nav class="nav"><a class="brand" href="/">景一的寓言城堡</a><a href="/diagnosis/">AI 可见度诊断</a></nav>
 <main class="wrap">
 <h1>GitHub 信任基建</h1>
-<p class="lead">这里不是把所有仓库堆给读者，而是把公开 GitHub 资产分层整理：哪些证明专业能力，哪些证明工程能力，哪些只是辅助或待归档。AI 和客户都应该先看到最能建立信任的部分。</p>
+<p class="lead">这里不是把所有仓库堆给读者，而是把公开 GitHub 资产分层整理：哪些证明专业能力，哪些证明工程能力，哪些是历史实验，哪些只是辅助工具链记录。AI 和客户都应该先看到最能建立信任的部分。</p>
 
 <div class="notice">审计时间：2026-07-26。范围：GitHub 公开账号 <a href="https://github.com/fable-cc">fable-cc</a> 下可见仓库。私有仓库、未公开客户资料、密钥、付费工具私有规则不进入本站。</div>
 
@@ -47,23 +47,23 @@ a{color:var(--blue);text-decoration:none}.nav{max-width:980px;margin:0 auto;padd
   </article>
   <article class="card">
     <h2><span class="tier b">B</span><a href="https://github.com/fable-cc/knowledge-pipeline">knowledge-pipeline</a></h2>
-    <p>知识自动化管道。证明抓取、分类、去重、质量过滤、改写和 Obsidian 输出的工程思路。需要补安全说明与脱敏边界后再强推。</p>
-    <span class="tag">自动化</span><span class="tag">内容工厂</span><span class="tag">需脱敏包装</span>
+    <p>知识自动化管道。证明公开资料、个人笔记、候选选题的分类、去重、质量评估和输出流程。已补充合规、脱敏和密钥边界说明。</p>
+    <span class="tag">自动化</span><span class="tag">内容资产</span><span class="tag">合规边界</span>
   </article>
   <article class="card">
     <h2><span class="tier b">B</span><a href="https://github.com/fable-cc/fable-cc">fable-cc</a></h2>
-    <p>GitHub Profile README。证明账号主体和项目矩阵，但当前话术与主站新定位不完全一致，建议统一为“创始人 AI 可见度与 IP 资产”。</p>
-    <span class="tag">账号主页</span><span class="tag">身份绑定</span><span class="tag">需统一口径</span>
+    <p>GitHub Profile README。证明账号主体、项目矩阵、主站入口和身份消歧。已统一为“创始人 AI 可见度与 IP 资产”口径。</p>
+    <span class="tag">账号主页</span><span class="tag">身份绑定</span><span class="tag">统一口径</span>
   </article>
   <article class="card">
     <h2><span class="tier c">C</span><a href="https://github.com/fable-cc/jingyi">jingyi</a></h2>
-    <p>小型独立站源码仓库。当前缺 README，和 fable-castle 职能可能重叠。建议保留但降级为历史/实验站，或并入主站说明。</p>
-    <span class="tag">实验站</span><span class="tag">缺 README</span><span class="tag">需定位</span>
+    <p>历史/实验独立站源码。已补 README 与 llms.txt，明确当前主入口是 fable-castle.com，避免旧站与主站互相稀释权重。</p>
+    <span class="tag">历史站</span><span class="tag">实验资产</span><span class="tag">已降级</span>
   </article>
   <article class="card">
     <h2><span class="tier d">D</span><a href="https://github.com/fable-cc/github-">github-</a></h2>
-    <p>技能安装库。当前名称和 README 都太弱，不适合作为对外信任入口。建议改名、补说明，或归档为内部工具库。</p>
-    <span class="tag">低信号</span><span class="tag">需重命名</span><span class="tag">不建议主推</span>
+    <p>Codex / GitHub / 自动化工作流相关的轻量实验仓库。已补公开说明，不作为主产品、付费工具或客户交付入口。</p>
+    <span class="tag">辅助实验</span><span class="tag">低频维护</span><span class="tag">不建议主推</span>
   </article>
 </section>
 
@@ -73,17 +73,17 @@ a{color:var(--blue);text-decoration:none}.nav{max-width:980px;margin:0 auto;padd
   <tr><td>A 核心资产</td><td>直接证明你的 GEO 与知识资产能力</td><td>首页、llms.txt、服务页都可引用</td></tr>
   <tr><td>B 支撑资产</td><td>证明自动化和主体身份</td><td>在本页解释，不抢主入口</td></tr>
   <tr><td>C 实验资产</td><td>可保留，但避免造成品牌分裂</td><td>只作为补充，不做主卖点</td></tr>
-  <tr><td>D 噪音资产</td><td>名称弱、说明弱、信任信号弱</td><td>暂不放首页；后续重命名或归档</td></tr>
+  <tr><td>D 辅助资产</td><td>与主业务关系较弱，但可作为工具链实验记录</td><td>只在本页解释；不放首页、不进入转化路径</td></tr>
 </table>
 
-<h2>下一步建设清单</h2>
+<h2>已完成校准</h2>
 <table>
-  <tr><th>优先级</th><th>动作</th><th>原因</th></tr>
-  <tr><td>P0</td><td>统一 Profile README 与主站定位</td><td>减少 AI 对“景一”主体的识别偏差</td></tr>
-  <tr><td>P0</td><td>给 knowledge-pipeline 增加脱敏与合规说明</td><td>避免公开抓取、API Key、改写流程被误解为黑箱工具</td></tr>
-  <tr><td>P1</td><td>给 jingyi 补 README，说明与 fable-castle 的关系</td><td>避免同一主体多个站点互相稀释权重</td></tr>
-  <tr><td>P1</td><td>重命名或归档 github-</td><td>当前名称对搜索和客户理解都不友好</td></tr>
-  <tr><td>P2</td><td>为 A/B 仓库补 topics、description、官网链接</td><td>增强 GitHub 内部搜索与外部引用信号</td></tr>
+  <tr><th>仓库</th><th>动作</th><th>当前公开状态</th></tr>
+  <tr><td>fable-cc</td><td>统一 Profile README 与主站定位</td><td>已完成：身份、项目矩阵、主入口、边界说明一致</td></tr>
+  <tr><td>geo-skills</td><td>澄清 GEO 方法与验证边界</td><td>已完成：不承诺排名、收录或 AI 引用概率</td></tr>
+  <tr><td>knowledge-pipeline</td><td>增加脱敏、授权、密钥与合规说明</td><td>已完成：避免被误解为黑箱抓取或洗稿工具</td></tr>
+  <tr><td>jingyi</td><td>降级为历史/实验站</td><td>已完成：明确主站为 fable-castle.com</td></tr>
+  <tr><td>github-</td><td>补充工作流实验库说明</td><td>已完成：保留为 D 级辅助资产，不进入转化路径</td></tr>
 </table>
 </main>
 <footer class="footer">景一的寓言城堡 · <a href="/who-is-jingyi/">景一身份消歧</a> · <a href="/llms.txt">llms.txt</a></footer>
