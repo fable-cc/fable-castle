@@ -1,0 +1,275 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内容健康检查 · 寓言城堡</title>
+<meta name="description" content="免费 GEO 工具：在浏览器本地检测内容是否容易被 AI 搜索找到与引用，涵盖回答前置、实体稳定、来源证据、结构可提取等维度。">
+<link rel="canonical" href="https://fable-castle.com/tools/content-health/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="内容健康检查 · 寓言城堡">
+<meta property="og:description" content="在浏览器本地检测内容是否容易被 AI 搜索找到与引用。">
+<meta property="og:url" content="https://fable-castle.com/tools/content-health/">
+<meta property="og:site_name" content="寓言城堡">
+<style>
+:root{--bg:#faf8f5;--text:#1a1a1a;--text-secondary:#555;--text-muted:#999;--accent:#2b5a8c;--accent-light:#e8f0f8;--border:#e0dcd6;--card-bg:#ffffff;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top-nav{max-width:860px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.logo{font-weight:700;font-size:15px;letter-spacing:1px}
+.nav a{font-size:13px;color:var(--text-secondary);margin-left:18px}
+.nav a:hover{color:var(--accent);text-decoration:none}
+.page{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:28px;font-weight:800;margin-bottom:12px}
+.page-desc{font-size:14px;color:var(--text-secondary);margin-bottom:32px;line-height:1.7}
+.section-title{font-size:16px;font-weight:700;margin:32px 0 12px}
+.info-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.info-card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.info-card p,.info-card li{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.info-card ul{padding-left:18px;margin-top:6px}
+.info-card ul li{margin-bottom:4px}
+.badge-wrap{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.badge{font-size:12px;padding:4px 12px;border-radius:4px;background:var(--accent-light);color:var(--accent);font-weight:600}
+.badge-local{background:#f0f0f0;color:#666}
+.btn{display:inline-block;padding:10px 24px;border-radius:var(--radius);font-size:14px;font-weight:600;transition:all .2s;margin-right:8px;margin-bottom:8px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#1d4068;text-decoration:none}
+.btn-secondary{border:1px solid var(--border);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);text-decoration:none}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:8px 0;border-bottom:1px solid #f0eeeb;font-size:13px;color:var(--text-secondary);line-height:1.6}
+.checklist li:last-child{border-bottom:none}
+.checklist .check{color:#2e7d32;font-weight:700;margin-right:4px}
+.footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted)}
+.footer a{color:var(--text-muted)}
+/* 检测器样式 */
+.checker-box{margin-bottom:28px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.checker-box label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
+.checker-box textarea{width:100%;border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-size:13px;font-family:inherit;resize:vertical;background:var(--bg);line-height:1.6}
+.checker-actions{display:flex;align-items:center;gap:12px;margin-top:10px}
+.char-count{font-size:12px;color:var(--text-muted)}
+.results{margin-top:16px}
+.result-item{font-size:13px;padding:6px 0;border-bottom:1px solid #f0eeeb;line-height:1.6}
+.result-item:last-child{border-bottom:none}
+.result-good{color:#2e7d32}
+.result-warn{color:#b76500}
+.result-score{font-size:20px;font-weight:800;margin-bottom:12px}
+.result-score .num{font-size:32px}
+.score-green{color:#2e7d32}
+.score-yellow{color:#b76500}
+.score-red{color:#c62828}
+.result-disclaimer{font-size:11px;color:var(--text-muted);margin-top:16px;line-height:1.6}
+@media(max-width:640px){h1{font-size:22px}.page{padding:32px 20px 60px}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/" class="logo">寓言城堡</a>
+  <div class="nav">
+    <a href="/tools/">工具</a>
+    <a href="/research/">研究</a>
+    <a href="/cases/">案例</a>
+    <a href="/services/">服务</a>
+    <a href="/about/">关于</a>
+  </div>
+</nav>
+<div class="page">
+  <div class="badge-wrap">
+    <span class="badge badge-local">浏览器本地执行</span>
+    <span class="badge badge-local">无限次数</span>
+  </div>
+  <h1>内容健康检查</h1>
+  <p class="page-desc">在浏览器本地检测您的一篇文章或页面，看看它是否容易被 AI 搜索找到并引用。正文不上传服务器，全部在您的电脑上执行。</p>
+
+  <a href="#rules" class="btn btn-primary">查看检查维度</a>
+  <a href="#rules" class="btn btn-secondary">检查维度说明</a>
+
+  <div class="checker-box" id="checker">
+    <label for="content-input">粘贴你要检测的内容（纯文本，上限 20,000 字）</label>
+    <textarea id="content-input" rows="10" placeholder="把你的文章内容粘贴到这里..."></textarea>
+    <div class="checker-actions">
+      <button class="btn btn-primary" onclick="runCheck()">开始检测</button>
+      <span id="char-count" class="char-count">0 / 20,000</span>
+    </div>
+    <div id="results" class="results" style="display:none"></div>
+  </div>
+
+  <div class="info-card">
+    <h3>使用限制</h3>
+    <ul>
+      <li>单次输入不超过 20,000 个字符</li>
+      <li>仅支持纯文本粘贴，不支持 URL 自动抓取</li>
+      <li>结果是启发式诊断，不代表任何平台的收录或引用概率</li>
+    </ul>
+  </div>
+
+  <h2 id="rules" class="section-title">检查维度（7 项）</h2>
+  <ul class="checklist">
+    <li><span class="check">✔</span> 回答是否前置 — 开篇是否直接回应用户可能的问题</li>
+    <li><span class="check">✔</span> 标题与问题是否对应 — 标题是否真实反映内容核心</li>
+    <li><span class="check">✔</span> 实体是否稳定、完整、可消歧 — 人物、品牌、方法名称是否一致</li>
+    <li><span class="check">✔</span> 事实是否带来源与时间 — 数据和结论是否可核验</li>
+    <li><span class="check">✔</span> 结构是否便于提取 — 小标题、列表、分段是否清晰</li>
+    <li><span class="check">✔</span> FAQ 与小标题是否真实服务读者 — 而非堆砌关键词</li>
+    <li><span class="check">✔</span> 是否存在无依据的精确数字 — 无法核验的百分比和统计</li>
+  </ul>
+  <p style="font-size:12px;color:var(--text-muted);margin-top:12px">每个扣分项可展开查看触发规则。总分为启发式健康分，不表示排名或收录保证。</p>
+
+  <div class="info-card">
+    <h3>示例</h3>
+    <p>输入一段内容后，工具会逐项检查并输出类似下方结果：</p>
+    <ul>
+      <li>✅ 回答前置：开篇直接回答问题</li>
+      <li>✅ 实体稳定：角色、品牌、方法前后一致</li>
+      <li>⚠️ 无来源数字：文中「85% 的用户……」缺少来源与统计日期</li>
+      <li>⚠️ 结构推荐：考虑增加 FAQ 段落便于 AI 提取</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h3>隐私说明</h3>
+    <p>所有内容在您的浏览器本地处理，不上传到任何服务器。不发送网络请求，不收集个人数据。</p>
+  </div>
+
+  <div class="info-card">
+    <h3>下一步</h3>
+    <p><a href="/diagnosis/">做一次创始人 AI 可见度自测 →</a></p>
+  </div>
+</div>
+<footer class="footer">
+  <p>寓言城堡 · <a href="https://github.com/fable-cc/fable-castle">GitHub</a> · © 2026</p>
+</footer>
+<script>
+const MAX_CHARS = 20000;
+const input = document.getElementById('content-input');
+const count = document.getElementById('char-count');
+const results = document.getElementById('results');
+
+input.addEventListener('input', function() {
+  const len = this.value.length;
+  count.textContent = len + ' / ' + MAX_CHARS;
+  count.style.color = len > MAX_CHARS ? '#c62828' : 'var(--text-muted)';
+});
+
+function runCheck() {
+  const text = input.value.trim();
+  if (!text) return alert('请先粘贴内容');
+  if (text.length > MAX_CHARS) return alert('内容超过 20,000 字上限，请精简后再试');
+
+  const checks = [
+    { name: '回答前置', fn: checkAnswerFirst },
+    { name: '标题对应', fn: checkTitleMatch },
+    { name: '实体稳定', fn: checkEntityStable },
+    { name: '来源标注', fn: checkSources },
+    { name: '结构清晰', fn: checkStructure },
+    { name: '真实 FAQ', fn: checkFAQ },
+    { name: '无来源数字', fn: checkUnverifiedNumbers }
+  ];
+
+  const items = checks.map(c => {
+    const r = c.fn(text);
+    return { name: c.name, pass: r.pass, detail: r.detail };
+  });
+
+  const score = items.filter(i => i.pass).length;
+  const pct = Math.round(score / 7 * 100);
+  const color = pct >= 80 ? 'score-green' : pct >= 50 ? 'score-yellow' : 'score-red';
+
+  let html = '<div class="result-score '+color+'">健康分 <span class="num">' + score + '</span> / 7</div>';
+  items.forEach(i => {
+    html += '<div class="result-item ' + (i.pass ? 'result-good' : 'result-warn') + '">' + (i.pass ? '✅' : '⚠️') + ' ' + i.name + '：' + i.detail + '</div>';
+  });
+  html += '<p class="result-disclaimer">启发式诊断，不代表任何平台的收录或引用概率。每个扣分项对应的维度说明见下方。</p>';
+
+  results.innerHTML = html;
+  results.style.display = 'block';
+  results.scrollIntoView({ behavior: 'smooth' });
+}
+
+function checkAnswerFirst(t) {
+  const first100 = t.slice(0, 200).replace(/\n/g, ' ');
+  if (first100.includes('?') || first100.includes('？')) return { pass: true, detail: '开篇包含提问或直接回应，读者知道你在回答什么问题' };
+  const hasPlaceholder = /^(大家好|首先|让我们|今天|这篇|本文|最近|随着|在当今|众所周知)/.test(first100);
+  if (hasPlaceholder) return { pass: false, detail: '开篇使用了铺垫句式，建议直接回应用户可能的搜索问题' };
+  return { pass: true, detail: '开篇没有冗余铺垫' };
+}
+
+function checkTitleMatch(t) {
+  const lines = t.split('\n').filter(l => l.trim());
+  const title = lines[0].replace(/^#+\s*/, '').trim();
+  if (title.length > 50) return { pass: false, detail: '标题过长（' + title.length + '字），AI 搜索偏好简洁的标题' };
+  if (title.length < 4) return { pass: false, detail: '标题过短，可能未准确反映内容主题' };
+  const body = lines.slice(1).join(' ').toLowerCase();
+  const keywords = title.toLowerCase().replace(/[？?，,。.！!]/g, ' ').split(/\s+/).filter(k => k.length > 1);
+  const matched = keywords.filter(k => body.includes(k));
+  if (matched.length < Math.ceil(keywords.length * 0.5)) return { pass: false, detail: '标题关键词在正文中覆盖率较低，标题可能夸大或偏离正文' };
+  return { pass: true, detail: '标题与正文关键词匹配良好' };
+}
+
+function checkEntityStable(t) {
+  const entities = [];
+  const re = /([A-Z][a-zA-Z0-9]{2,}|[\u4e00-\u9fff]{2,4})(?:[·的之]?(?:[A-Za-z]+|[\u4e00-\u9fff]+))?/g;
+  let m;
+  const seen = new Map();
+  while ((m = re.exec(t)) !== null) {
+    const e = m[0];
+    const pos = m.index;
+    if (e.length < 3) continue;
+    if (!seen.has(e)) seen.set(e, []);
+    seen.get(e).push(pos);
+  }
+  const unstable = [];
+  for (const [e, positions] of seen) {
+    if (positions.length < 2) continue;
+    const variants = new Set();
+    for (const p of positions) variants.add(t.slice(Math.max(0, p - 2), p + e.length + 2));
+    if (variants.size > positions.length * 0.5) unstable.push(e);
+  }
+  if (unstable.length > 2) return { pass: false, detail: '检测到多个实体名称不一致或上下文变化大，建议统一品牌/产品/人物称呼' };
+  return { pass: true, detail: '实体名称使用一致，AI 可以准确识别' };
+}
+
+function checkSources(t) {
+  const hasUrl = /https?:\/\/\S+/.test(t);
+  const hasRef = /(来源|引自|参考|根据|出处|详见|参见)/.test(t);
+  const numbers = t.match(/\d+(?:\.\d+)?%|\d+(?:\.\d+)?(?:\s*倍|\s*亿|\s*万|\s*千)/g) || [];
+  const hasNumbers = numbers.length > 2;
+  if (hasNumbers && !hasUrl && !hasRef) return { pass: false, detail: '文中含多个数字但缺少来源标注，建议为数据给出处或说明统计口径' };
+  if ((hasUrl || hasRef)) return { pass: true, detail: '有来源或引用标注，AI 更容易验证内容可信度' };
+  return { pass: true, detail: '无数据密集型断言，无需额外来源' };
+}
+
+function checkStructure(t) {
+  const lines = t.split('\n');
+  const headings = lines.filter(l => /^#{1,4}\s/.test(l));
+  const lists = lines.filter(l => /^\s*[-*•]\s/.test(l) || /^\s*\d+[.、]\s/.test(l));
+  const tables = (t.match(/\|/g) || []).length;
+  const paras = t.split(/\n\n+/).filter(p => p.trim().length > 30);
+  const score = (headings.length >= 3 ? 1 : 0) + (lists.length >= 2 ? 1 : 0) + (tables >= 6 ? 1 : 0) + (paras.length >= 5 ? 1 : 0);
+  if (score <= 1) return { pass: false, detail: '结构单一，建议增加小标题、列表或分段，便于 AI 提取关键信息' };
+  return { pass: true, detail: '结构层次清晰（小标题' + headings.length + '个，列表' + lists.length + '处）' };
+}
+
+function checkFAQ(t) {
+  const qaPattern = /(Q|问|问题)[\s:：]|(A|答|回答)[\s:：]|[？?]\s*\n.*[。！\.!]/;
+  const hasFAQsection = /(常见问题|FAQ|Q&A|问答)/i.test(t);
+  const hasQA = qaPattern.test(t);
+  if (hasFAQsection && hasQA) return { pass: true, detail: '包含 FAQ 或问答区块，AI 偏好引用此类结构化内容' };
+  if (hasFAQsection) return { pass: false, detail: '有 FAQ 标题但格式不清晰，建议使用 Q: / A: 固定格式' };
+  return { pass: false, detail: '缺少 FAQ 或问答段落，AI 搜索偏好有明确问答对的内容' };
+}
+
+function checkUnverifiedNumbers(t) {
+  const suspect = t.match(/(\d+(?:\.\d+)?%)\s*(?:的|以上|左右|用户|企业|消费者|市场)/g) || [];
+  if (suspect.length > 1) return { pass: false, detail: '检测到 ' + suspect.length + ' 处无来源精确数字，AI 对无来源数据持怀疑态度，建议删除或标注出处' };
+  return { pass: true, detail: '未发现可疑的无来源精确数字' };
+}
+</script>
+</body>
+</html>

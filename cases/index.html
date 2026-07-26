@@ -1,0 +1,184 @@
+---
+sitemap: true
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>样板案例 · 寓言城堡</title>
+<meta name="description" content="GEO 审计与优化前后对比样板案例。展示可复核的诊断结构、修改清单与交付样例。">
+<link rel="canonical" href="https://fable-castle.com/cases/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="样板案例 · 寓言城堡">
+<meta property="og:description" content="GEO 审计与优化前后对比样板案例。">
+<meta property="og:url" content="https://fable-castle.com/cases/">
+<meta property="og:site_name" content="寓言城堡">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"CollectionPage","@id":"https://fable-castle.com/cases/#page","name":"样板案例","url":"https://fable-castle.com/cases/","isPartOf":{"@id":"https://fable-castle.com/#website"},"about":{"@id":"https://fable-castle.com/#person"}},
+    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景","alternateName":["Jing","fable-cc"],"description":"GEO 与 AI 可见度顾问","url":"https://fable-castle.com/","jobTitle":"GEO 与 AI 可见度顾问","knowsAbout":["GEO","AI Agent","知识管理","个人IP","搜索引擎优化","内容策略"]}
+  ]
+}
+</script>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a1a;--text-secondary:#555;--text-muted:#999;--accent:#2b5a8c;--accent-light:#e8f0f8;--border:#e0dcd6;--card-bg:#ffffff;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top-nav{max-width:860px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.logo{font-weight:700;font-size:15px;letter-spacing:1px;color:var(--text)}
+.nav a,.nav span{font-size:13px;color:var(--text-secondary);margin-left:18px}
+.nav a:hover{color:var(--accent);text-decoration:none}
+.nav .current{color:var(--text-muted)}
+.page{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.page-desc{font-size:15px;color:var(--text-secondary);margin-bottom:32px}
+.cases-intro{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;font-size:14px;color:var(--text-secondary);line-height:1.7}
+.cases-intro p{margin-bottom:8px}
+.cases-intro p:last-child{margin-bottom:0}
+.case-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:24px}
+.case-card h2{font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.case-meta{font-size:12px;color:var(--text-muted);margin-bottom:18px}
+.case-section{margin-top:16px}
+.case-section h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--accent)}
+.case-section p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+.case-section ul{padding-left:18px;margin-top:6px}
+.case-section li{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:4px}
+.compare-table{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.compare-col{padding:14px 16px;border-radius:6px;font-size:13px;line-height:1.8;color:var(--text-secondary)}
+.compare-col.before{background:#fff5f5;border:1px solid #fcc}
+.compare-col.after{background:#f0faf0;border:1px solid #b7dfb7}
+.compare-label{font-weight:700;font-size:12px;margin-bottom:6px;color:var(--text)}
+.footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted)}
+.footer a{color:var(--text-muted)}
+@media(max-width:640px){h1{font-size:22px}.page{padding:32px 20px 60px}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/" class="logo">寓言城堡</a>
+  <div class="nav">
+    <a href="/tools/">工具</a>
+    <a href="/research/">研究</a>
+    <span class="current">案例</span>
+    <a href="/services/">服务</a>
+    <a href="/about/">关于</a>
+  </div>
+</nav>
+<div class="page">
+
+<h1>样板案例</h1>
+<p class="page-desc">用于展示 GEO 诊断报告写法、优化路径和前后对比结构。</p>
+
+<div class="cases-intro">
+  <p>本页为样板案例，用于说明交付结构、证据口径和可复核写法。正式客户案例上线前，应补充真实授权、来源链接、基线日期与样本说明。</p>
+</div>
+
+<div class="case-card">
+  <h2>样板一：技术博客从零引用到 AI 搜索稳定可见</h2>
+  <div class="case-meta">领域：开发者工具 · 优化周期：4 周 · 基线问题数：8 个</div>
+
+  <div class="case-section">
+    <h3>背景</h3>
+    <p>一个独立开发者的技术博客，已持续写作 3 年、累计 200+ 篇文章。Google 搜索有稳定流量，但在 ChatGPT、Claude、Perplexity 等 AI 搜索中几乎不可见——同样的技术问题，AI 总是引用其他来源。</p>
+  </div>
+
+  <div class="case-section">
+    <h3>诊断发现</h3>
+    <ul>
+      <li><strong>实体缺失</strong>：作者信息分散于各篇文章，没有统一的 Person Schema 标记</li>
+      <li><strong>结构散乱</strong>：文章以"日记体"叙述为主，缺少 AI 可提取的标题层级与结论摘要</li>
+      <li><strong>证据薄弱</strong>：大量主观判断（"推荐这样做"），缺少可核验的来源引用与数据支撑</li>
+      <li><strong>引用闭环断裂</strong>：文章内部互相引用但没有结构化关联，AI 无法建立知识图谱</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h3>优化措施</h3>
+    <ul>
+      <li>统一部署 Person + WebSite + Article Schema，建立作者实体锚点</li>
+      <li>为每篇文章添加 TL;DR 摘要块、层级小标题与 FAQ 段落</li>
+      <li>替换主观判断为可核验证据：官方文档链接、基准测试数据、版本号</li>
+      <li>建立文章间的"前置阅读"链接与系列导航，形成主题簇</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h3>效果对比</h3>
+    <div class="compare-table">
+      <div class="compare-col before">
+        <div class="compare-label">优化前（Day 0）</div>
+        <div>AI 搜索可见率：0/10</div>
+        <div>引用次数：0</div>
+        <div>Schema 错误：4 个</div>
+      </div>
+      <div class="compare-col after">
+        <div class="compare-label">优化后（Day 28）</div>
+        <div>AI 搜索可见率：6/10</div>
+        <div>引用次数：12 次</div>
+        <div>Schema 错误：0 个</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-card">
+  <h2>样板二：咨询服务站的 AI 信任度重建</h2>
+  <div class="case-meta">领域：商业咨询 · 优化周期：6 周 · 基线问题数：12 个</div>
+
+  <div class="case-section">
+    <h3>背景</h3>
+    <p>一位管理顾问的个人品牌站，内容质量高但 AI 搜索经常给出"无法验证"或"信息不充分"的结论。潜在客户通过 AI 搜索了解顾问背景时，得到的是模糊甚至错误的信息拼凑。</p>
+  </div>
+
+  <div class="case-section">
+    <h3>诊断发现</h3>
+    <ul>
+      <li><strong>同一实体多个名称</strong>：网站、社交媒体、第三方平台上作者名称不统一，AI 无法合并身份</li>
+      <li><strong>资历不可验证</strong>：声称"服务过 X 家企业"但没有任何可被爬虫抓取的证据链</li>
+      <li><strong>内容孤岛</strong>：文章独立存在，没有与作者的专业资质、服务项目、案例形成关联网络</li>
+      <li><strong>第三方信号缺失</strong>：没有 GitHub、LinkedIn、Google Scholar 等平台的 sameAs 链接</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h3>优化措施</h3>
+    <ul>
+      <li>统一 Person Schema 的 sameAs 数组，连接 GitHub、LinkedIn、知乎等 6 个平台</li>
+      <li>将"服务过 X 家企业"替换为可核验表述："以下企业（名称+链接）曾合作"</li>
+      <li>在文章、服务页、关于页之间建立双向链接，形成 ProfessionalService 知识图谱</li>
+      <li>为每项专业声明补充 publishedDate、author、publisher 结构化标记</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h3>效果对比</h3>
+    <div class="compare-table">
+      <div class="compare-col before">
+        <div class="compare-label">优化前（Day 0）</div>
+        <div>AI 信任评分：2.3/10</div>
+        <div>实体一致性：3 个变体</div>
+        <div>可核验声明：12%</div>
+      </div>
+      <div class="compare-col after">
+        <div class="compare-label">优化后（Day 42）</div>
+        <div>AI 信任评分：7.8/10</div>
+        <div>实体一致性：统一为 1 个</div>
+        <div>可核验声明：91%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<footer class="footer">
+  <p>寓言城堡 · <a href="https://github.com/fable-cc/fable-castle">GitHub</a> · © 2026</p>
+</footer>
+</body>
+</html>
