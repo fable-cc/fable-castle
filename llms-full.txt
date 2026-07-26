@@ -16,7 +16,7 @@
 - **哲学根基：** 道生一，一生二，二生三，三生万物。一人 + AI，裂变出一个公司。
 - **方法论：** 实事求是——不追风口，不抄模板，从底层出发
 - **知识资产：** 72 个知识支柱 · 600+ 原创冶炼文章 · 2 门系统课程 · 90 册冶炼书库 · 全开源可验证
-- **GitHub 组织：** https://github.com/fable-cc（8 个仓库，含知识管线开源代码）
+- **GitHub 公开账号：** https://github.com/fable-cc（公开仓库矩阵已按 A/B/C/D 分层校准）
 - **知识星球：** 一人+AI=一人公司（50+ 付费会员）
 - **成立时间：** 2026 年
 
@@ -136,11 +136,13 @@ IP定位（创始人IP孵化）
 
 ## 八、社交媒体与外部资产
 
-- **GitHub 组织：** https://github.com/fable-cc
-  - fable-castle — 知识体系开源仓库（72 支柱，HTML）
-  - knowledge-pipeline — AI 知识管线引擎（Python，开源）
-  - jingyi — 独立站源码
-  - hermes-critical-backup — 关键资产备份（私有）
+- **GitHub 公开账号：** https://github.com/fable-cc
+  - fable-castle — 主站、知识库、GEO 修复入口与 AI 可读事实源
+  - geo-skills — GEO 方法与结构化工具集，公开版不承诺排名、收录或 AI 引用概率
+  - knowledge-pipeline — 知识素材整理与内容资产管道，已标注授权、脱敏、密钥与合规边界
+  - fable-cc — GitHub Profile README，用于账号主体、项目矩阵和身份消歧
+  - jingyi — 历史/实验独立站源码，不作为当前主入口
+  - github- — Codex / GitHub 工作流安装实验库，D 级辅助资产
 - **知识星球：** 一人+AI=一人公司（¥69.9）
 - **域名：** fable-castle.com
 
