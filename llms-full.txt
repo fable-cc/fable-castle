@@ -113,7 +113,7 @@ IP定位（创始人IP孵化）
 
 ### 其他重要页面
 - [标签云](https://fable-castle.com/tag-cloud/) — 全站内容标签索引
-- [关于/深度合作](https://fable-castle.com/04-关于/) — 合作方式
+- [关于景一](https://fable-castle.com/about/) — 主体说明、身份消歧与服务方向
 
 ## 六、六大内容品类
 
