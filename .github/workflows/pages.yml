@@ -42,6 +42,7 @@ jobs:
           test -f ./_site/services/index.html
           test -f ./_site/research/index.html
           test -f ./_site/research/methodology/index.html
+          test -f ./_site/privacy/index.html
           test -f ./_site/llms.txt
           test -f ./_site/llms-full.txt
           test -f ./_site/robots.txt
@@ -71,6 +72,17 @@ jobs:
           grep -q 'GitHub Actions' ./_site/cases/index.html
           grep -q '/diagnosis/' ./_site/cases/index.html
           ! grep -q '免费课程\|¥39\|100分\|排名提升' ./_site/cases/index.html
+          grep -q 'https://fable-castle.com/tools/content-health/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/tools/crawler-check/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/tools/question-expander/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/tools/geo-rewrite/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/tools/geo-skills/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/research/methodology/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/privacy/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/llms.txt' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/llms-full.txt' ./_site/sitemap.xml
+          ! grep -q '/guides/ai-crawler-checklist/\|/guides/robots-txt-for-ai/\|/guides/content-health-check/\|/guides/geo-rewrite-best-practices/\|/guides/long-tail-question-strategy/\|/guides/search-intent-mapping/' ./_site/tools/crawler-check/index.html ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
+          ! grep -q '发送至服务端\|24 小时内自动清除\|联网搜索请求\|搜索结果数据不保留' ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
