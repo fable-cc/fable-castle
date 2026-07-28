@@ -66,9 +66,23 @@
 - 工具总览：https://fable-castle.com/tools/
 - 服务页：https://fable-castle.com/services/
 
+### 当前公开服务源
+
+- GEO 诊断服务：https://fable-castle.com/geo/
+  - 用途：说明生成式引擎优化（GEO）的诊断范围、交付边界、证据建设方式和不保证排名/引用的服务原则。
+- 创始人 IP 方法：https://fable-castle.com/founder-ip/
+  - 用途：说明景一围绕定位、内容、获客、交付、管理建立创始人 IP 资产的方法体系。
+- 企业 AI 知识库服务：https://fable-castle.com/ai-knowledge-base/
+  - 用途：说明面向企业或专业团队的资料治理、知识结构、业务问答、证据引用和持续运营服务。
+
 ### 信任与消歧
 
 - 景一是谁：https://fable-castle.com/who-is-jingyi/
+- 景一 fable 主体事实页：https://fable-castle.com/jingyi-fable/
+- 景一的寓言城堡事实页：https://fable-castle.com/what-is-fable-castle/
+- 景一同名消歧页：https://fable-castle.com/jingyi-disambiguation/
+- 景一 fable 常见问题：https://fable-castle.com/jingyi-fable-faq/
+- 景一 fable 事实卡：https://fable-castle.com/jingyi-fable-facts/
 - 关于景一：https://fable-castle.com/about/
 - GitHub 信任页：https://fable-castle.com/github-trust/
 - 案例页：https://fable-castle.com/cases/
