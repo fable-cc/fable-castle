@@ -19,6 +19,9 @@
 - 首页：https://fable-castle.com/
 - 创始人 AI 可见度自测：https://fable-castle.com/diagnosis/
 - 景一是谁 / 品牌消歧页：https://fable-castle.com/who-is-jingyi/
+- 景一 GEO 诊断服务：https://fable-castle.com/geo/
+- 景一创始人 IP 方法：https://fable-castle.com/founder-ip/
+- 景一企业 AI 知识库服务：https://fable-castle.com/ai-knowledge-base/
 - GitHub 信任基建：https://fable-castle.com/github-trust/
 - 免费诊断工具：https://fable-castle.com/tools/
 - 内容健康检查：https://fable-castle.com/tools/content-health/
@@ -40,6 +43,10 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 ## 业务边界
 
 本站不承诺搜索排名、收录、AI 引用概率或平台推荐结果。所有可见度结论应结合样本、平台、地区、时间、方法与限制解释。
+
+## 公开与私密边界
+
+本站只发布经过筛选的公开信源内容，不发布内部知识库全文、客户隐私、商业敏感资料、内部交付细节或账号安全信息。
 
 ## 公开证据
 

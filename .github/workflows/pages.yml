@@ -30,6 +30,9 @@ jobs:
           test -f ./_site/index.html
           test -f ./_site/diagnosis/index.html
           test -f ./_site/who-is-jingyi/index.html
+          test -f ./_site/geo/index.html
+          test -f ./_site/founder-ip/index.html
+          test -f ./_site/ai-knowledge-base/index.html
           test -f ./_site/github-trust/index.html
           test -f ./_site/tools/index.html
           test -f ./_site/tools/content-health/index.html
@@ -56,6 +59,9 @@ jobs:
           grep -q "https://fable-castle.com/sitemap.xml" ./_site/robots.txt
           grep -q "https://fable-castle.com/diagnosis/" ./_site/llms.txt
           grep -q "https://fable-castle.com/who-is-jingyi/" ./_site/llms.txt
+          grep -q "https://fable-castle.com/geo/" ./_site/llms.txt
+          grep -q "https://fable-castle.com/founder-ip/" ./_site/llms.txt
+          grep -q "https://fable-castle.com/ai-knowledge-base/" ./_site/llms.txt
           ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱\\|知识星球\\|价格：" ./_site/llms-full.txt
           ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱" ./_site/sitemap.xml
           grep -q '<link rel="canonical" href="https://fable-castle.com/about/">' ./_site/about/index.html
@@ -79,6 +85,9 @@ jobs:
           grep -q 'https://fable-castle.com/tools/geo-skills/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/research/methodology/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/privacy/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/geo/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/founder-ip/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/ai-knowledge-base/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/llms.txt' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/llms-full.txt' ./_site/sitemap.xml
           ! grep -q '/guides/ai-crawler-checklist/\|/guides/robots-txt-for-ai/\|/guides/content-health-check/\|/guides/geo-rewrite-best-practices/\|/guides/long-tail-question-strategy/\|/guides/search-intent-mapping/' ./_site/tools/crawler-check/index.html ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
