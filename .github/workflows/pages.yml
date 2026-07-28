@@ -63,6 +63,14 @@ jobs:
           grep -q 'application/ld+json' ./_site/services/index.html
           grep -q '景一' ./_site/about/index.html
           grep -q '景一' ./_site/services/index.html
+          grep -q '案例：fable-castle.com 的 GEO 修复记录' ./_site/cases/index.html
+          grep -q '8ef4521' ./_site/cases/index.html
+          grep -q 'llms-full.txt' ./_site/cases/index.html
+          grep -q 'sitemap.xml' ./_site/cases/index.html
+          grep -q 'robots.txt' ./_site/cases/index.html
+          grep -q 'GitHub Actions' ./_site/cases/index.html
+          grep -q '/diagnosis/' ./_site/cases/index.html
+          ! grep -q '免费课程\|¥39\|100分\|排名提升' ./_site/cases/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
