@@ -33,6 +33,8 @@ jobs:
           test -f ./_site/geo/index.html
           test -f ./_site/founder-ip/index.html
           test -f ./_site/ai-knowledge-base/index.html
+          test -f ./_site/faq.html
+          test -f ./_site/3d-globe/index.html
           test -f ./_site/github-trust/index.html
           test -f ./_site/tools/index.html
           test -f ./_site/tools/content-health/index.html
@@ -104,6 +106,7 @@ jobs:
           grep -q '/diagnosis/' ./_site/services/geo-en.html
           grep -q '/diagnosis/' ./_site/services/geo-test.html
           ! grep -q '¥4,980\|¥19,800\|¥29,800\|¥49,800\|¥79,800\|¥198,000\|¥999/年\|S-9595A\|知识星球\|AI搜索渗透率\|全球GEO市场\|ROI\|排名提升\|保证\|全覆盖\|首单' ./_site/services/geo.html ./_site/services/agent.html ./_site/services/training.html ./_site/services/geo-en.html ./_site/services/geo-test.html
+          ! grep -q 'S-9595A\|¥39.9\|¥69.9\|知识星球\|课程怎么购买\|不满意能退吗\|/04-关于/深度合作/\|/02-知识图谱/' ./_site/faq.html ./_site/3d-globe/index.html
           ! grep -q 'fable-cc.github.io/fable-castle' .github/FUNDING.yml .github/ISSUE_TEMPLATE/config.yml
       - uses: actions/upload-pages-artifact@v5
         with:

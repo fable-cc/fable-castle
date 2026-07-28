@@ -7,7 +7,7 @@ permalink: /3d-globe/
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>景一·知识星球</title>
+<title>景一·知识资产地图</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden;background:#030308;font-family:-apple-system,sans-serif}
@@ -31,7 +31,7 @@ a{color:#C9A96E;text-decoration:none}
 <body>
 <canvas id="bg"></canvas>
 <div id="stars"></div>
-<div id="top"><h1>🏰 景一·知识星球</h1><p>72支柱 · <span id="liveCount">600+</span>篇 · 点击星辰 · <a href="/">← 首页</a></p></div>
+<div id="top"><h1>🏰 景一·知识资产地图</h1><p>公开知识资产 · GEO / IP / AI 知识库 · <a href="/research/">研究 →</a></p></div>
 <div id="bot">拖拽旋转 · 悬停放大 · 点击引爆粒子</div>
 
 <script>
@@ -62,7 +62,7 @@ var totalArticles=0;P.forEach(function(d,i){totalArticles+=d.c;
   var col=colPal[i%colPal.length];el.style.background=col.bg;el.style.border='1px solid '+col.bd;el.style.color=col.c;
   el.style.animationDelay=(i*.04)+'s';
   el.onclick=function(e){
-    window.open('/02-知识图谱/','_self');
+    window.open('/research/','_self');
     if(d.c===0){e.preventDefault();return;}
     // Particle burst
     for(var j=0;j<16;j++){
@@ -102,7 +102,8 @@ function render(){
     n.el.style.opacity=.35+(z+n.r)/(2*n.r)*.65;
   });
   requestAnimationFrame(render);
-if(!document.getElementById('liveCount').dataset.set){document.getElementById('liveCount').textContent=totalArticles;document.getElementById('liveCount').dataset.set='1';}
+var liveCount=document.getElementById('liveCount');
+if(liveCount&&!liveCount.dataset.set){liveCount.textContent=totalArticles;liveCount.dataset.set='1';}
 }
 
 var starCols=['#C9A96E','#00D4FF','#FF64B4','#00FFAA','#FFB432','#A078FF','#FFF'];
