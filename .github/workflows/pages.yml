@@ -86,8 +86,16 @@ jobs:
           ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱" ./_site/sitemap.xml
           grep -q '<link rel="canonical" href="https://fable-castle.com/about/">' ./_site/about/index.html
           grep -q '<link rel="canonical" href="https://fable-castle.com/services/">' ./_site/services/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/geo/">' ./_site/geo/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/founder-ip/">' ./_site/founder-ip/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/ai-knowledge-base/">' ./_site/ai-knowledge-base/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/what-is-fable-castle/">' ./_site/what-is-fable-castle/index.html
           grep -q 'application/ld+json' ./_site/about/index.html
           grep -q 'application/ld+json' ./_site/services/index.html
+          grep -q 'application/ld+json' ./_site/geo/index.html
+          grep -q 'application/ld+json' ./_site/founder-ip/index.html
+          grep -q 'application/ld+json' ./_site/ai-knowledge-base/index.html
+          grep -q 'application/ld+json' ./_site/what-is-fable-castle/index.html
           grep -q '景一' ./_site/about/index.html
           grep -q '景一' ./_site/services/index.html
           grep -q '案例：fable-castle.com 的 GEO 修复记录' ./_site/cases/index.html
