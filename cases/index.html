@@ -7,63 +7,109 @@ sitemap: true
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>样板案例 · 寓言城堡</title>
-<meta name="description" content="GEO 审计与优化前后对比样板案例。展示可复核的诊断结构、修改清单与交付样例。">
+<title>案例：fable-castle.com 的 GEO 修复记录 · 景一的寓言城堡</title>
+<meta name="description" content="景一的寓言城堡自站 GEO 修复案例：从旧入口噪音、主体混淆和抓取策略不清，到可抓取、可理解、可验证的创始人 AI 可见度诊断站。">
 <link rel="canonical" href="https://fable-castle.com/cases/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏰</text></svg>">
-<meta property="og:type" content="website">
-<meta property="og:title" content="样板案例 · 寓言城堡">
-<meta property="og:description" content="GEO 审计与优化前后对比样板案例。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="案例：fable-castle.com 的 GEO 修复记录">
+<meta property="og:description" content="一次公开站点如何被整理成可抓取、可理解、可验证、可持续监测的 GEO 修复记录。">
 <meta property="og:url" content="https://fable-castle.com/cases/">
-<meta property="og:site_name" content="寓言城堡">
+<meta property="og:site_name" content="景一的寓言城堡">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@graph":[
-    {"@type":"CollectionPage","@id":"https://fable-castle.com/cases/#page","name":"样板案例","url":"https://fable-castle.com/cases/","isPartOf":{"@id":"https://fable-castle.com/#website"},"about":{"@id":"https://fable-castle.com/#person"}},
-    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景一","alternateName":["景一 fable","Jingyi fable","fable-cc","景一的寓言城堡"],"description":"GEO 与 AI 可见度顾问","url":"https://fable-castle.com/","jobTitle":"GEO 与 AI 可见度顾问","knowsAbout":["GEO","AI Agent","知识管理","个人IP","搜索引擎优化","内容策略"]}
+    {
+      "@type":"CollectionPage",
+      "@id":"https://fable-castle.com/cases/#page",
+      "name":"案例：fable-castle.com 的 GEO 修复记录",
+      "url":"https://fable-castle.com/cases/",
+      "isPartOf":{"@id":"https://fable-castle.com/#website"},
+      "about":{"@id":"https://fable-castle.com/#person"}
+    },
+    {
+      "@type":"CreativeWork",
+      "@id":"https://fable-castle.com/cases/#self-geo-case",
+      "headline":"fable-castle.com 从 AI 不易识别到可被验证的 GEO 修复记录",
+      "url":"https://fable-castle.com/cases/",
+      "datePublished":"2026-07-28",
+      "author":{"@id":"https://fable-castle.com/#person"},
+      "publisher":{"@id":"https://fable-castle.com/#person"},
+      "about":["GEO","AI 可见度","创始人 IP","搜索资产","品牌证据治理"]
+    },
+    {
+      "@type":"Person",
+      "@id":"https://fable-castle.com/#person",
+      "name":"景一",
+      "alternateName":["景一 fable","Jingyi fable","fable-cc","景一的寓言城堡"],
+      "description":"GEO 与创始人 AI 可见度顾问",
+      "url":"https://fable-castle.com/",
+      "jobTitle":"GEO 与创始人 AI 可见度顾问",
+      "knowsAbout":["GEO","AI Agent","知识管理","个人IP","搜索引擎优化","内容策略"]
+    }
   ]
 }
 </script>
 <style>
-:root{--bg:#faf8f5;--text:#1a1a1a;--text-secondary:#555;--text-muted:#999;--accent:#2b5a8c;--accent-light:#e8f0f8;--border:#e0dcd6;--card-bg:#ffffff;--radius:8px}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
-a{color:var(--accent);text-decoration:none}
+:root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--soft:#f4efe7;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--red:#a7472b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
-.top-nav{max-width:860px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
-.logo{font-weight:700;font-size:15px;letter-spacing:1px;color:var(--text)}
-.nav a,.nav span{font-size:13px;color:var(--text-secondary);margin-left:18px}
-.nav a:hover{color:var(--accent);text-decoration:none}
-.nav .current{color:var(--text-muted)}
-.page{max-width:680px;margin:0 auto;padding:48px 24px 80px}
-h1{font-size:28px;font-weight:800;margin-bottom:8px}
-.page-desc{font-size:15px;color:var(--text-secondary);margin-bottom:32px}
-.cases-intro{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;font-size:14px;color:var(--text-secondary);line-height:1.7}
-.cases-intro p{margin-bottom:8px}
-.cases-intro p:last-child{margin-bottom:0}
-.case-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:24px}
-.case-card h2{font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text)}
-.case-meta{font-size:12px;color:var(--text-muted);margin-bottom:18px}
-.case-section{margin-top:16px}
-.case-section h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--accent)}
-.case-section p{font-size:14px;color:var(--text-secondary);line-height:1.7}
-.case-section ul{padding-left:18px;margin-top:6px}
-.case-section li{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:4px}
-.compare-table{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.compare-col{padding:14px 16px;border-radius:6px;font-size:13px;line-height:1.8;color:var(--text-secondary)}
-.compare-col.before{background:#fff5f5;border:1px solid #fcc}
-.compare-col.after{background:#f0faf0;border:1px solid #b7dfb7}
-.compare-label{font-weight:700;font-size:12px;margin-bottom:6px;color:var(--text)}
-.footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted)}
-.footer a{color:var(--text-muted)}
-@media(max-width:640px){h1{font-size:22px}.page{padding:32px 20px 60px}}
+.nav{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;color:var(--ink);letter-spacing:.02em}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a,.links span{font-size:14px;color:var(--muted)}
+.links .current{color:var(--ink);font-weight:800}
+.wrap{max-width:1080px;margin:0 auto;padding:52px 24px 86px}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:34px;align-items:start}
+.kicker{font-size:13px;color:var(--gold);font-weight:900;margin-bottom:12px}
+h1{font-size:42px;line-height:1.16;letter-spacing:-.02em;margin-bottom:16px}
+.lead{font-size:18px;color:var(--muted);max-width:760px;margin-bottom:22px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);padding:12px 18px;font-weight:800;font-size:14px;border:1px solid var(--line)}
+.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.secondary{background:#fff;color:var(--ink)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:#fff;color:var(--muted);font-weight:700}
+.panel,.card,.evidence,.cta{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.panel h2{font-size:17px;margin-bottom:10px}
+.panel p,.panel li,.card p,.card li,.evidence li{font-size:14px;color:var(--muted)}
+.panel ul,.card ul,.evidence ul{padding-left:18px}
+.scoreline{display:grid;gap:10px;margin-top:12px}
+.scoreline div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--soft);padding-bottom:8px;font-size:14px}
+.scoreline strong{color:var(--ink)}
+.section{margin-top:58px}
+.section h2{font-size:25px;margin-bottom:10px}
+.section>p{color:var(--muted);max-width:780px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card h3{font-size:16px;margin-bottom:8px}
+.card .label{font-size:12px;color:var(--gold);font-weight:900;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;font-size:14px}
+th{background:var(--soft);font-weight:800;color:var(--ink)}
+td{color:var(--muted)}
+.timeline{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.num{width:34px;height:34px;border-radius:50%;background:#e7f0f6;color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:900}
+.step h3{font-size:16px;margin-bottom:4px}
+.step p{font-size:14px;color:var(--muted)}
+.evidence{border-left:4px solid var(--green)}
+.boundary{border-left:4px solid var(--gold);background:#fff9ea;padding:16px 18px;border-radius:0 var(--radius) var(--radius) 0;color:#725515;font-size:14px;margin-top:18px}
+.cta{margin-top:48px;text-align:center;background:#f7fbff}
+.cta h2{font-size:24px;margin-bottom:10px}
+.cta p{color:var(--muted);max-width:720px;margin:0 auto 18px}
+.footer{border-top:1px solid var(--line);padding:28px 24px;text-align:center;color:var(--muted);font-size:13px}
+.footer a{color:var(--muted)}
+@media(max-width:860px){.hero,.grid,.grid2{grid-template-columns:1fr}h1{font-size:31px}.nav{align-items:flex-start;gap:12px;flex-direction:column}.links{gap:12px}.wrap{padding-top:38px}}
 </style>
 </head>
 <body>
-<nav class="top-nav">
-  <a href="/" class="logo">寓言城堡</a>
-  <div class="nav">
+<nav class="nav">
+  <a class="brand" href="/">景一的寓言城堡</a>
+  <div class="links">
     <a href="/tools/">工具</a>
     <a href="/research/">研究</a>
     <span class="current">案例</span>
@@ -71,114 +117,141 @@ h1{font-size:28px;font-weight:800;margin-bottom:8px}
     <a href="/about/">关于</a>
   </div>
 </nav>
-<div class="page">
 
-<h1>样板案例</h1>
-<p class="page-desc">用于展示 GEO 诊断报告写法、优化路径和前后对比结构。</p>
-
-<div class="cases-intro">
-  <p>本页为样板案例，用于说明交付结构、证据口径和可复核写法。正式客户案例上线前，应补充真实授权、来源链接、基线日期与样本说明。</p>
-</div>
-
-<div class="case-card">
-  <h2>样板一：技术博客从零引用到 AI 搜索稳定可见</h2>
-  <div class="case-meta">领域：开发者工具 · 优化周期：4 周 · 基线问题数：8 个</div>
-
-  <div class="case-section">
-    <h3>背景</h3>
-    <p>一个独立开发者的技术博客，已持续写作 3 年、累计 200+ 篇文章。Google 搜索有稳定流量，但在 ChatGPT、Claude、Perplexity 等 AI 搜索中几乎不可见——同样的技术问题，AI 总是引用其他来源。</p>
-  </div>
-
-  <div class="case-section">
-    <h3>诊断发现</h3>
-    <ul>
-      <li><strong>实体缺失</strong>：作者信息分散于各篇文章，没有统一的 Person Schema 标记</li>
-      <li><strong>结构散乱</strong>：文章以"日记体"叙述为主，缺少 AI 可提取的标题层级与结论摘要</li>
-      <li><strong>证据薄弱</strong>：大量主观判断（"推荐这样做"），缺少可核验的来源引用与数据支撑</li>
-      <li><strong>引用闭环断裂</strong>：文章内部互相引用但没有结构化关联，AI 无法建立知识图谱</li>
-    </ul>
-  </div>
-
-  <div class="case-section">
-    <h3>优化措施</h3>
-    <ul>
-      <li>统一部署 Person + WebSite + Article Schema，建立作者实体锚点</li>
-      <li>为每篇文章添加 TL;DR 摘要块、层级小标题与 FAQ 段落</li>
-      <li>替换主观判断为可核验证据：官方文档链接、基准测试数据、版本号</li>
-      <li>建立文章间的"前置阅读"链接与系列导航，形成主题簇</li>
-    </ul>
-  </div>
-
-  <div class="case-section">
-    <h3>效果对比</h3>
-    <div class="compare-table">
-      <div class="compare-col before">
-        <div class="compare-label">优化前（Day 0）</div>
-        <div>AI 搜索可见率：0/10</div>
-        <div>引用次数：0</div>
-        <div>Schema 错误：4 个</div>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="kicker">自站案例 · GEO 修复 · 可复核证据</div>
+      <h1>案例：fable-castle.com 的 GEO 修复记录</h1>
+      <p class="lead">这不是“保证 AI 推荐”的案例，而是一次公开站点如何被整理成可抓取、可理解、可验证、可持续监测的 GEO 修复记录。</p>
+      <div class="actions">
+        <a class="btn primary" href="/diagnosis/">预约 AI 可见度诊断</a>
+        <a class="btn secondary" href="/github-trust/">查看 GitHub 证据链</a>
       </div>
-      <div class="compare-col after">
-        <div class="compare-label">优化后（Day 28）</div>
-        <div>AI 搜索可见率：6/10</div>
-        <div>引用次数：12 次</div>
-        <div>Schema 错误：0 个</div>
+      <div class="tags">
+        <span class="tag">自站案例</span>
+        <span class="tag">GEO 修复</span>
+        <span class="tag">AI 可见度</span>
+        <span class="tag">可复核证据</span>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="case-card">
-  <h2>样板二：咨询服务站的 AI 信任度重建</h2>
-  <div class="case-meta">领域：商业咨询 · 优化周期：6 周 · 基线问题数：12 个</div>
-
-  <div class="case-section">
-    <h3>背景</h3>
-    <p>一位管理顾问的个人品牌站，内容质量高但 AI 搜索经常给出"无法验证"或"信息不充分"的结论。潜在客户通过 AI 搜索了解顾问背景时，得到的是模糊甚至错误的信息拼凑。</p>
-  </div>
-
-  <div class="case-section">
-    <h3>诊断发现</h3>
-    <ul>
-      <li><strong>同一实体多个名称</strong>：网站、社交媒体、第三方平台上作者名称不统一，AI 无法合并身份</li>
-      <li><strong>资历不可验证</strong>：声称"服务过 X 家企业"但没有任何可被爬虫抓取的证据链</li>
-      <li><strong>内容孤岛</strong>：文章独立存在，没有与作者的专业资质、服务项目、案例形成关联网络</li>
-      <li><strong>第三方信号缺失</strong>：没有 GitHub、LinkedIn、Google Scholar 等平台的 sameAs 链接</li>
-    </ul>
-  </div>
-
-  <div class="case-section">
-    <h3>优化措施</h3>
-    <ul>
-      <li>统一 Person Schema 的 sameAs 数组，连接 GitHub、LinkedIn、知乎等 6 个平台</li>
-      <li>将"服务过 X 家企业"替换为可核验表述："以下企业（名称+链接）曾合作"</li>
-      <li>在文章、服务页、关于页之间建立双向链接，形成 ProfessionalService 知识图谱</li>
-      <li>为每项专业声明补充 publishedDate、author、publisher 结构化标记</li>
-    </ul>
-  </div>
-
-  <div class="case-section">
-    <h3>效果对比</h3>
-    <div class="compare-table">
-      <div class="compare-col before">
-        <div class="compare-label">优化前（Day 0）</div>
-        <div>AI 信任评分：2.3/10</div>
-        <div>实体一致性：3 个变体</div>
-        <div>可核验声明：12%</div>
+    <aside class="panel">
+      <h2>案例边界</h2>
+      <p>本页记录的是站点基础设施、公开叙事与证据链修复，不承诺搜索排名、收录结果或 AI 引用概率。</p>
+      <div class="scoreline">
+        <div><strong>主体</strong><span>景一 fable / fable-cc</span></div>
+        <div><strong>站点</strong><span>fable-castle.com</span></div>
+        <div><strong>主入口</strong><span>/diagnosis/</span></div>
+        <div><strong>证据提交</strong><span>8ef4521</span></div>
       </div>
-      <div class="compare-col after">
-        <div class="compare-label">优化后（Day 42）</div>
-        <div>AI 信任评分：7.8/10</div>
-        <div>实体一致性：统一为 1 个</div>
-        <div>可核验声明：91%</div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <h2>修复前：问题不是“没有内容”，而是 AI 很难判断什么最重要</h2>
+    <p>站点里有大量知识资产、课程素材、工具说明和服务页面。资产本身有价值，但对搜索引擎和 AI 来说，主入口、主体身份、服务边界和证据路径不够收束。</p>
+    <div class="grid">
+      <article class="card"><div class="label">主叙事分散</div><h3>旧内容和服务混在一起</h3><p>课程、知识库、方法论、工具和服务同时出现，容易让外界误读为泛内容站。</p></article>
+      <article class="card"><div class="label">主体识别不稳</div><h3>需要更强消歧</h3><p>“景一”需要持续绑定“景一 fable / fable-cc / 景一的寓言城堡”，避免与同名主体混淆。</p></article>
+      <article class="card"><div class="label">旧入口噪音</div><h3>低客单线索稀释定位</h3><p>旧课程、旧知识库和课程目录容易稀释高客单 GEO 顾问服务定位。</p></article>
+      <article class="card"><div class="label">AI 文件过期</div><h3>llms-full.txt 叙事滞后</h3><p>旧版 AI 索引文件曾包含旧业务线、价格和知识星球等过期信息。</p></article>
+      <article class="card"><div class="label">抓取策略不清</div><h3>Cloudflare 与 robots 需要统一</h3><p>AI bot policy、robots.txt、sitemap.xml 和页面 canonical 需要形成同一套口径。</p></article>
+      <article class="card"><div class="label">证据页不足</div><h3>案例缺少真实修复链路</h3><p>原案例页是泛样板，不能充分证明“我自己也按这套方法修过”。</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>五维诊断：把模糊问题拆成可修复对象</h2>
+    <table>
+      <tr><th>维度</th><th>修复前问题</th><th>修复动作</th></tr>
+      <tr><td>定位资产</td><td>主页与旧入口容易让外界误读为课程/知识库站</td><td>统一为 GEO 与创始人 AI 可见度诊断站</td></tr>
+      <tr><td>内容资产</td><td>内容多，但主线不够收束</td><td>保留指南、研究、工具、案例，旧素材退出正式构建</td></tr>
+      <tr><td>信任资产</td><td>GitHub 仓库多，但层级不清</td><td>建立 GitHub 信任页，公开仓库按 A/B/C/D 分层</td></tr>
+      <tr><td>搜索资产</td><td>Sitemap 曾主动推荐旧入口</td><td>将 sitemap.xml 收束到当前核心页面</td></tr>
+      <tr><td>AI 可见度资产</td><td>llms-full.txt 过期，AI 爬虫策略不统一</td><td>重写 AI 索引说明，调整 robots.txt 与 Cloudflare 策略</td></tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>执行动作：从入口、证据、索引到防回流</h2>
+    <div class="timeline">
+      <div class="step"><div class="num">1</div><div><h3>统一主入口</h3><p>主页和导航明确指向创始人 AI 可见度与 IP 资产诊断：/diagnosis/。</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>清理低客单入口</h3><p>服务页不再出现旧免费课或低价课主入口，服务梯度改为诊断、审计、知识库与年度监测。</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>修复身份命名</h3><p>公开页面统一使用“景一 / 景一 fable / fable-cc / 景一的寓言城堡”。</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>建立 GitHub 信任页</h3><p>将公开仓库按 A/B/C/D 分层，说明哪些是核心资产，哪些只是历史或辅助实验。</p></div></div>
+      <div class="step"><div class="num">5</div><div><h3>重写 llms-full.txt</h3><p>AI 完整索引说明只保留当前权威叙事、服务边界、核心 URL 和不应误读项。</p></div></div>
+      <div class="step"><div class="num">6</div><div><h3>收束 sitemap.xml</h3><p>旧课程、旧知识库、旧方法论不再作为核心 URL 被主动推荐给搜索引擎。</p></div></div>
+      <div class="step"><div class="num">7</div><div><h3>增强 robots.txt</h3><p>允许搜索/问答爬虫访问核心公开页面，同时对旧路径降噪。</p></div></div>
+      <div class="step"><div class="num">8</div><div><h3>增加 CI 防回流</h3><p>如果旧入口重新进入构建结果，或 AI 索引文件再次出现旧叙事，GitHub Actions 会失败。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>可复核证据：只写已经验证的事实</h2>
+    <div class="grid2">
+      <div class="evidence">
+        <h3>GitHub 提交</h3>
+        <ul>
+          <li><code>8ef4521 docs: narrow public GEO site authority graph</code></li>
+          <li>动作：降噪、重写 AI 索引、服务页修正、CI 防回流。</li>
+        </ul>
+      </div>
+      <div class="evidence">
+        <h3>线上验证</h3>
+        <ul>
+          <li><code>/llms-full.txt</code> 已出现当前权威标题。</li>
+          <li><code>/sitemap.xml</code> 不再包含旧课程/旧知识库入口。</li>
+          <li><code>/services/</code> 不再含旧免费课与低价课残留。</li>
+          <li><code>/course/</code> 与 <code>/02-知识图谱/</code> 返回 404。</li>
+        </ul>
+      </div>
+      <div class="evidence">
+        <h3>构建验证</h3>
+        <ul>
+          <li>GitHub Actions 构建与部署通过。</li>
+          <li>CI 检查核心 GEO 页面、canonical、JSON-LD、llms、robots 与 sitemap。</li>
+        </ul>
+      </div>
+      <div class="evidence">
+        <h3>技术边界</h3>
+        <ul>
+          <li>本地构建失败原因是本机 Bundler 版本过旧。</li>
+          <li>线上构建使用 GitHub Actions 的 Ruby 4.0 环境完成。</li>
+        </ul>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-</div>
-<footer class="footer">
-  <p>寓言城堡 · <a href="https://github.com/fable-cc/fable-castle">GitHub</a> · © 2026</p>
-</footer>
+  <section class="section">
+    <h2>修复结果：从“素材很多”变成“入口清楚、证据清楚、边界清楚”</h2>
+    <div class="grid2">
+      <article class="card"><h3>对客户更清楚</h3><p>访问者不需要在课程、工具、知识库和咨询之间猜主线。默认路径变成：先诊断，再按短板进入服务。</p></article>
+      <article class="card"><h3>对 AI 更清楚</h3><p>AI 看到的权威文件更一致：llms.txt、llms-full.txt、sitemap.xml、robots.txt 指向同一个主体和服务边界。</p></article>
+      <article class="card"><h3>对搜索更清楚</h3><p>sitemap 不再主动推荐旧课程、旧知识库和旧方法论入口，减少无关页面对当前业务的干扰。</p></article>
+      <article class="card"><h3>对后续维护更清楚</h3><p>CI 增加防回流检查，避免未来改动把已经清理掉的旧入口重新发布出去。</p></article>
+    </div>
+    <p class="boundary">边界说明：这次修复不等于搜索排名、收录或 AI 引用的承诺。它证明的是基础设施更清晰、证据链更可复核、AI 更容易理解本站当前身份和服务范围。</p>
+  </section>
+
+  <section class="section">
+    <h2>下一步：从站内可信，走向站外可信</h2>
+    <div class="grid">
+      <article class="card"><h3>外部权威信源</h3><p>继续建设掘金、知乎、CSDN、公众号和第三方介绍页，让“景一 fable”在站外也有一致证据。</p></article>
+      <article class="card"><h3>消费端 AI 复测</h3><p>用固定问题集复测 ChatGPT、Perplexity、Kimi、DeepSeek、豆包等平台，记录日期、问题、回答和限制。</p></article>
+      <article class="card"><h3>真实客户案例</h3><p>取得授权后再发布客户案例，保留基线、样本、执行动作、证据截图和不可控边界。</p></article>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>你的官网也可能不是“没内容”，而是 AI 看不懂重点。</h2>
+    <p>如果你的官网、个人 IP 或专家品牌也有“搜得到但说不清、AI 知道但不敢引用、内容多但证据散”的问题，可以先做一次创始人 AI 可见度与 IP 资产诊断。</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn primary" href="/diagnosis/">开始 AI 可见度诊断</a>
+      <a class="btn secondary" href="/services/">查看服务边界</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">景一的寓言城堡 · <a href="/who-is-jingyi/">景一身份消歧</a> · <a href="/llms.txt">llms.txt</a> · © 2026</footer>
 </body>
 </html>
