@@ -93,6 +93,17 @@ jobs:
           ! grep -q '/guides/ai-crawler-checklist/\|/guides/robots-txt-for-ai/\|/guides/content-health-check/\|/guides/geo-rewrite-best-practices/\|/guides/long-tail-question-strategy/\|/guides/search-intent-mapping/' ./_site/tools/crawler-check/index.html ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
           ! grep -q '发送至服务端\|24 小时内自动清除\|联网搜索请求\|搜索结果数据不保留' ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
           ! grep -q '¥39,800\|¥99,800\|¥198,000\|首单体验价\|排名提升\|全球AI平台全覆盖\|✗ 无' ./_site/services/enterprise.html ./_site/services/geo-global.html
+          test -f ./_site/services/geo.html
+          test -f ./_site/services/agent.html
+          test -f ./_site/services/training.html
+          test -f ./_site/services/geo-en.html
+          test -f ./_site/services/geo-test.html
+          grep -q '/diagnosis/' ./_site/services/geo.html
+          grep -q '/diagnosis/' ./_site/services/agent.html
+          grep -q '/diagnosis/' ./_site/services/training.html
+          grep -q '/diagnosis/' ./_site/services/geo-en.html
+          grep -q '/diagnosis/' ./_site/services/geo-test.html
+          ! grep -q '¥4,980\|¥19,800\|¥29,800\|¥49,800\|¥79,800\|¥198,000\|¥999/年\|S-9595A\|知识星球\|AI搜索渗透率\|全球GEO市场\|ROI\|排名提升\|保证\|全覆盖\|首单' ./_site/services/geo.html ./_site/services/agent.html ./_site/services/training.html ./_site/services/geo-en.html ./_site/services/geo-test.html
           ! grep -q 'fable-cc.github.io/fable-castle' .github/FUNDING.yml .github/ISSUE_TEMPLATE/config.yml
       - uses: actions/upload-pages-artifact@v5
         with:
