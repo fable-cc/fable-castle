@@ -45,7 +45,7 @@ aux_links:
 aux_links_new_tab: true
 
 # 页脚
-footer_content: "Made with 🔥 by 景 · <a href=\"https://github.com/fable-cc/fable-castle\">GitHub</a>"
+footer_content: "Made with 🔥 by 景一 · <a href=\"https://github.com/fable-cc/fable-castle\">GitHub</a>"
 
 # 返回顶部
 back_to_top: true
@@ -66,24 +66,34 @@ defaults:
   - scope:
       path: "01-方法论/"
     values:
-      nav_exclude: false
+      nav_exclude: true
+      sitemap: false
+      published: false
   - scope:
       path: "02-知识图谱/"
     values:
-      nav_exclude: false
+      nav_exclude: true
       layout: default
+      sitemap: false
+      published: false
   - scope:
       path: "03-内容样本/"
     values:
-      nav_exclude: false
+      nav_exclude: true
+      sitemap: false
+      published: false
   - scope:
       path: "04-关于/"
     values:
-      nav_exclude: false
+      nav_exclude: true
+      sitemap: false
+      published: false
   - scope:
       path: "知识库/"
     values:
-      nav_exclude: false
+      nav_exclude: true
+      sitemap: false
+      published: false
   - scope:
       path: "services/"
     values:
@@ -108,6 +118,20 @@ exclude:
   - .git/
   - docs/superpowers/
   - image-cards/
+  - 01-方法论/
+  - 02-知识图谱/
+  - 03-内容样本/
+  - 04-关于/
+  - 05-CSDN版/
+  - 05-掘金版/
+  - 05-知乎版/
+  - course/
+  - standalone/
+  - tag-cloud.md
+  - 公版书库/
+  - 知识库/
+  - 课程/
+  - 运营方案/
 
 # Just the Docs 特定配置
 heading_anchors: true

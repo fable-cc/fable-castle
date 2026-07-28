@@ -43,11 +43,20 @@ jobs:
           test -f ./_site/research/index.html
           test -f ./_site/research/methodology/index.html
           test -f ./_site/llms.txt
+          test -f ./_site/llms-full.txt
           test -f ./_site/robots.txt
           test -f ./_site/sitemap.xml
+          test ! -e ./_site/course/index.html
+          test ! -e ./_site/01-方法论/index.html
+          test ! -e ./_site/02-知识图谱/index.html
+          test ! -e ./_site/03-内容样本/index.html
+          test ! -e ./_site/04-关于/index.html
+          test ! -e ./_site/课程/index.html
           grep -q "https://fable-castle.com/sitemap.xml" ./_site/robots.txt
           grep -q "https://fable-castle.com/diagnosis/" ./_site/llms.txt
           grep -q "https://fable-castle.com/who-is-jingyi/" ./_site/llms.txt
+          ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱\\|知识星球\\|价格：" ./_site/llms-full.txt
+          ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱" ./_site/sitemap.xml
           grep -q '<link rel="canonical" href="https://fable-castle.com/about/">' ./_site/about/index.html
           grep -q '<link rel="canonical" href="https://fable-castle.com/services/">' ./_site/services/index.html
           grep -q 'application/ld+json' ./_site/about/index.html
