@@ -117,6 +117,13 @@ main {
   gap: 18px;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
 .card {
   min-height: 220px;
   padding: 24px;
@@ -124,6 +131,22 @@ main {
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
+}
+
+.mini-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.mini-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.mini-card p {
+  margin: 0;
 }
 
 .card h2,
@@ -177,6 +200,28 @@ main {
   border-top: 1px solid var(--line);
 }
 
+table {
+  width: 100%;
+  margin-top: 18px;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  width: 140px;
+  color: var(--ink);
+  background: #f4f1e9;
+}
+
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -223,6 +268,7 @@ main {
   }
 
   .grid,
+  .grid-2,
   .article {
     grid-template-columns: 1fr;
   }
