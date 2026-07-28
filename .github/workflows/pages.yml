@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '4.0'
@@ -85,7 +85,7 @@ jobs:
           ! grep -q '发送至服务端\|24 小时内自动清除\|联网搜索请求\|搜索结果数据不保留' ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
           ! grep -q '¥39,800\|¥99,800\|¥198,000\|首单体验价\|排名提升\|全球AI平台全覆盖\|✗ 无' ./_site/services/enterprise.html ./_site/services/geo-global.html
           ! grep -q 'fable-cc.github.io/fable-castle' .github/FUNDING.yml .github/ISSUE_TEMPLATE/config.yml
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: ./_site
 
@@ -97,7 +97,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Ping search engines after deploy
         if: success()
