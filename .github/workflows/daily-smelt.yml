@@ -1,8 +1,6 @@
 name: 景一知识库管家
 
 on:
-  schedule:
-    - cron: '0 21 * * *'  # 每天UTC 21:00 = 北京时间凌晨5点
   workflow_dispatch:
 
 jobs:

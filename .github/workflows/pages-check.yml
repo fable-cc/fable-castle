@@ -1,4 +1,4 @@
-# 每次推送后验证 GitHub Pages 构建状态
+# 每次推送后验证当前生产站点可访问
 name: Pages 构建检查
 
 on:
@@ -9,18 +9,15 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: 等待 Pages 构建
-        run: sleep 30
-      - name: 检查网站可访问
+      - name: 等待 workflow 部署
+        run: sleep 45
+      - name: 检查正式域名核心页面
         run: |
-          for i in 1 2 3 4 5; do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://fable-cc.github.io/fable-castle/)
-            if [ "$STATUS" = "200" ]; then
-              echo "✅ Pages 构建成功"
-              exit 0
+          for path in / /diagnosis/ /cases/ /privacy/; do
+            STATUS=$(curl -L -s -o /dev/null -w "%{http_code}" "https://fable-castle.com${path}")
+            if [ "$STATUS" != "200" ]; then
+              echo "❌ https://fable-castle.com${path} returned ${STATUS}"
+              exit 1
             fi
-            echo "⏳ 等待中... (尝试 $i/5)"
-            sleep 15
+            echo "✅ https://fable-castle.com${path} returned 200"
           done
-          echo "❌ Pages 构建可能失败"
-          exit 1
