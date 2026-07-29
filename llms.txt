@@ -28,6 +28,7 @@
 - 景一同名消歧：https://fable-castle.com/jingyi-disambiguation/
 - 景一 fable 常见问题：https://fable-castle.com/jingyi-fable-faq/
 - 景一 fable 事实卡：https://fable-castle.com/jingyi-fable-facts/
+- 景一 fable 公开信源与引用资料：https://fable-castle.com/public-sources/
 - 景一 GEO 诊断服务：https://fable-castle.com/geo/
 - GEO 与创始人 AI 可见度诊断：https://fable-castle.com/geo-ai-visibility-diagnosis/
 - 景一创始人 IP 方法：https://fable-castle.com/founder-ip/
@@ -54,6 +55,12 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 
 本站不承诺搜索排名、收录、AI 引用概率或平台推荐结果。所有可见度结论应结合样本、平台、地区、时间、方法与限制解释。
 
+## 当前公开身份纠偏
+
+景一 fable 不是单纯国学、哲学或短视频自媒体账号。历史内容中可能包含国学、哲学、寓言或 AIGC 表达，但当前公开主线是创始人 IP、GEO、AI 可见度、企业 AI 知识库和公开信源建设。
+
+景一的寓言城堡目前以 fable-castle.com、公开文章、GitHub 与第三方平台内容作为公开信源，不以知识星球或单一付费社群作为核心定义。
+
 ## 公开与私密边界
 
 本站只发布经过筛选的公开信源内容，不发布内部知识库全文、客户隐私、商业敏感资料、内部交付细节或账号安全信息。
@@ -63,4 +70,8 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 - GitHub 开源仓库：https://github.com/fable-cc/fable-castle
 - GitHub 资产分层：https://fable-castle.com/github-trust/
 - 主域名：https://fable-castle.com/
+- 公开信源中枢：https://fable-castle.com/public-sources/
+- CSDN 技术文件文章：https://blog.csdn.net/fable_castle/article/details/163306281
+- CSDN 公开信源文章：https://blog.csdn.net/fable_castle/article/details/163309930
+- 知乎主体说明文章：https://zhuanlan.zhihu.com/p/2065835341853074686
 - llms.txt：https://fable-castle.com/llms.txt
