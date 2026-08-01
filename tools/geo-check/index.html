@@ -1,0 +1,364 @@
+---
+sitemap: true
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO 基建检测 · 景一的寓言城堡</title>
+<meta name="description" content="GEO 基建检测工具：输入品牌名、营业执照主体或官网网址，检查 AI 搜索可理解、可抓取、可引用的基础条件，生成清楚可解释的 GEO 体检报告。">
+<link rel="canonical" href="https://fable-castle.com/tools/geo-check/">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "@id":"https://fable-castle.com/tools/geo-check/#app",
+      "name":"GEO 基建检测",
+      "description":"面向品牌、营业执照主体、创始人与官网的 GEO 基础体检工具，检查 URL、robots、sitemap、llms、Schema、品牌实体、工商主体、公开信源、同名消歧与客户决策承接等维度。结果用于诊断，不承诺 AI 排名、收录或推荐。",
+      "url":"https://fable-castle.com/tools/geo-check/",
+      "applicationCategory":"BusinessApplication",
+      "operatingSystem":"All",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},
+      "author":{"@id":"https://fable-castle.com/#person"}
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://fable-castle.com/tools/geo-check/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"GEO 基建检测能保证 AI 推荐吗？","acceptedAnswer":{"@type":"Answer","text":"不能。它检查品牌是否具备被 AI 理解、抓取、引用的基础条件，不承诺 AI 首答、固定排名、收录或成交。"}},
+        {"@type":"Question","name":"可以只输入营业执照名称或网站吗？","acceptedAnswer":{"@type":"Answer","text":"可以。工具会把品牌名、营业执照主体和网站域名都视为可检测入口，并提示是否需要补充对外品牌与工商主体之间的桥接说明。"}}
+      ]
+    },
+    {"@type":"Person","@id":"https://fable-castle.com/#person","name":"景一","alternateName":["景一 fable","Jingyi fable","fable-cc","景一的寓言城堡"],"url":"https://fable-castle.com/","jobTitle":"GEO 与创始人 AI 可见度顾问"}
+  ]
+}
+</script>
+<style>
+:root{--bg:#070b14;--panel:#0e1626;--panel2:#111c31;--paper:#f8fafc;--ink:#eaf2ff;--muted:#9fb0c8;--soft:#cad7ea;--line:rgba(154,179,216,.22);--cyan:#55e6ff;--blue:#68a8ff;--green:#5df0ae;--gold:#ffc96b;--red:#ff7b8a;--violet:#b994ff;--radius:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:
+radial-gradient(circle at 12% 8%,rgba(85,230,255,.18),transparent 28%),
+radial-gradient(circle at 84% 2%,rgba(185,148,255,.18),transparent 30%),
+linear-gradient(180deg,#070b14 0%,#0b1020 55%,#080b12 100%);color:var(--ink);font-size:16px;line-height:1.75;min-height:100vh}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{max-width:1120px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.brand{font-weight:850;color:#fff;letter-spacing:.04em}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{font-size:13px;color:var(--muted)}
+.wrap{max-width:1120px;margin:0 auto;padding:54px 24px 90px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;margin-bottom:28px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;color:#06111a;background:linear-gradient(90deg,var(--cyan),var(--green));font-weight:800;font-size:12px;border-radius:999px;padding:6px 12px;margin-bottom:18px}
+h1{font-size:46px;line-height:1.08;letter-spacing:-.04em;margin-bottom:16px}
+.lead{color:var(--soft);font-size:17px;max-width:760px}
+.hero-card{position:relative;min-height:260px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(17,28,49,.82),rgba(11,18,32,.56));overflow:hidden;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.hero-card:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 120deg,transparent,rgba(85,230,255,.32),transparent,rgba(185,148,255,.3),transparent);animation:spin 18s linear infinite}
+.hero-card>*{position:relative}.orb{width:150px;height:150px;border-radius:50%;margin:26px auto 18px;background:radial-gradient(circle at 32% 28%,#fff,var(--cyan) 14%,#2264ff 44%,#101a38 70%);box-shadow:0 0 50px rgba(85,230,255,.46)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mini{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(7,11,20,.58);text-align:center}.mini strong{display:block;font-size:18px}.mini span{font-size:11px;color:var(--muted)}
+.tool{background:rgba(14,22,38,.86);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.26);margin:26px 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--soft);font-weight:700;margin-bottom:6px}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:14px;background:#08111f;color:var(--ink);padding:12px 13px;font:inherit;outline:none}
+textarea{min-height:108px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-shadow:0 0 0 3px rgba(85,230,255,.12)}
+.wide{grid-column:1/-1}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:850;cursor:pointer;font-size:14px}
+.primary{background:linear-gradient(90deg,var(--cyan),var(--blue));color:#06111a}.ghost{background:transparent;color:var(--soft);border:1px solid var(--line)}
+.hint{font-size:12px;color:var(--muted)}
+.result{display:none;margin-top:24px}.result.show{display:block}
+.score-row{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:stretch;margin-bottom:18px}
+.score-card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#101c31,#09111e);padding:22px;text-align:center}
+.score{font-size:64px;line-height:1;font-weight:950;letter-spacing:-.06em}.score small{font-size:24px;color:var(--muted)}.level{font-weight:850;margin-top:8px}
+.explain{border:1px solid var(--line);border-radius:24px;background:rgba(8,17,31,.76);padding:20px}.explain h2{font-size:20px;margin-bottom:8px}.explain p{color:var(--soft);font-size:14px}
+.bars{display:grid;gap:10px;margin:18px 0}.bar{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.025)}.bar-head{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:800}.bar-note{font-size:12px;color:var(--muted);margin-top:4px}.track{height:8px;border-radius:99px;background:#1c2b45;margin-top:9px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green))}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.card{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(255,255,255,.035)}.card h3{font-size:15px;margin-bottom:6px}.card p,.card li{font-size:13px;color:var(--soft)}.card ul{padding-left:18px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:850;margin-bottom:8px}.ok{background:rgba(93,240,174,.14);color:var(--green);border:1px solid rgba(93,240,174,.35)}.warn{background:rgba(255,201,107,.14);color:var(--gold);border:1px solid rgba(255,201,107,.35)}.risk{background:rgba(255,123,138,.14);color:var(--red);border:1px solid rgba(255,123,138,.35)}
+.report{white-space:pre-wrap;border:1px solid var(--line);border-radius:18px;background:#07101d;padding:16px;color:#dfeaff;font-size:13px;max-height:360px;overflow:auto;margin-top:16px}
+.section{margin-top:34px}.section h2{font-size:22px;margin-bottom:12px}.muted{color:var(--muted);font-size:14px}.footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:var(--muted);font-size:12px}
+@media(max-width:860px){.hero,.score-row,.form-grid{grid-template-columns:1fr}h1{font-size:34px}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.mini-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">景一的寓言城堡</a>
+  <div class="nav-links">
+    <a href="/tools/">工具</a>
+    <a href="/geo/">GEO 服务</a>
+    <a href="/cases/">案例</a>
+    <a href="/public-sources/">公开信源</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">GEO CHECK · 客户看得懂的 AI 搜索基建体检</span>
+      <h1>不是测一个分数，<br>是把 AI 为什么看不懂你说清楚。</h1>
+      <p class="lead">输入品牌名、营业执照主体或官网网址，生成一份 GEO 基建检测报告：技术抓取、AI 可读、品牌实体、工商主体桥接、公开信源、同名消歧、客户决策承接，每项都给扣分原因和修复动作。</p>
+    </div>
+    <div class="hero-card">
+      <div class="orb"></div>
+      <div class="mini-grid">
+        <div class="mini"><strong>6</strong><span>核心维度</span></div>
+        <div class="mini"><strong>24</strong><span>检测点</span></div>
+        <div class="mini"><strong>0</strong><span>排名承诺</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool" id="tool">
+    <div class="form-grid">
+      <div>
+        <label for="brand">品牌 / 创始人 / 网站名（可选）</label>
+        <input id="brand" placeholder="例如：景一 fable">
+      </div>
+      <div>
+        <label for="legal">营业执照主体 / 公司名（可选）</label>
+        <input id="legal" placeholder="例如：某某科技有限公司">
+      </div>
+      <div>
+        <label for="url">官网 URL（必填）</label>
+        <input id="url" placeholder="例如：https://fable-castle.com/">
+      </div>
+      <div>
+        <label for="industry">行业 / 赛道</label>
+        <input id="industry" placeholder="例如：GEO 与创始人 IP">
+      </div>
+      <div class="wide">
+        <label for="sources">公开信源链接（可选，一行一个）</label>
+        <textarea id="sources" placeholder="官网事实页、GitHub、CSDN、知乎、媒体报道、百科、白皮书、案例页……"></textarea>
+      </div>
+      <div class="wide">
+        <label for="notes">品牌说明 / 客户决策信息（可选）</label>
+        <textarea id="notes" placeholder="你是谁、营业执照主体和对外品牌是什么关系、服务谁、解决什么问题、案例证据、同名主体、适合/不适合谁、下一步怎么联系……"></textarea>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" onclick="runGeoCheck()">开始 GEO 检测</button>
+      <button class="btn ghost" onclick="loadExample()">填入景一 fable 示例</button>
+      <button class="btn ghost" onclick="copyReport()">复制报告</button>
+      <span class="hint">静态版不把输入发到服务器；自动抓取受浏览器 CORS 限制，真实收录与 AI 提及需人工复测。</span>
+    </div>
+
+    <div id="result" class="result">
+      <div class="score-row">
+        <div class="score-card">
+          <div class="score"><span id="totalScore">0</span><small>/100</small></div>
+          <div class="level" id="scoreLevel">待检测</div>
+          <p class="hint" id="scoreHint">分数代表 GEO 基建准备度，不代表 AI 排名。</p>
+        </div>
+        <div class="explain">
+          <h2 id="summaryTitle">检测摘要</h2>
+          <p id="summaryText"></p>
+          <div class="bars" id="bars"></div>
+        </div>
+      </div>
+      <div class="cards" id="cards"></div>
+      <div class="report" id="report"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>为什么这个比普通检测更清楚？</h2>
+    <div class="cards">
+      <div class="card"><span class="tag ok">看事实</span><h3>不把“可访问”说成“已收录”</h3><p>可抓取、被索引、被 AI 识别、被引用，是四件事。检测报告会分开写，不混成一句漂亮话。</p></div>
+      <div class="card"><span class="tag warn">看原因</span><h3>每个扣分都有解释</h3><p>不是只给红黄绿，而是告诉客户缺的是技术入口、品牌实体、公开证据，还是同名消歧。</p></div>
+      <div class="card"><span class="tag risk">看动作</span><h3>直接变成交付清单</h3><p>报告最后输出 7 天、30 天修复建议，方便你把免费检测自然接到深度诊断。</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>检测边界</h2>
+    <p class="muted">本工具用于 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。完整 GEO 诊断仍需要多平台复测、搜索索引证据、第三方信源核验和人工判断。</p>
+  </section>
+</main>
+
+<footer class="footer">景一的寓言城堡 · GEO 诊断不是买排名，是让 AI 更准确理解你的公开品牌资产。</footer>
+
+<script>
+const dims = [
+  {key:'tech', name:'技术可抓取', max:18, note:'URL、HTTPS、robots、sitemap、llms 入口是否具备。'},
+  {key:'readable', name:'AI 可读结构', max:18, note:'是否有清楚标题、FAQ、Schema、页面事实块。'},
+  {key:'entity', name:'主体实体清晰度', max:18, note:'品牌名、营业执照主体、网站名、别名、行业、服务对象是否稳定。'},
+  {key:'sources', name:'公开信源质量', max:18, note:'是否有可被搜索与 AI 交叉验证的第三方公开资料。'},
+  {key:'disambiguation', name:'同名消歧', max:14, note:'是否说明不是哪些同名人、公司、作品或地点。'},
+  {key:'decision', name:'客户决策承接', max:14, note:'客户看完是否知道适合谁、怎么做、下一步联系谁。'}
+];
+let latestReport = '';
+
+function val(id){return document.getElementById(id).value.trim()}
+function normUrl(raw){
+  if(!raw) return null;
+  let u = raw;
+  if(!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  try{return new URL(u)}catch(e){return null}
+}
+function hasAny(text, words){return words.some(w => text.toLowerCase().includes(w.toLowerCase()))}
+function countLines(text){return text.split(/\n+/).map(s=>s.trim()).filter(Boolean).length}
+
+function runGeoCheck(){
+  const rawBrand = val('brand');
+  const legal = val('legal');
+  const industry = val('industry');
+  const urlObj = normUrl(val('url'));
+  const sources = val('sources');
+  const notes = val('notes');
+  if(!urlObj){alert('请至少填写官网 URL；品牌名或营业执照主体可以先留空。'); return}
+  const hostName = urlObj.hostname.replace(/^www\./,'');
+  const brand = rawBrand || legal || hostName;
+  document.getElementById('url').value = urlObj.href;
+  if(!rawBrand && !legal){document.getElementById('brand').value = hostName}
+  const all = [brand, legal, industry, sources, notes, urlObj.href, hostName].join('\n');
+  const sourceLines = countLines(sources);
+
+  const scores = {};
+  const reasons = {};
+  scores.tech = 0; reasons.tech = [];
+  if(urlObj.protocol === 'https:'){scores.tech += 4; reasons.tech.push('HTTPS 已具备。')} else {reasons.tech.push('建议改为 HTTPS。')}
+  if(!urlObj.hostname.match(/^\\d+\\.\\d+\\.\\d+\\.\\d+$/)){scores.tech += 2; reasons.tech.push('域名形态正常。')}
+  if(urlObj.pathname === '/' || urlObj.pathname.length > 1){scores.tech += 2; reasons.tech.push('URL 可作为检测入口。')}
+  if(hasAny(all,['robots.txt','robots'])){scores.tech += 3; reasons.tech.push('已提到 robots 抓取规则。')} else reasons.tech.push('未提供 robots.txt 证据，需检查是否误拦 AI/搜索爬虫。');
+  if(hasAny(all,['sitemap.xml','sitemap'])){scores.tech += 3; reasons.tech.push('已提到 sitemap。')} else reasons.tech.push('未提供 sitemap 证据，建议补齐。');
+  if(hasAny(all,['llms.txt','llms-full'])){scores.tech += 4; reasons.tech.push('已提到 llms.txt / llms-full。')} else reasons.tech.push('未提供 llms.txt 入口，AI 友好度不足。');
+
+  scores.readable = 0; reasons.readable = [];
+  if(hasAny(all,['schema','json-ld','结构化数据'])){scores.readable += 5; reasons.readable.push('有结构化数据意识。')} else reasons.readable.push('未看到 Schema / JSON-LD 证据。');
+  if(hasAny(all,['faq','问答','常见问题'])){scores.readable += 4; reasons.readable.push('有 FAQ / 问答结构。')} else reasons.readable.push('建议增加 FAQ，方便 AI 抽取答案。');
+  if(hasAny(all,['事实页','事实卡','简介','品牌说明','about'])){scores.readable += 4; reasons.readable.push('有事实说明入口。')} else reasons.readable.push('缺少稳定事实页/事实卡。');
+  if(notes.length > 120){scores.readable += 3; reasons.readable.push('补充说明较充分。')} else reasons.readable.push('品牌说明偏短，AI 难以形成完整画像。');
+  if(hasAny(all,['案例','报告','白皮书','研究','数据'])){scores.readable += 2; reasons.readable.push('包含可引用内容线索。')}
+
+  scores.entity = 0; reasons.entity = [];
+  if(rawBrand.length >= 2){scores.entity += 4; reasons.entity.push('对外品牌/创始人/网站名已明确。')}
+  else {scores.entity += 2; reasons.entity.push('未填写品牌名，已临时按网站域名识别；建议补充真实对外品牌。')}
+  if(legal.length >= 4){scores.entity += 3; reasons.entity.push('营业执照主体/公司名已填写。')}
+  else reasons.entity.push('未填写营业执照主体；企业客户建议补充工商主体。');
+  if(rawBrand && legal && rawBrand !== legal){
+    if(hasAny(all,['关系','主体','运营','隶属','公司','旗下','品牌'])){
+      scores.entity += 2; reasons.entity.push('已出现品牌与工商主体之间的桥接说明。');
+    } else {
+      reasons.entity.push('对外品牌与营业执照主体不同，建议写明二者关系，否则 AI 可能分裂识别。');
+    }
+  } else if(rawBrand && legal && rawBrand === legal){
+    scores.entity += 2; reasons.entity.push('对外品牌与工商主体一致，实体识别更稳定。');
+  }
+  if(industry.length >= 3){scores.entity += 4; reasons.entity.push('行业/赛道已填写。')} else reasons.entity.push('行业/赛道未明确。');
+  if(hasAny(all,['别名','英文','fable','alternate','又称'])){scores.entity += 3; reasons.entity.push('有别名/英文名线索。')} else reasons.entity.push('建议写清品牌别名、英文名、账号名。');
+  if(hasAny(all,['服务','帮助','面向','适合','客户'])){scores.entity += 4; reasons.entity.push('服务对象或价值描述存在。')} else reasons.entity.push('缺少服务对象与价值描述。');
+  if(hasAny(all,['不是','无关','同名','消歧'])){scores.entity += 2; reasons.entity.push('有消歧或边界描述。')}
+
+  scores.sources = 0; reasons.sources = [];
+  if(sourceLines >= 1){scores.sources += 4; reasons.sources.push('已有公开信源链接。')} else reasons.sources.push('未提供公开信源链接。');
+  if(sourceLines >= 3){scores.sources += 4; reasons.sources.push('信源数量达到基础交叉验证。')} else reasons.sources.push('建议至少准备 3 个公开信源。');
+  if(sourceLines >= 6){scores.sources += 3; reasons.sources.push('信源矩阵较充足。')}
+  if(hasAny(sources,'github csdn zhihu juejin weixin mp.weixin 36kr baidu wikipedia 知乎 掘金 公众号 媒体 百科 白皮书'.split(' '))){scores.sources += 4; reasons.sources.push('包含第三方或高权重平台线索。')} else reasons.sources.push('缺少第三方平台/媒体/百科/开源信源。');
+  if(hasAny(sources,['/public-sources/','公开信源','discussion','article','posts'])){scores.sources += 3; reasons.sources.push('有公开资料中枢或文章入口。')}
+
+  scores.disambiguation = 0; reasons.disambiguation = [];
+  if(hasAny(all,['同名','不是','无关','区别','消歧'])){scores.disambiguation += 5; reasons.disambiguation.push('已有同名消歧意识。')} else reasons.disambiguation.push('未看到同名消歧说明。');
+  if(hasAny(all,['导演','企业家','小说','角色','地点','公司','品牌'])){scores.disambiguation += 4; reasons.disambiguation.push('列出了可能混淆主体。')} else reasons.disambiguation.push('建议列出同名人/公司/作品/地点。');
+  if(hasAny(all,['优先使用','搜索时','引用时','fable','官网'])){scores.disambiguation += 3; reasons.disambiguation.push('有推荐引用口径。')}
+  if(sourceLines >= 3){scores.disambiguation += 2; reasons.disambiguation.push('信源可辅助消歧。')}
+
+  scores.decision = 0; reasons.decision = [];
+  if(hasAny(all,['适合','不适合','服务谁','客户','创始人','企业'])){scores.decision += 4; reasons.decision.push('有适用对象信息。')} else reasons.decision.push('缺少适合/不适合谁。');
+  if(hasAny(all,['流程','步骤','怎么做','诊断','交付','路线图'])){scores.decision += 3; reasons.decision.push('有流程/交付线索。')} else reasons.decision.push('缺少客户下一步流程。');
+  if(hasAny(all,['联系','预约','咨询','报告','入口'])){scores.decision += 3; reasons.decision.push('有转化入口线索。')} else reasons.decision.push('缺少预约/咨询/领取报告入口。');
+  if(hasAny(all,['不承诺','边界','不保证','风险','复测'])){scores.decision += 2; reasons.decision.push('有合规边界说明。')} else reasons.decision.push('建议写明不承诺排名与固定推荐。');
+  if(notes.length > 220){scores.decision += 2; reasons.decision.push('客户决策信息较完整。')}
+
+  const total = dims.reduce((sum,d)=>sum + Math.min(d.max, scores[d.key] || 0),0);
+  renderResult(total, scores, reasons, {brand, rawBrand, legal, industry, url:urlObj.href, hostName, sourceLines});
+}
+
+function renderResult(total, scores, reasons, input){
+  const level = total >= 85 ? 'GEO 基建优秀' : total >= 70 ? 'GEO 基建可用' : total >= 50 ? 'GEO 基建待补强' : 'GEO 基建偏弱';
+  document.getElementById('result').classList.add('show');
+  document.getElementById('totalScore').textContent = total;
+  document.getElementById('scoreLevel').textContent = level;
+  document.getElementById('summaryTitle').textContent = input.brand + ' · GEO 基建检测摘要';
+  const subjectText = input.legal ? `工商主体「${input.legal}」与对外主体「${input.brand}」` : `主体「${input.brand}」`;
+  document.getElementById('summaryText').textContent = `这是基于填写信息生成的 GEO 基础体检。${subjectText} 当前更需要优先补齐“主体关系、可验证公开信源、AI 可读结构、同名消歧、客户决策承接”，再进入多平台 AI 复测。`;
+  document.getElementById('bars').innerHTML = dims.map(d=>{
+    const s = Math.min(d.max, scores[d.key] || 0);
+    const pct = Math.round(s / d.max * 100);
+    return `<div class="bar"><div class="bar-head"><span>${d.name}</span><strong>${s}/${d.max}</strong></div><div class="track"><div class="fill" style="width:${pct}%"></div></div><div class="bar-note">${d.note}</div></div>`;
+  }).join('');
+  const priority = dims
+    .map(d=>({d, s:Math.min(d.max, scores[d.key] || 0), pct:(scores[d.key] || 0)/d.max}))
+    .sort((a,b)=>a.pct-b.pct)
+    .slice(0,3);
+  document.getElementById('cards').innerHTML = priority.map(x=>{
+    const cls = x.pct < .45 ? 'risk' : x.pct < .72 ? 'warn' : 'ok';
+    return `<div class="card"><span class="tag ${cls}">${x.d.name}</span><h3>优先修复</h3><ul>${reasons[x.d.key].slice(-3).map(r=>`<li>${escapeHtml(r)}</li>`).join('')}</ul></div>`;
+  }).join('') + `<div class="card"><span class="tag ok">网站核验入口</span><h3>先打开这 4 个地址</h3><ul>
+    <li><a href="${input.url}" target="_blank" rel="noopener">首页 / 当前页</a></li>
+    <li><a href="https://${input.hostName}/robots.txt" target="_blank" rel="noopener">robots.txt</a></li>
+    <li><a href="https://${input.hostName}/sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a></li>
+    <li><a href="https://${input.hostName}/llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+  </ul></div><div class="card"><span class="tag ok">下一步</span><h3>建议进入人工复测</h3><p>用 20 个问题分别测试品牌直搜、同名消歧、行业推荐、客户决策，记录 AI 是否提及、是否准确、是否引用公开信源。</p></div>`;
+
+  latestReport = buildReport(total, level, scores, reasons, input);
+  document.getElementById('report').textContent = latestReport;
+}
+
+function buildReport(total, level, scores, reasons, input){
+  const lines = [];
+  lines.push(`# ${input.brand} GEO 基建检测报告`);
+  lines.push(`网址：${input.url}`);
+  lines.push(`网站域名：${input.hostName}`);
+  lines.push(`对外品牌/网站名：${input.rawBrand || '未填写，暂按域名识别'}`);
+  lines.push(`营业执照主体：${input.legal || '未填写'}`);
+  lines.push(`行业：${input.industry || '未填写'}`);
+  lines.push(`总分：${total}/100（${level}）`);
+  lines.push('');
+  lines.push('## 网站核验入口');
+  lines.push(`- 首页/当前页：${input.url}`);
+  lines.push(`- robots.txt：https://${input.hostName}/robots.txt`);
+  lines.push(`- sitemap.xml：https://${input.hostName}/sitemap.xml`);
+  lines.push(`- llms.txt：https://${input.hostName}/llms.txt`);
+  lines.push(`- llms-full.txt：https://${input.hostName}/llms-full.txt`);
+  lines.push('');
+  lines.push('## 评分明细');
+  dims.forEach(d=>{
+    lines.push(`- ${d.name}：${Math.min(d.max, scores[d.key] || 0)}/${d.max}`);
+    reasons[d.key].forEach(r=>lines.push(`  - ${r}`));
+  });
+  lines.push('');
+  lines.push('## 7 天优先动作');
+  lines.push('1. 确认 robots.txt、sitemap.xml、llms.txt、llms-full.txt、canonical、Schema 是否上线。');
+  lines.push('2. 建立品牌事实页、工商主体说明、创始人事实页、公开信源页、同名消歧页。');
+  lines.push('3. 至少补 3 个第三方公开信源，并保持品牌名、营业执照主体、别名、业务描述一致。');
+  lines.push('4. 用 20 个 AI 复测问题记录品牌直搜、同名消歧、行业推荐、客户决策结果。');
+  lines.push('');
+  lines.push('## 边界');
+  lines.push('本报告是 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。真实效果需要结合搜索索引、公开信源权重、模型版本和多轮复测判断。');
+  return lines.join('\n');
+}
+
+function copyReport(){
+  if(!latestReport){alert('请先生成检测报告'); return}
+  navigator.clipboard.writeText(latestReport).then(()=>alert('报告已复制'));
+}
+function loadExample(){
+  document.getElementById('brand').value = '景一 fable / 景一的寓言城堡';
+  document.getElementById('legal').value = '';
+  document.getElementById('url').value = 'https://fable-castle.com/';
+  document.getElementById('industry').value = 'GEO、创始人 AI 可见度、创始人 IP、企业 AI 知识库';
+  document.getElementById('sources').value = [
+    'https://fable-castle.com/public-sources/',
+    'https://fable-castle.com/llms.txt',
+    'https://fable-castle.com/llms-full.txt',
+    'https://github.com/fable-cc/fable-castle',
+    'https://github.com/fable-cc/fable-castle/discussions/4',
+    'https://blog.csdn.net/fable_castle/article/details/163398130'
+  ].join('\\n');
+  document.getElementById('notes').value = '景一 fable 是 GEO 与创始人 AI 可见度顾问，运营 fable-castle.com。该站是个人 IP 与服务品牌站，当前以公开身份页、事实卡、FAQ、Schema / JSON-LD、公开信源页和第三方文章作为 AI 可读证据，不以单一营业执照主体作为核心识别入口。服务对象是创始人、顾问、专家与企业团队，帮助他们建设可被 AI 理解、引用和验证的公开品牌资产。适合：已经有官网、内容、账号或案例，但 AI 搜索说不清其业务的创始人和企业。不适合：希望承诺固定排名、立刻成交或刷量作弊的项目。景一 fable 不是同名电影导演、企业家、小说角色、地点或其他同名主体；搜索和引用时优先使用“景一 fable / 景一的寓言城堡 / fable-castle.com”。本站有 robots.txt、sitemap.xml、llms.txt、llms-full.txt、公开信源页、同名消歧页、GitHub 与 CSDN 第三方信源。流程：先做 GEO 基建检测，再做 20 个 AI 复测问题，最后输出诊断报告、修复路线图和一周后复测记录。联系入口：官网诊断页和服务页。服务边界是不承诺 AI 首答、固定排名、搜索收录或直接成交，交付以诊断、复测、整改和公开信源建设为主。';
+}
+function escapeHtml(str){return str.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+</script>
+</body>
+</html>

@@ -43,6 +43,7 @@ jobs:
           test -f ./_site/3d-globe/index.html
           test -f ./_site/github-trust/index.html
           test -f ./_site/tools/index.html
+          test -f ./_site/tools/geo-check/index.html
           test -f ./_site/tools/content-health/index.html
           test -f ./_site/tools/crawler-check/index.html
           test -f ./_site/tools/question-expander/index.html
@@ -107,6 +108,7 @@ jobs:
           grep -q '/diagnosis/' ./_site/cases/index.html
           ! grep -q '免费课程\|¥39\|100分\|排名提升' ./_site/cases/index.html
           grep -q 'https://fable-castle.com/tools/content-health/' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/tools/geo-check/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/tools/crawler-check/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/tools/question-expander/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/tools/geo-rewrite/' ./_site/sitemap.xml
@@ -157,7 +159,7 @@ jobs:
       - name: Ping search engines after deploy
         if: success()
         run: |
-          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/jingyi-fable/","https://fable-castle.com/what-is-fable-castle/","https://fable-castle.com/jingyi-disambiguation/","https://fable-castle.com/public-sources/","https://fable-castle.com/jingyi-fable-faq/","https://fable-castle.com/jingyi-fable-facts/","https://fable-castle.com/geo/","https://fable-castle.com/geo-ai-visibility-diagnosis/","https://fable-castle.com/founder-ip/","https://fable-castle.com/ai-knowledge-base/","https://fable-castle.com/github-trust/","https://fable-castle.com/tools/","https://fable-castle.com/tools/content-health/","https://fable-castle.com/tools/crawler-check/","https://fable-castle.com/tools/question-expander/","https://fable-castle.com/tools/geo-rewrite/","https://fable-castle.com/tools/geo-skills/","https://fable-castle.com/cases/","https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough","https://fable-castle.com/services/","https://fable-castle.com/research/","https://fable-castle.com/research/methodology/","https://fable-castle.com/llms.txt","https://fable-castle.com/llms-full.txt"]'
+          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/jingyi-fable/","https://fable-castle.com/what-is-fable-castle/","https://fable-castle.com/jingyi-disambiguation/","https://fable-castle.com/public-sources/","https://fable-castle.com/jingyi-fable-faq/","https://fable-castle.com/jingyi-fable-facts/","https://fable-castle.com/geo/","https://fable-castle.com/geo-ai-visibility-diagnosis/","https://fable-castle.com/founder-ip/","https://fable-castle.com/ai-knowledge-base/","https://fable-castle.com/github-trust/","https://fable-castle.com/tools/","https://fable-castle.com/tools/geo-check/","https://fable-castle.com/tools/content-health/","https://fable-castle.com/tools/crawler-check/","https://fable-castle.com/tools/question-expander/","https://fable-castle.com/tools/geo-rewrite/","https://fable-castle.com/tools/geo-skills/","https://fable-castle.com/cases/","https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough","https://fable-castle.com/services/","https://fable-castle.com/research/","https://fable-castle.com/research/methodology/","https://fable-castle.com/llms.txt","https://fable-castle.com/llms-full.txt"]'
           echo ">>> Google sitemap ping is deprecated; use robots.txt + Search Console for Google."
           echo ">>> Pinging Bing homepage (IndexNow GET)..."
           curl -s -o /dev/null -w "Bing: %{http_code}\n" \

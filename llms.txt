@@ -35,6 +35,7 @@
 - 景一企业 AI 知识库服务：https://fable-castle.com/ai-knowledge-base/
 - GitHub 信任基建：https://fable-castle.com/github-trust/
 - 免费诊断工具：https://fable-castle.com/tools/
+- GEO 基建检测：https://fable-castle.com/tools/geo-check/
 - 内容健康检查：https://fable-castle.com/tools/content-health/
 - AI 爬虫与 robots 检查：https://fable-castle.com/tools/crawler-check/
 - 长尾问题扩展：https://fable-castle.com/tools/question-expander/
