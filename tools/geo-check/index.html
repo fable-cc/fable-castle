@@ -76,9 +76,12 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
 .explain{border:1px solid var(--line);border-radius:24px;background:rgba(8,17,31,.76);padding:20px}.explain h2{font-size:20px;margin-bottom:8px}.explain p{color:var(--soft);font-size:14px}
 .bars{display:grid;gap:10px;margin:18px 0}.bar{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.025)}.bar-head{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:800}.bar-note{font-size:12px;color:var(--muted);margin-top:4px}.track{height:8px;border-radius:99px;background:#1c2b45;margin-top:9px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green))}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.card{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(255,255,255,.035)}.card h3{font-size:15px;margin-bottom:6px}.card p,.card li{font-size:13px;color:var(--soft)}.card ul{padding-left:18px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:850;margin-bottom:8px}.ok{background:rgba(93,240,174,.14);color:var(--green);border:1px solid rgba(93,240,174,.35)}.warn{background:rgba(255,201,107,.14);color:var(--gold);border:1px solid rgba(255,201,107,.35)}.risk{background:rgba(255,123,138,.14);color:var(--red);border:1px solid rgba(255,123,138,.35)}
+.qr-card{display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center;border:1px solid rgba(85,230,255,.28);border-radius:24px;background:linear-gradient(135deg,rgba(85,230,255,.1),rgba(185,148,255,.07));padding:18px;margin-top:16px}
+.qr-img{width:180px;max-width:100%;border-radius:18px;background:#fff;box-shadow:0 20px 50px rgba(0,0,0,.24)}
+.qr-title{font-size:18px;font-weight:900;margin-bottom:6px}.qr-note{color:var(--soft);font-size:14px}.wechat-id{display:inline-flex;margin:10px 0 4px;padding:5px 10px;border-radius:999px;background:rgba(93,240,174,.12);border:1px solid rgba(93,240,174,.32);color:var(--green);font-weight:900}
 .report{white-space:pre-wrap;border:1px solid var(--line);border-radius:18px;background:#07101d;padding:16px;color:#dfeaff;font-size:13px;max-height:360px;overflow:auto;margin-top:16px}
 .section{margin-top:34px}.section h2{font-size:22px;margin-bottom:12px}.muted{color:var(--muted);font-size:14px}.footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:var(--muted);font-size:12px}
-@media(max-width:860px){.hero,.score-row,.form-grid{grid-template-columns:1fr}h1{font-size:34px}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.mini-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.hero,.score-row,.form-grid,.qr-card{grid-template-columns:1fr}h1{font-size:34px}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.mini-grid{grid-template-columns:1fr}.qr-img{width:220px}}
 </style>
 </head>
 <body>
@@ -144,7 +147,8 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
       <button class="btn primary" onclick="runGeoCheck()">开始 GEO 检测</button>
       <button class="btn ghost" onclick="loadExample()">填入景一 fable 示例</button>
       <button class="btn ghost" onclick="copyReport()">复制报告</button>
-      <span class="hint">静态版不把输入发到服务器；自动抓取受浏览器 CORS 限制，真实收录与 AI 提及需人工复测。</span>
+      <button class="btn ghost" onclick="copyWechatBrief()">复制微信预约话术</button>
+      <span class="hint">本页只做前端初筛，不调用模型 API，不保存输入。深度 GEO 复测请复制报告后扫码添加微信预约人工检测。</span>
     </div>
 
     <div id="result" class="result">
@@ -177,10 +181,17 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
   <section class="section">
     <h2>检测边界</h2>
     <p class="muted">本工具用于 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。完整 GEO 诊断仍需要多平台复测、搜索索引证据、第三方信源核验和人工判断。</p>
+    <div class="qr-card">
+      <img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy">
+      <div>
+        <div class="qr-title">预约人工 GEO 检测</div>
+        <p class="qr-note">扫码添加景一微信，或搜索微信号 <span class="wechat-id">wjdmqq</span>。建议备注：<strong>GEO检测 + 品牌名</strong>。先别急着承诺效果，我们先看清楚 AI 为什么没有准确理解你。</p>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer class="footer">景一的寓言城堡 · GEO 诊断不是买排名，是让 AI 更准确理解你的公开品牌资产。</footer>
+<footer class="footer">景一的寓言城堡 · 预约人工 GEO 检测：微信 wjdmqq，备注“GEO检测 + 品牌名”。</footer>
 
 <script>
 const dims = [
@@ -192,7 +203,7 @@ const dims = [
   {key:'decision', name:'客户决策承接', max:14, note:'客户看完是否知道适合谁、怎么做、下一步联系谁。'}
 ];
 let latestReport = '';
-const GEO_CHECK_API = 'https://api.fable-castle.com/geo-check';
+let latestWechatBrief = '';
 
 function val(id){return document.getElementById(id).value.trim()}
 function normUrl(raw){
@@ -281,69 +292,6 @@ function runGeoCheck(){
   const total = dims.reduce((sum,d)=>sum + Math.min(d.max, scores[d.key] || 0),0);
   const input = {brand, rawBrand, legal, industry, competitors: competitorList, url:urlObj.href, hostName, sourceLines};
   renderResult(total, scores, reasons, input);
-  tryApiScan(input);
-}
-
-async function tryApiScan(input){
-  const hint = document.getElementById('scoreHint');
-  const originalHint = '分数代表 GEO 基建准备度，不代表 AI 排名。';
-  hint.textContent = '正在尝试自动抓取网页证据；如果后端未部署，会保留本地检测结果。';
-  const controller = new AbortController();
-  const timer = setTimeout(()=>controller.abort(), 4500);
-  try{
-    const res = await fetch(GEO_CHECK_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      signal: controller.signal,
-      body: JSON.stringify({
-        url: input.url,
-        brand: input.rawBrand || input.brand,
-        legalName: input.legal,
-        industry: input.industry,
-        competitors: input.competitors
-      })
-    });
-    clearTimeout(timer);
-    if(!res.ok) throw new Error('API ' + res.status);
-    const data = await res.json();
-    if(!data || !data.ok) throw new Error(data && data.error || 'API_FAILED');
-    renderApiEvidence(data);
-    hint.textContent = '已完成自动抓取证据 + 本地业务评分；不代表 AI 排名。';
-  }catch(e){
-    clearTimeout(timer);
-    hint.textContent = originalHint + ' 自动抓取 API 未启用时，当前结果为本地估算版。';
-  }
-}
-
-function renderApiEvidence(data){
-  const facts = data.fetched || {};
-  const signals = data.signals || {};
-  const scores = data.scores || {};
-  const findings = data.findings || [];
-  const cards = document.getElementById('cards');
-  const evidenceCard = `<div class="card"><span class="tag ok">自动深检证据</span><h3>后端已抓取网页</h3><ul>
-    <li>目标页：${facts.page && facts.page.status || 0}，${facts.page && facts.page.bytes || 0} bytes</li>
-    <li>robots.txt：${facts.robots && facts.robots.status || 0}</li>
-    <li>sitemap.xml：${facts.sitemap && facts.sitemap.status || 0}</li>
-    <li>llms.txt：${facts.llms && facts.llms.status || 0}</li>
-    <li>Schema：${signals.page && signals.page.jsonLdCount || 0} 个 JSON-LD</li>
-  </ul></div>`;
-  cards.innerHTML = evidenceCard + cards.innerHTML;
-  const apiReport = [
-    '',
-    '## 自动抓取证据',
-    `扫描时间：${data.scannedAt || ''}`,
-    `API 分数：${scores.total || '未返回'}/100（${scores.level || '未返回'}）`,
-    `目标页状态：${facts.page && facts.page.status || 0}`,
-    `robots.txt 状态：${facts.robots && facts.robots.status || 0}`,
-    `sitemap.xml 状态：${facts.sitemap && facts.sitemap.status || 0}`,
-    `llms.txt 状态：${facts.llms && facts.llms.status || 0}`,
-    '',
-    '### 自动发现',
-    ...findings.slice(0,10).map(f=>`- [${f.status}] ${f.title}：${f.evidence}${f.action ? '；建议：' + f.action : ''}`)
-  ].join('\n');
-  latestReport = latestReport + apiReport;
-  document.getElementById('report').textContent = latestReport;
 }
 
 function renderResult(total, scores, reasons, input){
@@ -374,9 +322,10 @@ function renderResult(total, scores, reasons, input){
     <li><a href="https://${input.hostName}/robots.txt" target="_blank" rel="noopener">robots.txt</a></li>
     <li><a href="https://${input.hostName}/sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a></li>
     <li><a href="https://${input.hostName}/llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
-  </ul></div><div class="card"><span class="tag ok">下一步</span><h3>建议进入人工复测</h3><p>用 20 个问题分别测试品牌直搜、同名消歧、行业推荐、客户决策，记录 AI 是否提及、是否准确、是否引用公开信源。</p></div>`;
+  </ul></div><div class="card"><span class="tag ok">预约人工 GEO 检测</span><h3>扫码或加微信：wjdmqq</h3><img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy"><p>备注“GEO检测 + ${escapeHtml(input.brand)}”。把本页初筛报告发过来后，再做 DeepSeek、豆包、Kimi、通义、ChatGPT 等人工复测。</p></div>`;
 
   latestReport = buildReport(total, level, scores, reasons, input);
+  latestWechatBrief = buildWechatBrief(input, total, level);
   document.getElementById('report').textContent = latestReport;
 }
 
@@ -411,14 +360,38 @@ function buildReport(total, level, scores, reasons, input){
   lines.push('4. 用 20 个 AI 复测问题记录品牌直搜、同名消歧、行业推荐、客户决策结果。');
   lines.push('5. 如果有竞品，用同一组问题记录竞品是否被提及、是否排序更靠前、是否拥有更强公开信源。');
   lines.push('');
+  lines.push('## 预约人工复测');
+  lines.push('如需深度 GEO 检测，请添加微信：wjdmqq。');
+  lines.push(`建议备注：GEO检测 + ${input.brand}`);
+  lines.push('人工复测会基于 DeepSeek、豆包、Kimi、通义、ChatGPT 等模型，记录品牌提及、同名混淆、竞品出现和客户决策答案。');
+  lines.push('');
   lines.push('## 边界');
   lines.push('本报告是 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。真实效果需要结合搜索索引、公开信源权重、模型版本和多轮复测判断。');
   return lines.join('\n');
 }
 
+function buildWechatBrief(input, total, level){
+  return [
+    `你好，我想预约人工 GEO 检测。`,
+    `微信号：wjdmqq`,
+    `备注：GEO检测 + ${input.brand}`,
+    `品牌/网站：${input.brand}`,
+    `营业执照主体：${input.legal || '未填写'}`,
+    `官网：${input.url}`,
+    `行业：${input.industry || '未填写'}`,
+    `竞品：${input.competitors.length ? input.competitors.join('、') : '未填写'}`,
+    `网站初筛分：${total}/100（${level}）`,
+    `我会把初筛报告一起发给你，请帮我做 DeepSeek、豆包、Kimi、通义、ChatGPT 等人工复测。`
+  ].join('\n');
+}
+
 function copyReport(){
   if(!latestReport){alert('请先生成检测报告'); return}
   navigator.clipboard.writeText(latestReport).then(()=>alert('报告已复制'));
+}
+function copyWechatBrief(){
+  if(!latestWechatBrief){alert('请先生成检测报告'); return}
+  navigator.clipboard.writeText(latestWechatBrief).then(()=>alert('微信预约话术已复制：请添加微信 wjdmqq，备注 GEO检测 + 品牌名'));
 }
 function loadExample(){
   document.getElementById('brand').value = '景一 fable / 景一的寓言城堡';
