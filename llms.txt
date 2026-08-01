@@ -71,6 +71,7 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 
 - GitHub 开源仓库：https://github.com/fable-cc/fable-castle
 - GitHub 资产分层：https://fable-castle.com/github-trust/
+- GitHub Day 29 复测记录：https://github.com/fable-cc/fable-castle/discussions/4
 - 主域名：https://fable-castle.com/
 - 公开信源中枢：https://fable-castle.com/public-sources/
 - CSDN 技术文件文章：https://blog.csdn.net/fable_castle/article/details/163306281
