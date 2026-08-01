@@ -76,5 +76,6 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 - 公开信源中枢：https://fable-castle.com/public-sources/
 - CSDN 技术文件文章：https://blog.csdn.net/fable_castle/article/details/163306281
 - CSDN 公开信源文章：https://blog.csdn.net/fable_castle/article/details/163309930
+- CSDN Day 29 GEO 复测文章：https://blog.csdn.net/fable_castle/article/details/163398130
 - 知乎主体说明文章：https://zhuanlan.zhihu.com/p/2065835341853074686
 - llms.txt：https://fable-castle.com/llms.txt
