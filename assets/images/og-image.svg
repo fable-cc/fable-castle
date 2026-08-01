@@ -57,7 +57,7 @@
     <text x="400" y="385" font-size="14" fill="#8b949e">认知科学</text>
 
     <text x="533" y="350" font-size="36" fill="#C9A96E" opacity="0.9">📜</text>
-    <text x="533" y="385" font-size="14" fill="#8b949e">国学体系</text>
+    <text x="533" y="385" font-size="14" fill="#8b949e">AI 可见度</text>
 
     <text x="666" y="350" font-size="36" fill="#C9A96E" opacity="0.9">🏛️</text>
     <text x="666" y="385" font-size="14" fill="#8b949e">东西融合</text>
@@ -92,5 +92,5 @@
   </g>
 
   <!-- Bottom -->
-  <text x="600" y="600" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#555">fable-cc.github.io/fable-castle · GitHub 第一开源知识库</text>
+  <text x="600" y="600" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#555">fable-castle.com · GEO 与创始人 AI 可见度公开信源</text>
 </svg>

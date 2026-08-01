@@ -55,6 +55,5 @@ Feedly监控30个信息源 → 每日自动抓取 → GPT-4o分类到18个支柱
 
 **你的知识库上线了。不需要好看。需要存在。**
 
-📍 景一·寓言城堡 · 从人性出发 · 自然穿透所有领域
+📍 景一 fable · GEO 与创始人 AI 可见度 · https://fable-castle.com/
 🌐 fable-castle.com
-🪐 知识星球：一人+AI=一人公司

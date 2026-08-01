@@ -126,5 +126,5 @@ AI 搜索引擎怎么理解你的内容？它不会看你的公众号合集、�
 - **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
 - **全景篇**：[中文 GEO 全景指南 2026](/posts/chinese-geo-comprehensive-guide-2026) — 六平台 × 三层策略 × 四支柱框架
 
-*作者：景一 fable · 从人性出发，自然穿透所有领域*
-*🌐 fable-cc.github.io/fable-castle*
+*作者：景一 fable · GEO 与创始人 AI 可见度 · https://fable-castle.com/*
+*🌐 https://fable-castle.com/ · 公开信源：https://fable-castle.com/public-sources/*

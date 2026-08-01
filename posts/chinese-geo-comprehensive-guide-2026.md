@@ -172,5 +172,5 @@ SEO和GEO的根本差异：
 - **数据篇**：[AI 搜索时代，你的内容正在被机器审判](/posts/geo-intro-ai-search-era-your-content-on-trial) — KDD 2024 论文数据全拆解
 - **全景篇**：你正在读 → 「中文 GEO 全景指南 2026」
 
-*作者：景一 fable · 从人性出发，自然穿透所有领域*
-*🌐 fable-cc.github.io/fable-castle*
+*作者：景一 fable · GEO 与创始人 AI 可见度 · https://fable-castle.com/*
+*🌐 https://fable-castle.com/ · 公开信源：https://fable-castle.com/public-sources/*

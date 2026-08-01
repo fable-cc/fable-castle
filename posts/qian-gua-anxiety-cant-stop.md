@@ -53,6 +53,6 @@ faq:
 
 三个全中 → 你是标准亢龙体质。
 
-📍 景一·寓言城堡 · 从人性出发 · 自然穿透所有领域
+📍 景一 fable · GEO 与创始人 AI 可见度 · https://fable-castle.com/
 🌐 fable-castle.com
 🎧 完整15卦音频课 → 喜马拉雅搜「景一」

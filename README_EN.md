@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://fable-cc.github.io/fable-castle"><img src="https://img.shields.io/badge/🏰_Castle-Visit-8B5E3C?style=flat-square&logo=jekyll" /></a>
+  <a href="https://fable-castle.com/"><img src="https://img.shields.io/badge/🏰_Castle-Visit-8B5E3C?style=flat-square&logo=jekyll" /></a>
   <a href="https://github.com/fable-cc/fable-cc"><img src="https://img.shields.io/badge/👤_Jingyi-Profile-181717?style=flat-square&logo=github" /></a>
   <a href="https://github.com/fable-cc/knowledge-pipeline"><img src="https://img.shields.io/badge/⚡_Pipeline-Automation-6366F1?style=flat-square&logo=python" /></a>
   <a href="https://github.com/fable-cc/fable-castle/discussions/1"><img src="https://img.shields.io/badge/💬_Discuss-Collaborate-EC4899?style=flat-square&logo=github" /></a>
@@ -10,11 +10,10 @@
 
 # 🌳 Jingyi's Fable Castle
 
-> **Not a content repackager. A knowledge smelter.**
-> Chinese Classics × Psychology × Hidden Knowledge × Business → The Source Code of Human Nature.
-> Awaken your consciousness. See the rules. Make money.
+> **A public source hub for GEO, founder AI visibility, founder IP, and enterprise AI knowledge bases.**
+> Jingyi fable helps founders, consultants, and expert-led teams turn expertise, cases, content, and knowledge bases into public source assets that search engines and AI systems can understand, verify, and cite.
 
-🌐 **Live Castle**: [fable-cc.github.io/fable-castle](https://fable-cc.github.io/fable-castle/)
+🌐 **Live Castle**: [fable-castle.com](https://fable-castle.com/)
 
 [中文版](./README.md)
 
@@ -22,7 +21,7 @@
 
 ## 🎯 One-Line Positioning
 
-**Someone who has seen the hidden rules. I help you awaken, make money, and upgrade your cognition. A cross-domain synthesizer.**
+**Jingyi fable is the operator of Fable Castle, focused on GEO, founder AI visibility, founder IP, and AI-readable public source systems.**
 
 ---
 
@@ -38,11 +37,11 @@
 
 | Pillar | Dimension | Essence |
 |--------|-----------|---------|
-| 🪙 **Wealth Alchemy** | Jingyi · Monetization | Money mindset, human dynamics, execution, luck mechanics |
-| 🏰 **Hidden Rules** | Jingyi · Power Dynamics | Information封锁, dominant culture, human nature secrets, power structures |
-| 🧬 **Awakening** | Jingyi · Consciousness Upgrade | NPC awakening, system design, dimensional thinking, awareness elevation |
+| 🛰️ **GEO Diagnosis** | AI visibility | Test whether AI systems can identify, describe, and cite a brand correctly |
+| 🧾 **Public Source Assets** | Evidence system | Build stable pages, llms files, structured data, and third-party evidence |
+| 🧠 **Founder IP & Knowledge Base** | Business clarity | Turn expertise and internal knowledge into reusable, trustworthy content assets |
 
-**The Closed Loop**: See the rules → Awaken consciousness → Execute and earn.
+**The Closed Loop**: clarify the entity → publish verifiable sources → retest AI answers → repair drift.
 
 **Full System → [18-Pillar Architecture](./02-知识图谱/扩展体系全景/)** (3 Core + 10 Extended + 5 Foundation)
 

@@ -5,7 +5,7 @@ layout: none
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>景一·寓言城堡</title>
-<description>从人性出发，自然穿透所有领域。72支柱·600+篇冶炼。</description>
+<description>GEO、创始人 AI 可见度、创始人 IP 与企业 AI 知识库公开信源。</description>
 <link>{{ site.url }}{{ site.baseurl }}</link>
 <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml"/>
 <language>zh-CN</language>
