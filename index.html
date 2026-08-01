@@ -58,7 +58,7 @@
 }
 </script>
 <style>
-:root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--soft:#ece8df;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--teal:#13c8b5;--deep:#071d23;--radius:8px}
+:root{--bg:#fbfaf7;--paper:#fff;--ink:#171717;--muted:#5f615f;--soft:#ece8df;--line:#ded8cc;--blue:#245c88;--green:#3d7459;--gold:#9a6a20;--teal:#55e6ff;--violet:#b994ff;--deep:#07101d;--radius:8px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:
 radial-gradient(circle at 82% 8%,rgba(19,200,181,.12),transparent 30%),
@@ -82,24 +82,27 @@ h1{font-size:42px;line-height:1.18;letter-spacing:0;margin-bottom:18px}
 .trust{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
 .risk{font-size:14px;color:var(--muted)}
-.ai-panel{position:relative;overflow:hidden;min-height:430px;border:1px solid rgba(19,200,181,.28);border-radius:18px;padding:24px;background:
-linear-gradient(145deg,rgba(7,29,35,.98),rgba(12,47,53,.94) 48%,rgba(15,63,58,.90)),
-radial-gradient(circle at 18% 18%,rgba(19,200,181,.34),transparent 26%),
-radial-gradient(circle at 88% 12%,rgba(154,106,32,.28),transparent 28%);box-shadow:0 28px 80px rgba(7,29,35,.22);color:#ecfffb}
-.ai-panel::before{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.14) 48%,transparent 54%);animation:scan 7s linear infinite;pointer-events:none}
-.ai-panel::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(236,255,251,.18) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 82%);pointer-events:none}
+.ai-panel{position:relative;overflow:hidden;min-height:430px;border:1px solid rgba(85,230,255,.22);border-radius:22px;padding:24px;background:
+linear-gradient(rgba(85,230,255,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(85,230,255,.045) 1px,transparent 1px),
+radial-gradient(circle at 18% 12%,rgba(85,230,255,.20),transparent 30%),
+radial-gradient(circle at 86% 8%,rgba(185,148,255,.18),transparent 28%),
+linear-gradient(145deg,rgba(7,16,29,.98),rgba(10,20,40,.96) 48%,rgba(13,18,35,.94));background-size:24px 24px,24px 24px,100% 100%,100% 100%,100% 100%;box-shadow:0 30px 86px rgba(7,16,29,.28),inset 0 0 58px rgba(85,230,255,.08);color:#ecf8ff}
+.ai-panel::before{content:"";position:absolute;inset:-45%;background:linear-gradient(115deg,transparent 43%,rgba(85,230,255,.16) 48%,rgba(185,148,255,.12) 51%,transparent 57%);animation:scan 8s linear infinite;pointer-events:none}
+.ai-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(85,230,255,.055) 54%,transparent 56%);background-size:100% 9px;opacity:.75;pointer-events:none}
 .signal-top,.signal-status,.signal-flow,.signal-foot{position:relative;z-index:1}
-.signal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:28px;color:#9df3e6;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-.signal-top span{font-weight:900}.signal-top i{font-style:normal;color:rgba(236,255,251,.62)}
-.signal-status{margin:28px 0 22px}.signal-status strong{display:block;font-size:28px;line-height:1.2;color:#fff}.signal-status p{margin-top:8px;color:rgba(236,255,251,.72)}
-.signal-grid{position:absolute;inset:72px 24px auto 24px;height:128px;border:1px solid rgba(157,243,230,.14);border-radius:14px;background:linear-gradient(90deg,rgba(157,243,230,.08) 1px,transparent 1px),linear-gradient(rgba(157,243,230,.08) 1px,transparent 1px);background-size:32px 32px;z-index:0}
-.signal-node{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 6px rgba(19,200,181,.10),0 0 24px rgba(19,200,181,.75);animation:pulse 3.8s ease-in-out infinite}
-.node-a{left:12%;top:28%}.node-b{left:40%;top:58%;animation-delay:.8s}.node-c{right:28%;top:25%;animation-delay:1.6s}.node-d{right:10%;bottom:20%;background:#d7a245;box-shadow:0 0 0 6px rgba(215,162,69,.12),0 0 24px rgba(215,162,69,.7);animation-delay:2.4s}
-.signal-flow{display:grid;gap:10px;margin-top:40px}
-.flow-step{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border:1px solid rgba(157,243,230,.18);border-radius:12px;background:rgba(255,255,255,.055);backdrop-filter:blur(8px)}
-.flow-step span{font-size:12px;color:#9df3e6;text-transform:uppercase;letter-spacing:.08em}.flow-step b{font-size:14px;color:#fff;text-align:right}
-.flow-line{width:1px;height:14px;margin-left:22px;background:linear-gradient(to bottom,rgba(19,200,181,.85),rgba(19,200,181,.12))}
-.signal-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(157,243,230,.16);color:rgba(236,255,251,.68);font-size:13px}
+.signal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;color:#9feeff;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.signal-top span{font-weight:900}.signal-top i{font-style:normal;color:rgba(236,248,255,.62)}
+.signal-status{margin:20px 0 18px}.signal-status strong{display:block;font-size:28px;line-height:1.2;color:#fff}.signal-status p{margin-top:8px;color:rgba(236,248,255,.72)}
+.signal-grid{position:absolute;inset:78px 24px auto 24px;height:116px;border:1px solid rgba(85,230,255,.14);border-radius:16px;background:linear-gradient(90deg,rgba(85,230,255,.08) 1px,transparent 1px),linear-gradient(rgba(85,230,255,.08) 1px,transparent 1px);background-size:32px 32px;z-index:0}
+.signal-node{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 6px rgba(85,230,255,.10),0 0 24px rgba(85,230,255,.75);animation:pulse 3.8s ease-in-out infinite}
+.node-a{left:12%;top:28%}.node-b{left:40%;top:58%;animation-delay:.8s}.node-c{right:28%;top:25%;animation-delay:1.6s}.node-d{right:10%;bottom:20%;background:var(--violet);box-shadow:0 0 0 6px rgba(185,148,255,.12),0 0 24px rgba(185,148,255,.7);animation-delay:2.4s}
+.model-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:88px 0 16px}.model-pill{border:1px solid rgba(85,230,255,.18);border-radius:999px;padding:6px 8px;text-align:center;font-size:11px;font-weight:850;color:#dcf7ff;background:rgba(255,255,255,.045)}
+.signal-flow{display:grid;gap:10px;margin-top:14px}
+.flow-step{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border:1px solid rgba(85,230,255,.17);border-radius:13px;background:rgba(255,255,255,.055);backdrop-filter:blur(8px)}
+.flow-step span{font-size:12px;color:#9feeff;text-transform:uppercase;letter-spacing:.08em}.flow-step b{font-size:14px;color:#fff;text-align:right}
+.flow-line{width:1px;height:12px;margin-left:22px;background:linear-gradient(to bottom,rgba(85,230,255,.85),rgba(185,148,255,.12))}
+.signal-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(85,230,255,.16);color:rgba(236,248,255,.68);font-size:13px}
 @keyframes scan{0%{transform:translateX(-25%) translateY(-15%)}100%{transform:translateX(25%) translateY(15%)}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.86}50%{transform:scale(1.35);opacity:1}}
 .section{margin-top:58px}
@@ -119,7 +122,7 @@ radial-gradient(circle at 88% 12%,rgba(154,106,32,.28),transparent 28%);box-shad
 .path div{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px}
 .num{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#e7f0f6;color:var(--blue);font-weight:900;flex:0 0 30px}
 .footer{border-top:1px solid var(--line);padding:28px 24px;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:860px){.hero,.grid,.cards3,.cards2{grid-template-columns:1fr}h1{font-size:31px}.wrap{padding-top:38px}.links{gap:12px}.nav{align-items:flex-start;gap:12px;flex-direction:column}.ai-panel{min-height:auto;padding:20px}.signal-grid{height:104px}.signal-status strong{font-size:24px}.flow-step{align-items:flex-start;flex-direction:column}.flow-step b{text-align:left}}
+@media(max-width:860px){.hero,.grid,.cards3,.cards2{grid-template-columns:1fr}h1{font-size:31px}.wrap{padding-top:38px}.links{gap:12px}.nav{align-items:flex-start;gap:12px;flex-direction:column}.ai-panel{min-height:auto;padding:20px}.signal-grid{height:104px}.model-row{grid-template-columns:repeat(2,1fr)}.signal-status strong{font-size:24px}.flow-step{align-items:flex-start;flex-direction:column}.flow-step b{text-align:left}}
 @media(prefers-reduced-motion:reduce){.ai-panel::before,.signal-node{animation:none}}
 </style>
 </head>
@@ -142,8 +145,8 @@ radial-gradient(circle at 88% 12%,rgba(154,106,32,.28),transparent 28%);box-shad
       <h1>把你的专业能力，变成能被用户信任、被平台识别、被 AI 正确引用的品牌资产。</h1>
       <p class="lead">先判断你是否被看见、被理解、被信任，再把定位、内容、证据和公开信源整理成 AI 更容易读取的品牌资产。</p>
       <div class="actions">
-        <a class="btn primary" href="/tools/geo-check/">免费检测 GEO 基建</a>
-        <a class="btn secondary" href="/diagnosis/">免费做一次 AI 可见度自测</a>
+        <a class="btn primary" href="/tools/geo-check/">开始 GEO 基建检测</a>
+        <a class="btn secondary" href="/diagnosis/">做 AI 可见度自测</a>
         <a class="btn secondary" href="/public-sources/">查看公开信源</a>
       </div>
       <div class="trust">
@@ -155,8 +158,8 @@ radial-gradient(circle at 88% 12%,rgba(154,106,32,.28),transparent 28%);box-shad
     </div>
     <aside class="ai-panel" aria-label="AI 可见度信号示意">
       <div class="signal-top">
-        <span>AI Visibility Signal</span>
-        <i>Live evidence map</i>
+        <span>AI Brand Signal Map</span>
+        <i>Multi-model evidence path</i>
       </div>
       <div class="signal-grid" aria-hidden="true">
         <span class="signal-node node-a"></span>
@@ -165,17 +168,27 @@ radial-gradient(circle at 88% 12%,rgba(154,106,32,.28),transparent 28%);box-shad
         <span class="signal-node node-d"></span>
       </div>
       <div class="signal-status">
-        <strong>先让 AI 稳定识别</strong>
-        <p>再谈推荐、引用和客户决策。</p>
+        <strong>先把品牌信号接成一条链</strong>
+        <p>实体、证据、文件、模型复测要互相对得上，再谈推荐、引用和客户决策。</p>
+      </div>
+      <div class="model-row" aria-label="主流 AI 复测范围">
+        <span class="model-pill">ChatGPT</span>
+        <span class="model-pill">DeepSeek</span>
+        <span class="model-pill">豆包</span>
+        <span class="model-pill">Kimi</span>
+        <span class="model-pill">通义</span>
+        <span class="model-pill">文心</span>
+        <span class="model-pill">Perplexity</span>
+        <span class="model-pill">Gemini</span>
       </div>
       <div class="signal-flow">
-        <div class="flow-step"><span>Entity</span><b>景一 fable</b></div>
+        <div class="flow-step"><span>Entity</span><b>品牌实体 · 景一 fable</b></div>
         <div class="flow-line"></div>
-        <div class="flow-step"><span>Evidence</span><b>官网 · CSDN · 知乎 · GitHub</b></div>
+        <div class="flow-step"><span>Evidence</span><b>公开证据 · 官网 / CSDN / 知乎 / GitHub</b></div>
         <div class="flow-line"></div>
-        <div class="flow-step"><span>Files</span><b>llms · sitemap · Schema</b></div>
+        <div class="flow-step"><span>Files</span><b>机器文件 · llms / sitemap / Schema</b></div>
         <div class="flow-line"></div>
-        <div class="flow-step"><span>Output</span><b>被正确理解</b></div>
+        <div class="flow-step"><span>Output</span><b>输出目标 · 被理解 / 被引用 / 被推荐</b></div>
       </div>
       <p class="signal-foot">不承诺排名、收录或 AI 引用；先把公开事实整理成机器可读的信源。</p>
     </aside>
