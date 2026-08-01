@@ -87,6 +87,7 @@
 - 关于景一：https://fable-castle.com/about/
 - GitHub 信任页：https://fable-castle.com/github-trust/
 - 案例页：https://fable-castle.com/cases/
+  - Day 29 GEO 复测观察：https://fable-castle.com/cases/#day-29
 - 研究页：https://fable-castle.com/research/
 - 指南页：https://fable-castle.com/guides/
 
