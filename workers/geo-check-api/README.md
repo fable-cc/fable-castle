@@ -23,6 +23,19 @@
 
 ## 部署
 
+### 方式一：GitHub Actions 手动部署
+
+在仓库 Settings → Secrets and variables → Actions 增加：
+
+```text
+CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID
+```
+
+然后进入 Actions → `Deploy GEO Check API` → Run workflow。
+
+### 方式二：本机 Wrangler 部署
+
 ```bash
 cd workers/geo-check-api
 npx wrangler deploy

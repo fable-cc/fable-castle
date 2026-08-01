@@ -187,17 +187,48 @@ function analyzeHtml(html, url, brand, legalName, industry, competitors) {
 
 function analyzeRobots(text) {
   const exists = !!text;
-  const lower = text.toLowerCase();
-  const blockedAgents = ["gptbot", "chatgpt-user", "oai-searchbot", "claudebot", "perplexitybot", "bytespider", "googlebot", "bingbot"]
-    .filter(agent => {
-      const idx = lower.indexOf(`user-agent: ${agent}`);
-      if (idx < 0) return false;
-      const next = lower.slice(idx, idx + 600);
-      return /disallow:\s*\/(?:\s|$)/.test(next);
-    });
+  const groups = parseRobotsGroups(text);
+  const searchAgents = ["chatgpt-user", "oai-searchbot", "claudebot", "claude-web", "perplexitybot", "perplexity-user", "bytespider", "applebot", "googlebot", "bingbot"];
+  const blockedAgents = searchAgents.filter(agent => isAgentBlockedAtRoot(groups, agent));
+  const trainingBlockedAgents = ["gptbot", "google-extended", "applebot-extended"].filter(agent => isAgentBlockedAtRoot(groups, agent));
   const sitemapUrls = [...text.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map(m => m[1]);
   const allowsAi = exists && blockedAgents.length === 0;
-  return { exists, allowsAi, blockedAgents, sitemapUrls };
+  return { exists, allowsAi, blockedAgents, trainingBlockedAgents, sitemapUrls };
+}
+
+function parseRobotsGroups(text) {
+  const groups = [];
+  let current = null;
+  for (const rawLine of String(text || "").split(/\r?\n/)) {
+    const line = rawLine.replace(/#.*/, "").trim();
+    if (!line) continue;
+    const m = line.match(/^([^:]+):\s*(.*)$/);
+    if (!m) continue;
+    const key = m[1].trim().toLowerCase();
+    const value = m[2].trim();
+    if (key === "user-agent") {
+      if (!current || current.rules.length) {
+        current = { agents: [], rules: [] };
+        groups.push(current);
+      }
+      current.agents.push(value.toLowerCase());
+    } else if ((key === "allow" || key === "disallow") && current) {
+      current.rules.push({ type: key, path: value });
+    }
+  }
+  return groups;
+}
+
+function isAgentBlockedAtRoot(groups, agent) {
+  const agentLower = agent.toLowerCase();
+  const matching = groups.filter(group => group.agents.includes(agentLower) || group.agents.includes("*"));
+  let blocked = false;
+  for (const group of matching) {
+    for (const rule of group.rules) {
+      if (rule.path === "/") blocked = rule.type === "disallow";
+    }
+  }
+  return blocked;
 }
 
 function analyzeSitemap(text, targetUrl) {
