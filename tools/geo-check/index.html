@@ -56,7 +56,15 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.04em;margin-bottom:16px}
 .lead{color:var(--soft);font-size:17px;max-width:760px}
 .hero-card{position:relative;min-height:260px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(17,28,49,.82),rgba(11,18,32,.56));overflow:hidden;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
 .hero-card:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 120deg,transparent,rgba(85,230,255,.32),transparent,rgba(185,148,255,.3),transparent);animation:spin 18s linear infinite}
-.hero-card>*{position:relative}.orb{width:150px;height:150px;border-radius:50%;margin:26px auto 18px;background:radial-gradient(circle at 32% 28%,#fff,var(--cyan) 14%,#2264ff 44%,#101a38 70%);box-shadow:0 0 50px rgba(85,230,255,.46)}
+.hero-card>*{position:relative}
+.ai-console{position:relative;border:1px solid rgba(85,230,255,.24);border-radius:24px;background:
+linear-gradient(rgba(85,230,255,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(85,230,255,.045) 1px,transparent 1px),
+linear-gradient(180deg,rgba(5,12,24,.92),rgba(7,15,31,.78));background-size:24px 24px,24px 24px,100% 100%;padding:16px;box-shadow:inset 0 0 42px rgba(85,230,255,.08)}
+.console-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.console-title{font-size:13px;font-weight:900;letter-spacing:.08em;color:#fff}.console-status{display:inline-flex;align-items:center;gap:7px;color:var(--green);font-size:12px;font-weight:800}.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1.25)}}
+.model-cloud{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}.model-chip{border:1px solid rgba(154,179,216,.2);border-radius:16px;padding:10px;background:rgba(255,255,255,.04)}.model-chip strong{display:block;font-size:14px;color:#fff}.model-chip span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.signal-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:center}.flow-node{min-height:54px;border:1px solid rgba(85,230,255,.18);border-radius:14px;padding:8px;background:linear-gradient(180deg,rgba(85,230,255,.08),rgba(255,255,255,.025));text-align:center}.flow-node b{display:block;color:var(--cyan);font-size:15px}.flow-node span{font-size:10px;color:var(--muted)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mini{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(7,11,20,.58);text-align:center}.mini strong{display:block;font-size:18px}.mini span{font-size:11px;color:var(--muted)}
 .tool{background:rgba(14,22,38,.86);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.26);margin:26px 0}
@@ -76,12 +84,13 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
 .explain{border:1px solid var(--line);border-radius:24px;background:rgba(8,17,31,.76);padding:20px}.explain h2{font-size:20px;margin-bottom:8px}.explain p{color:var(--soft);font-size:14px}
 .bars{display:grid;gap:10px;margin:18px 0}.bar{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.025)}.bar-head{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:800}.bar-note{font-size:12px;color:var(--muted);margin-top:4px}.track{height:8px;border-radius:99px;background:#1c2b45;margin-top:9px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green))}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.card{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(255,255,255,.035)}.card h3{font-size:15px;margin-bottom:6px}.card p,.card li{font-size:13px;color:var(--soft)}.card ul{padding-left:18px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:850;margin-bottom:8px}.ok{background:rgba(93,240,174,.14);color:var(--green);border:1px solid rgba(93,240,174,.35)}.warn{background:rgba(255,201,107,.14);color:var(--gold);border:1px solid rgba(255,201,107,.35)}.risk{background:rgba(255,123,138,.14);color:var(--red);border:1px solid rgba(255,123,138,.35)}
+.model-section{border:1px solid var(--line);border-radius:28px;background:rgba(14,22,38,.62);padding:22px;margin:24px 0}.ai-matrix{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}.ai-tile{border:1px solid rgba(154,179,216,.2);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));padding:13px}.ai-tile strong{display:block;color:#fff;font-size:14px}.ai-tile span{color:var(--muted);font-size:11px}
 .qr-card{display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center;border:1px solid rgba(85,230,255,.28);border-radius:24px;background:linear-gradient(135deg,rgba(85,230,255,.1),rgba(185,148,255,.07));padding:18px;margin-top:16px}
 .qr-img{width:180px;max-width:100%;border-radius:18px;background:#fff;box-shadow:0 20px 50px rgba(0,0,0,.24)}
 .qr-title{font-size:18px;font-weight:900;margin-bottom:6px}.qr-note{color:var(--soft);font-size:14px}.wechat-id{display:inline-flex;margin:10px 0 4px;padding:5px 10px;border-radius:999px;background:rgba(93,240,174,.12);border:1px solid rgba(93,240,174,.32);color:var(--green);font-weight:900}
 .report{white-space:pre-wrap;border:1px solid var(--line);border-radius:18px;background:#07101d;padding:16px;color:#dfeaff;font-size:13px;max-height:360px;overflow:auto;margin-top:16px}
 .section{margin-top:34px}.section h2{font-size:22px;margin-bottom:12px}.muted{color:var(--muted);font-size:14px}.footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:var(--muted);font-size:12px}
-@media(max-width:860px){.hero,.score-row,.form-grid,.qr-card{grid-template-columns:1fr}h1{font-size:34px}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.mini-grid{grid-template-columns:1fr}.qr-img{width:220px}}
+@media(max-width:860px){.hero,.score-row,.form-grid,.qr-card{grid-template-columns:1fr}h1{font-size:34px}.cards,.model-cloud,.ai-matrix{grid-template-columns:1fr}.signal-flow{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.mini-grid{grid-template-columns:1fr}.qr-img{width:220px}}
 </style>
 </head>
 <body>
@@ -100,15 +109,46 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
     <div>
       <span class="eyebrow">GEO CHECK · 客户看得懂的 AI 搜索基建体检</span>
       <h1>不是测一个分数，<br>是把 AI 为什么看不懂你说清楚。</h1>
-      <p class="lead">输入品牌名、营业执照主体或官网网址，生成一份 GEO 基建检测报告：技术抓取、AI 可读、品牌实体、工商主体桥接、公开信源、同名消歧、客户决策承接，每项都给扣分原因和修复动作。</p>
+      <p class="lead">输入品牌名、营业执照主体或官网网址，生成一份 GEO 基建检测报告：技术抓取、AI 可读、品牌实体、工商主体桥接、公开信源、同名消歧、客户决策承接，每项都给扣分原因和修复动作，并为主流 AI 人工复测准备问题与证据。</p>
     </div>
     <div class="hero-card">
-      <div class="orb"></div>
-      <div class="mini-grid">
-        <div class="mini"><strong>6</strong><span>核心维度</span></div>
-        <div class="mini"><strong>24</strong><span>检测点</span></div>
-        <div class="mini"><strong>0</strong><span>排名承诺</span></div>
+      <div class="ai-console" aria-label="主流 AI GEO 检测信号控制台">
+        <div class="console-top">
+          <div class="console-title">AI VISIBILITY SIGNAL CONSOLE</div>
+          <div class="console-status"><span class="pulse"></span>Manual Retest Ready</div>
+        </div>
+        <div class="model-cloud">
+          <div class="model-chip"><strong>ChatGPT / Perplexity</strong><span>英文与全球 AI 搜索语境</span></div>
+          <div class="model-chip"><strong>DeepSeek / 豆包</strong><span>中文模型认知与品牌回答</span></div>
+          <div class="model-chip"><strong>Kimi / 通义</strong><span>长文理解与公开信源提取</span></div>
+          <div class="model-chip"><strong>文心 / Gemini</strong><span>搜索生态与跨域信号校验</span></div>
+        </div>
+        <div class="signal-flow">
+          <div class="flow-node"><b>01</b><span>品牌输入</span></div>
+          <div class="flow-node"><b>02</b><span>信源抓取</span></div>
+          <div class="flow-node"><b>03</b><span>实体消歧</span></div>
+          <div class="flow-node"><b>04</b><span>模型复测</span></div>
+          <div class="flow-node"><b>05</b><span>报告修复</span></div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="model-section" aria-label="主流 AI 复测矩阵">
+    <span class="eyebrow">MODEL MATRIX · 不冒充 API 接入，只展示人工复测范围</span>
+    <h2>主流 AI 不是一个答案，要分平台记录。</h2>
+    <p class="muted">同一个品牌，在不同 AI 里可能出现“知道你、说错你、把你和同名主体混淆、只推荐竞品、完全不提及”五种结果。这个工具先做基建初筛，人工深检再按统一问题集逐个平台记录证据。</p>
+    <div class="ai-matrix">
+      <div class="ai-tile"><strong>ChatGPT</strong><span>品牌直搜 / 决策建议</span></div>
+      <div class="ai-tile"><strong>DeepSeek</strong><span>中文回答 / 同名消歧</span></div>
+      <div class="ai-tile"><strong>豆包</strong><span>国内语境 / 内容理解</span></div>
+      <div class="ai-tile"><strong>Kimi</strong><span>长文信源 / 事实提取</span></div>
+      <div class="ai-tile"><strong>通义千问</strong><span>行业推荐 / 服务判断</span></div>
+      <div class="ai-tile"><strong>文心一言</strong><span>百度生态 / 搜索关联</span></div>
+      <div class="ai-tile"><strong>Perplexity</strong><span>引用来源 / 可点击证据</span></div>
+      <div class="ai-tile"><strong>Gemini</strong><span>Google 语境 / 英文识别</span></div>
+      <div class="ai-tile"><strong>腾讯元宝</strong><span>微信生态 / 中文检索</span></div>
+      <div class="ai-tile"><strong>Claude</strong><span>长上下文 / 品牌解释</span></div>
     </div>
   </section>
 
@@ -182,7 +222,7 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
     <h2>检测边界</h2>
     <p class="muted">本工具用于 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。完整 GEO 诊断仍需要多平台复测、搜索索引证据、第三方信源核验和人工判断。</p>
     <div class="qr-card">
-      <img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy">
+      <img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq-qr.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy">
       <div>
         <div class="qr-title">预约人工 GEO 检测</div>
         <p class="qr-note">扫码添加景一微信，或搜索微信号 <span class="wechat-id">wjdmqq</span>。建议备注：<strong>GEO检测 + 品牌名</strong>。先别急着承诺效果，我们先看清楚 AI 为什么没有准确理解你。</p>
@@ -322,7 +362,7 @@ function renderResult(total, scores, reasons, input){
     <li><a href="https://${input.hostName}/robots.txt" target="_blank" rel="noopener">robots.txt</a></li>
     <li><a href="https://${input.hostName}/sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a></li>
     <li><a href="https://${input.hostName}/llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
-  </ul></div><div class="card"><span class="tag ok">预约人工 GEO 检测</span><h3>扫码或加微信：wjdmqq</h3><img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy"><p>备注“GEO检测 + ${escapeHtml(input.brand)}”。把本页初筛报告发过来后，再做 DeepSeek、豆包、Kimi、通义、ChatGPT 等人工复测。</p></div>`;
+  </ul></div><div class="card"><span class="tag ok">预约人工 GEO 检测</span><h3>扫码或加微信：wjdmqq</h3><img class="qr-img" src="/assets/img/wechat-geo-check-wjdmqq-qr.jpg" alt="添加景一微信预约人工 GEO 检测二维码" loading="lazy"><p>备注“GEO检测 + ${escapeHtml(input.brand)}”。把本页初筛报告发过来后，再做 DeepSeek、豆包、Kimi、通义、ChatGPT 等人工复测。</p></div>`;
 
   latestReport = buildReport(total, level, scores, reasons, input);
   latestWechatBrief = buildWechatBrief(input, total, level);
