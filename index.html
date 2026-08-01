@@ -75,14 +75,13 @@ a:hover{text-decoration:underline}
 .kicker{font-size:13px;color:var(--gold);font-weight:800;margin-bottom:12px}
 h1{font-size:42px;line-height:1.18;letter-spacing:0;margin-bottom:18px}
 .lead{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:26px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);padding:12px 18px;font-weight:800;font-size:14px;border:1px solid var(--line)}
 .primary{background:var(--blue);border-color:var(--blue);color:#fff}
 .secondary{background:#fff;color:var(--ink)}
-.trust{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
 .risk{font-size:14px;color:var(--muted)}
-.ai-panel{position:relative;overflow:hidden;min-height:430px;border:1px solid rgba(85,230,255,.22);border-radius:22px;padding:24px;background:
+.ai-panel{position:relative;overflow:hidden;min-height:340px;border:1px solid rgba(85,230,255,.22);border-radius:22px;padding:24px;background:
 linear-gradient(rgba(85,230,255,.045) 1px,transparent 1px),
 linear-gradient(90deg,rgba(85,230,255,.045) 1px,transparent 1px),
 radial-gradient(circle at 18% 12%,rgba(85,230,255,.20),transparent 30%),
@@ -90,19 +89,14 @@ radial-gradient(circle at 86% 8%,rgba(185,148,255,.18),transparent 28%),
 linear-gradient(145deg,rgba(7,16,29,.98),rgba(10,20,40,.96) 48%,rgba(13,18,35,.94));background-size:24px 24px,24px 24px,100% 100%,100% 100%,100% 100%;box-shadow:0 30px 86px rgba(7,16,29,.28),inset 0 0 58px rgba(85,230,255,.08);color:#ecf8ff}
 .ai-panel::before{content:"";position:absolute;inset:-45%;background:linear-gradient(115deg,transparent 43%,rgba(85,230,255,.16) 48%,rgba(185,148,255,.12) 51%,transparent 57%);animation:scan 8s linear infinite;pointer-events:none}
 .ai-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(85,230,255,.055) 54%,transparent 56%);background-size:100% 9px;opacity:.75;pointer-events:none}
-.signal-top,.signal-status,.signal-flow,.signal-foot{position:relative;z-index:1}
+.signal-top,.signal-status{position:relative;z-index:1}
 .signal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;color:#9feeff;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 .signal-top span{font-weight:900}.signal-top i{font-style:normal;color:rgba(236,248,255,.62)}
 .signal-status{margin:20px 0 18px}.signal-status strong{display:block;font-size:28px;line-height:1.2;color:#fff}.signal-status p{margin-top:8px;color:rgba(236,248,255,.72)}
 .signal-grid{position:absolute;inset:78px 24px auto 24px;height:116px;border:1px solid rgba(85,230,255,.14);border-radius:16px;background:linear-gradient(90deg,rgba(85,230,255,.08) 1px,transparent 1px),linear-gradient(rgba(85,230,255,.08) 1px,transparent 1px);background-size:32px 32px;z-index:0}
 .signal-node{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 6px rgba(85,230,255,.10),0 0 24px rgba(85,230,255,.75);animation:pulse 3.8s ease-in-out infinite}
 .node-a{left:12%;top:28%}.node-b{left:40%;top:58%;animation-delay:.8s}.node-c{right:28%;top:25%;animation-delay:1.6s}.node-d{right:10%;bottom:20%;background:var(--violet);box-shadow:0 0 0 6px rgba(185,148,255,.12),0 0 24px rgba(185,148,255,.7);animation-delay:2.4s}
-.model-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:88px 0 16px}.model-pill{border:1px solid rgba(85,230,255,.18);border-radius:999px;padding:6px 8px;text-align:center;font-size:11px;font-weight:850;color:#dcf7ff;background:rgba(255,255,255,.045)}
-.signal-flow{display:grid;gap:10px;margin-top:14px}
-.flow-step{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border:1px solid rgba(85,230,255,.17);border-radius:13px;background:rgba(255,255,255,.055);backdrop-filter:blur(8px)}
-.flow-step span{font-size:12px;color:#9feeff;text-transform:uppercase;letter-spacing:.08em}.flow-step b{font-size:14px;color:#fff;text-align:right}
-.flow-line{width:1px;height:12px;margin-left:22px;background:linear-gradient(to bottom,rgba(85,230,255,.85),rgba(185,148,255,.12))}
-.signal-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(85,230,255,.16);color:rgba(236,248,255,.68);font-size:13px}
+.model-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:92px 0 0}.model-pill{border:1px solid rgba(85,230,255,.18);border-radius:999px;padding:6px 8px;text-align:center;font-size:11px;font-weight:850;color:#dcf7ff;background:rgba(255,255,255,.045)}
 @keyframes scan{0%{transform:translateX(-25%) translateY(-15%)}100%{transform:translateX(25%) translateY(15%)}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.86}50%{transform:scale(1.35);opacity:1}}
 .section{margin-top:58px}
@@ -149,12 +143,6 @@ linear-gradient(145deg,rgba(7,16,29,.98),rgba(10,20,40,.96) 48%,rgba(13,18,35,.9
         <a class="btn secondary" href="/diagnosis/">做 AI 可见度自测</a>
         <a class="btn secondary" href="/public-sources/">查看公开信源</a>
       </div>
-      <div class="trust">
-        <span>5 维度诊断</span>
-        <span>不承诺排名</span>
-        <span>不暴露付费工具</span>
-        <span>方法与边界公开</span>
-      </div>
     </div>
     <aside class="ai-panel" aria-label="AI 可见度信号示意">
       <div class="signal-top">
@@ -181,16 +169,6 @@ linear-gradient(145deg,rgba(7,16,29,.98),rgba(10,20,40,.96) 48%,rgba(13,18,35,.9
         <span class="model-pill">Perplexity</span>
         <span class="model-pill">Gemini</span>
       </div>
-      <div class="signal-flow">
-        <div class="flow-step"><span>Entity</span><b>品牌实体 · 景一 fable</b></div>
-        <div class="flow-line"></div>
-        <div class="flow-step"><span>Evidence</span><b>公开证据 · 官网 / CSDN / 知乎 / GitHub</b></div>
-        <div class="flow-line"></div>
-        <div class="flow-step"><span>Files</span><b>机器文件 · llms / sitemap / Schema</b></div>
-        <div class="flow-line"></div>
-        <div class="flow-step"><span>Output</span><b>输出目标 · 被理解 / 被引用 / 被推荐</b></div>
-      </div>
-      <p class="signal-foot">不承诺排名、收录或 AI 引用；先把公开事实整理成机器可读的信源。</p>
     </aside>
   </section>
 
