@@ -59,6 +59,8 @@ jobs:
           test -f ./_site/llms-full.txt
           test -f ./_site/robots.txt
           test -f ./_site/sitemap.xml
+          test -f ./workers/geo-check-api/worker.js
+          node --check ./workers/geo-check-api/worker.js
           test ! -e ./_site/course/index.html
           test ! -e ./_site/01-方法论/index.html
           test ! -e ./_site/02-知识图谱/index.html

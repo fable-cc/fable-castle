@@ -65,7 +65,7 @@
 - 创始人 AI 可见度自测：https://fable-castle.com/diagnosis/
 - 工具总览：https://fable-castle.com/tools/
 - GEO 基建检测：https://fable-castle.com/tools/geo-check/
-  - 用途：输入品牌名、营业执照主体或官网网址，检查技术抓取、AI 可读结构、主体实体、公开信源、同名消歧与客户决策承接。
+  - 用途：输入品牌名、营业执照主体、官网网址与竞品/对标对象，检查技术抓取、AI 可读结构、主体实体、公开信源、同名消歧、客户决策承接与竞品相对检测样本。
   - 边界：用于初步诊断，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。
 - 服务页：https://fable-castle.com/services/
 

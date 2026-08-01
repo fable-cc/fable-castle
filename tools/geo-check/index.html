@@ -128,6 +128,10 @@ input:focus,textarea:focus,select:focus{border-color:rgba(85,230,255,.72);box-sh
         <input id="industry" placeholder="例如：GEO 与创始人 IP">
       </div>
       <div class="wide">
+        <label for="competitors">竞品 / 对标对象（可选，一行一个）</label>
+        <textarea id="competitors" placeholder="例如：同行品牌、区域竞品、行业头部账号、客户经常拿来比较的公司……"></textarea>
+      </div>
+      <div class="wide">
         <label for="sources">公开信源链接（可选，一行一个）</label>
         <textarea id="sources" placeholder="官网事实页、GitHub、CSDN、知乎、媒体报道、百科、白皮书、案例页……"></textarea>
       </div>
@@ -188,6 +192,7 @@ const dims = [
   {key:'decision', name:'客户决策承接', max:14, note:'客户看完是否知道适合谁、怎么做、下一步联系谁。'}
 ];
 let latestReport = '';
+const GEO_CHECK_API = 'https://api.fable-castle.com/geo-check';
 
 function val(id){return document.getElementById(id).value.trim()}
 function normUrl(raw){
@@ -203,6 +208,7 @@ function runGeoCheck(){
   const rawBrand = val('brand');
   const legal = val('legal');
   const industry = val('industry');
+  const competitors = val('competitors');
   const urlObj = normUrl(val('url'));
   const sources = val('sources');
   const notes = val('notes');
@@ -211,8 +217,9 @@ function runGeoCheck(){
   const brand = rawBrand || legal || hostName;
   document.getElementById('url').value = urlObj.href;
   if(!rawBrand && !legal){document.getElementById('brand').value = hostName}
-  const all = [brand, legal, industry, sources, notes, urlObj.href, hostName].join('\n');
+  const all = [brand, legal, industry, competitors, sources, notes, urlObj.href, hostName].join('\n');
   const sourceLines = countLines(sources);
+  const competitorList = competitors.split(/\n+/).map(s=>s.trim()).filter(Boolean).slice(0,5);
 
   const scores = {};
   const reasons = {};
@@ -269,9 +276,74 @@ function runGeoCheck(){
   if(hasAny(all,['联系','预约','咨询','报告','入口'])){scores.decision += 3; reasons.decision.push('有转化入口线索。')} else reasons.decision.push('缺少预约/咨询/领取报告入口。');
   if(hasAny(all,['不承诺','边界','不保证','风险','复测'])){scores.decision += 2; reasons.decision.push('有合规边界说明。')} else reasons.decision.push('建议写明不承诺排名与固定推荐。');
   if(notes.length > 220){scores.decision += 2; reasons.decision.push('客户决策信息较完整。')}
+  if(competitorList.length){scores.decision = Math.min(14, scores.decision + 1); reasons.decision.push('已填写竞品/对标对象，可进入相对差距复测。')}
 
   const total = dims.reduce((sum,d)=>sum + Math.min(d.max, scores[d.key] || 0),0);
-  renderResult(total, scores, reasons, {brand, rawBrand, legal, industry, url:urlObj.href, hostName, sourceLines});
+  const input = {brand, rawBrand, legal, industry, competitors: competitorList, url:urlObj.href, hostName, sourceLines};
+  renderResult(total, scores, reasons, input);
+  tryApiScan(input);
+}
+
+async function tryApiScan(input){
+  const hint = document.getElementById('scoreHint');
+  const originalHint = '分数代表 GEO 基建准备度，不代表 AI 排名。';
+  hint.textContent = '正在尝试自动抓取网页证据；如果后端未部署，会保留本地检测结果。';
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(), 4500);
+  try{
+    const res = await fetch(GEO_CHECK_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      signal: controller.signal,
+      body: JSON.stringify({
+        url: input.url,
+        brand: input.rawBrand || input.brand,
+        legalName: input.legal,
+        industry: input.industry,
+        competitors: input.competitors
+      })
+    });
+    clearTimeout(timer);
+    if(!res.ok) throw new Error('API ' + res.status);
+    const data = await res.json();
+    if(!data || !data.ok) throw new Error(data && data.error || 'API_FAILED');
+    renderApiEvidence(data);
+    hint.textContent = '已完成自动抓取证据 + 本地业务评分；不代表 AI 排名。';
+  }catch(e){
+    clearTimeout(timer);
+    hint.textContent = originalHint + ' 自动抓取 API 未启用时，当前结果为本地估算版。';
+  }
+}
+
+function renderApiEvidence(data){
+  const facts = data.fetched || {};
+  const signals = data.signals || {};
+  const scores = data.scores || {};
+  const findings = data.findings || [];
+  const cards = document.getElementById('cards');
+  const evidenceCard = `<div class="card"><span class="tag ok">自动深检证据</span><h3>后端已抓取网页</h3><ul>
+    <li>目标页：${facts.page && facts.page.status || 0}，${facts.page && facts.page.bytes || 0} bytes</li>
+    <li>robots.txt：${facts.robots && facts.robots.status || 0}</li>
+    <li>sitemap.xml：${facts.sitemap && facts.sitemap.status || 0}</li>
+    <li>llms.txt：${facts.llms && facts.llms.status || 0}</li>
+    <li>Schema：${signals.page && signals.page.jsonLdCount || 0} 个 JSON-LD</li>
+  </ul></div>`;
+  cards.innerHTML = evidenceCard + cards.innerHTML;
+  const apiReport = [
+    '',
+    '## 自动抓取证据',
+    `扫描时间：${data.scannedAt || ''}`,
+    `API 分数：${scores.total || '未返回'}/100（${scores.level || '未返回'}）`,
+    `目标页状态：${facts.page && facts.page.status || 0}`,
+    `robots.txt 状态：${facts.robots && facts.robots.status || 0}`,
+    `sitemap.xml 状态：${facts.sitemap && facts.sitemap.status || 0}`,
+    `llms.txt 状态：${facts.llms && facts.llms.status || 0}`,
+    '',
+    '### 自动发现',
+    ...findings.slice(0,10).map(f=>`- [${f.status}] ${f.title}：${f.evidence}${f.action ? '；建议：' + f.action : ''}`)
+  ].join('\n');
+  latestReport = latestReport + apiReport;
+  document.getElementById('report').textContent = latestReport;
 }
 
 function renderResult(total, scores, reasons, input){
@@ -291,10 +363,13 @@ function renderResult(total, scores, reasons, input){
     .map(d=>({d, s:Math.min(d.max, scores[d.key] || 0), pct:(scores[d.key] || 0)/d.max}))
     .sort((a,b)=>a.pct-b.pct)
     .slice(0,3);
+  const competitorCard = input.competitors.length
+    ? `<div class="card"><span class="tag warn">竞品差距</span><h3>下一步要测这 ${input.competitors.length} 个对象</h3><ul>${input.competitors.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul><p>建议用同一组 AI 问题记录：谁被提及、谁排前、谁被引用、谁更像可信来源。</p></div>`
+    : `<div class="card"><span class="tag warn">竞品差距</span><h3>未填写竞品</h3><p>建议补 1-5 个客户常比较的品牌。GEO 不是只问“有没有我”，还要问“AI 为什么说竞品不说我”。</p></div>`;
   document.getElementById('cards').innerHTML = priority.map(x=>{
     const cls = x.pct < .45 ? 'risk' : x.pct < .72 ? 'warn' : 'ok';
     return `<div class="card"><span class="tag ${cls}">${x.d.name}</span><h3>优先修复</h3><ul>${reasons[x.d.key].slice(-3).map(r=>`<li>${escapeHtml(r)}</li>`).join('')}</ul></div>`;
-  }).join('') + `<div class="card"><span class="tag ok">网站核验入口</span><h3>先打开这 4 个地址</h3><ul>
+  }).join('') + competitorCard + `<div class="card"><span class="tag ok">网站核验入口</span><h3>先打开这 4 个地址</h3><ul>
     <li><a href="${input.url}" target="_blank" rel="noopener">首页 / 当前页</a></li>
     <li><a href="https://${input.hostName}/robots.txt" target="_blank" rel="noopener">robots.txt</a></li>
     <li><a href="https://${input.hostName}/sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a></li>
@@ -313,6 +388,7 @@ function buildReport(total, level, scores, reasons, input){
   lines.push(`对外品牌/网站名：${input.rawBrand || '未填写，暂按域名识别'}`);
   lines.push(`营业执照主体：${input.legal || '未填写'}`);
   lines.push(`行业：${input.industry || '未填写'}`);
+  lines.push(`竞品/对标对象：${input.competitors.length ? input.competitors.join('、') : '未填写'}`);
   lines.push(`总分：${total}/100（${level}）`);
   lines.push('');
   lines.push('## 网站核验入口');
@@ -333,6 +409,7 @@ function buildReport(total, level, scores, reasons, input){
   lines.push('2. 建立品牌事实页、工商主体说明、创始人事实页、公开信源页、同名消歧页。');
   lines.push('3. 至少补 3 个第三方公开信源，并保持品牌名、营业执照主体、别名、业务描述一致。');
   lines.push('4. 用 20 个 AI 复测问题记录品牌直搜、同名消歧、行业推荐、客户决策结果。');
+  lines.push('5. 如果有竞品，用同一组问题记录竞品是否被提及、是否排序更靠前、是否拥有更强公开信源。');
   lines.push('');
   lines.push('## 边界');
   lines.push('本报告是 GEO 基建自查，不承诺 AI 首答、固定排名、搜索收录、平台推荐或直接成交。真实效果需要结合搜索索引、公开信源权重、模型版本和多轮复测判断。');
@@ -348,6 +425,12 @@ function loadExample(){
   document.getElementById('legal').value = '';
   document.getElementById('url').value = 'https://fable-castle.com/';
   document.getElementById('industry').value = 'GEO、创始人 AI 可见度、创始人 IP、企业 AI 知识库';
+  document.getElementById('competitors').value = [
+    '传统 SEO 服务商',
+    'AI 营销顾问',
+    '企业知识库服务商',
+    '创始人 IP 陪跑机构'
+  ].join('\n');
   document.getElementById('sources').value = [
     'https://fable-castle.com/public-sources/',
     'https://fable-castle.com/llms.txt',
@@ -355,7 +438,7 @@ function loadExample(){
     'https://github.com/fable-cc/fable-castle',
     'https://github.com/fable-cc/fable-castle/discussions/4',
     'https://blog.csdn.net/fable_castle/article/details/163398130'
-  ].join('\\n');
+  ].join('\n');
   document.getElementById('notes').value = '景一 fable 是 GEO 与创始人 AI 可见度顾问，运营 fable-castle.com。该站是个人 IP 与服务品牌站，当前以公开身份页、事实卡、FAQ、Schema / JSON-LD、公开信源页和第三方文章作为 AI 可读证据，不以单一营业执照主体作为核心识别入口。服务对象是创始人、顾问、专家与企业团队，帮助他们建设可被 AI 理解、引用和验证的公开品牌资产。适合：已经有官网、内容、账号或案例，但 AI 搜索说不清其业务的创始人和企业。不适合：希望承诺固定排名、立刻成交或刷量作弊的项目。景一 fable 不是同名电影导演、企业家、小说角色、地点或其他同名主体；搜索和引用时优先使用“景一 fable / 景一的寓言城堡 / fable-castle.com”。本站有 robots.txt、sitemap.xml、llms.txt、llms-full.txt、公开信源页、同名消歧页、GitHub 与 CSDN 第三方信源。流程：先做 GEO 基建检测，再做 20 个 AI 复测问题，最后输出诊断报告、修复路线图和一周后复测记录。联系入口：官网诊断页和服务页。服务边界是不承诺 AI 首答、固定排名、搜索收录或直接成交，交付以诊断、复测、整改和公开信源建设为主。';
 }
 function escapeHtml(str){return str.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
