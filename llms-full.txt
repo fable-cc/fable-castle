@@ -95,6 +95,7 @@
 
 - GEO 落地指南：https://fable-castle.com/posts/2026-07-22-geo-practical-guide.html
 - AI 搜索与知识管理：https://fable-castle.com/posts/2026-07-22-ai-search-knowledge-management.html
+- Day 29 GEO 复测：一个第三方信源如何打破同名结果垄断：https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough
 - 中文 GEO 全景指南 2026：https://fable-castle.com/posts/chinese-geo-comprehensive-guide-2026
 - SEO vs GEO：https://fable-castle.com/posts/seo-vs-geo-whats-the-difference-2026
 - 为什么 AI 搜索不引用你的文章：https://fable-castle.com/posts/why-ai-search-never-cites-my-articles

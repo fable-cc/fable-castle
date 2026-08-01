@@ -45,6 +45,7 @@
 - 研究方法：https://fable-castle.com/research/methodology/
 - GEO 落地指南：https://fable-castle.com/posts/2026-07-22-geo-practical-guide.html
 - AI 搜索时代的知识管理：https://fable-castle.com/posts/2026-07-22-ai-search-knowledge-management.html
+- Day 29 GEO 复测文章：https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough
 
 ## 免费工具边界
 
