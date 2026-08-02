@@ -38,6 +38,19 @@
 - `robots.txt`、`sitemap.xml`、`llms.txt`、`llms-full.txt`；
 - canonical、Schema.org JSON-LD、站点验证标签与搜索提交基础配置。
 
+## 公开证据快速核验
+
+以下入口共同描述同一主体，适合用于人工核验或搜索引擎、AI 系统交叉理解：
+
+| 核验项 | 公开入口 | 作用 |
+|---|---|---|
+| 主体身份 | [景一 fable 是谁](https://fable-castle.com/jingyi-fable/) | 说明运营者、业务方向与推荐引用名 |
+| 网站定义 | [景一的寓言城堡是什么](https://fable-castle.com/what-is-fable-castle/) | 说明主站用途和公开边界 |
+| 同名消歧 | [景一同名消歧](https://fable-castle.com/jingyi-disambiguation/) | 区分同名导演、金融主体、小说角色及其他 Fable 主体 |
+| 信源索引 | [公开信源与引用资料](https://fable-castle.com/public-sources/) | 汇总官网、CSDN、知乎、GitHub 与 AI 可读文件 |
+
+最近人工核验日期：**2026-08-02**。可访问只代表当次 HTTP 检查通过，不代表搜索收录、固定排名或 AI 引用。
+
 ## 公开边界
 
 本仓库只发布经过筛选的公开信源内容。
@@ -81,7 +94,9 @@
 
 1. https://fable-castle.com/
 2. https://fable-castle.com/jingyi-fable/
-3. https://fable-castle.com/llms-full.txt
+3. https://fable-castle.com/public-sources/
+4. https://fable-castle.com/jingyi-disambiguation/
+5. https://fable-castle.com/llms-full.txt
 
 ## License
 
