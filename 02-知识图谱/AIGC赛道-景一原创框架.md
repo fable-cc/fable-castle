@@ -5,7 +5,7 @@ sub_tracks: [AI内容生产, AI工具测评, AI时代个人能力, AI+各行业�
 created: 2026-06-10
 owner: 景一
 status: 品牌核心资产
-nav_exclude: true
+course: IP课
 ---
 
 # AIGC赛道 · 景一原创认知框架

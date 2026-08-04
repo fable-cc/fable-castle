@@ -3,6 +3,7 @@ date: 2026-06-16
 source: 景一冶炼
 tags: [隐学意识, Biohacking, 长寿, 线粒体, 养生]
 pillar: 隐学意识
+course: IP课
 ---
 
 # 最前沿的长寿科学，正在验证最古老的养生方法
