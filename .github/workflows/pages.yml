@@ -99,9 +99,10 @@ jobs:
           grep -q 'application/ld+json' ./_site/founder-ip/index.html
           grep -q 'application/ld+json' ./_site/ai-knowledge-base/index.html
           grep -q 'application/ld+json' ./_site/what-is-fable-castle/index.html
-          grep -q '"dateModified": "2026-08-02"' ./_site/public-sources/index.html
-          grep -q '待恢复来源' ./_site/public-sources/index.html
+          grep -q '"dateModified": "2026-08-08"' ./_site/public-sources/index.html
+          grep -q '平台访问不稳定' ./_site/public-sources/index.html
           ! grep -q 'href="https://blog.csdn.net/fable_castle/article/details/163398130"' ./_site/public-sources/index.html
+          ! grep -q 'href="https://blog.csdn.net/fable_castle/article/details/163309930"' ./_site/public-sources/index.html
           grep -q '景一' ./_site/about/index.html
           grep -q '景一' ./_site/services/index.html
           grep -q '案例：fable-castle.com 的 GEO 修复记录' ./_site/cases/index.html

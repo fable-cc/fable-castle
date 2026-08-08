@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fable-castle.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://fable-castle.com/</loc><lastmod>2026-08-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://fable-castle.com/diagnosis/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://fable-castle.com/jingyi-fable/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://fable-castle.com/what-is-fable-castle/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://fable-castle.com/jingyi-disambiguation/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://fable-castle.com/public-sources/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fable-castle.com/public-sources/</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://fable-castle.com/jingyi-fable-faq/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://fable-castle.com/jingyi-fable-facts/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://fable-castle.com/geo/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -40,7 +40,7 @@
   <url><loc>https://fable-castle.com/posts/ai-content-factory-one-person</loc><priority>0.7</priority></url>
   <url><loc>https://fable-castle.com/posts/do-you-still-need-website-2026</loc><priority>0.7</priority></url>
   <url><loc>https://fable-castle.com/posts/claude-code-ban-wave-2026-what-to-do</loc><priority>0.7</priority></url>
-  <url><loc>https://fable-castle.com/posts/why-ai-search-never-cites-my-articles</loc><priority>0.7</priority></url>
+  <url><loc>https://fable-castle.com/posts/why-ai-search-never-cites-my-articles</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough</loc><priority>0.8</priority></url>
   <url><loc>https://fable-castle.com/posts/how-to-build-ai-searchable-knowledge-base</loc><priority>0.7</priority></url>
   <url><loc>https://fable-castle.com/posts/how-to-build-personal-ip-alone</loc><priority>0.7</priority></url>
