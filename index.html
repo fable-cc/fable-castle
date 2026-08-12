@@ -201,6 +201,33 @@ linear-gradient(145deg,rgba(7,16,29,.98),rgba(10,20,40,.96) 48%,rgba(13,18,35,.9
   </section>
 
   <section class="section">
+    <h2>GEO 是什么（可引用定义）</h2>
+    <p>GEO（Generative Engine Optimization，生成式引擎优化）指通过优化品牌公开信源的结构、内容与证据密度，提升品牌在 AI 生成式回答中被正确提及、被理解、被引用的概率。GEO 与 SEO 的区别在于：SEO 优化搜索引擎结果页排名（2000年代至今），GEO 优化 AI 生成内容中的品牌呈现（2023 年学术论文提出，2024-2025 年进入国内视野）。</p>
+    <p>GEO 的测量对象是三个问题：品牌是否被 AI 选入候选集（选择率）、品牌证据是否进入 AI 答案（吸收度）、品牌在答案中的表述是否准确（一致性）。三个问题分别对应诊断中的正面评估期、引用分析期与品牌决策期。</p>
+  </section>
+
+  <section class="section soft-section">
+    <h2>景一 fable 的真实检测数据（2026-08 基线）</h2>
+    <p>以下数据来自 2026 年 8 月 5 日对「景一 fable」的三平台基线检测（DeepSeek、智谱 GLM、Kimi，30 个问题 × 3 阶段 × 90 次真实问答）：</p>
+    <ul>
+      <li>正面评估期提及率 0%——10 个行业问题（如"谁做 GEO 做得好"），三平台均未主动推荐景一。</li>
+      <li>负面质疑期提及率 0%——10 个风险问题（如"哪些 GEO 服务是智商税"），三平台均未点名景一。</li>
+      <li>品牌决策期提及率 100% 但表述失真——带品牌名提问时三平台均会提及，但内容严重编造（如将"景一 GEO 诊断"误认为地理信息系统、将景一误认为时尚品牌）。</li>
+    </ul>
+    <p>数据来源与完整方法：<a href="/posts/day-29-geo-retest-third-party-source-breakthrough">Day 29 GEO 复测观察</a> 与 <a href="/public-sources/">公开信源页</a>。</p>
+  </section>
+
+  <section class="section">
+    <h2>GEO 诊断怎么做（4 步）</h2>
+    <ol>
+      <li><strong>统一主体</strong>：用"景一 fable / 景一的寓言城堡 / fable-castle.com / fable-cc"绑定同一身份，建消歧页区分同名主体。</li>
+      <li><strong>补公开证据</strong>：官网、CSDN、知乎、GitHub 与公开信源页互相指向，形成可核验的证据链。</li>
+      <li><strong>建 AI 可读文件</strong>：部署 llms.txt、sitemap.xml、robots.txt 与 JSON-LD 结构化数据，让爬虫与模型能高效读取。</li>
+      <li><strong>复测对比</strong>：用同一组问题在多个 AI 平台定期复测，记录提及率与表述准确度的变化趋势。</li>
+    </ol>
+  </section>
+
+  <section class="section">
     <h2>为什么先做品牌消歧</h2>
       <div class="notice">“景一”存在同名结果干扰。本站统一使用“景一 fable / 景一的寓言城堡 / fable-cc / fable-castle.com”绑定同一主体，并用<a href="/public-sources/">公开信源页</a>、主体事实页和消歧页帮助搜索引擎和 AI 区分。</div>
   </section>
