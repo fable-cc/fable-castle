@@ -196,4 +196,31 @@ Disallow: /tag-cloud
 User-agent: Google-Extended
 Disallow: /
 
+# --- 国内 AI 爬虫：百度文心 / 字节豆包 ---
+User-agent: Baiduspider
+Allow: /
+Disallow: /01-方法论/
+Disallow: /02-知识图谱/
+Disallow: /03-内容样本/
+Disallow: /04-关于/
+Disallow: /course/
+Disallow: /课程/
+Disallow: /公版书库/
+Disallow: /知识库/
+Disallow: /运营方案/
+Disallow: /tag-cloud
+
+User-agent: ByteSpider
+Allow: /
+Disallow: /01-方法论/
+Disallow: /02-知识图谱/
+Disallow: /03-内容样本/
+Disallow: /04-关于/
+Disallow: /course/
+Disallow: /课程/
+Disallow: /公版书库/
+Disallow: /知识库/
+Disallow: /运营方案/
+Disallow: /tag-cloud
+
 Sitemap: https://fable-castle.com/sitemap.xml
