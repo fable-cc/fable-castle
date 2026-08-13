@@ -105,6 +105,11 @@ jobs:
           grep -q '<link rel="canonical" href="https://fable-castle.com/cases/api-model-baseline-2026-08-13/">' ./_site/cases/api-model-baseline-2026-08-13/index.html
           grep -q 'DeepSeek V4 Flash' ./_site/cases/api-model-baseline-2026-08-13/index.html
           grep -q 'API 模型基线' ./_site/cases/api-model-baseline-2026-08-13/index.html
+          grep -q '开始诊断需要什么' ./_site/geo-ai-visibility-diagnosis/index.html
+          grep -q '不适合谁' ./_site/geo-ai-visibility-diagnosis/index.html
+          grep -q '固定问题卡、原始回答证据、人工标注与可解释评分' ./_site/geo-ai-visibility-diagnosis/index.html
+          grep -q 'API 模型品牌识别基线' ./_site/jingyi-fable-facts/index.html
+          grep -q 'GEO 诊断需要的公开输入' ./_site/llms-full.txt
           grep -q '"dateModified": "2026-08-13"' ./_site/public-sources/index.html
           grep -q '平台访问不稳定' ./_site/public-sources/index.html
           grep -q '163306281、163309930 与 163398130 均返回 521' ./_site/public-sources/index.html

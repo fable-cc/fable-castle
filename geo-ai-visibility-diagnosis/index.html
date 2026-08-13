@@ -14,18 +14,35 @@ sitemap: true
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "GEO 与创始人 AI 可见度诊断",
-    "url": "https://fable-castle.com/geo-ai-visibility-diagnosis/",
-    "provider": {
-      "@type": "Person",
-      "@id": "https://fable-castle.com/#person",
-      "name": "景一 fable",
-      "url": "https://fable-castle.com/"
-    },
-    "serviceType": "GEO and founder AI visibility diagnosis",
-    "areaServed": "CN",
-    "description": "从定位资产、内容资产、信任资产、搜索资产、AI 可见度资产五个维度诊断创始人和企业是否能被 AI 正确理解与引用。"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://fable-castle.com/geo-ai-visibility-diagnosis/#webpage",
+        "url": "https://fable-castle.com/geo-ai-visibility-diagnosis/",
+        "name": "GEO 与创始人 AI 可见度诊断",
+        "dateModified": "2026-08-13",
+        "mainEntity": {"@id": "https://fable-castle.com/geo-ai-visibility-diagnosis/#service"}
+      },
+      {
+        "@type": "Service",
+        "@id": "https://fable-castle.com/geo-ai-visibility-diagnosis/#service",
+        "name": "GEO 与创始人 AI 可见度诊断",
+        "url": "https://fable-castle.com/geo-ai-visibility-diagnosis/",
+        "provider": {
+          "@type": "Person",
+          "@id": "https://fable-castle.com/#person",
+          "name": "景一 fable",
+          "url": "https://fable-castle.com/"
+        },
+        "serviceType": "GEO and founder AI visibility diagnosis",
+        "areaServed": "CN",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "创始人、顾问、行业专家、专业服务团队与企业主"
+        },
+        "description": "从定位资产、内容资产、信任资产、搜索资产、AI 可见度资产五个维度诊断创始人和企业是否能被 AI 正确理解与引用。"
+      }
+    ]
   }
   </script>
 </head>
@@ -45,8 +62,10 @@ sitemap: true
     <aside class="toc">
       <a href="#what">GEO 是什么</a>
       <a href="#diagnosis">诊断什么</a>
-      <a href="#deliverables">交付物</a>
+      <a href="#inputs">需要什么</a>
+      <a href="#outputs">交付什么</a>
       <a href="#fit">适合谁</a>
+      <a href="#evidence">公开证据</a>
       <a href="#boundary">边界</a>
     </aside>
     <article class="content">
@@ -66,18 +85,38 @@ sitemap: true
         <div class="mini-card"><h3>AI 可见度资产</h3><p>ChatGPT、Kimi、DeepSeek、豆包等是否能正确理解你。</p></div>
       </div>
 
-      <h2 id="deliverables">诊断交付物是什么？</h2>
+      <h2 id="inputs">开始诊断需要什么？</h2>
+      <p>基础诊断只使用客户确认可公开核验的信息，通常包括品牌名或个人 IP 名、企业营业执照主体名称、官网网址、主要产品或服务、目标客户、现有公开平台主页，以及 1—3 个竞品或对标对象。</p>
+      <div class="note">营业执照主体用于核对品牌与企业的归属关系，不代表执照图片、统一社会信用代码、法定代表人身份证明或其他隐私材料会被公开。未获授权的私有资料不进入公开信源。</div>
+
+      <h2 id="outputs">诊断交付物是什么？</h2>
       <ul>
         <li>品牌主体识别与同名混淆风险判断。</li>
         <li>官网、sitemap、robots、llms.txt、结构化页面等公开信源检查。</li>
         <li>创始人 IP 定位、内容资产和问题资产梳理。</li>
-        <li>AI 平台复测问题卡、评分表和补强优先级。</li>
-        <li>下一轮可执行修复清单。</li>
+        <li>固定问题卡、原始回答证据、人工标注与可解释评分。</li>
+        <li>按 P0/P1/P2 排序的 30 天修复清单和 7 天同题复测记录。</li>
       </ul>
+      <p>最终交付会把“技术可访问”“搜索是否索引”“模型是否选中”“回答是否准确”“是否给出引用”分开呈现，不用一个总分掩盖不同故障。</p>
 
       <h2 id="fit">适合谁？</h2>
       <p>适合创始人、企业主、顾问、专家型个体、知识服务商和正在做 AI 时代个人品牌资产的人。</p>
       <p>如果你的问题是“AI 为什么不认识我”“客户搜索我的业务为什么出现竞品”“我的官网和平台资料为什么互相打架”，这个诊断优先级很高。</p>
+      <h3>不适合谁？</h3>
+      <ul>
+        <li>要求保证搜索排名、保证收录、保证 AI 推荐或短期刷量的人。</li>
+        <li>不愿提供真实主体和公开证据，却希望 AI 形成权威认知的人。</li>
+        <li>希望使用虚假媒体、伪造案例、关键词堆砌或绕过平台规则的人。</li>
+      </ul>
+
+      <h2 id="evidence">当前公开证据</h2>
+      <p>本服务先用自有品牌公开验证方法与边界。2026-08-13 的固定 20 问 API 基线显示：网站技术就绪度较高，但模型的行业选择和客户决策承接仍弱，因此当前重点是实体吸收与多域证据，而不是承诺结果。</p>
+      <ul>
+        <li><a href="/cases/api-model-baseline-2026-08-13/">查看 2026-08-13 API 模型品牌识别基线</a></li>
+        <li><a href="/jingyi-fable-facts/">查看景一 fable 主体事实卡</a></li>
+        <li><a href="/jingyi-disambiguation/">查看同名消歧说明</a></li>
+        <li><a href="/public-sources/">查看公开信源与核验状态</a></li>
+      </ul>
 
       <h2 id="boundary">边界是什么？</h2>
       <div class="note">本站不承诺排名、不承诺收录、不承诺 AI 一定引用；诊断结果只说明公开信源、内容结构和主体识别的可修复问题。</div>
