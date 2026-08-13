@@ -50,6 +50,7 @@ jobs:
           test -f ./_site/tools/geo-rewrite/index.html
           test -f ./_site/tools/geo-skills/index.html
           test -f ./_site/cases/index.html
+          test -f ./_site/cases/api-model-baseline-2026-08-13/index.html
           test -f ./_site/about/index.html
           test -f ./_site/services/index.html
           test -f ./_site/research/index.html
@@ -85,6 +86,7 @@ jobs:
           grep -q "https://fable-castle.com/geo/" ./_site/llms-full.txt
           grep -q "https://fable-castle.com/founder-ip/" ./_site/llms-full.txt
           grep -q "https://fable-castle.com/ai-knowledge-base/" ./_site/llms-full.txt
+          grep -q "https://fable-castle.com/cases/api-model-baseline-2026-08-13/" ./_site/llms-full.txt
           ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱\\|知识星球\\|价格：" ./_site/llms-full.txt
           ! grep -q "course.html\\|/course/\\|/课程/\\|01-方法论\\|02-知识图谱" ./_site/sitemap.xml
           grep -q '<link rel="canonical" href="https://fable-castle.com/about/">' ./_site/about/index.html
@@ -99,6 +101,10 @@ jobs:
           grep -q 'application/ld+json' ./_site/founder-ip/index.html
           grep -q 'application/ld+json' ./_site/ai-knowledge-base/index.html
           grep -q 'application/ld+json' ./_site/what-is-fable-castle/index.html
+          grep -q 'application/ld+json' ./_site/cases/api-model-baseline-2026-08-13/index.html
+          grep -q '<link rel="canonical" href="https://fable-castle.com/cases/api-model-baseline-2026-08-13/">' ./_site/cases/api-model-baseline-2026-08-13/index.html
+          grep -q 'DeepSeek V4 Flash' ./_site/cases/api-model-baseline-2026-08-13/index.html
+          grep -q 'API 模型基线' ./_site/cases/api-model-baseline-2026-08-13/index.html
           grep -q '"dateModified": "2026-08-13"' ./_site/public-sources/index.html
           grep -q '平台访问不稳定' ./_site/public-sources/index.html
           grep -q '163306281、163309930 与 163398130 均返回 521' ./_site/public-sources/index.html
@@ -137,6 +143,7 @@ jobs:
           grep -q 'https://fable-castle.com/ai-knowledge-base/' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/llms.txt' ./_site/sitemap.xml
           grep -q 'https://fable-castle.com/llms-full.txt' ./_site/sitemap.xml
+          grep -q 'https://fable-castle.com/cases/api-model-baseline-2026-08-13/' ./_site/sitemap.xml
           ! grep -q '/guides/ai-crawler-checklist/\|/guides/robots-txt-for-ai/\|/guides/content-health-check/\|/guides/geo-rewrite-best-practices/\|/guides/long-tail-question-strategy/\|/guides/search-intent-mapping/' ./_site/tools/crawler-check/index.html ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
           ! grep -q '发送至服务端\|24 小时内自动清除\|联网搜索请求\|搜索结果数据不保留' ./_site/tools/question-expander/index.html ./_site/tools/geo-rewrite/index.html
           ! grep -q '¥39,800\|¥99,800\|¥198,000\|首单体验价\|排名提升\|全球AI平台全覆盖\|✗ 无' ./_site/services/enterprise.html ./_site/services/geo-global.html
@@ -170,7 +177,7 @@ jobs:
       - name: Ping search engines after deploy
         if: success()
         run: |
-          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/jingyi-fable/","https://fable-castle.com/what-is-fable-castle/","https://fable-castle.com/jingyi-disambiguation/","https://fable-castle.com/public-sources/","https://fable-castle.com/jingyi-fable-faq/","https://fable-castle.com/jingyi-fable-facts/","https://fable-castle.com/geo/","https://fable-castle.com/geo-ai-visibility-diagnosis/","https://fable-castle.com/founder-ip/","https://fable-castle.com/ai-knowledge-base/","https://fable-castle.com/github-trust/","https://fable-castle.com/tools/","https://fable-castle.com/tools/geo-check/","https://fable-castle.com/tools/content-health/","https://fable-castle.com/tools/crawler-check/","https://fable-castle.com/tools/question-expander/","https://fable-castle.com/tools/geo-rewrite/","https://fable-castle.com/tools/geo-skills/","https://fable-castle.com/cases/","https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough","https://fable-castle.com/posts/why-ai-search-never-cites-my-articles.html","https://fable-castle.com/services/","https://fable-castle.com/research/","https://fable-castle.com/research/methodology/","https://fable-castle.com/llms.txt","https://fable-castle.com/llms-full.txt"]'
+          URLS='["https://fable-castle.com/","https://fable-castle.com/diagnosis/","https://fable-castle.com/who-is-jingyi/","https://fable-castle.com/jingyi-fable/","https://fable-castle.com/what-is-fable-castle/","https://fable-castle.com/jingyi-disambiguation/","https://fable-castle.com/public-sources/","https://fable-castle.com/jingyi-fable-faq/","https://fable-castle.com/jingyi-fable-facts/","https://fable-castle.com/geo/","https://fable-castle.com/geo-ai-visibility-diagnosis/","https://fable-castle.com/founder-ip/","https://fable-castle.com/ai-knowledge-base/","https://fable-castle.com/github-trust/","https://fable-castle.com/tools/","https://fable-castle.com/tools/geo-check/","https://fable-castle.com/tools/content-health/","https://fable-castle.com/tools/crawler-check/","https://fable-castle.com/tools/question-expander/","https://fable-castle.com/tools/geo-rewrite/","https://fable-castle.com/tools/geo-skills/","https://fable-castle.com/cases/","https://fable-castle.com/cases/api-model-baseline-2026-08-13/","https://fable-castle.com/posts/day-29-geo-retest-third-party-source-breakthrough","https://fable-castle.com/posts/why-ai-search-never-cites-my-articles.html","https://fable-castle.com/services/","https://fable-castle.com/research/","https://fable-castle.com/research/methodology/","https://fable-castle.com/llms.txt","https://fable-castle.com/llms-full.txt"]'
           echo ">>> Google sitemap ping is deprecated; use robots.txt + Search Console for Google."
           echo ">>> Pinging Bing homepage (IndexNow GET)..."
           curl -s -o /dev/null -w "Bing: %{http_code}\n" \

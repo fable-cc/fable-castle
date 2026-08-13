@@ -41,6 +41,7 @@
 - 长尾问题扩展：https://fable-castle.com/tools/question-expander/
 - 案例：https://fable-castle.com/cases/
 - Day 29 GEO 复测观察：https://fable-castle.com/cases/#day-29
+- 2026-08-13 API 模型品牌识别基线：https://fable-castle.com/cases/api-model-baseline-2026-08-13/
 - 服务：https://fable-castle.com/services/
 - 指南：https://fable-castle.com/guides/
 - 研究方法：https://fable-castle.com/research/methodology/
