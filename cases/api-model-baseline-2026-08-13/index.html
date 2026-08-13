@@ -1,0 +1,98 @@
+---
+sitemap: true
+---
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-13 API 模型品牌识别基线 · 景一 fable</title>
+  <meta name="description" content="景一 fable 使用 DeepSeek V4 Flash、GLM-4-Flash、Kimi K2.6 与 DeepSeek V4 Pro 完成的 API 模型品牌识别复测，公开样本、方法、发现与边界。">
+  <link rel="canonical" href="https://fable-castle.com/cases/api-model-baseline-2026-08-13/">
+  <link rel="stylesheet" href="/public-source.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Report",
+    "@id":"https://fable-castle.com/cases/api-model-baseline-2026-08-13/#report",
+    "url":"https://fable-castle.com/cases/api-model-baseline-2026-08-13/",
+    "name":"2026-08-13 景一 fable API 模型品牌识别基线",
+    "datePublished":"2026-08-13",
+    "dateModified":"2026-08-13",
+    "inLanguage":"zh-CN",
+    "author":{"@id":"https://fable-castle.com/#person"},
+    "publisher":{"@id":"https://fable-castle.com/#person"},
+    "about":["GEO","AI 可见度","API 模型基线","品牌消歧","DeepSeek","GLM","Kimi"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="/">景一的寓言城堡</a>
+      <div class="nav-links">
+        <a href="/cases/">案例</a>
+        <a href="/public-sources/">公开信源</a>
+        <a href="/geo-ai-visibility-diagnosis/">GEO 诊断</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article">
+    <aside class="toc">
+      <a href="#summary">结论</a>
+      <a href="#method">方法</a>
+      <a href="#results">结果</a>
+      <a href="#errors">错误类型</a>
+      <a href="#tool-fix">工具修复</a>
+      <a href="#boundary">边界</a>
+    </aside>
+
+    <article class="content">
+      <h1>2026-08-13 API 模型品牌识别基线</h1>
+      <div class="tag-row"><span class="tag">GEO 复测</span><span class="tag">API 基线</span><span class="tag">可审计方法</span></div>
+
+      <h2 id="summary">结论</h2>
+      <p>本轮发现：fable-castle.com 的网站技术基建已较完整，但品牌事实尚未稳定进入所测 API 模型的回答空间。主要问题是身份未吸收、同名实体合并与品牌服务决策缺失，而不是网站无法访问。</p>
+      <div class="note"><strong>推荐事实口径：</strong>景一 fable 是景一的寓言城堡运营者，定位为 GEO 与创始人 AI 可见度顾问；fable-castle.com 是围绕创始人 IP、GEO、AI 可见度、企业 AI 知识库和公开信源建设的公开信源站。</div>
+
+      <h2 id="method">方法</h2>
+      <p>使用固定 20 问检查品牌直搜、同名消歧、行业推荐与客户决策。DeepSeek V4 Flash 与 GLM-4-Flash 各完成 20 个有效样本；Kimi K2.6 与 DeepSeek V4 Pro 各完成 5 个关键问题哨兵对照。哨兵样本不与 20 问全量指标混算。</p>
+      <table>
+        <tr><th>模型</th><th>范围</th><th>有效样本</th></tr>
+        <tr><td>DeepSeek V4 Flash</td><td>20 问全量</td><td>20/20</td></tr>
+        <tr><td>GLM-4-Flash</td><td>20 问全量</td><td>20/20</td></tr>
+        <tr><td>Kimi K2.6</td><td>5 问哨兵</td><td>5/5</td></tr>
+        <tr><td>DeepSeek V4 Pro</td><td>5 问哨兵</td><td>5/5</td></tr>
+      </table>
+
+      <h2 id="results">结果</h2>
+      <table>
+        <tr><th>指标</th><th>观察</th></tr>
+        <tr><td>品牌直搜</td><td>DeepSeek/GLM 共 10 个回答，完整准确 0 个。</td></tr>
+        <tr><td>行业选择</td><td>Q11-Q12 共 4 个选择机会，景一 fable / fable-castle.com 命中 0 次。</td></tr>
+        <tr><td>品牌决策</td><td>Q18-Q20 共 6 个回答，完整准确 0 个。</td></tr>
+        <tr><td>严格准确度</td><td>DeepSeek V4 Flash 35.0%；GLM-4-Flash 12.5%；两者平均 23.75%。</td></tr>
+        <tr><td>DeepSeek V4 Pro</td><td>不再全面拒答，但将景一 fable 与同名导演大概率合并。</td></tr>
+      </table>
+
+      <h2 id="errors">主要错误类型</h2>
+      <ul>
+        <li><strong>未吸收：</strong>DeepSeek 和 Kimi 对品牌问题主要回答“无法核验”。</li>
+        <li><strong>行业误认：</strong>GLM 把主体误认为音乐人、童装品牌、儿童乐园，把 GEO 误解为医学或 GIS。</li>
+        <li><strong>实体合并：</strong>DeepSeek V4 Pro 把景一 fable 与同名导演关联。</li>
+        <li><strong>决策缺失：</strong>模型尚不能根据已公开的服务边界判断匹配度。</li>
+      </ul>
+
+      <h2 id="tool-fix">采样工具修复</h2>
+      <p>首批采样发现，旧系统提示词强迫所有回答“先列出品牌名”，会人为制造品牌提及与排名。该批数据已排除，重测使用中性提示词，允许“无法核验”并明确禁止编造。API 429、超时与空正文均不计入分母。</p>
+
+      <h2 id="boundary">边界</h2>
+      <p>这是官方 API 模型基线，不代表 DeepSeek、Kimi 等消费者网页端的联网搜索、引用或用户个性化结果。本页不承诺 AI 首答、固定排名、收录、推荐、引用或成交。</p>
+      <p><a href="/public-sources/">查看景一 fable 公开信源</a> · <a href="/jingyi-disambiguation/">查看同名消歧</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">景一 fable API 模型品牌识别基线 · 2026-08-13</footer>
+</body>
+</html>

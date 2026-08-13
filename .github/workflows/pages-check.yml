@@ -13,7 +13,7 @@ jobs:
         run: sleep 45
       - name: 检查正式域名核心页面
         run: |
-          for path in / /diagnosis/ /cases/ /privacy/; do
+          for path in / /diagnosis/ /cases/ /cases/api-model-baseline-2026-08-13/ /privacy/; do
             STATUS=$(curl -L -s -o /dev/null -w "%{http_code}" "https://fable-castle.com${path}")
             if [ "$STATUS" != "200" ]; then
               echo "❌ https://fable-castle.com${path} returned ${STATUS}"
