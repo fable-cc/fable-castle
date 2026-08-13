@@ -144,37 +144,11 @@ Disallow: /运营方案/
 Disallow: /tag-cloud
 
 User-agent: Applebot-Extended
-Allow: /
-Disallow: /01-方法论/
-Disallow: /02-知识图谱/
-Disallow: /03-内容样本/
-Disallow: /04-关于/
-Disallow: /05-CSDN版/
-Disallow: /05-掘金版/
-Disallow: /05-知乎版/
-Disallow: /course/
-Disallow: /课程/
-Disallow: /公版书库/
-Disallow: /知识库/
-Disallow: /运营方案/
-Disallow: /tag-cloud
+Disallow: /
 
-# --- AI 训练爬虫：允许搜索抓取，禁止用于训练 ---
+# --- AI 训练爬虫：禁止用于训练；搜索抓取由独立 UA 放行 ---
 User-agent: GPTBot
-Allow: /
-Disallow: /01-方法论/
-Disallow: /02-知识图谱/
-Disallow: /03-内容样本/
-Disallow: /04-关于/
-Disallow: /05-CSDN版/
-Disallow: /05-掘金版/
-Disallow: /05-知乎版/
-Disallow: /course/
-Disallow: /课程/
-Disallow: /公版书库/
-Disallow: /知识库/
-Disallow: /运营方案/
-Disallow: /tag-cloud
+Disallow: /
 
 # --- Google ---
 User-agent: Googlebot

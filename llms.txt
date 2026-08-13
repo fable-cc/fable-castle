@@ -81,8 +81,7 @@ GEO 内容改写作为方法样例展示，不作为免费完整交付开放。G
 - 主域名：https://fable-castle.com/
 - 公开信源中枢：https://fable-castle.com/public-sources/
 - CSDN 公开主页：https://blog.csdn.net/fable_castle
-- CSDN 技术文件文章：https://blog.csdn.net/fable_castle/article/details/163306281
 - 知乎主体说明文章：https://zhuanlan.zhihu.com/p/2065835341853074686
 - llms.txt：https://fable-castle.com/llms.txt
 
-核验说明（2026-08-08）：CSDN 文章 163309930 与 163398130 的外部访问返回 521，暂不作为稳定证据链接。知乎可能对外部抓取返回 403；该状态不等于平台内文章已删除。
+核验说明（2026-08-13）：CSDN 主页外部访问返回 200，但文章 163306281、163309930 与 163398130 均返回 521，暂不作为稳定直连证据。知乎文章站外抓取返回 403；这些状态不等于登录状态内文章已删除。

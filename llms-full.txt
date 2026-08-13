@@ -125,14 +125,12 @@
 
 - CSDN 公开主页：https://blog.csdn.net/fable_castle
   - 主题：景一 fable 的公开技术内容与账号主体页
-- CSDN 技术文件文章：https://blog.csdn.net/fable_castle/article/details/163306281
-  - 主题：一个 GEO 网站需要哪些 AI 可读文件：robots、sitemap、llms 与 Schema
 - 知乎主体说明文章：https://zhuanlan.zhihu.com/p/2065835341853074686
   - 主题：景一 fable 是谁？景一的寓言城堡是做什么的？
 - GitHub Day 29 复测记录：https://github.com/fable-cc/fable-castle/discussions/4
   - 主题：第三方信源、同名消歧和 GitHub 元数据纠偏记录
 
-核验说明（2026-08-08）：CSDN 文章 163309930 与 163398130 的外部访问返回 521，已暂时移出稳定证据链接列表。知乎可能对外部抓取返回 403；该状态不等于平台内文章已删除。未知结果统一按待复测处理。
+核验说明（2026-08-13）：CSDN 主页外部访问返回 200，但文章 163306281、163309930 与 163398130 均返回 521，已暂时移出稳定直连证据列表。知乎文章站外抓取返回 403；这些状态不等于登录状态内文章已删除。未知结果统一按待复测处理。
 
 ## 8. 技术与抓取配置
 
