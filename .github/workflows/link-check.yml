@@ -1,4 +1,13 @@
 # 每周自动检查所有链接是否失效
+#
+# 修复记录（2026-10-12）：
+#   原配置检查全部 '**/*.md'，把被 _config.yml exclude 的内部目录也扫了进去。
+#   那些目录里的 wiki 链接不带 .md 后缀（如 02-知识图谱/佛学应用-放下不是放弃），
+#   lychee 会判定为 File not found —— 458 个链接里 188 个报错，导致本工作流
+#   自 2026-08-17 起连续 9 周失败，每周的失败邮件也失去了告警意义。
+#
+#   修复方式：用 --exclude-path 对齐「实际发布的内容」，与 _config.yml 的
+#   exclude 列表保持一致。这样一旦真出现死链，告警就是可信的。
 name: 链接检查
 
 on:
@@ -11,10 +20,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-retries 2 '**/*.md'
+          # 只检查实际会发布出去的内容，排除目录与 _config.yml 的 exclude 保持一致
+          args: >-
+            --no-progress
+            --max-retries 2
+            --exclude-path 01-方法论
+            --exclude-path 02-知识图谱
+            --exclude-path 03-内容样本
+            --exclude-path 04-关于
+            --exclude-path 05-CSDN版
+            --exclude-path 05-掘金版
+            --exclude-path 05-知乎版
+            --exclude-path course
+            --exclude-path standalone
+            --exclude-path docs/superpowers
+            --exclude-path image-cards
+            --exclude-path 公版书库
+            --exclude-path 知识库
+            --exclude-path 课程
+            --exclude-path 运营方案
+            '**/*.md'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
