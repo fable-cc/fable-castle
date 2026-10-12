@@ -114,7 +114,7 @@ Claude Code有对话导出功能，没有的话手动复制重点。别等账号
 
 - [AI 搜索时代，你的内容正在被机器审判](/posts/geo-intro-ai-search-era-your-content-on-trial) — 理解 AI 如何挑选内容
 - [中文 GEO 全景指南 2026](/posts/chinese-geo-comprehensive-guide-2026) — 让你的内容在 AI 搜索里被找到
-- [🏰 返回知识城堡首页](/posts/) — 600+ 篇原创冶炼
+- [🏰 返回知识城堡首页](/) — 600+ 篇原创冶炼
 
 *作者：景一 fable · GEO 与创始人 AI 可见度 · https://fable-castle.com/*
 *🌐 https://fable-castle.com/ · 公开信源：https://fable-castle.com/public-sources/*
