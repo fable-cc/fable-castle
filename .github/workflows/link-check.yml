@@ -1,17 +1,22 @@
 # 每周自动检查所有链接是否失效
 #
-# 修复记录（2026-10-12）：
-#   原配置检查全部 '**/*.md'，把被 _config.yml exclude 的内部目录也扫了进去。
-#   那些目录里的 wiki 链接不带 .md 后缀（如 02-知识图谱/佛学应用-放下不是放弃），
-#   lychee 会判定为 File not found —— 458 个链接里 188 个报错，导致本工作流
-#   自 2026-08-17 起连续 9 周失败，每周的失败邮件也失去了告警意义。
+# 修复记录（2026-10-12，共三轮）：
+#   原配置检查全部 '**/*.md'，把被 _config.yml exclude 的内部目录也扫了进去，
+#   且 lychee 默认无法解析本地文件里的根相对链接（/diagnosis/）。
+#   这导致本工作流自 2026-08-17 起连续 9 周失败，每周失败邮件失去告警意义。
 #
-#   修复方式（两步）：
-#     1) --exclude-path 对齐「实际发布的内容」，与 _config.yml 的 exclude 列表一致
-#        → 检查量 458 降到 179，错误从 188 降到 99
-#     2) --base-url 解析根相对链接（/diagnosis/ 等），lychee 默认无法解析本地文件里的
-#        根相对链接 → 剩余 99 个错误全部属于这一类
-#   修复后一旦真出现死链，告警就是可信的。
+#   第一轮：--exclude-path 对齐「实际发布的内容」，与 _config.yml 的 exclude 一致
+#           → 检查量 458 降到 179，错误 188 降到 99
+#   第二轮：--base-url https://fable-castle.com 解析根相对链接，让检查等价于
+#           对生产站点做一次内链体检（比只查本地文件更有意义）
+#           → 剩余 99 个里 37 个变成真实 404，其余在线上可正常解析
+#   第三轮：把「仓库文档 / 被 exclude 的非发布文件」移出检查范围——
+#           README*.md / AGENTS.md 是仓库说明（部分甚至不被发布），
+#           tag-cloud.md 虽写了 permalink 但已被 _config.yml exclude，并非线上页面。
+#           这些文件里的链接指向「刻意不发布」的目录，永远 404，不属于
+#           「生产站点死链」。同时修正 posts 里一处把「返回首页」错链到
+#           /posts/（该索引页不存在）的真实 bug。
+#   现在：只有真正发布且用户可见的内容会被体检，真出现死链时告警可信。
 name: 链接检查
 
 on:
@@ -28,10 +33,12 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          # 只检查实际会发布出去的内容，排除目录与 _config.yml 的 exclude 保持一致。
-          # --base-url 让根相对链接（如 /diagnosis/）解析到线上地址，这样
+          # 只检查「真正发布且用户可见」的内容。
+          # --base-url 让根相对链接（如 /diagnosis/）解析到线上地址，
           # 每周检查等于对生产站点做一次完整内链体检 —— 对内链要求极高的
           # GEO 站点来说，这比只查本地文件更有意义。
+          # 仓库文档（README*/AGENTS）与 _config.yml 中 exclude 的非发布文件
+          # 移出范围，避免把「指向刻意不发布目录」的链接误报成死链。
           args: >-
             --no-progress
             --max-retries 2
@@ -51,6 +58,12 @@ jobs:
             --exclude-path 知识库
             --exclude-path 课程
             --exclude-path 运营方案
+            --exclude-path README.md
+            --exclude-path README_EN.md
+            --exclude-path README-KNOWLEDGE-BASE.md
+            --exclude-path README-TAXONOMY.md
+            --exclude-path AGENTS.md
+            --exclude-path tag-cloud.md
             '**/*.md'
           fail: true
         env:
